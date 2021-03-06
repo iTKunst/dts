@@ -1,0 +1,14 @@
+FROM postgres:13
+
+USER root
+
+EXPOSE 5432
+
+ARG CONT_DIR
+ARG HOST_DIR
+
+RUN mkdir -p $CONT_DIR
+WORKDIR ${CONT_DIR}
+
+
+COPY ${HOST_DIR}/*.sql /docker-entrypoint-initdb.d/

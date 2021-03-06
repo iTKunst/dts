@@ -1,0 +1,1 @@
+find ./ -name 'linux.sh' -execdir rename 's/linux.sh/init.sh/g' '{}' \;

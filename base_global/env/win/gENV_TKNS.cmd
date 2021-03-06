@@ -1,0 +1,16 @@
+@echo off
+
+
+call LOG_ENTER gENV_TKNS
+
+SET "BCK_SLASH=\"
+SET "COLON=:"
+SET "DASH=-"
+SET "DOT=."
+SET "FOR_SLASH=/"
+SET "SPLIT=_"
+
+SET "CURRENT=%DOT%%SLASH%"
+SET "UP=%DOT%%DOT%%SLASH%"
+
+call LOG_EXIT gENV_TKNS

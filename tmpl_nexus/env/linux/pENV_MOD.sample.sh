@@ -1,0 +1,21 @@
+#!/bin/bash
+# shellcheck disable=SC2086
+
+
+log_enter pENV_MOD
+
+source sENV.sh
+
+
+export PROJ_HOST=$NEXUS_HOST
+export PROJ_PASSWORD=$NEXUS_PASSWORD
+export PROJ_PORT_EXT=$NEXUS_PORT_EXT
+export PROJ_USER=$NEXUS_USER
+
+export PROJ_CONT_PATH=$NEXUS_CONT_PATH
+export PROJ_MAX_HEAP=$NEXUS_MAX_HEAP
+export PROJ_MIN_HEAP=$NEXUS_MIN_HEAP
+export PROJ_JAVA_OPTS=${NEXUS_JAVA_OPTS}
+export PROJ_LAUNCH_CONF=$NEXUS_LAUNCH_CONF
+
+log_exit pENV_MOD

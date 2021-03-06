@@ -1,0 +1,35 @@
+# Step 1
+FROM node:10-alpine as build-step
+
+ARG CONT_DIR
+ARG HOST_DIR
+ARG SYS_DIR
+
+RUN mkdir -p ${CONT_DIR}/node_modules && chown -R node:node ${CONT_DIR}
+
+WORKDIR ${CONT_DIR}
+
+COPY ${HOST_DIR}/package.json ./
+COPY ${HOST_DIR}/yarn.lock ./
+
+RUN yarn
+
+COPY ${HOST_DIR} .
+
+RUN yarn build
+
+#step 2
+FROM nginx:1.17.1-alpine
+
+ARG CONT_DIR
+ARG SYS_DIR
+
+EXPOSE 80
+
+COPY --from=build-step ${CONT_DIR}/build /usr/share/nginx/html
+COPY ${SYS_DIR}/keycloak/keycloak.json /usr/share/nginx/html
+
+RUN mkdir /etc/nginx/available_sites
+COPY ${SYS_DIR}/nginx/default /etc/nginx/available_sites/
+
+CMD ["nginx", "-g", "daemon off;"]

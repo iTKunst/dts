@@ -1,0 +1,1036 @@
+<wsdl:definitions
+    xmlns:tns="https://ws.innav.gc.ca/" 
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+    xmlns:s="http://www.w3.org/2001/XMLSchema"
+    xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" 
+    xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    targetNamespace="https://ws.innav.gc.ca/">
+    <wsdl:types>
+        <s:schema elementFormDefault="qualified" targetNamespace="https://ws.innav.gc.ca/">
+            <s:element name="GetHandoffs">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="condition" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetHandoffsResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetHandoffsResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetLocationsList">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="region" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="location" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="condition" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="level" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetLocationsListResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetLocationsListResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetOwnersVesselsList">
+                <s:complexType/>
+            </s:element>
+            <s:element name="GetOwnersVesselsListResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetOwnersVesselsListResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetReport">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="report" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="parameter1" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="parameter2" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="parameter3" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="parameter4" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="parameter5" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="parameter6" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetReportResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetReportResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetReportsList">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetReportsListResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetReportsListResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetSpecificTripsHistory">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="tripIden" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="convoyTowingIndi" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetSpecificTripsHistoryResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetSpecificTripsHistoryResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetTripsHistoryList">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="vesselIdType" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="vesselIdValue" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="condition" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetTripsHistoryListResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetTripsHistoryListResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetTripsIDHistoryList">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="vesselIdType" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="vesselIdValue" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="condition" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetTripsIDHistoryListResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetTripsIDHistoryListResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetTripSummary">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="vessel" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="condition" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetTripSummaryResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetTripSummaryResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetTripTrafficEvents">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="vessel" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="condition" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetTripTrafficEventsResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetTripTrafficEventsResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetVesselsArrivalDepartureList">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="vessel" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="condition" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="typeEvent" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetVesselsArrivalDepartureListResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetVesselsArrivalDepartureListResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetVesselsCpaTcpa">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="vessel" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="condition" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="latitude" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="longitude" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetVesselsCpaTcpaResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetVesselsCpaTcpaResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetVesselsMeetingOvertakingList">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="vessel" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="condition" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetVesselsMeetingOvertakingListResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetVesselsMeetingOvertakingListResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetVesselsNearPointByPeriodList">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="distance" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="condition" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="latitude" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="longitude" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetVesselsNearPointByPeriodListResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetVesselsNearPointByPeriodListResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetVesselsPositionsList">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="filter" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="condition" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetVesselsPositionsListResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetVesselsPositionsListResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetVesselsTombstone">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="vessel" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="condition" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="level" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetVesselsTombstoneResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetVesselsTombstoneResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetVesselsTripsList">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="filter" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="condition" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="level" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetVesselsTripsListResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetVesselsTripsListResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SendEpair">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="marsec" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="vessel" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="callsign" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="imo" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="latitude" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="longitude" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="course" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="speed" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="positionDatetime" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="destination" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="arrivalDatetime" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lpocCode" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="lpocName" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SendEpairResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="SendEpairResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SendHandoffs">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="vess_inte_iden" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="vessel" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="callsign" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="imo" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="mmsi" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="vesselType" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="speed" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="numBarges" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="loaded" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="departureLocation" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="departureLatitude" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="departureLongitude" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="handoffLocation" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="handoffDatetime" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="arrivalLocation" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="tripRemark" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SendHandoffsResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="SendHandoffsResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:element ref="s:schema"/>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+        </s:schema>
+    </wsdl:types>
+    <wsdl:message name="GetHandoffsSoapIn">
+        <wsdl:part name="parameters" element="tns:GetHandoffs"/>
+    </wsdl:message>
+    <wsdl:message name="GetHandoffsSoapOut">
+        <wsdl:part name="parameters" element="tns:GetHandoffsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetLocationsListSoapIn">
+        <wsdl:part name="parameters" element="tns:GetLocationsList"/>
+    </wsdl:message>
+    <wsdl:message name="GetLocationsListSoapOut">
+        <wsdl:part name="parameters" element="tns:GetLocationsListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetOwnersVesselsListSoapIn">
+        <wsdl:part name="parameters" element="tns:GetOwnersVesselsList"/>
+    </wsdl:message>
+    <wsdl:message name="GetOwnersVesselsListSoapOut">
+        <wsdl:part name="parameters" element="tns:GetOwnersVesselsListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetReportSoapIn">
+        <wsdl:part name="parameters" element="tns:GetReport"/>
+    </wsdl:message>
+    <wsdl:message name="GetReportSoapOut">
+        <wsdl:part name="parameters" element="tns:GetReportResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetReportsListSoapIn">
+        <wsdl:part name="parameters" element="tns:GetReportsList"/>
+    </wsdl:message>
+    <wsdl:message name="GetReportsListSoapOut">
+        <wsdl:part name="parameters" element="tns:GetReportsListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetSpecificTripsHistorySoapIn">
+        <wsdl:part name="parameters" element="tns:GetSpecificTripsHistory"/>
+    </wsdl:message>
+    <wsdl:message name="GetSpecificTripsHistorySoapOut">
+        <wsdl:part name="parameters" element="tns:GetSpecificTripsHistoryResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetTripsHistoryListSoapIn">
+        <wsdl:part name="parameters" element="tns:GetTripsHistoryList"/>
+    </wsdl:message>
+    <wsdl:message name="GetTripsHistoryListSoapOut">
+        <wsdl:part name="parameters" element="tns:GetTripsHistoryListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetTripsIDHistoryListSoapIn">
+        <wsdl:part name="parameters" element="tns:GetTripsIDHistoryList"/>
+    </wsdl:message>
+    <wsdl:message name="GetTripsIDHistoryListSoapOut">
+        <wsdl:part name="parameters" element="tns:GetTripsIDHistoryListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetTripSummarySoapIn">
+        <wsdl:part name="parameters" element="tns:GetTripSummary"/>
+    </wsdl:message>
+    <wsdl:message name="GetTripSummarySoapOut">
+        <wsdl:part name="parameters" element="tns:GetTripSummaryResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetTripTrafficEventsSoapIn">
+        <wsdl:part name="parameters" element="tns:GetTripTrafficEvents"/>
+    </wsdl:message>
+    <wsdl:message name="GetTripTrafficEventsSoapOut">
+        <wsdl:part name="parameters" element="tns:GetTripTrafficEventsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetVesselsArrivalDepartureListSoapIn">
+        <wsdl:part name="parameters" element="tns:GetVesselsArrivalDepartureList"/>
+    </wsdl:message>
+    <wsdl:message name="GetVesselsArrivalDepartureListSoapOut">
+        <wsdl:part name="parameters" element="tns:GetVesselsArrivalDepartureListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetVesselsCpaTcpaSoapIn">
+        <wsdl:part name="parameters" element="tns:GetVesselsCpaTcpa"/>
+    </wsdl:message>
+    <wsdl:message name="GetVesselsCpaTcpaSoapOut">
+        <wsdl:part name="parameters" element="tns:GetVesselsCpaTcpaResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetVesselsMeetingOvertakingListSoapIn">
+        <wsdl:part name="parameters" element="tns:GetVesselsMeetingOvertakingList"/>
+    </wsdl:message>
+    <wsdl:message name="GetVesselsMeetingOvertakingListSoapOut">
+        <wsdl:part name="parameters" element="tns:GetVesselsMeetingOvertakingListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetVesselsNearPointByPeriodListSoapIn">
+        <wsdl:part name="parameters" element="tns:GetVesselsNearPointByPeriodList"/>
+    </wsdl:message>
+    <wsdl:message name="GetVesselsNearPointByPeriodListSoapOut">
+        <wsdl:part name="parameters" element="tns:GetVesselsNearPointByPeriodListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetVesselsPositionsListSoapIn">
+        <wsdl:part name="parameters" element="tns:GetVesselsPositionsList"/>
+    </wsdl:message>
+    <wsdl:message name="GetVesselsPositionsListSoapOut">
+        <wsdl:part name="parameters" element="tns:GetVesselsPositionsListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetVesselsTombstoneSoapIn">
+        <wsdl:part name="parameters" element="tns:GetVesselsTombstone"/>
+    </wsdl:message>
+    <wsdl:message name="GetVesselsTombstoneSoapOut">
+        <wsdl:part name="parameters" element="tns:GetVesselsTombstoneResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetVesselsTripsListSoapIn">
+        <wsdl:part name="parameters" element="tns:GetVesselsTripsList"/>
+    </wsdl:message>
+    <wsdl:message name="GetVesselsTripsListSoapOut">
+        <wsdl:part name="parameters" element="tns:GetVesselsTripsListResponse"/>
+    </wsdl:message>
+    <wsdl:message name="SendEpairSoapIn">
+        <wsdl:part name="parameters" element="tns:SendEpair"/>
+    </wsdl:message>
+    <wsdl:message name="SendEpairSoapOut">
+        <wsdl:part name="parameters" element="tns:SendEpairResponse"/>
+    </wsdl:message>
+    <wsdl:message name="SendHandoffsSoapIn">
+        <wsdl:part name="parameters" element="tns:SendHandoffs"/>
+    </wsdl:message>
+    <wsdl:message name="SendHandoffsSoapOut">
+        <wsdl:part name="parameters" element="tns:SendHandoffsResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="WebServiceSoap">
+        <wsdl:operation name="GetHandoffs">
+            <wsdl:input message="tns:GetHandoffsSoapIn"/>
+            <wsdl:output message="tns:GetHandoffsSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetLocationsList">
+            <wsdl:input message="tns:GetLocationsListSoapIn"/>
+            <wsdl:output message="tns:GetLocationsListSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetOwnersVesselsList">
+            <wsdl:input message="tns:GetOwnersVesselsListSoapIn"/>
+            <wsdl:output message="tns:GetOwnersVesselsListSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetReport">
+            <wsdl:input message="tns:GetReportSoapIn"/>
+            <wsdl:output message="tns:GetReportSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetReportsList">
+            <wsdl:input message="tns:GetReportsListSoapIn"/>
+            <wsdl:output message="tns:GetReportsListSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetSpecificTripsHistory">
+            <wsdl:input message="tns:GetSpecificTripsHistorySoapIn"/>
+            <wsdl:output message="tns:GetSpecificTripsHistorySoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetTripsHistoryList">
+            <wsdl:input message="tns:GetTripsHistoryListSoapIn"/>
+            <wsdl:output message="tns:GetTripsHistoryListSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetTripsIDHistoryList">
+            <wsdl:input message="tns:GetTripsIDHistoryListSoapIn"/>
+            <wsdl:output message="tns:GetTripsIDHistoryListSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetTripSummary">
+            <wsdl:input message="tns:GetTripSummarySoapIn"/>
+            <wsdl:output message="tns:GetTripSummarySoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetTripTrafficEvents">
+            <wsdl:input message="tns:GetTripTrafficEventsSoapIn"/>
+            <wsdl:output message="tns:GetTripTrafficEventsSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsArrivalDepartureList">
+            <wsdl:input message="tns:GetVesselsArrivalDepartureListSoapIn"/>
+            <wsdl:output message="tns:GetVesselsArrivalDepartureListSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsCpaTcpa">
+            <wsdl:input message="tns:GetVesselsCpaTcpaSoapIn"/>
+            <wsdl:output message="tns:GetVesselsCpaTcpaSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsMeetingOvertakingList">
+            <wsdl:input message="tns:GetVesselsMeetingOvertakingListSoapIn"/>
+            <wsdl:output message="tns:GetVesselsMeetingOvertakingListSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsNearPointByPeriodList">
+            <wsdl:input message="tns:GetVesselsNearPointByPeriodListSoapIn"/>
+            <wsdl:output message="tns:GetVesselsNearPointByPeriodListSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsPositionsList">
+            <wsdl:input message="tns:GetVesselsPositionsListSoapIn"/>
+            <wsdl:output message="tns:GetVesselsPositionsListSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsTombstone">
+            <wsdl:input message="tns:GetVesselsTombstoneSoapIn"/>
+            <wsdl:output message="tns:GetVesselsTombstoneSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsTripsList">
+            <wsdl:input message="tns:GetVesselsTripsListSoapIn"/>
+            <wsdl:output message="tns:GetVesselsTripsListSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="SendEpair">
+            <wsdl:input message="tns:SendEpairSoapIn"/>
+            <wsdl:output message="tns:SendEpairSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="SendHandoffs">
+            <wsdl:input message="tns:SendHandoffsSoapIn"/>
+            <wsdl:output message="tns:SendHandoffsSoapOut"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="GetHandoffs">
+            <soap:operation soapAction="https://ws.innav.gc.ca/GetHandoffs" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetLocationsList">
+            <soap:operation soapAction="https://ws.innav.gc.ca/GetLocationsList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetOwnersVesselsList">
+            <soap:operation soapAction="https://ws.innav.gc.ca/GetOwnersVesselsList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetReport">
+            <soap:operation soapAction="https://ws.innav.gc.ca/GetReport" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetReportsList">
+            <soap:operation soapAction="https://ws.innav.gc.ca/GetReportsList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetSpecificTripsHistory">
+            <soap:operation soapAction="https://ws.innav.gc.ca/GetSpecificTripsHistory" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetTripsHistoryList">
+            <soap:operation soapAction="https://ws.innav.gc.ca/GetTripsHistoryList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetTripsIDHistoryList">
+            <soap:operation soapAction="https://ws.innav.gc.ca/GetTripsIDHistoryList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetTripSummary">
+            <soap:operation soapAction="https://ws.innav.gc.ca/GetTripSummary" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetTripTrafficEvents">
+            <soap:operation soapAction="https://ws.innav.gc.ca/GetTripTrafficEvents" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsArrivalDepartureList">
+            <soap:operation soapAction="https://ws.innav.gc.ca/GetVesselsArrivalDepartureList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsCpaTcpa">
+            <soap:operation soapAction="https://ws.innav.gc.ca/GetVesselsCpaTcpa" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsMeetingOvertakingList">
+            <soap:operation soapAction="https://ws.innav.gc.ca/GetVesselsMeetingOvertakingList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsNearPointByPeriodList">
+            <soap:operation soapAction="https://ws.innav.gc.ca/GetVesselsNearPointByPeriodList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsPositionsList">
+            <soap:operation soapAction="https://ws.innav.gc.ca/GetVesselsPositionsList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsTombstone">
+            <soap:operation soapAction="https://ws.innav.gc.ca/GetVesselsTombstone" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsTripsList">
+            <soap:operation soapAction="https://ws.innav.gc.ca/GetVesselsTripsList" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SendEpair">
+            <soap:operation soapAction="https://ws.innav.gc.ca/SendEpair" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SendHandoffs">
+            <soap:operation soapAction="https://ws.innav.gc.ca/SendHandoffs" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="GetHandoffs">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/GetHandoffs" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetLocationsList">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/GetLocationsList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetOwnersVesselsList">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/GetOwnersVesselsList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetReport">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/GetReport" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetReportsList">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/GetReportsList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetSpecificTripsHistory">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/GetSpecificTripsHistory" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetTripsHistoryList">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/GetTripsHistoryList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetTripsIDHistoryList">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/GetTripsIDHistoryList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetTripSummary">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/GetTripSummary" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetTripTrafficEvents">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/GetTripTrafficEvents" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsArrivalDepartureList">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/GetVesselsArrivalDepartureList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsCpaTcpa">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/GetVesselsCpaTcpa" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsMeetingOvertakingList">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/GetVesselsMeetingOvertakingList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsNearPointByPeriodList">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/GetVesselsNearPointByPeriodList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsPositionsList">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/GetVesselsPositionsList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsTombstone">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/GetVesselsTombstone" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetVesselsTripsList">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/GetVesselsTripsList" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SendEpair">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/SendEpair" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SendHandoffs">
+            <soap12:operation soapAction="https://ws.innav.gc.ca/SendHandoffs" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="WebService">
+        <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+            <soap:address location="https://ws.innav.gc.ca/webservices.asmx"/>
+        </wsdl:port>
+        <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+            <soap12:address location="https://ws.innav.gc.ca/webservices.asmx"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

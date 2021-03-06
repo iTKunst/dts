@@ -1,0 +1,11 @@
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
+
+EXPOSE 5432
+
+ARG HOST_DIR
+ARG CONT_DIR
+
+
+RUN ECHO "CONT_DIR is %CONT_DIR%"
+
+RUN echo "CONT_DIR is %CONT_DIR%"

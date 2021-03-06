@@ -1,0 +1,125 @@
+version: "3.3"
+
+
+services:
+
+  db:
+    container_name: $DB_CONT
+    environment:
+      POSTGRES_DB: $DB_NAME
+      POSTGRES_USER: $DB_USER
+      POSTGRES_PASSWORD: $DB_PASSWORD
+    image: $DB_IMG
+    labels:
+      - $APP
+    ports:
+      - $DB_PORT_EXT:$DB_PORT_INT
+    restart: always
+    volumes:
+      - DB_VOL:$DB_VOL_DIR
+
+  db_admin:
+    container_name: $DB_ADMIN_CONT
+    depends_on:
+      - db
+    environment:
+      PGADMIN_DEFAULT_EMAIL: $DB_ADMIN_USER
+      PGADMIN_DEFAULT_PASSWORD: $DB_ADMIN_PASSWORD
+    image: $DB_ADMIN_IMG
+    labels:
+      - $APP
+    links:
+      - db
+    ports:
+      - $DB_ADMIN_PORT_EXT:$DB_ADMIN_PORT_INT
+    restart: always
+
+  db_vol:
+    container_name: $DB_VOL_CONT
+    depends_on:
+      - db
+    image: $DB_VOL_IMG
+    labels:
+      - $APP
+    restart: always
+    volumes:
+      - DB_VOL:$DB_VOL_DIR
+
+  db_ms:
+    container_name: $DB_MS_CONT
+    environment:
+      MYSQL_ROOT_PASSWORD: $DB_MS_ROOT_PASSWORD
+    image: $DB_MS_IMG
+    labels:
+      - $APP
+    ports:
+      - $DB_MS_PORT_EXT:$DB_MS_PORT_INT
+    restart: always
+    volumes:
+      - DB_MS_VOL:$DB_MS_VOL_DIR
+
+  db_ms_admin:
+    container_name: $DB_MS_ADMIN_CONT
+    depends_on:
+      - db_ms
+    environment:
+      PGADMIN_DEFAULT_EMAIL: $DB_MS_ADMIN_USER
+      PGADMIN_DEFAULT_PASSWORD: $DB_MS_ADMIN_PASSWORD
+    image: $DB_MS_ADMIN_IMG
+    labels:
+      - $APP
+    links:
+      - db_ms
+    ports:
+      - $DB_MS_ADMIN_PORT_EXT:$DB_MS_ADMIN_PORT_INT
+    restart: always
+
+  db_ms_vol:
+    container_name: $DB_MS_VOL_CONT
+    depends_on:
+      - db_ms
+    image: $DB_MS_VOL_IMG
+    labels:
+      - $APP
+    restart: always
+    volumes:
+      - DB_MS_VOL:$DB_MS_VOL_DIR
+
+  wf:
+    container_name: $WF_CONT
+    depends_on:
+      - db
+      - db_ms
+    image: $WF_IMG
+    labels:
+      - $APP
+    links:
+      - db
+      - db_ms
+    ports:
+      - $WF_PORT_ADMIN_EXT:$WF_PORT_ADMIN_INT
+      - $WF_PORT_APPS_EXT:$WF_PORT_APPS_INT
+      - $WF_PORT_DBG_EXT:$WF_PORT_DBG_INT
+    restart: always
+    volumes:
+      - WF_VOL:$WF_VOL_DIR
+
+  app:
+    container_name: $APP_CONT
+    depends_on:
+      - wf
+    image: $APP_IMG
+    labels:
+      - $APP
+    links:
+      - wf
+    ports:
+      - $APP_PORT_EXT:$APP_PORT_INT
+    restart: always
+    volumes:
+      - WF_VOL:$APP_VOL_DIR
+
+volumes:
+  DB_VOL:
+  DB_MS_VOL:
+  WF_VOL:

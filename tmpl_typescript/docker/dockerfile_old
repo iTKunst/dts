@@ -1,0 +1,30 @@
+FROM openjdk:11-jre-slim
+
+USER root
+
+ARG CONT_DIR=${CONT_DIR}
+ARG HOST_DIR=${HOST_DIR}
+
+RUN echo CONT_DIR is ${CONT_DIR}
+RUN echo HOST_DIR is ${HOST_DIR}
+
+EXPOSE 8080
+EXPOSE 5005
+
+RUN mkdir ${CONT_DIR}
+
+COPY .${HOST_DIR} ${CONT_DIR}
+WORKDIR ${CONT_DIR}
+
+RUN apt-get -qq update
+RUN apt-get -qq install openjdk-11-jdk-headless
+RUN apt install default-jre
+
+RUN javac Main.java
+
+#ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-Djava.security.egd=file:/dev/./urandom","-jar","/app/spring-boot-application.jar"]
+#ENTRYPOINT ["java", "-jar", "/app/spring-boot-application.jar"]
+ENTRYPOINT ["/bin/sh"]
+
+#ENTRYPOINT java -jar -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005 /app/spring-boot-application.jar
+ENTRYPOINT java  -agentlib:jdwp=dt_socket,server=y,suspend=n,address=*:5005 ${CONT_DIR}/Main

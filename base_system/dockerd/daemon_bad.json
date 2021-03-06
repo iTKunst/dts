@@ -1,0 +1,15 @@
+{
+  "registry-mirrors": [
+    "https://docker-repo-nexus.dev.ccg-gcc.gc.ca"
+  ],
+  "insecure-registries": [
+    "https://docker-repo-nexus.dev.ccg-gcc.gc.ca",
+    "https://docker-private-nexus.dev.ccg-gcc.gc.ca"
+  ],
+  "debug": true,
+  "experimental": false,
+  "hosts": ["unix:///var/run/docker.sock", "tcp://127.0.0.1:2375"],
+  "tls": true,
+  "tlscert": "/usr/share/ca-certificates/dockerd/server-cert.pem",
+  "tlskey": "~/usr/share/ca-certificates/dockerd/server-key.pem"
+}

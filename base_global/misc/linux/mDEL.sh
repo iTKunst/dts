@@ -1,0 +1,1 @@
+find $PWD -type f -name "win.cmd" -exec rm -f {} \;

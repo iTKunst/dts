@@ -1,0 +1,13 @@
+#FROM jfrog-docker-reg2.bintray.io/jfrog/artifactory-registry:latest
+FROM docker.bintray.io/jfrog/artifactory-oss:latest
+
+USER root
+
+ARG CONT_DIR
+
+EXPOSE 443
+EXPOSE 8081
+EXPOSE 80
+
+RUN mkdir -p ${CONT_DIR}
+WORKDIR ${CONT_DIR}

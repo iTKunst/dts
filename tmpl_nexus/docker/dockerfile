@@ -1,0 +1,6 @@
+FROM sonatype/nexus3
+
+EXPOSE 443
+EXPOSE 8081
+EXPOSE 80
+

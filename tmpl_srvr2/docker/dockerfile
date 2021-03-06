@@ -1,0 +1,55 @@
+FROM maven:3.6.3-jdk-8
+
+
+USER root
+
+EXPOSE 8080
+EXPOSE 9990
+
+ARG CONT_DIR
+ARG HOST_DIR
+ARG SYS_DIR
+ARG TMPL_DIR
+
+ARG ART $ART
+ARG GRP $GRP
+ARG REPO_URL $REPO_URL
+ARG REPO_PORT $REPO_PORT
+ARG VER $VER
+
+RUN echo CONT_DIR is ${CONT_DIR}
+RUN echo HOST_DIR is ${HOST_DIR}
+RUN echo SYS_DIR is ${SYS_DIR}
+RUN echo TMPL_DIR is ${TMPL_DIR}
+
+RUN echo ART is ${ART}
+RUN echo GRP is ${GRP}
+RUN echo REPO_URL is ${REPO_URL}
+RUN echo REPO_PORT is ${REPO_PORT}
+RUN echo VER is ${VER}
+
+RUN mkdir -p ${CONT_DIR}
+
+WORKDIR ${CONT_DIR}
+
+RUN mkdir -p /root/.m2
+COPY ./${SYS_DIR}/maven/settings.xml /root/.m2
+
+# copy the project files
+COPY ./code/pom.xml .
+
+ARG CERT_DIR=$(readlink -f /usr/bin/java | sed "s:bin/java::")lib/security/cacerts
+RUN echo CERT_DIR is ${CERT_DIR}
+
+COPY ./${SYS_DIR}/maven/nexus.cert .
+RUN keytool -import -alias nexus -keystore $CERT_DIR -file nexus.cer
+
+# build all dependencies for offline use
+RUN mvn dependency:go-offline -B
+
+COPY ./code/src ./src
+RUN mvn package
+
+ENTRYPOINT ["java", "-jar", "./target/swagger-spring-1.0.0.jar"]
+
+#ENTRYPOINT ["/bin/sh"]

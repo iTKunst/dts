@@ -1,0 +1,292 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: "IHS"
+host: "0.0.0.0"
+basePath: "/ihs.svc/RESTFul"
+securityDefinitions:
+  BasicAuth:
+    type: basic
+schemes:
+  - "https"
+  - "http"
+paths:
+  /GetName:
+    get:
+      tags:
+        - "IHS"
+      summary: "GetName"
+      description: ''
+      operationId: "GetName"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "Name"
+          in: "query"
+          description: "The name of the vessel"
+          default: ""
+          required: true
+          type: "string"
+        - name: "Id"
+          in: "query"
+          description: "The Index of the name in history"
+          default: ""
+          required: true
+          type: "integer"
+          format: "int32"
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/q1_Name'
+          headers: {}
+      security:
+        - BasicAuth: []
+  /GetNames:
+    get:
+      tags:
+        - "IHS"
+      summary: "GetNames"
+      description: ''
+      operationId: "GetNames"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "Name"
+          in: "query"
+          description: "The name of the vessel"
+          default: ""
+          required: true
+          type: "string"
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/q1_Names'
+          headers: {}
+      security:
+        - BasicAuth: []
+  /GetShipByCallSign:
+    get:
+      tags:
+        - "IHS"
+      summary: "GetShipByCallSign"
+      description: ''
+      operationId: "GetShipByCallSign"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "Callsign"
+          in: "query"
+          description: "The call sign of the vessel"
+          default: ""
+          required: true
+          type: "string"
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/q1_Ship'
+          headers: {}
+      security:
+        - BasicAuth: []
+  /GetShipByIMO:
+    get:
+      tags:
+        - "IHS"
+      summary: "GetShipByIMO"
+      description: ''
+      operationId: "GetShipByIMO"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "IMO"
+          in: "query"
+          description: "The IMO number of the vessel"
+          default: ""
+          required: true
+          type: "string"
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/q1_Ship'
+          headers: {}
+      security:
+        - BasicAuth: []
+  /GetShipByMMSI:
+    get:
+      tags:
+        - "IHS"
+      summary: "GetShipByMMSI"
+      description: ''
+      operationId: "GetShipByMMSI"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "Name"
+          in: "query"
+          description: "The MMSI number of the vessel"
+          default: ""
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: "#/definitions/q1_Ship"
+        '400':
+          description: "Invalid status value"
+        '401':
+          description: "Forbidden - Error 401"
+      security:
+        - BasicAuth: []
+  /GetShipByName:
+    get:
+      tags:
+        - "IHS"
+      summary: "GetShipByName"
+      description: ''
+      operationId: "GetShipByName"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "Name"
+          in: "query"
+          description: "The name of the vessel"
+          default: ""
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: "#/definitions/q1_Ship"
+        '400':
+          description: "Invalid status value"
+        '401':
+          description: "Forbidden - Error 401"
+      security:
+        - BasicAuth: []
+  /GetShipByNamePart:
+    get:
+      tags:
+        - "IHS"
+      summary: "GetShipByNamePart"
+      description: ''
+      operationId: "GetShipByNamePart"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "Name"
+          in: "query"
+          description: "The partial name of the vessel"
+          default: ""
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: "#/definitions/q1_Ship"
+        '400':
+          description: "Invalid status value"
+        '401':
+          description: "Forbidden - Error 401"
+      security:
+        - BasicAuth: []
+definitions:
+  q1_Names:
+    title: q1_Names
+    type: object
+    properties:
+      Name:
+        type: array
+        items:
+          $ref: '#/definitions/q1_Name'
+    description: ""
+  q1_Name:
+    title: q1_Name
+    description: ""
+    allOf:
+      - $ref: '#/definitions/q11_Attribute'
+      - type: object
+        properties:
+          DataSetVersion:
+            $ref: '#/definitions/q1_WebServiceVersion'
+          Effective_Date:
+            type: string
+          LRNO:
+            type: string
+          Sequence:
+            type: string
+          VesselName:
+            type: string
+  q1_Ship:
+    title: q1_Ship
+    description: ''
+    properties:
+      Beam:
+        type: integer
+        format: int32
+      CallSign:
+        type: string
+      ClassificationCo:
+        type: string
+      ConstructionYear:
+        type: string
+      GrossTonnage:
+        type: integer
+        format: int32
+      IceClass:
+        type: string
+      IMO:
+        type: string
+      Length:
+        type: integer
+        format: int32
+      MaxDraught:
+        type: integer
+        format: int32
+      MMSI:
+        type: string
+      MouldedDepth:
+        type: integer
+        format: int32
+      Name:
+        type: string
+      Nationality:
+        type: string
+      NetTonnage:
+        type: integer
+        format: int32
+      NormalCruiseSpeed:
+        type: integer
+        format: int32
+      Owner:
+        type: string
+      PowerHP:
+        type: integer
+        format: int32
+      PowerKW:
+        type: integer
+        format: int32
+      PresenceOfCoolingSystemOfInternalCircularSystem:
+        type: string
+      SummerDisplacement:
+        type: integer
+        format: int32
+      Type:
+        type: string
+  q1_WebServiceVersion:
+    title: q1_WebServiceVersion
+    type: object
+    properties:
+      DataSetVersion:
+        type: string
+    description: ""
+  q11_Attribute:
+    title: q11_Attribute
+    type: object
+    description: ""
+

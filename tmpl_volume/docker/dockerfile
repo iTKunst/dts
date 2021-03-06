@@ -1,0 +1,7 @@
+FROM ubuntu
+
+ARG CONT_DIR
+ARG HOST_DIR
+
+RUN mkdir -p ${CONT_DIR}
+WORKDIR ${CONT_DIR}

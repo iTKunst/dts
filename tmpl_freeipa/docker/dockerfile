@@ -1,0 +1,6 @@
+FROM freeipa/freeipa-server:centos-8
+
+USER root
+
+
+

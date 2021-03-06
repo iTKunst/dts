@@ -1,0 +1,5 @@
+embed-server --std-out=echo
+batch
+module add --name=org.postgresql --resources=/tmp/postgresql-42.2.16.jar --dependencies=javax.api,javax.transaction.api
+/subsystem=datasources/jdbc-driver=org.postgresql/:add( driver-name=postgresql, driver-module-name=org.postgresql, driver-xa-datasource-class-name=org.postgresql.xa.PGXADataSource )
+run-batch

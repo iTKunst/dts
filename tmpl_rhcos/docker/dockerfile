@@ -1,0 +1,7 @@
+FROM registry.redhat.io/rhel8/support-tools
+USER root
+LABEL maintainer="John Doe"
+# Disable RHSM
+RUN sed -i -e  's/^\(enabled\).*/\1=0/g' /etc/yum/pluginconf.d/subscription-manager.conf
+# Start bash
+ENTRYPOINT ["/usr/bin/bash"]

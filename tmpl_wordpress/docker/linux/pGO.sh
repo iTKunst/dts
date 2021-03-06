@@ -1,0 +1,68 @@
+#!/bin/bash
+# shellcheck disable=SC2086
+source settings.sh
+source LOG.sh
+
+log_enter pGO
+
+source pENV.sh
+
+CONT=$PROJ_CONT
+CONT_DIR=$PROJ_CONT_DIR
+HOST=$PROJ_HOST
+HOST_DIR=$(pwd)$PROJ_HOST_DIR
+IMG=$PROJ_IMG
+LABEL=$PROJ_LABEL
+MODE=$PROJ_MODE
+NET=$PROJ_NET
+PASSWORD=$PROJ_PASSWORD
+PORT_EXT=$PROJ_PORT_EXT
+PORT_INT=$PROJ_PORT_INT
+USER=$PROJ_USER
+VOL=$PROJ_VOL
+VOL_DIR=$PROJ_VOL_DIR
+
+DB_HOST=$PROJ_DB_HOST
+DB_NAME=$PROJ_DB_NAME
+DB_PASSWORD=$PROJ_DB_PASSWORD
+DB_USER=$PROJ_DB_USER
+
+TABLE_PREFIX=$PROJ_TABLE_PREFIX
+
+log_var CONT $CONT
+log_var CONT_DIR $CONT_DIR
+log_var HOST $HOST
+log_var HOST_DIR $HOST_DIR
+log_var IMG $IMG
+log_var LABEL $LABEL
+log_var MODE $MODE
+log_var NET $NET
+log_var PASSWORD $PASSWORD
+log_var PORT_EXT $PORT_EXT
+log_var PORT_INT $PORT_INT
+log_var USER $USER
+log_var VOL $VOL
+log_var VOL_DIR $VOL_DIR
+
+log_var DB_HOST $DB_HOST
+log_var DB_NAME $DB_NAME
+log_var DB_PASSWORD $DB_PASSWORD
+log_var DB_USER $DB_USER
+
+log_var TABLE_PREFIX $TABLE_PREFIX
+
+docker run \
+       -$MODE \
+       -p $HOST:$PORT_EXT:$PORT_INT \
+       -v $HOST_DIR:$CONT_DIR:rw \
+       -e WORDPRESS_DB_HOST=$DB_HOST \
+       -e WORDPRESS_DB_USER=$DB_USER \
+       -e WORDPRESS_DB_NAME=$DB_NAME \
+       -e WORDPRESS_DB_PASSWORD=$DB_PASSWORD \
+       -e WORDPRESS_TABLE_PREFIX=$TABLE_PREFIX \
+       --label=$LABEL \
+       --name=$CONT \
+       --network=$NET \
+       $IMG
+
+log_exit pGO

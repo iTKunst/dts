@@ -1,0 +1,33 @@
+@echo off
+CALL settings
+
+
+call LOG_ENTER pREMOVE
+
+CALL pSET_TRACE
+
+IF EXIST %DIR_BNDL% (
+  CALL pREMOVE_REPO %DIR_BNDL%
+)
+
+IF EXIST %DIR_GLBL% (
+  CALL pREMOVE_REPO %DIR_GLBL%
+)
+
+IF EXIST %DIR_TMPL% (
+  CALL pREMOVE_REPO %DIR_TMPL%
+)
+
+IF EXIST %DIR_SYS% (
+  CALL pREMOVE_REPO DIR_SYS
+)
+
+if exist bin (
+  RD /S /Q bin
+)
+
+if exist bin (
+  RD /S /Q bin
+)
+
+call LOG_EXIT pREMOVE

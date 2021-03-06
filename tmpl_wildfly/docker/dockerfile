@@ -1,0 +1,25 @@
+FROM jboss/wildfly:20.0.0.Final
+
+USER root
+
+EXPOSE 8080
+EXPOSE 8787
+EXPOSE 9990
+
+ARG CONT_DIR
+ARG HOST_DIR
+ARG SYS_DIR
+
+ENV PATH ${PATH}:${CONT_DIR}/bin
+
+WORKDIR ${CONT_DIR}
+
+RUN add-user.sh admin -p admin -s
+
+COPY ${SYS_DIR}/wildfly/postgres/*.jar /tmp
+COPY ${SYS_DIR}/wildfly/postgres.cli /tmp
+COPY ${SYS_DIR}/wildfly/standalone.xml ./
+
+RUN jboss-cli.sh --file=/tmp/postgres.cli
+
+CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]

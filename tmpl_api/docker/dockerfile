@@ -1,0 +1,44 @@
+FROM maven:3.6.3-jdk-8
+
+
+USER root
+
+EXPOSE 8080
+EXPOSE 9990
+
+ARG CONT_DIR
+ARG HOST_DIR
+ARG SYS_DIR
+ARG TMPL_DIR
+
+RUN echo CONT_DIR is ${CONT_DIR}
+RUN echo HOST_DIR is ${HOST_DIR}
+RUN echo SYS_DIR is ${SYS_DIR}
+RUN echo TMPL_DIR is ${TMPL_DIR}
+
+RUN mkdir -p ${CONT_DIR}
+
+WORKDIR ${CONT_DIR}
+
+RUN mkdir -p /root/.m2
+COPY ./${SYS_DIR}/maven/settings.xml /root/.m2
+
+ENV ART $ART
+ENV GRP $GRP
+ENV PKG $PKG
+ENV REPO_URL $REPO_URL
+ENV REPO_PORT $REPO_PORT
+ENV VER $VER
+
+# copy the project files
+COPY ./code/pom.xml .
+
+# build all dependencies for offline use
+RUN mvn dependency:go-offline -B
+
+COPY ./code/src ./src
+RUN mvn package
+
+ENTRYPOINT ["java", "-jar", "./target/swagger-spring-1.0.0.jar"]
+
+#ENTRYPOINT ["/bin/sh"]

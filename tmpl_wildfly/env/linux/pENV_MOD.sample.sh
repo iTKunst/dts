@@ -1,0 +1,24 @@
+#!/bin/bash
+# shellcheck disable=SC2086
+
+
+log_enter pENV_MOD
+
+source sENV.sh
+
+
+export PROJ_HOST=$WF_HOST
+export PROJ_PASSWORD=$WF_PASSWORD
+export PROJ_PORT_EXT=$WF_PORT_EXT
+export PROJ_USER=$WF_USER
+
+export PROJ_DB_HOST=$MS_CONT
+export PROJ_DB_NAME=$MS_DB_NAME
+export PROJ_DB_PASSWORD=$MS_PASSWORD
+export PROJ_DB_USER=$MS_USER
+
+export PROJ_PORT_EXT_ADMIN=$WF_PORT_EXT_ADMIN
+export PROJ_PORT_EXT_APPS=$WF_PORT_EXT_APPS
+export PROJ_PORT_EXT_DBG=$WF_PORT_EXT_DBG
+
+log_exit pENV_MOD

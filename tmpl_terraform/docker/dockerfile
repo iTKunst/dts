@@ -1,0 +1,15 @@
+FROM hashicorp/terraform:light
+
+USER root
+
+EXPOSE 8080
+
+ARG CONT_DIR
+ARG HOST_DIR
+ARG SYS_DIR
+
+RUN mkdir -p $CONT_DIR
+WORKDIR $CONT_DIR
+
+
+ENTRYPOINT["/usr/bin/tail"]

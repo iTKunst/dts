@@ -1,0 +1,6 @@
+FROM phpmyadmin
+
+ADD /Project/Conf/fqdn.conf /etc/apache2/conf.d/
+
+EXPOSE 80
+

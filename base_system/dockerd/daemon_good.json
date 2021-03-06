@@ -1,0 +1,11 @@
+{
+  "registry-mirrors": [
+    "https://docker-repo-nexus.dev.ccg-gcc.gc.ca"
+  ],
+  "insecure-registries": [
+    "https://docker-repo-nexus.dev.ccg-gcc.gc.ca",
+    "https://docker-private-nexus.dev.ccg-gcc.gc.ca"
+  ],
+  "debug": true,
+  "experimental": false
+}

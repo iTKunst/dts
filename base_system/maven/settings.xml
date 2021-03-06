@@ -1,0 +1,66 @@
+<settings>
+   <mirrors>
+    <mirror> 
+      <id>nexus</id>
+      <mirrorOf>*</mirrorOf>
+      <url>https://nexus.dev.ccg-gcc.gc.ca/repository/maven-public/</url>
+    </mirror>
+  </mirrors>
+
+  <activeProfiles>
+    <activeProfile>nexus</activeProfile>
+  </activeProfiles>
+
+  <profiles>
+    <profile>
+      <id>nexus</id>
+      <repositories>
+        <repository>
+          <id>central</id>
+          <url>http://central</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>central</id>
+          <url>http://central</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+
+  <pluginGroups>
+    <pluginGroup>org.sonatype.plugins</pluginGroup>
+  </pluginGroups>
+
+     <servers>
+        <server>
+            <id>nexus</id>
+            <username>taghrdooleyp</username>
+            <password>12345678</password>
+        </server>
+        <server>
+            <id>nexusReleases</id>
+            <username>taghrdooleyp</username>
+            <password>12345678</password>
+        </server>
+        <server>
+            <id>nexusSnapshots</id>
+            <username>taghrdooleyp</username>
+            <password>12345678</password>
+        </server>
+    </servers>
+
+</settings>

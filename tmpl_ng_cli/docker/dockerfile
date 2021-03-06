@@ -1,0 +1,25 @@
+FROM alexsuch/angular-cli:7.3.8-chromium
+
+
+EXPOSE 4200
+
+ARG CONT_DIR
+ARG HOST_DIR
+ARG SYS_DIR
+ARG TMPL_DIR
+
+RUN echo CONT_DIR is ${CONT_DIR}
+RUN echo HOST_DIR is ${HOST_DIR}
+RUN echo SYS_DIR  is ${SYS_DIR}
+RUN echo TMPL_DIR is ${TMPL_DIR}
+
+RUN mkdir -p $CONT_DIR
+WORKDIR ${CONT_DIR}
+
+COPY ./code/package.json .
+RUN npm install
+
+COPY code .
+
+CMD ["/bin/sh"]
+

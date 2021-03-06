@@ -1,0 +1,1 @@
+for /r %%x in (win.cmd) do ren "%%x" init.htm

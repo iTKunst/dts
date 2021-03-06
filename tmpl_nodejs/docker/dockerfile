@@ -1,0 +1,17 @@
+FROM node
+
+USER root
+
+EXPOSE 3000
+
+ARG CONT_DIR=/usr/src/app
+
+WORKDIR ${CONT_DIR}
+
+COPY ./code/package.json .
+
+RUN npm i
+
+COPY ./code .
+
+ENTRYPOINT ["npm", "start"]

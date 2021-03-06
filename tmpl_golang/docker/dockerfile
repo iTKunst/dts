@@ -1,0 +1,16 @@
+FROM golang:1.14
+
+EXPOSE 8080
+
+ARG CONT_DIR
+ARG HOST_DIR
+
+RUN mkdir -p ${CONT_DIR}
+WORKDIR ${CONT_DIR}
+
+COPY code .
+
+RUN go get -d -v ./...
+RUN go install -v ./...
+
+CMD ["app"]

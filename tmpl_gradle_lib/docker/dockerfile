@@ -1,0 +1,20 @@
+FROM gradle:6.6.1-jdk8
+
+
+ARG CONT_DIR
+ARG HOST_DIR
+ARG SYS_DIR
+
+RUN echo CONT_DIR is ${CONT_DIR}
+RUN echo HOST_DIR is ${HOST_DIR}
+RUN echo SYS_DIR is ${SYS_DIR}
+
+RUN mkdir -p ${CONT_DIR}
+WORKDIR ${CONT_DIR}
+
+COPY --chown=gradle:gradle .${HOST_DIR} .
+
+COPY ${SYS_DIR}/grdl/init.gradle /home/gradle/.gradle
+
+ENTRYPOINT ["gradle", "uploadArchives"]
+# ENTRYPOINT ["/bin/sh"]

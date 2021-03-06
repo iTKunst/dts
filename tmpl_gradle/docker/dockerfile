@@ -1,0 +1,12 @@
+FROM gradle:6.6.1-jdk8
+
+USER root
+
+ARG HOME
+
+RUN mkdir -p $HOME
+WORKDIR ${HOME}
+
+COPY Code .
+
+ENTRYPOINT ["gradle", "build"]

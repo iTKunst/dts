@@ -1,0 +1,9 @@
+FROM swaggerapi/swagger-generator
+
+ARG HOST_DIR
+ARG CONT_DIR
+
+WORKDIR ${CONT_DIR}
+
+#ENTRYPOINT ["generate", "-i", "${HOST_DIR}/api/api.json", "-g", "typescript", "-o", "${HOST_DIR}/out/typescript"]
+#ENTRYPOINT ["/bin/bash"]

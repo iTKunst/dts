@@ -1,0 +1,17 @@
+FROM wordpress
+
+ARG CONT_DIR
+ARG HOST_DIR
+
+USER root
+
+EXPOSE 5432
+
+WORKDIR ${CONT_DIR}
+
+#COPY Project/conf/.htaccess ${CONT_DIR}
+#COPY ./themes/itkunst ${CONT_DIR}/wp-content/themes/
+#COPY ./themes/timesnews ${CONT_DIR}/wp-content/themes/
+
+#COPY ./themes /var/www/html/wp-content/themes
+#COPY ./themes /usr/src/wordpress/wp-content/themes

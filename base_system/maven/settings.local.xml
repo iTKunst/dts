@@ -1,0 +1,66 @@
+<settings>
+   <mirrors>
+    <mirror> 
+      <id>nexus</id>
+      <mirrorOf>*</mirrorOf>
+      <url>https://localhost:8094/repository/maven-central/</url>
+    </mirror>
+  </mirrors>
+
+  <activeProfiles>
+    <activeProfile>nexus</activeProfile>
+  </activeProfiles>
+
+  <profiles>
+    <profile>
+      <id>nexus</id>
+      <repositories>
+        <repository>
+          <id>central</id>
+          <url>http://central</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>central</id>
+          <url>http://central</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+
+  <pluginGroups>
+    <pluginGroup>org.sonatype.plugins</pluginGroup>
+  </pluginGroups>
+
+     <servers>
+        <server>
+            <id>nexus</id>
+            <username>pat</username>
+            <password>pat</password>
+        </server>
+        <server>
+            <id>nexusReleases</id>
+            <username>pat</username>
+            <password>pat</password>
+        </server>
+        <server>
+            <id>nexusSnapshots</id>
+            <username>pat</username>
+            <password>pat</password>
+        </server>
+    </servers>
+
+</settings>

@@ -1,0 +1,13 @@
+FROM mysql
+
+USER root
+
+EXPOSE 8080
+
+ARG HOST_DIR
+ARG CONT_DIR
+
+RUN echo HOST_DIR is $HOST_DIR
+
+COPY ${HOST_DIR}/*.sql /docker-entrypoint-initdb.d/
+

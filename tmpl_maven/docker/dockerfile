@@ -1,0 +1,50 @@
+FROM maven:3.6.3-jdk-8 AS build
+
+USER root
+
+ARG CONT_DIR
+ARG HOST_DIR
+ARG SYS_DIR
+ARG TMPL_DIR
+
+RUN echo CONT_DIR is ${CONT_DIR}
+RUN echo HOST_DIR is ${HOST_DIR}
+RUN echo SYS_DIR is ${SYS_DIR}
+RUN echo TMPL_DIR is ${TMPL_DIR}
+
+RUN mkdir -p ${CONT_DIR}
+
+WORKDIR ${CONT_DIR}
+
+COPY src ./src/
+COPY ./${SYS_DIR}/maven/settings.xml /home/maven/.m2
+COPY .${HOST_DIR}/pom.xml .
+
+ENV REPO_URL $REPO_URL
+ENV REPO_PORT $REPO_PORT
+
+RUN mvn dependency:go-offline -B
+
+RUN mvn package
+
+
+FROM openjdk:8-jre-slim
+
+ARG CONT_DIR=${CONT_DIR}
+
+RUN echo CONT_DIR is ${CONT_DIR}
+
+EXPOSE 8080
+EXPOSE 5005
+
+RUN mkdir /app
+
+COPY --from=build ${CONT_DIR}/target/*.jar /app/spring-boot-application.jar
+
+#ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-Djava.security.egd=file:/dev/./urandom","-jar","/app/spring-boot-application.jar"]
+#ENTRYPOINT ["java", "-jar", "/app/spring-boot-application.jar"]
+#ENTRYPOINT ["/bin/sh"]
+
+ENTRYPOINT java -jar -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005 /app/spring-boot-application.jar
+#ENTRYPOINT java -jar -agentlib:jdwp=dt_socket,server=y,suspend=n,address=*:5005 /app/spring-boot-application.jar
+#ENTRYPOINT ["/bin/sh"]

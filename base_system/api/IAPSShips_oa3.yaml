@@ -1,0 +1,5269 @@
+openapi: 3.0.1
+info:
+  title: APSShipsService
+  version: "1.0"
+servers:
+  - url: https://maritimewebservices.ihs.com/MaritimeWCF/APSShipService.svc/RESTFul
+  - url: http://maritimewebservices.ihs.com/MaritimeWCF/APSShipService.svc/RESTFul
+paths:
+  /GetAssociatedDataByName:
+    get:
+      tags:
+        - IAPSShipsService
+      summary: GetAssociatedDataByName
+      operationId: GetAssociatedDataByName
+      parameters:
+        - name: EnglishName
+          in: query
+          required: true
+          schema:
+            type: string
+            default: Classification Society
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IAPSShipsService_getAssociatedDataByName_OutputMessage'
+        400:
+          description: Invalid status value
+          content: {}
+        401:
+          description: Forbidden - Error 401
+          content: {}
+      security:
+        - BasicAuth: []
+  /GetAssociatedFlagISOByName:
+    get:
+      tags:
+        - IAPSShipsService
+      summary: GetAssociatedFlagISOByName
+      operationId: GetAssociatedFlagISOByName
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IAPSShipsService_getAssociatedFlagISOByName_OutputMessage'
+      deprecated: false
+      security:
+        - BasicAuth: []
+  /GetAssociatedShipTypeByName:
+    get:
+      tags:
+        - IAPSShipsService
+      summary: GetAssociatedShipTypeByName
+      operationId: GetAssociatedShipTypeByName
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IAPSShipsService_getAssociatedShipTypeByName_OutputMessage'
+      deprecated: false
+      security:
+        - BasicAuth: []
+  /GetCompaniesByName:
+    get:
+      tags:
+        - IAPSShipsService
+      summary: GetCompaniesByName
+      operationId: GetCompaniesByName
+      parameters:
+        - name: NameString
+          in: query
+          required: true
+          schema:
+            type: string
+            default: FCN MANAGEMENT INC-PAN
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IAPSShipsService_getCompaniesByName_OutputMessage'
+      deprecated: false
+      security:
+        - BasicAuth: []
+  /GetCompanyChangesByLastUpdateDateRange:
+    get:
+      tags:
+        - IAPSShipsService
+      summary: GetCompanyChangesByLastUpdateDateRange
+      operationId: GetCompanyChangesByLastUpdateDateRange
+      parameters:
+        - name: FromYear
+          in: query
+          description: nnnn
+          required: true
+          schema:
+            type: integer
+            default: 2001
+        - name: FromMonth
+          in: query
+          description: 1-12
+          required: true
+          schema:
+            type: integer
+            default: 9
+        - name: FromDay
+          in: query
+          description: 1-31
+          required: true
+          schema:
+            type: integer
+            default: 9
+        - name: ToYear
+          in: query
+          description: nnnn
+          required: true
+          schema:
+            type: integer
+            default: 2002
+        - name: ToMonth
+          in: query
+          description: 1-12
+          required: true
+          schema:
+            type: integer
+            default: 10
+        - name: ToDay
+          in: query
+          description: 1-31
+          required: true
+          schema:
+            type: integer
+            default: 12
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IAPSShipsService_getCompanyChangesByLastUpdateDateRange_OutputMessage'
+      deprecated: false
+      security:
+        - BasicAuth: []
+  /GetCompanyDataByCode:
+    get:
+      tags:
+        - IAPSShipsService
+      summary: GetCompanyDataByCode
+      operationId: GetCompanyDataByCode
+      parameters:
+        - name: CompanyCode
+          in: query
+          required: true
+          schema:
+            type: integer
+            default: 12
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IAPSShipsService_getCompanyDataByCode_OutputMessage'
+      deprecated: false
+      security:
+        - BasicAuth: []
+  /GetDownloadEntitlement:
+    get:
+      tags:
+        - IAPSShipsService
+      summary: GetDownloadEntitlement
+      operationId: GetDownloadEntitlement
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IAPSShipsService_getDownloadEntitlement_OutputMessage'
+      deprecated: false
+      security:
+        - BasicAuth: []
+  /GetShipChangesByLastUpdate:
+    get:
+      tags:
+        - IAPSShipsService
+      summary: GetShipChangesByLastUpdate
+      operationId: GetShipChangesByLastUpdate
+      parameters:
+        - name: ShipsCategory
+          in: query
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: array
+            items:
+              type: integer
+        - name: Year
+          in: query
+          description: nnnn
+          required: true
+          schema:
+            type: integer
+            default: 2001
+        - name: Month
+          in: query
+          description: 1-12
+          required: true
+          schema:
+            type: integer
+            default: 9
+        - name: Day
+          in: query
+          description: 1-31
+          required: true
+          schema:
+            type: integer
+            default: 9
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IAPSShipsService_getShipChangesByLastUpdate_OutputMessage'
+      deprecated: false
+      security:
+        - BasicAuth: []
+  /GetShipChangesByLastUpdateDateRange:
+    get:
+      tags:
+        - IAPSShipsService
+      summary: GetShipChangesByLastUpdateDateRange
+      operationId: GetShipChangesByLastUpdateDateRange
+      parameters:
+        - name: ShipsCategory
+          in: query
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: array
+            items:
+              type: integer
+        - name: FromYear
+          in: query
+          description: nnnn
+          required: true
+          schema:
+            type: integer
+            default: 2001
+        - name: FromMonth
+          in: query
+          description: 1-12
+          required: true
+          schema:
+            type: integer
+            default: 9
+        - name: FromDay
+          in: query
+          description: 1-31
+          required: true
+          schema:
+            type: integer
+            default: 9
+        - name: ToYear
+          in: query
+          description: nnnn
+          required: true
+          schema:
+            type: integer
+            default: 2002
+        - name: ToMonth
+          in: query
+          description: 1-12
+          required: true
+          schema:
+            type: integer
+            default: 10
+        - name: ToDay
+          in: query
+          description: 1-31
+          required: true
+          schema:
+            type: integer
+            default: 12
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IAPSShipsService_getShipChangesByLastUpdateDateRange_OutputMessage'
+      deprecated: false
+      security:
+        - BasicAuth: []
+  /GetShipDataByCallSign:
+    get:
+      tags:
+        - IAPSShipsService
+      summary: GetShipDataByCallSign
+      operationId: GetShipDataByCallSign
+      parameters:
+        - name: CallSign
+          in: query
+          required: true
+          schema:
+            type: string
+            default: 9HA4202
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IAPSShipsService_getShipDataByCallSign_OutputMessage'
+      deprecated: false
+      security:
+        - BasicAuth: []
+  /GetShipDataByIHSLRorIMO:
+    get:
+      tags:
+        - IAPSShipsService
+      summary: GetShipDataByIHSLRorIMO
+      operationId: GetShipDataByIHSLRorIMO
+      parameters:
+        - name: IHSLRorIMO
+          in: query
+          description: IHSLRorIMO
+          required: true
+          schema:
+            type: string
+            default: "4228762"
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IAPSShipsService_getShipDataByIHSLRorIMO_OutputMessage'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/IAPSShipsService_getShipDataByIHSLRorIMO_OutputMessage'
+      deprecated: false
+      security:
+        - BasicAuth: []
+  /GetShipDataByMMSI:
+    get:
+      tags:
+        - IAPSShipsService
+      summary: GetShipDataByMMSI
+      operationId: GetShipDataByMMSI
+      parameters:
+        - name: MMSI
+          in: query
+          required: true
+          schema:
+            type: integer
+            default: 249338000
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IAPSShipsService_getShipDataByMMSI_OutputMessage'
+      deprecated: false
+      security:
+        - BasicAuth: []
+  /GetShipsByExName:
+    get:
+      tags:
+        - IAPSShipsService
+      summary: GetShipsByExName
+      operationId: GetShipsByExName
+      parameters:
+        - name: ExNameString
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IAPSShipsService_getShipsByExName_OutputMessage'
+      deprecated: false
+      security:
+        - BasicAuth: []
+  /GetShipsByIHSLRorIMONumbers:
+    get:
+      tags:
+        - IAPSShipsService
+      summary: GetShipsByIHSLRorIMONumbers
+      operationId: GetShipsByIHSLRorIMONumbers
+      parameters:
+        - name: IHSLRorIMONumbers
+          in: query
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: array
+            items:
+              type: integer
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IAPSShipsService_getShipsByIHSLRorIMONumbers_OutputMessage'
+      deprecated: false
+      security:
+        - BasicAuth: []
+  /GetShipsByIHSLRorIMONumbersAll:
+    get:
+      tags:
+        - IAPSShipsService
+      summary: GetShipsByIHSLRorIMONumbersAll
+      operationId: GetShipsByIHSLRorIMONumbersAll
+      parameters:
+        - name: IMONumbers
+          in: query
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: array
+            items:
+              type: integer
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IAPSShipsService_getShipsByIHSLRorIMONumbersAll_OutputMessage'
+      deprecated: false
+      security:
+        - BasicAuth: []
+  /GetShipsByName:
+    get:
+      tags:
+        - IAPSShipsService
+      summary: GetShipsByName
+      operationId: GetShipsByName
+      parameters:
+        - name: NameString
+          in: query
+          required: true
+          schema:
+            type: string
+            default: HAFNIA LISE
+        - name: ShipsCategory
+          in: query
+          required: true
+          schema:
+            type: string
+            default: HAFNIA LISE
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IAPSShipsService_getShipsByName_OutputMessage'
+      deprecated: false
+      security:
+        - BasicAuth: []
+  /GetShipsByOfficialNumber:
+    get:
+      tags:
+        - IAPSShipsService
+      summary: GetShipsByOfficialNumber
+      operationId: GetShipsByOfficialNumber
+      parameters:
+        - name: OfficialNumber
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IAPSShipsService_getShipsByOfficialNumber_OutputMessage'
+      deprecated: false
+      security:
+        - BasicAuth: []
+components:
+  schemas:
+    tns_GetShipDataByIHSLRorIMOResponse:
+      title: tns_GetShipDataByIHSLRorIMOResponse
+      type: object
+      properties:
+        GetShipDataByIHSLRorIMOResult:
+          $ref: '#/components/schemas/q1_APSShipResult'
+      description: ""
+    tns_GetShipsByIHSLRorIMONumbersResponse:
+      title: tns_GetShipsByIHSLRorIMONumbersResponse
+      type: object
+      properties:
+        GetShipsByIHSLRorIMONumbersResult:
+          $ref: '#/components/schemas/q1_APSShipSearchResult'
+      description: ""
+    tns_GetShipsByIHSLRorIMONumbersAllResponse:
+      title: tns_GetShipsByIHSLRorIMONumbersAllResponse
+      type: object
+      properties:
+        GetShipsByIHSLRorIMONumbersAllResult:
+          $ref: '#/components/schemas/q1_APSShipMultiResult'
+      description: ""
+    tns_GetShipDataByMMSIResponse:
+      title: tns_GetShipDataByMMSIResponse
+      type: object
+      properties:
+        GetShipDataByMMSIResult:
+          $ref: '#/components/schemas/q1_APSShipResult'
+      description: ""
+    tns_GetShipDataByCallSignResponse:
+      title: tns_GetShipDataByCallSignResponse
+      type: object
+      properties:
+        GetShipDataByCallSignResult:
+          $ref: '#/components/schemas/q1_APSShipResult'
+      description: ""
+    tns_GetShipsByNameResponse:
+      title: tns_GetShipsByNameResponse
+      type: object
+      properties:
+        GetShipsByNameResult:
+          $ref: '#/components/schemas/q1_APSShipSearchResult'
+      description: ""
+    tns_GetShipChangesByLastUpdateResponse:
+      title: tns_GetShipChangesByLastUpdateResponse
+      type: object
+      properties:
+        GetShipChangesByLastUpdateResult:
+          $ref: '#/components/schemas/q1_APSShipSearchResult'
+      description: ""
+    tns_GetShipChangesByLastUpdateDateRangeResponse:
+      title: tns_GetShipChangesByLastUpdateDateRangeResponse
+      type: object
+      properties:
+        GetShipChangesByLastUpdateDateRangeResult:
+          $ref: '#/components/schemas/q1_APSShipSearchResult'
+      description: ""
+    tns_GetCompanyDataByCodeResponse:
+      title: tns_GetCompanyDataByCodeResponse
+      type: object
+      properties:
+        GetCompanyDataByCodeResult:
+          $ref: '#/components/schemas/q1_APSCompanyResult'
+      description: ""
+    tns_GetCompaniesByNameResponse:
+      title: tns_GetCompaniesByNameResponse
+      type: object
+      properties:
+        GetCompaniesByNameResult:
+          $ref: '#/components/schemas/q1_APSCompanySearchResult'
+      description: ""
+    tns_GetCompanyChangesByLastUpdateDateRangeResponse:
+      title: tns_GetCompanyChangesByLastUpdateDateRangeResponse
+      type: object
+      properties:
+        GetCompanyChangesByLastUpdateDateRangeResult:
+          $ref: '#/components/schemas/q1_APSCompanySearchResult'
+      description: ""
+    tns_GetAssociatedDataByNameResponse:
+      title: tns_GetAssociatedDataByNameResponse
+      type: object
+      properties:
+        GetAssociatedDataByNameResult:
+          $ref: '#/components/schemas/q1_APSAssociatedResult'
+      description: ""
+    tns_GetAssociatedFlagISOByNameResponse:
+      title: tns_GetAssociatedFlagISOByNameResponse
+      type: object
+      properties:
+        GetAssociatedFlagISOByNameResult:
+          $ref: '#/components/schemas/q1_APSAssociatedFlagISOResult'
+      description: ""
+    tns_GetAssociatedShipTypeByNameResponse:
+      title: tns_GetAssociatedShipTypeByNameResponse
+      type: object
+      properties:
+        GetAssociatedShipTypeByNameResult:
+          $ref: '#/components/schemas/q1_APSAssociatedShipTypeResult'
+      description: ""
+    tns_GetShipsByExNameResponse:
+      title: tns_GetShipsByExNameResponse
+      type: object
+      properties:
+        GetShipsByExNameResult:
+          $ref: '#/components/schemas/q1_APSShipSearchResult'
+      description: ""
+    tns_GetShipsByOfficialNumberResponse:
+      title: tns_GetShipsByOfficialNumberResponse
+      type: object
+      properties:
+        GetShipsByOfficialNumberResult:
+          $ref: '#/components/schemas/q1_APSShipSearchResult'
+      description: ""
+    tns_GetDownloadEntitlementResponse:
+      title: tns_GetDownloadEntitlementResponse
+      type: object
+      properties:
+        GetDownloadEntitlementResult:
+          $ref: '#/components/schemas/q1_DownloadEntitlementResult'
+      description: ""
+    tns_GetShipCountByLastUpdateYearAndMonthResponse:
+      title: tns_GetShipCountByLastUpdateYearAndMonthResponse
+      type: object
+      properties:
+        GetShipCountByLastUpdateYearAndMonthResult:
+          $ref: '#/components/schemas/q1_APSShipCountResult'
+      description: ""
+    q1_APSShipResult:
+      title: q1_APSShipResult
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q1_APSStatusBase'
+        - type: object
+          properties:
+            APSShipDetail:
+              $ref: '#/components/schemas/q1_APSShipDetail'
+            shipCount:
+              type: integer
+              format: int32
+    q1_APSStatusBase:
+      title: q1_APSStatusBase
+      type: object
+      properties:
+        APSStatus:
+          $ref: '#/components/schemas/q1_APSStatus'
+      description: ""
+    q1_APSStatus:
+      title: q1_APSStatus
+      type: object
+      properties:
+        CompletedOK:
+          type: boolean
+        ErrorLevel:
+          type: string
+        ErrorMessage:
+          type: string
+        Guid:
+          pattern: '[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}'
+          type: string
+        JobRunDate:
+          type: string
+          format: date-time
+        RemedialAction:
+          type: string
+        SystemDate:
+          type: string
+          format: date-time
+        SystemVersion:
+          type: string
+      description: ""
+    q1_APSShipDetail:
+      title: q1_APSShipDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            AdditionalInformation:
+              $ref: '#/components/schemas/q1_ArrayOfAPSAdditionalInformationDetail'
+            AlterationsDescriptiveNarrative:
+              type: string
+            Arrangements:
+              $ref: '#/components/schemas/q1_ArrayOfAPSArrangementsDetail'
+            AuxEngine:
+              $ref: '#/components/schemas/q1_ArrayOfAPSAuxEngineDetail'
+            AuxGenerator:
+              $ref: '#/components/schemas/q1_ArrayOfAPSAuxGeneratorDetail'
+            AuxiliaryEnginesNarrative:
+              type: string
+            AuxiliaryGeneratorsDescriptiveNarrative:
+              type: string
+            BaleCapacity:
+              type: string
+            BareboatCharterCompany:
+              type: string
+            BareboatCharterCompanyCode:
+              type: string
+            BareboatCharterCountryOfControl:
+              type: string
+            BareboatCharterCountryOfControlCode:
+              type: string
+            BareboatCharterCountryOfDomicile:
+              type: string
+            BareboatCharterCountryOfDomicileCode:
+              type: string
+            BareboatCharterCountryOfRegistration:
+              type: string
+            BareboatCharterCountryOfRegistrationCode:
+              type: string
+            BareboatCharterEffectiveDate:
+              type: string
+            Boiler:
+              $ref: '#/components/schemas/q1_ArrayOfAPSBoilerDetail'
+            BoilerManufacturer:
+              type: string
+            BoilersDescriptiveNarrative:
+              type: string
+            BoilersExpanded:
+              $ref: '#/components/schemas/q1_ArrayOfAPSBoilersExpandedDetail'
+            BollardPull:
+              type: string
+            BowDischargeFacility:
+              type: string
+            BowLoadingFacility:
+              type: string
+            BowStoppersNo:
+              type: string
+            BowStoppersSWL:
+              type: string
+            BowStoppersType:
+              type: string
+            BowToCentreManifold:
+              type: string
+            Breadth:
+              type: string
+            BreadthExtreme:
+              type: string
+            BreadthMoulded:
+              type: string
+            BuilderAddress:
+              $ref: '#/components/schemas/q1_ArrayOfAPSBuilderAddressDetail'
+            BulbousBow:
+              type: string
+            BunkersDescriptiveNarrative:
+              type: string
+            CallSign:
+              type: string
+            CallSignAndMmsiHistory:
+              $ref: '#/components/schemas/q1_ArrayOfAPSShipCallSignAndMmsiHistoryDetail'
+            CancelDate:
+              type: string
+            Capacities:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCapacitiesDetail'
+            CargoCapacitiesNarrative:
+              type: string
+            CargoGradesSegregations:
+              type: string
+            CargoManifoldType:
+              type: string
+            CargoPump:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCargoPumpDetail'
+            CargoTankCoatings:
+              type: string
+            CargoTankHeatExchangerMaterial:
+              type: string
+            CargoTankHeatExchangers:
+              type: string
+            CasualtyDate:
+              type: string
+            ChartererLatestReported:
+              type: string
+            ChartererLatestReportedOffFixture:
+              type: string
+            ChartererLatestReportedOnFixture:
+              type: string
+            ClassCurrent:
+              $ref: '#/components/schemas/q1_ArrayOfAPSClassCurrentDetail'
+            ClassHistory:
+              $ref: '#/components/schemas/q1_ArrayOfAPSClassHistoryDetail'
+            ClassHistorySince2000:
+              $ref: '#/components/schemas/q1_ArrayOfAPSClassHistoryDetail'
+            ClassNarrative:
+              type: string
+            ClassWithdrawn:
+              $ref: '#/components/schemas/q1_ArrayOfAPSClassWithdrawnDetail'
+            ClassificationSociety:
+              type: string
+            ClassificationSocietyCode:
+              type: string
+            CleanBallastCapacity:
+              type: string
+            ClearDeckArea_m2:
+              type: string
+            ClearHeightOfROROLanes:
+              type: string
+            ClosedLoadingSystem:
+              type: string
+            Company:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCompanyDetail'
+            CompanyCompliance:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCompanyCompliance'
+            CompanyComplianceDetails:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCompanyComplianceDetails'
+            CompanyDetailsAndParent:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCompanyDetailsAndParentCodeDetail'
+            CompanyDetailsComplex:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCompanyDetailsComplexDetail'
+            CompanyDetailsComplexAndParentCode:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCompanyDetailsComplexAndParentCodeDetail'
+            CompanyDetailsComplexWithCodes:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCompanyDetailsComplexWithCodesDetail'
+            CompanyDetailsComplexWithCodesAndParent:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCompanyDetailsComplexWithCodesAndParentDetail'
+            CompanyDetailsWithCodes:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCompanyDetailsWithCodesDetail'
+            CompanyDetailsWithCodesAndParentCode:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCompanyDetailsWithCodesAndParentCodeDetail'
+            CompanyFleetCounts:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCompanyFleetCountsDetail'
+            CompanyOrderBookCounts:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCompanyOrderBookCountsDetail'
+            CompanyPersonnel:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCompanyPersonnelDetail'
+            CompanyVesselRelationships:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCompanyVesselRelationshipsDetail'
+            CompensatedGrossTonnageCGT:
+              type: string
+            ConstructionDescriptiveNarrative:
+              type: string
+            ConsumptionSpeed1:
+              type: string
+            ConsumptionSpeed2:
+              type: string
+            ConsumptionValue1:
+              type: string
+            ConsumptionValue2:
+              type: string
+            ContractDate:
+              type: string
+            ConversionDateLatest:
+              type: string
+            CoreShipInd:
+              type: string
+            CountryOfBreaking:
+              type: string
+            CountryOfBuild:
+              type: string
+            CountryOfBuildCode:
+              type: string
+            CountryOfEconomicBenefit:
+              type: string
+            CraneSWL:
+              type: string
+            CrewList:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCrewListDetail'
+            CrudeOilWashingCOW:
+              type: string
+            DOCCompany:
+              type: string
+            DOCCompanyCountryOfDomicile:
+              type: string
+            DOCCompanyCountryOfDomicileCode:
+              type: string
+            DOCCountryOfControl:
+              type: string
+            DOCCountryOfRegistration:
+              type: string
+            DOCHistory:
+              $ref: '#/components/schemas/q1_ArrayOfAPSDOCHistoryDetail'
+            DOCHistorySince2000:
+              $ref: '#/components/schemas/q1_ArrayOfAPSDOCHistoryDetail'
+            DarkActivityConfirmed:
+              $ref: '#/components/schemas/q1_ArrayOfAPSDarkActivityConfirmed'
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            DateBreakingCommenced:
+              type: string
+            DateOfBuild:
+              type: string
+            DateOfBuildConversionInd:
+              type: string
+            DateOfBuildConvertedDate:
+              type: string
+              format: date-time
+            DateOfLastInspection:
+              type: string
+              format: date-time
+            Deadweight:
+              type: string
+            DeathDate:
+              type: string
+            Defect:
+              $ref: '#/components/schemas/q1_ArrayOfAPSDefectDetail'
+            DeliveryDate:
+              type: string
+            DeliveryDateConversionInd:
+              type: string
+            DeliveryDateConvertedDate:
+              type: string
+              format: date-time
+            Depth:
+              type: string
+            DerrickSWL:
+              type: string
+            Destination:
+              $ref: '#/components/schemas/q1_ArrayOfAPSDestinationDetail'
+            DischargeDiameterOfCargoManifold:
+              type: string
+            Displacement:
+              type: string
+            DocumentOfComplianceDOCCompanyCode:
+              type: string
+            Draught:
+              type: string
+            EngineBuilder:
+              $ref: '#/components/schemas/q1_ArrayOfAPSEngineBuilderDetail'
+            ExName:
+              type: string
+            FairplayID:
+              type: string
+            FishingNumber:
+              type: string
+            Fixture:
+              $ref: '#/components/schemas/q1_ArrayOfAPSFixtureDetail'
+            Fixture3Months:
+              $ref: '#/components/schemas/q1_ArrayOfAPSFixtureDetail'
+            FlagCode:
+              type: string
+            FlagEffectiveDate:
+              type: string
+            FlagHistory:
+              $ref: '#/components/schemas/q1_ArrayOfAPSFlagHistoryDetail'
+            FlagHistorySince2000:
+              $ref: '#/components/schemas/q1_ArrayOfAPSFlagHistoryDetail'
+            FlagName:
+              type: string
+            FlagStateSpecial:
+              $ref: '#/components/schemas/q1_ArrayOfAPSFlagStateSpecialDetail'
+            FlashPointOver60c:
+              type: string
+            FlashPointUnder60c:
+              type: string
+            FormulaDWT:
+              type: string
+            Freeboard:
+              type: string
+            FuelConsumptionMainEnginesOnly:
+              type: string
+            FuelConsumptionTotal:
+              type: string
+            FuelType1Capacity:
+              type: string
+            FuelType1Code:
+              type: string
+            FuelType1First:
+              type: string
+            FuelType2Capacity:
+              type: string
+            FuelType2Code:
+              type: string
+            FuelType2Second:
+              type: string
+            GasCapacity:
+              type: string
+            GearDescriptiveNarrative:
+              type: string
+            GearNoLargest:
+              type: string
+            GearSWLLargest:
+              type: string
+            GearTypeLargest:
+              type: string
+            Gearless:
+              type: string
+            GrainCapacity:
+              type: string
+            GrossTonnage:
+              type: string
+            GrossTonnageHistory:
+              $ref: '#/components/schemas/q1_ArrayOfAPSGrossTonnageHistoryDetail'
+            GroupBeneficialOwner:
+              type: string
+            GroupBeneficialOwnerCompanyCode:
+              type: string
+            GroupBeneficialOwnerCountryOfControl:
+              type: string
+            GroupBeneficialOwnerCountryOfDomicile:
+              type: string
+            GroupBeneficialOwnerCountryOfDomicileCode:
+              type: string
+            GroupBeneficialOwnerCountryOfRegistration:
+              type: string
+            GroupBeneficialOwnerHistory:
+              $ref: '#/components/schemas/q1_ArrayOfAPSGroupBeneficialOwnerHistoryDetail'
+            GroupBeneficialOwnerHistorySince2000:
+              $ref: '#/components/schemas/q1_ArrayOfAPSGroupBeneficialOwnerHistoryDetail'
+            HatchesDescriptiveNarrative:
+              type: string
+            HeatingCoilsInCargoTanks:
+              type: string
+            HeatingCoilsInSlopTanks:
+              type: string
+            HeatingCoilsMaterial:
+              type: string
+            HeightOfROROLanes:
+              type: string
+            HoldsDescriptiveNarrative:
+              type: string
+            HullMaterial:
+              type: string
+            HullMaterialCode:
+              type: string
+            HullShapeCode:
+              type: string
+            HullType:
+              type: string
+            HullTypeCode:
+              type: string
+            IHSLRorIMOShipNo:
+              type: string
+            IMOChemicalClassI:
+              type: string
+            IMOChemicalClassII:
+              type: string
+            IMOChemicalClassIII:
+              type: string
+            IceCapabilityDescriptiveNarrative:
+              type: string
+            IceClass:
+              $ref: '#/components/schemas/q1_ArrayOfAPSIceClassDetail'
+            InertGasSystemIGS:
+              type: string
+            InmarsatNumberSatCommID:
+              type: string
+            Inspection:
+              $ref: '#/components/schemas/q1_ArrayOfAPSInspectionDetail'
+            InsulatedCapacity:
+              type: string
+            InvestigationIndicators:
+              $ref: '#/components/schemas/q1_ArrayOfAPSInvestigationIndicatorsDetail'
+            KeelLaidDate:
+              type: string
+            KeelLaidDateConversionInd:
+              type: string
+            KeelLaidDateConvertedDate:
+              type: string
+              format: date-time
+            KeelToMastHeight:
+              type: string
+            LanesDoorsRampsNarrative:
+              type: string
+            LargestHatchBreadth:
+              type: string
+            LargestHatchLength:
+              type: string
+            LastRecordedPortOfCall:
+              $ref: '#/components/schemas/q1_ArrayOfAPSLastRecordedPortOfCallDetail'
+            LastUpdateDate:
+              type: string
+              format: date-time
+            LastUpdateDateString:
+              type: string
+            LaunchDate:
+              type: string
+            LaunchDateConversionInd:
+              type: string
+            LaunchDateConvertedDate:
+              type: string
+              format: date-time
+            LeadShipInSeriesByIMONumber:
+              type: string
+            LegalAnnex4:
+              type: string
+            LegalAnnex5:
+              type: string
+            LegalBeSanctionedCompany:
+              type: string
+            LegalDai:
+              type: string
+            LegalEuSanctioned:
+              type: string
+            LegalEuSanctionedCompany:
+              type: string
+            LegalFlag:
+              type: string
+            LegalFlagDisputed:
+              type: string
+            LegalFlagHistory:
+              type: string
+            LegalOverall:
+              type: string
+            LegalOwnerOfac:
+              type: string
+            LegalOwnership:
+              type: string
+            LegalOwnershipFatf:
+              type: string
+            LegalOwnershipHistory:
+              type: string
+            LegalOwnershipOwner:
+              type: string
+            LegalOwnershipOwnerFatf:
+              type: string
+            LegalPortCall180D:
+              type: string
+            LegalPortCall1Y:
+              type: string
+            LegalPortCall3M:
+              type: string
+            LegalShip:
+              type: string
+            LegalShipNonSdn:
+              type: string
+            LegalUnsanctioned:
+              type: string
+            LegalUnsanctionedCompany:
+              type: string
+            Length:
+              type: string
+            LengthBetweenPerpendicularsLBP:
+              type: string
+            LengthOfROROLanes:
+              type: string
+            LengthOverallLOA:
+              type: string
+            LengthRegistered:
+              type: string
+            LiftingGear:
+              $ref: '#/components/schemas/q1_ArrayOfAPSLiftingGearDetail'
+            LightDisplacementTonnage:
+              type: string
+            LinesPerSide:
+              type: string
+            LiquidCapacity:
+              type: string
+            MARPOL13GPhaseOutCategory:
+              type: string
+            MainEngine:
+              $ref: '#/components/schemas/q1_ArrayOfAPSMainEngineDetail'
+            MainEngineBore:
+              type: string
+            MainEngineBuilder:
+              type: string
+            MainEngineBuilderCode:
+              type: string
+            MainEngineDesigner:
+              type: string
+            MainEngineDesignerCode:
+              type: string
+            MainEngineDesignerGroup:
+              type: string
+            MainEngineDesignerGroupCode:
+              type: string
+            MainEngineModel:
+              type: string
+            MainEngineNumberOfCylinders:
+              type: string
+            MainEngineRPM:
+              type: string
+            MainEngineStrokeType:
+              type: string
+            MainEngineType:
+              type: string
+            MainGenerator:
+              $ref: '#/components/schemas/q1_ArrayOfAPSMainGeneratorDetail'
+            ManifoldHeightAtBallastCondition:
+              type: string
+            ManifoldHeightAtLadenCondition:
+              type: string
+            MaritimeMobileServiceIdentityMMSINumber:
+              type: string
+            MidPointManifoldAftBallast:
+              type: string
+            MidPointManifoldAftLaden:
+              type: string
+            MidPointManifoldAftLight:
+              type: string
+            MidPointManifoldForwardBallast:
+              type: string
+            MidPointManifoldForwardLaden:
+              type: string
+            MidPointManifoldForwardLight:
+              type: string
+            Movement:
+              $ref: '#/components/schemas/q1_ArrayOfAPSMovementDetail'
+            MultiLoadLines:
+              type: string
+            NameHistory:
+              $ref: '#/components/schemas/q1_ArrayOfAPSNameHistoryDetail'
+            NameHistorySince2000:
+              $ref: '#/components/schemas/q1_ArrayOfAPSNameHistoryDetail'
+            NetTonnage:
+              type: string
+            NewConstructionEntryDateConverted:
+              type: string
+              format: date-time
+            NewbuildPrice:
+              type: string
+            NewbuildPriceCurrency:
+              type: string
+            NewbuildPriceUSD:
+              type: string
+            NewbuildSubStatus:
+              type: string
+            NewbuildSubStatusNote:
+              type: string
+            NewconstructionDateConversionInd:
+              type: string
+            NewconstructionEntryDate:
+              type: string
+            NonSpecificCargoCoatingTarEpoxy:
+              type: string
+            NonSpecificSlopCoatingTarEpoxy:
+              type: string
+            NumberOfAllEngines:
+              type: string
+            NumberOfAuxiliaryEngines:
+              type: string
+            NumberOfCabins:
+              type: string
+            NumberOfCargoPumps:
+              type: string
+            NumberOfCargoTanks:
+              type: string
+            NumberOfCars:
+              type: string
+            NumberOfDecks:
+              type: string
+            NumberOfGenerators:
+              type: string
+            NumberOfHatches:
+              type: string
+            NumberOfHolds:
+              type: string
+            NumberOfMainEngines:
+              type: string
+            NumberOfPropulsionUnits:
+              type: string
+            NumberOfROROLanes:
+              type: string
+            NumberOfRORORamps:
+              type: string
+            NumberOfRamps:
+              type: string
+            NumberOfSlopTanks:
+              type: string
+            NumberOfTanks:
+              type: string
+            NumberOfThrusters:
+              type: string
+            OFACReport:
+              $ref: '#/components/schemas/q1_ArrayOfAPSOFACReportDetail'
+            OfficialNumber:
+              type: string
+            Operator:
+              type: string
+            OperatorCompanyCode:
+              type: string
+            OperatorCountryOfControl:
+              type: string
+            OperatorCountryOfDomicileCode:
+              type: string
+            OperatorCountryOfDomicileName:
+              type: string
+            OperatorCountryOfRegistration:
+              type: string
+            OperatorHistory:
+              $ref: '#/components/schemas/q1_ArrayOfAPSOperatorHistoryDetail'
+            OperatorHistorySince2000:
+              $ref: '#/components/schemas/q1_ArrayOfAPSOperatorHistoryDetail'
+            OwnerHistory:
+              $ref: '#/components/schemas/q1_ArrayOfAPSOwnerHistoryDetail'
+            OwnerHistorySince2000:
+              $ref: '#/components/schemas/q1_ArrayOfAPSOwnerHistoryDetail'
+            PanamaCanalNetTonnagePCNT:
+              type: string
+            PandIClub:
+              type: string
+            PandIClubCode:
+              type: string
+            PandIHistory:
+              $ref: '#/components/schemas/q1_ArrayOfAPSPandIHistory'
+            ParallelBodyLengthBallast:
+              type: string
+            ParallelBodyLengthLaden:
+              type: string
+            ParallelBodyLengthLight:
+              type: string
+            PassengerCapacity:
+              type: string
+            PassengersBerthed:
+              type: string
+            PermanentBallastCapacity:
+              type: string
+            PhotoPresent:
+              type: string
+            PlaceOfBreaking:
+              type: string
+            PortOfRegistry:
+              type: string
+            PortOfRegistryCode:
+              type: string
+            PortOfRegistryFullCode:
+              type: string
+            PowerBHPIHPSHPMax:
+              type: string
+            PowerBHPIHPSHPService:
+              type: string
+            PowerKWMax:
+              type: string
+            PowerKWService:
+              type: string
+            PrimeMoverDescriptiveNarrative:
+              type: string
+            PrimeMoverDescriptiveOverviewNarrative:
+              type: string
+            PropellerManufacturer:
+              type: string
+            PropellerType:
+              type: string
+            Propellers:
+              $ref: '#/components/schemas/q1_ArrayOfAPSPropellerDetail'
+            PropulsionType:
+              type: string
+            PropulsionTypeCode:
+              type: string
+            PumpingCapacityM3:
+              type: string
+            RORODoors:
+              $ref: '#/components/schemas/q1_ArrayOfAPSRORODoorsDetail'
+            RORORamps:
+              $ref: '#/components/schemas/q1_ArrayOfAPSRORORampsDetail'
+            RampLocation:
+              type: string
+            RampSWL:
+              type: string
+            RecentTerrestrialPositions:
+              $ref: '#/components/schemas/q1_ArrayOfAPSRecentTerrestrialPositionDetail'
+            RecyclingCountry:
+              type: string
+            RecyclingCountryCode:
+              type: string
+            RecyclingDateArrival:
+              type: string
+            RecyclingDateCommenced:
+              type: string
+            RecyclingPerLDTPrice:
+              type: string
+            RecyclingShipbreaker:
+              type: string
+            RecyclingTotalPrice:
+              type: string
+            ReeferPoints:
+              type: string
+            RegisteredOwner:
+              type: string
+            RegisteredOwnerCode:
+              type: string
+            RegisteredOwnerCountryOfControl:
+              type: string
+            RegisteredOwnerCountryOfDomicile:
+              type: string
+            RegisteredOwnerCountryOfDomicileCode:
+              type: string
+            RegisteredOwnerCountryOfRegistration:
+              type: string
+            SBTPLSBTProtectedLocation:
+              type: string
+            SafetyManagementCertificateAuditor:
+              type: string
+            SafetyManagementCertificateConventionOrVol:
+              type: string
+            SafetyManagementCertificateDOCCompany:
+              type: string
+            SafetyManagementCertificateDateExpires:
+              type: string
+            SafetyManagementCertificateDateIssued:
+              type: string
+            SafetyManagementCertificateFlag:
+              type: string
+            SafetyManagementCertificateHistory:
+              $ref: '#/components/schemas/q1_ArrayOfAPSSafetyManagementCertificateHistoryDetail'
+            SafetyManagementCertificateIssuer:
+              type: string
+            SafetyManagementCertificateOtherDescription:
+              type: string
+            SafetyManagementCertificateShipName:
+              type: string
+            SafetyManagementCertificateShipType:
+              type: string
+            SafetyManagementCertificateSource:
+              type: string
+            SaleDate:
+              type: string
+            SalePriceUSD:
+              type: string
+            Sales:
+              $ref: '#/components/schemas/q1_ArrayOfAPSSalesDetail'
+            ScrubberDetails:
+              $ref: '#/components/schemas/q1_ArrayOfAPSScrubberDetail'
+            SegregatedBallastCapacity:
+              type: string
+            SegregatedBallastTanks:
+              type: string
+            ShipANNEX4SuspectedSTSTransferswithNKorea:
+              type: string
+            ShipANNEX5SuspectedExportOfNKoreanCoal:
+              type: string
+            ShipBuilderAndSubContractor:
+              $ref: '#/components/schemas/q1_ArrayOfAPSShipBuilderAndSubContractorDetail'
+            ShipBuilderDetail:
+              $ref: '#/components/schemas/q1_ArrayOfAPSShipBuilderDetail'
+            ShipBuilderHistory:
+              $ref: '#/components/schemas/q1_ArrayOfAPSShipBuilderHistoryDetail'
+            ShipCertificates:
+              $ref: '#/components/schemas/q1_ArrayOfAPSShipCertificateDetail'
+            ShipCertificatesAll:
+              $ref: '#/components/schemas/q1_ArrayOfAPSShipCertificateAllDetail'
+            ShipDarkActivityIndicator:
+              type: string
+            ShipEUSanctionList:
+              type: string
+            ShipFlagDisputed:
+              type: string
+            ShipFlagSanctionedCountry:
+              type: string
+            ShipHistoricalFlagSanctionedCountry:
+              type: string
+            ShipManager:
+              type: string
+            ShipManagerCompanyCode:
+              type: string
+            ShipManagerCountryOfControl:
+              type: string
+            ShipManagerCountryOfDomicileCode:
+              type: string
+            ShipManagerCountryOfDomicileName:
+              type: string
+            ShipManagerCountryOfRegistration:
+              type: string
+            ShipManagerHistory:
+              $ref: '#/components/schemas/q1_ArrayOfAPSShipManagerHistoryDetail'
+            ShipManagerHistorySince2000:
+              $ref: '#/components/schemas/q1_ArrayOfAPSShipManagerHistoryDetail'
+            ShipName:
+              type: string
+            ShipOFACNonSDNSanctionList:
+              type: string
+            ShipOFACSSIList:
+              type: string
+            ShipOFACSanctionList:
+              type: string
+            ShipOverallComplianceStatus:
+              type: string
+            ShipOwnerAustralianSanctionList:
+              type: string
+            ShipOwnerBESSanctionList:
+              type: string
+            ShipOwnerCanadianSanctionList:
+              type: string
+            ShipOwnerEUSanctionList:
+              type: string
+            ShipOwnerFATFJurisdiction:
+              type: string
+            ShipOwnerHistoricalOFACSanctionedCountry:
+              type: string
+            ShipOwnerOFACSanctionList:
+              type: string
+            ShipOwnerOFACSanctionedCountry:
+              type: string
+            ShipOwnerParentFATFJurisdiction:
+              type: string
+            ShipOwnerParentOFACSanctionedCountry:
+              type: string
+            ShipOwnerSwissSanctionList:
+              type: string
+            ShipOwnerUNSanctionList:
+              type: string
+            ShipSanctionedCountryPortCallLast12m:
+              type: string
+            ShipSanctionedCountryPortCallLast3m:
+              type: string
+            ShipSanctionedCountryPortCallLast6m:
+              type: string
+            ShipStatus:
+              type: string
+            ShipStatusCode:
+              type: string
+            ShipStatusEffectiveDate:
+              type: string
+            ShipSwissSanctionList:
+              type: string
+            ShipThumbsIndex:
+              $ref: '#/components/schemas/q1_ArrayOfAPSShipThumbsIndexDetail'
+            ShipTrackHistory:
+              $ref: '#/components/schemas/q1_ArrayOfAPSShipTrackHistoryDetail'
+            ShipTypeHistory:
+              $ref: '#/components/schemas/q1_ArrayOfAPSShipTypeHistoryDetail'
+            ShipUNSanctionList:
+              type: string
+            ShipUSTreasuryOFACAdvisoryList:
+              type: string
+            Shipbuilder:
+              type: string
+            ShipbuilderCompanyCode:
+              type: string
+            ShipbuilderFullStyle:
+              type: string
+            ShipbuilderFullStyleSBR:
+              type: string
+            ShipbuilderSubContractor:
+              type: string
+            ShipbuilderSubContractorCode:
+              type: string
+            ShipbuilderSubContractorShipyardYardHullNo:
+              type: string
+            ShiptypeGroup:
+              type: string
+            ShiptypeLevel2:
+              type: string
+            ShiptypeLevel3:
+              type: string
+            ShiptypeLevel4:
+              type: string
+            ShiptypeLevel5:
+              type: string
+            ShiptypeLevel5HullType:
+              type: string
+            ShiptypeLevel5SubGroup:
+              type: string
+            ShiptypeLevel5SubType:
+              type: string
+            SinglePointMooring:
+              type: string
+            SisterShipLinks:
+              $ref: '#/components/schemas/q1_ArrayOfAPSSisterShipLinks'
+            SlopTankCapacity:
+              type: string
+            SlopTankCoatings:
+              type: string
+            SpecialFeature:
+              $ref: '#/components/schemas/q1_ArrayOfAPSSpecialFeatureDetail'
+            SpecialTanksDescriptiveNarrative:
+              type: string
+            SpecialistTankerNarrative:
+              type: string
+            Speed:
+              type: string
+            SpeedMax:
+              type: string
+            SpeedService:
+              type: string
+            StandardShipDesign:
+              type: string
+            StatCode5:
+              type: string
+            StatusHistory:
+              $ref: '#/components/schemas/q1_ArrayOfAPSStatusHistoryDetail'
+            StatusHistorySince2000:
+              $ref: '#/components/schemas/q1_ArrayOfAPSStatusHistoryDetail'
+            SternDischargeFacility:
+              type: string
+            SternLoadingFacility:
+              type: string
+            StowageCommodity:
+              $ref: '#/components/schemas/q1_ArrayOfAPSStowageCommodityDetail'
+            SuezCanalNetTonnageSCNT:
+              type: string
+            SurveyDates:
+              $ref: '#/components/schemas/q1_ArrayOfAPSSurveyDatesDetail'
+            SurveyDatesHistory:
+              $ref: '#/components/schemas/q1_ArrayOfAPSSurveyDatesHistoryDetail'
+            TEU:
+              type: string
+            TEUCapacity14THomogenous:
+              type: string
+            TVEExpiryDate:
+              type: string
+            TankCoatings:
+              $ref: '#/components/schemas/q1_ArrayOfAPSTankCoatingsDetail'
+            TankCoatingsNarrative:
+              type: string
+            TanksDescriptiveNarrative:
+              type: string
+            TechnicalManager:
+              type: string
+            TechnicalManagerCode:
+              type: string
+            TechnicalManagerCountryOfControl:
+              type: string
+            TechnicalManagerCountryOfDomicile:
+              type: string
+            TechnicalManagerCountryOfDomicileCode:
+              type: string
+            TechnicalManagerCountryOfRegistration:
+              type: string
+            TechnicalManagerHistory:
+              $ref: '#/components/schemas/q1_ArrayOfAPSTechnicalManagerHistoryDetail'
+            TechnicalManagerHistorySince2000:
+              $ref: '#/components/schemas/q1_ArrayOfAPSTechnicalManagerHistoryDetail'
+            TempMaximum:
+              type: string
+            TempMinimum:
+              type: string
+            ThirdPartyIdentification:
+              $ref: '#/components/schemas/q1_ArrayOfAPSThirdPartyIdentificationDetail'
+            Thrusters:
+              $ref: '#/components/schemas/q1_ArrayOfAPSThrustersDetail'
+            ThrustersDescriptiveNarrative:
+              type: string
+            TonnageEffectiveDate:
+              type: string
+            TonnageSystem69Convention:
+              type: string
+            TonnesPerCentimetreImmersionTPCI:
+              type: string
+            TotalBunkerCapacity:
+              type: string
+            TotalHorsepowerOfAuxiliaryGenerators:
+              type: string
+            TotalHorsepowerOfMainEngines:
+              type: string
+            TotalHorsepowerOfMainGenerators:
+              type: string
+            TotalKilowattsOfMainEngines:
+              type: string
+            TotalPowerOfAllEngines:
+              type: string
+            TotalPowerOfAuxiliaryEngines:
+              type: string
+            TradingZoneLastSeen:
+              $ref: '#/components/schemas/q1_ArrayOfAPSTradingZoneLastSeenDetail'
+            TurboCharger:
+              $ref: '#/components/schemas/q1_ArrayOfAPSTurboChargerDetail'
+            UnderHijack:
+              $ref: '#/components/schemas/q1_ArrayOfAPSUnderHijackDetail'
+            VapourRecoverySystem:
+              type: string
+            WidthOfROROLanes:
+              type: string
+            YardNumber:
+              type: string
+            YearOfBuild:
+              type: string
+    q1_ArrayOfAPSAdditionalInformationDetail:
+      title: q1_ArrayOfAPSAdditionalInformationDetail
+      type: object
+      properties:
+        APSAdditionalInformationDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSAdditionalInformationDetail'
+      description: ""
+    q1_APSAdditionalInformationDetail:
+      title: q1_APSAdditionalInformationDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            DeckHeatExchangerInd:
+              type: string
+            DeckHeatExchangerMaterial:
+              type: string
+            DrillBargeInd:
+              type: string
+            DrillDepthMax:
+              type: string
+            LRNO:
+              type: string
+            ProductionVesselInd:
+              type: string
+            SatComAnsBack:
+              type: string
+            SatComID:
+              type: string
+            ShipEmail:
+              type: string
+            TweenDeckFixed:
+              type: string
+            TweenDeckPortable:
+              type: string
+            WaterDepthMax:
+              type: string
+    q1_WebServiceVersion:
+      title: q1_WebServiceVersion
+      type: object
+      properties:
+        DataSetVersion:
+          type: string
+      description: ""
+    q1_ArrayOfAPSArrangementsDetail:
+      title: q1_ArrayOfAPSArrangementsDetail
+      type: object
+      properties:
+        APSArrangementsDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSArrangementsDetail'
+      description: ""
+    q1_APSArrangementsDetail:
+      title: q1_APSArrangementsDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            Breadth:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LRNO:
+              type: string
+            Length:
+              type: string
+            Material:
+              type: string
+            Position:
+              type: string
+            Sequence:
+              type: string
+            Structure:
+              type: string
+            Type:
+              type: string
+    q1_ArrayOfAPSAuxEngineDetail:
+      title: q1_ArrayOfAPSAuxEngineDetail
+      type: object
+      properties:
+        APSAuxEngineDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSAuxEngineDetail'
+      description: ""
+    q1_APSAuxEngineDetail:
+      title: q1_APSAuxEngineDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            Bore:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            EngineBuilder:
+              type: string
+            EngineDesigner:
+              type: string
+            EngineModel:
+              type: string
+            EngineSequence:
+              type: string
+            LRNO:
+              type: string
+            MaxPower:
+              type: string
+            NumberOfCylinders:
+              type: string
+            Stroke:
+              type: string
+            StrokeType:
+              type: string
+    q1_ArrayOfAPSAuxGeneratorDetail:
+      title: q1_ArrayOfAPSAuxGeneratorDetail
+      type: object
+      properties:
+        APSAuxGeneratorDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSAuxGeneratorDetail'
+      description: ""
+    q1_APSAuxGeneratorDetail:
+      title: q1_APSAuxGeneratorDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            ACDC:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Frequency:
+              type: string
+            KWEach:
+              type: string
+            LRNO:
+              type: string
+            MainEngineDriven:
+              type: string
+            Number:
+              type: string
+            SEQ:
+              type: string
+            Voltage1:
+              type: string
+            Voltage2:
+              type: string
+    q1_ArrayOfAPSBoilerDetail:
+      title: q1_ArrayOfAPSBoilerDetail
+      type: object
+      properties:
+        APSBoilerDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSBoilerDetail'
+      description: ""
+    q1_APSBoilerDetail:
+      title: q1_APSBoilerDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            Boiler:
+              type: string
+            BoilerCode:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LRNO:
+              type: string
+            NumberOfBoilers:
+              type: string
+            Sequence:
+              type: string
+    q1_ArrayOfAPSBoilersExpandedDetail:
+      title: q1_ArrayOfAPSBoilersExpandedDetail
+      type: object
+      properties:
+        APSBoilersExpandedDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSBoilersExpandedDetail'
+      description: ""
+    q1_APSBoilersExpandedDetail:
+      title: q1_APSBoilersExpandedDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            BoilerTypeCode:
+              type: string
+            BoilerTypeDecode:
+              type: string
+            Builder:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Design:
+              type: string
+            EffectiveDate:
+              type: string
+            FiringTypeCode:
+              type: string
+            FiringTypeDecode:
+              type: string
+            LRNO:
+              type: string
+            NumberOfBoilers:
+              type: string
+            Sequence:
+              type: string
+    q1_ArrayOfAPSBuilderAddressDetail:
+      title: q1_ArrayOfAPSBuilderAddressDetail
+      type: object
+      properties:
+        APSBuilderAddressDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSBuilderAddressDetail'
+      description: ""
+    q1_APSBuilderAddressDetail:
+      title: q1_APSBuilderAddressDetail
+      type: object
+      properties:
+        BuilderCode:
+          type: string
+        BuilderStatus:
+          type: string
+        Contact:
+          type: string
+        CountryCode:
+          type: string
+        CountryName:
+          type: string
+        DataSetVersion:
+          $ref: '#/components/schemas/q1_WebServiceVersion'
+        EmailAddress:
+          type: string
+        Facsimile:
+          type: string
+        FullAddress:
+          type: string
+        ShipBuilder:
+          type: string
+        ShipBuilderFullStyle:
+          type: string
+        Telephone:
+          type: string
+        Telex:
+          type: string
+        Town:
+          type: string
+        TownCode:
+          type: string
+        Website:
+          type: string
+      description: ""
+    q1_ArrayOfAPSShipCallSignAndMmsiHistoryDetail:
+      title: q1_ArrayOfAPSShipCallSignAndMmsiHistoryDetail
+      type: object
+      properties:
+        APSShipCallSignAndMmsiHistoryDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSShipCallSignAndMmsiHistoryDetail'
+      description: ""
+    q1_APSShipCallSignAndMmsiHistoryDetail:
+      title: q1_APSShipCallSignAndMmsiHistoryDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CallSign:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            EffectiveDate:
+              type: string
+            Lrno:
+              type: string
+            Mmsi:
+              type: string
+            SeqNo:
+              type: string
+    q1_ArrayOfAPSCapacitiesDetail:
+      title: q1_ArrayOfAPSCapacitiesDetail
+      type: object
+      properties:
+        APSCapacitiesDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSCapacitiesDetail'
+      description: ""
+    q1_APSCapacitiesDetail:
+      title: q1_APSCapacitiesDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            Bale:
+              type: string
+            BollardPull:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            GasCapacity:
+              type: string
+            GrainCapacity:
+              type: string
+            Horsepower:
+              type: string
+            IndicatedHorsepower:
+              type: string
+            LRNO:
+              type: string
+            LiquidCapacity:
+              type: string
+            NumberOfBarges:
+              type: string
+            NumberOfCars:
+              type: string
+            NumberOfPassengers:
+              type: string
+            NumberOfRailWagons:
+              type: string
+            NumberOfTEU:
+              type: string
+            NumberOfTrucks:
+              type: string
+            NumberOfVehicles:
+              type: string
+            NumberRefrigeratedContainers:
+              type: string
+    q1_ArrayOfAPSCargoPumpDetail:
+      title: q1_ArrayOfAPSCargoPumpDetail
+      type: object
+      properties:
+        APSCargoPumpDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSCargoPumpDetail'
+      description: ""
+    q1_APSCargoPumpDetail:
+      title: q1_APSCargoPumpDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CubicMetersCapacity:
+              type: string
+            CubicTonsCapacity:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LRNO:
+              type: string
+            NumberOfPumps:
+              type: string
+            Sequence:
+              type: string
+    q1_ArrayOfAPSClassCurrentDetail:
+      title: q1_ArrayOfAPSClassCurrentDetail
+      type: object
+      properties:
+        APSClassCurrentDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSClassCurrentDetail'
+      description: ""
+    q1_APSClassCurrentDetail:
+      title: q1_APSClassCurrentDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            Class:
+              type: string
+            ClassCode:
+              type: string
+            ClassID:
+              type: string
+            ClassIndicator:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            EffectiveDate:
+              type: string
+            LRNO:
+              type: string
+    q1_ArrayOfAPSClassHistoryDetail:
+      title: q1_ArrayOfAPSClassHistoryDetail
+      type: object
+      properties:
+        APSClassHistoryDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSClassHistoryDetail'
+      description: ""
+    q1_APSClassHistoryDetail:
+      title: q1_APSClassHistoryDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            Class:
+              type: string
+            ClassCode:
+              type: string
+            ClassID:
+              type: string
+            ClassIndicator:
+              type: string
+            CurrentIndicator:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            EffectiveDate:
+              type: string
+            LRNO:
+              type: string
+            Sequence:
+              type: string
+    q1_ArrayOfAPSClassWithdrawnDetail:
+      title: q1_ArrayOfAPSClassWithdrawnDetail
+      type: object
+      properties:
+        APSClassWithdrawnDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSClassWithdrawnDetail'
+      description: ""
+    q1_APSClassWithdrawnDetail:
+      title: q1_APSClassWithdrawnDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            Class:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LRNO:
+              type: string
+            Reason:
+              type: string
+            WithdrawnDate:
+              type: string
+              format: date-time
+    q1_ArrayOfAPSCompanyDetail:
+      title: q1_ArrayOfAPSCompanyDetail
+      type: object
+      properties:
+        APSCompanyDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSCompanyDetail'
+      description: ""
+    q1_APSCompanyDetail:
+      title: q1_APSCompanyDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CompanyStatus:
+              type: string
+            CountryName:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Emailaddress:
+              type: string
+            Facsimile:
+              type: string
+            FullAddress:
+              type: string
+            FullName:
+              type: string
+            LastChangeDate:
+              type: string
+            NationalityOfControl:
+              type: string
+            NationalityOfRegistration:
+              type: string
+            OWCODE:
+              type: string
+            ShortCompanyName:
+              type: string
+            Telephone:
+              type: string
+            Telex:
+              type: string
+            Website:
+              type: string
+    q1_ArrayOfAPSCompanyCompliance:
+      title: q1_ArrayOfAPSCompanyCompliance
+      type: object
+      properties:
+        APSCompanyCompliance:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSCompanyCompliance'
+      description: ""
+    q1_APSCompanyCompliance:
+      title: q1_APSCompanyCompliance
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CompanyInFATFJurisdiction:
+              type: string
+            CompanyInOFACSanctionedCountry:
+              type: string
+            CompanyOnBESSanctionList:
+              type: string
+            CompanyOnEUSanctionList:
+              type: string
+            CompanyOnOFACSanctionList:
+              type: string
+            CompanyOnUNSanctionList:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            OverallComplianceStatus:
+              type: string
+            OwCode:
+              type: string
+            ParentCompanyComplianceRisk:
+              type: string
+            ShortCompanyName:
+              type: string
+    q1_ArrayOfAPSCompanyComplianceDetails:
+      title: q1_ArrayOfAPSCompanyComplianceDetails
+      type: object
+      properties:
+        APSCompanyComplianceDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSCompanyComplianceDetails'
+      description: ""
+    q1_APSCompanyComplianceDetails:
+      title: q1_APSCompanyComplianceDetails
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CompanyInFATFJurisdiction:
+              type: string
+            CompanyInOFACSanctionedCountry:
+              type: string
+            CompanyOnAustralianSanctionList:
+              type: string
+            CompanyOnBESSanctionList:
+              type: string
+            CompanyOnCanadianSanctionList:
+              type: string
+            CompanyOnEUSanctionList:
+              type: string
+            CompanyOnOFACSSIList:
+              type: string
+            CompanyOnOFACSanctionList:
+              type: string
+            CompanyOnSwissSanctionList:
+              type: string
+            CompanyOnUNSanctionList:
+              type: string
+            CompanyOverallComplianceStatus:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            OwCode:
+              type: string
+            ParentCompanyComplianceRisk:
+              type: string
+            ShortCompanyName:
+              type: string
+    q1_ArrayOfAPSCompanyDetailsAndParentCodeDetail:
+      title: q1_ArrayOfAPSCompanyDetailsAndParentCodeDetail
+      type: object
+      properties:
+        APSCompanyDetailsAndParentCodeDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSCompanyDetailsAndParentCodeDetail'
+      description: ""
+    q1_APSCompanyDetailsAndParentCodeDetail:
+      title: q1_APSCompanyDetailsAndParentCodeDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CompanyStatus:
+              type: string
+            CountryName:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Emailaddress:
+              type: string
+            Facsimile:
+              type: string
+            FullAddress:
+              type: string
+            FullName:
+              type: string
+            LastChangeDate:
+              type: string
+            NationalityOfControl:
+              type: string
+            NationalityOfRegistration:
+              type: string
+            OWCODE:
+              type: string
+            ParentCompany:
+              type: string
+            ShortCompanyName:
+              type: string
+            Telephone:
+              type: string
+            Telex:
+              type: string
+            Website:
+              type: string
+    q1_ArrayOfAPSCompanyDetailsComplexDetail:
+      title: q1_ArrayOfAPSCompanyDetailsComplexDetail
+      type: object
+      properties:
+        APSCompanyDetailsComplexDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSCompanyDetailsComplexDetail'
+      description: ""
+    q1_APSCompanyDetailsComplexDetail:
+      title: q1_APSCompanyDetailsComplexDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CareOfCode:
+              type: string
+            CompanyStatus:
+              type: string
+            CountryName:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Emailaddress:
+              type: string
+            Facsimile:
+              type: string
+            FullAddress:
+              type: string
+            FullName:
+              type: string
+            LastChangeDate:
+              type: string
+            NationalityofControl:
+              type: string
+            NationalityofRegistration:
+              type: string
+            OWCODE:
+              type: string
+            POBox:
+              type: string
+            getgetcode:
+              type: string
+            Pregetcode:
+              type: string
+            RoomFloorBuilding1:
+              type: string
+            RoomFloorBuilding2:
+              type: string
+            RoomFloorBuilding3:
+              type: string
+            ShortCompanyName:
+              type: string
+            Street:
+              type: string
+            StreetNumber:
+              type: string
+            Telephone:
+              type: string
+            Telex:
+              type: string
+            TownName:
+              type: string
+            Website:
+              type: string
+    q1_ArrayOfAPSCompanyDetailsComplexAndParentCodeDetail:
+      title: q1_ArrayOfAPSCompanyDetailsComplexAndParentCodeDetail
+      type: object
+      properties:
+        APSCompanyDetailsComplexAndParentCodeDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSCompanyDetailsComplexAndParentCodeDetail'
+      description: ""
+    q1_APSCompanyDetailsComplexAndParentCodeDetail:
+      title: q1_APSCompanyDetailsComplexAndParentCodeDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CareOfCode:
+              type: string
+            CompanyStatus:
+              type: string
+            CountryName:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Emailaddress:
+              type: string
+            Facsimile:
+              type: string
+            FullAddress:
+              type: string
+            FullCompanyName:
+              type: string
+            LastChangeDate:
+              type: string
+            NationalityofControl:
+              type: string
+            NationalityofRegistration:
+              type: string
+            OWCODE:
+              type: string
+            POBox:
+              type: string
+            ParentCompany:
+              type: string
+            getgetcode:
+              type: string
+            Pregetcode:
+              type: string
+            RoomFloorBuilding1:
+              type: string
+            RoomFloorBuilding2:
+              type: string
+            RoomFloorBuilding3:
+              type: string
+            ShortCompanyName:
+              type: string
+            Street:
+              type: string
+            StreetNumber:
+              type: string
+            Telephone:
+              type: string
+            Telex:
+              type: string
+            TownName:
+              type: string
+            Website:
+              type: string
+    q1_ArrayOfAPSCompanyDetailsComplexWithCodesDetail:
+      title: q1_ArrayOfAPSCompanyDetailsComplexWithCodesDetail
+      type: object
+      properties:
+        APSCompanyDetailsComplexWithCodesDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSCompanyDetailsComplexWithCodesDetail'
+      description: ""
+    q1_APSCompanyDetailsComplexWithCodesDetail:
+      title: q1_APSCompanyDetailsComplexWithCodesDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CareOfCode:
+              type: string
+            CompanyStatus:
+              type: string
+            CountryName:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Emailaddress:
+              type: string
+            Facsimile:
+              type: string
+            FoundedDate:
+              type: string
+            FullAddress:
+              type: string
+            FullName:
+              type: string
+            LastChangeDate:
+              type: string
+            LocationCode:
+              type: string
+            NationalityofControl:
+              type: string
+            NationalityofControlCode:
+              type: string
+            NationalityofRegistration:
+              type: string
+            NationalityofRegistrationCode:
+              type: string
+            OWCODE:
+              type: string
+            POBox:
+              type: string
+            getgetcode:
+              type: string
+            Pregetcode:
+              type: string
+            RoomFloorBuilding1:
+              type: string
+            RoomFloorBuilding2:
+              type: string
+            RoomFloorBuilding3:
+              type: string
+            ShortCompanyName:
+              type: string
+            Street:
+              type: string
+            StreetNumber:
+              type: string
+            Telephone:
+              type: string
+            Telex:
+              type: string
+            TownName:
+              type: string
+            Website:
+              type: string
+    q1_ArrayOfAPSCompanyDetailsComplexWithCodesAndParentDetail:
+      title: q1_ArrayOfAPSCompanyDetailsComplexWithCodesAndParentDetail
+      type: object
+      properties:
+        APSCompanyDetailsComplexWithCodesAndParentDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSCompanyDetailsComplexWithCodesAndParentDetail'
+      description: ""
+    q1_APSCompanyDetailsComplexWithCodesAndParentDetail:
+      title: q1_APSCompanyDetailsComplexWithCodesAndParentDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CareOfCode:
+              type: string
+            CompanyStatus:
+              type: string
+            CountryName:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Emailaddress:
+              type: string
+            Facsimile:
+              type: string
+            FoundedDate:
+              type: string
+            FullAddress:
+              type: string
+            FullName:
+              type: string
+            LastChangeDate:
+              type: string
+            LocationCode:
+              type: string
+            NationalityofControl:
+              type: string
+            NationalityofControlCode:
+              type: string
+            NationalityofRegistration:
+              type: string
+            NationalityofRegistrationCode:
+              type: string
+            OWCODE:
+              type: string
+            POBox:
+              type: string
+            ParentCompany:
+              type: string
+            getgetcode:
+              type: string
+            Pregetcode:
+              type: string
+            RoomFloorBuilding1:
+              type: string
+            RoomFloorBuilding2:
+              type: string
+            RoomFloorBuilding3:
+              type: string
+            ShortCompanyName:
+              type: string
+            Street:
+              type: string
+            StreetNumber:
+              type: string
+            Telephone:
+              type: string
+            Telex:
+              type: string
+            TownName:
+              type: string
+            Website:
+              type: string
+    q1_ArrayOfAPSCompanyDetailsWithCodesDetail:
+      title: q1_ArrayOfAPSCompanyDetailsWithCodesDetail
+      type: object
+      properties:
+        APSCompanyDetailsWithCodesDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSCompanyDetailsWithCodesDetail'
+      description: ""
+    q1_APSCompanyDetailsWithCodesDetail:
+      title: q1_APSCompanyDetailsWithCodesDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CompanyStatus:
+              type: string
+            CountryName:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Emailaddress:
+              type: string
+            Facsimile:
+              type: string
+            FullAddress:
+              type: string
+            FullName:
+              type: string
+            LastChangeDate:
+              type: string
+            LocationCode:
+              type: string
+            NationalityofControl:
+              type: string
+            NationalityofControlCode:
+              type: string
+            NationalityofRegistration:
+              type: string
+            NationalityofRegistrationCode:
+              type: string
+            OWCODE:
+              type: string
+            ParentCompany:
+              type: string
+            ShortCompanyName:
+              type: string
+            Telephone:
+              type: string
+            Telex:
+              type: string
+            Website:
+              type: string
+    q1_ArrayOfAPSCompanyDetailsWithCodesAndParentCodeDetail:
+      title: q1_ArrayOfAPSCompanyDetailsWithCodesAndParentCodeDetail
+      type: object
+      properties:
+        APSCompanyDetailsWithCodesAndParentCodeDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSCompanyDetailsWithCodesAndParentCodeDetail'
+      description: ""
+    q1_APSCompanyDetailsWithCodesAndParentCodeDetail:
+      title: q1_APSCompanyDetailsWithCodesAndParentCodeDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CompanyStatus:
+              type: string
+            CountryName:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Emailaddress:
+              type: string
+            Facsimile:
+              type: string
+            FullAddress:
+              type: string
+            FullName:
+              type: string
+            LastChangeDate:
+              type: string
+            LocationCode:
+              type: string
+            NationalityofControl:
+              type: string
+            NationalityofControlCode:
+              type: string
+            NationalityofRegistration:
+              type: string
+            NationalityofRegistrationCode:
+              type: string
+            OWCODE:
+              type: string
+            ParentCompany:
+              type: string
+            ShortCompanyName:
+              type: string
+            Telephone:
+              type: string
+            Telex:
+              type: string
+            Website:
+              type: string
+    q1_ArrayOfAPSCompanyFleetCountsDetail:
+      title: q1_ArrayOfAPSCompanyFleetCountsDetail
+      type: object
+      properties:
+        APSCompanyFleetCountsDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSCompanyFleetCountsDetail'
+      description: ""
+    q1_APSCompanyFleetCountsDetail:
+      title: q1_APSCompanyFleetCountsDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DOCCount:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            FleetSize:
+              type: string
+            GroupOwnerCount:
+              type: string
+            InServiceCount:
+              type: string
+            OWCODE:
+              type: string
+            OperatorCount:
+              type: string
+            RegisteredOwnerCount:
+              type: string
+            ShipManagerCount:
+              type: string
+            ShortCompanyName:
+              type: string
+            TechnicalManagerCount:
+              type: string
+    q1_ArrayOfAPSCompanyOrderBookCountsDetail:
+      title: q1_ArrayOfAPSCompanyOrderBookCountsDetail
+      type: object
+      properties:
+        APSCompanyOrderBookCountsDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSCompanyOrderBookCountsDetail'
+      description: ""
+    q1_APSCompanyOrderBookCountsDetail:
+      title: q1_APSCompanyOrderBookCountsDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DOCOrderbookCount:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            GroupOwnerOrderbookCount:
+              type: string
+            OWCODE:
+              type: string
+            OperatorOrderbookCount:
+              type: string
+            RegisteredOrderbookOwnerCount:
+              type: string
+            ShipManagerOrderbookCount:
+              type: string
+    q1_ArrayOfAPSCompanyPersonnelDetail:
+      title: q1_ArrayOfAPSCompanyPersonnelDetail
+      type: object
+      properties:
+        APSCompanyPersonnelDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSCompanyPersonnelDetail'
+      description: ""
+    q1_APSCompanyPersonnelDetail:
+      title: q1_APSCompanyPersonnelDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            AfterOfficeHoursTelephone:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            DirectLine:
+              type: string
+            Email:
+              type: string
+            Fullname:
+              type: string
+            GeneralContact:
+              type: string
+            Initials:
+              type: string
+            MarketingContact:
+              type: string
+            Mobile:
+              type: string
+            OWCODE:
+              type: string
+            ParentOwcode:
+              type: string
+            PersonnelID:
+              type: string
+            Position:
+              type: string
+            Salutation:
+              type: string
+            Surname:
+              type: string
+            TechnicalContact:
+              type: string
+    q1_ArrayOfAPSCompanyVesselRelationshipsDetail:
+      title: q1_ArrayOfAPSCompanyVesselRelationshipsDetail
+      type: object
+      properties:
+        APSCompanyVesselRelationshipsDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSCompanyVesselRelationshipsDetail'
+      description: ""
+    q1_APSCompanyVesselRelationshipsDetail:
+      title: q1_APSCompanyVesselRelationshipsDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DOCCode:
+              type: string
+            DOCCompany:
+              type: string
+            DOCGroup:
+              type: string
+            DOCGroupCode:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            GroupBeneficialOwner:
+              type: string
+            GroupBeneficialOwnerCode:
+              type: string
+            LRNO:
+              type: string
+            Operator:
+              type: string
+            OperatorCode:
+              type: string
+            OperatorGroup:
+              type: string
+            OperatorGroupCode:
+              type: string
+            RegisteredOwner:
+              type: string
+            RegisteredOwnerCode:
+              type: string
+            ShipManager:
+              type: string
+            ShipManagerCode:
+              type: string
+            ShipManagerGroup:
+              type: string
+            ShipManagerGroupCode:
+              type: string
+            TechnicalManager:
+              type: string
+            TechnicalManagerCode:
+              type: string
+            TechnicalManagerGroup:
+              type: string
+            TechnicalManagerGroupCode:
+              type: string
+    q1_ArrayOfAPSCrewListDetail:
+      title: q1_ArrayOfAPSCrewListDetail
+      type: object
+      properties:
+        APSCrewListDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSCrewListDetail'
+      description: ""
+    q1_APSCrewListDetail:
+      title: q1_APSCrewListDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CrewListDate:
+              type: string
+              format: date-time
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            ID:
+              type: string
+            LRNO:
+              type: string
+            Nationality:
+              type: string
+            Shipname:
+              type: string
+            TotalCrew:
+              type: string
+            TotalOfficers:
+              type: string
+            TotalRatings:
+              type: string
+    q1_ArrayOfAPSDOCHistoryDetail:
+      title: q1_ArrayOfAPSDOCHistoryDetail
+      type: object
+      properties:
+        APSDOCHistoryDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSDOCHistoryDetail'
+      description: ""
+    q1_APSDOCHistoryDetail:
+      title: q1_APSDOCHistoryDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CompanyStatus:
+              type: string
+            DOCCompany:
+              type: string
+            DOCCompanyCode:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            EffectiveDate:
+              type: string
+            LRNO:
+              type: string
+            Sequence:
+              type: string
+    q1_ArrayOfAPSDarkActivityConfirmed:
+      title: q1_ArrayOfAPSDarkActivityConfirmed
+      type: object
+      properties:
+        APSDarkActivityConfirmed:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSDarkActivityConfirmed'
+      description: ""
+    q1_APSDarkActivityConfirmed:
+      title: q1_APSDarkActivityConfirmed
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            Area_Country:
+              type: string
+            Area_Id:
+              type: string
+            Area_Name:
+              type: string
+            Dark_Activity:
+              type: string
+            Dark_Draught:
+              type: string
+            Dark_Heading:
+              type: string
+            Dark_Hours:
+              type: string
+            Dark_Latitude:
+              type: string
+            Dark_Longitude:
+              type: string
+            Dark_Reported_Destination:
+              type: string
+            Dark_Speed:
+              type: string
+            Dark_Status:
+              type: string
+            Dark_Time:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Last_Port_Country:
+              type: string
+            Last_Port_Country_Code:
+              type: string
+            Last_Port_of_Call:
+              type: string
+            Lrno:
+              type: string
+            Mmsi:
+              type: string
+            NextSeen:
+              type: string
+            NextSeen_Draught:
+              type: string
+            NextSeen_Heading:
+              type: string
+            NextSeen_Latitude:
+              type: string
+            NextSeen_Longitude:
+              type: string
+            NextSeen_Reported_Destination:
+              type: string
+            NextSeen_Speed:
+              type: string
+            Vessel_Name:
+              type: string
+    q1_ArrayOfAPSDefectDetail:
+      title: q1_ArrayOfAPSDefectDetail
+      type: object
+      properties:
+        APSDefectDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSDefectDetail'
+      description: ""
+    q1_APSDefectDetail:
+      title: q1_APSDefectDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            Action_1:
+              type: string
+            Action_2:
+              type: string
+            Action_3:
+              type: string
+            Action_Code_1:
+              type: string
+            Action_Code_2:
+              type: string
+            Action_Code_3:
+              type: string
+            ClassIsResponsible:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Defect_Code:
+              type: string
+            Defect_ID:
+              type: string
+            Defect_Text:
+              type: string
+            DefectiveItemCode:
+              type: string
+            DetentionReasonDeficiency:
+              type: string
+            Inspection_ID:
+              type: string
+            IsAccidentalDamage:
+              type: string
+            Main_Defect_Code:
+              type: string
+            Main_Defect_Text:
+              type: string
+            NatureOfDefectCode:
+              type: string
+            NatureOfDefectDecode:
+              type: string
+            Other_Action:
+              type: string
+            Other_Recognised_Org_Resp:
+              type: string
+            Recognised_Org_Resp:
+              type: string
+            Recognised_Org_Resp_Code:
+              type: string
+            Recognised_Org_Resp_YN:
+              type: string
+    q1_ArrayOfAPSDestinationDetail:
+      title: q1_ArrayOfAPSDestinationDetail
+      type: object
+      properties:
+        APSDestinationDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSDestinationDetail'
+      description: ""
+    q1_APSDestinationDetail:
+      title: q1_APSDestinationDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            AISDestinationRaw:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            DestinationCountry:
+              type: string
+            DestinationCountryCode:
+              type: string
+            DestinationPortOfCall:
+              type: string
+            ETA:
+              type: string
+              format: date-time
+            LRNO:
+              type: string
+            LastUpdated:
+              type: string
+              format: date-time
+            ShipName:
+              type: string
+            WorldPortNumber:
+              type: string
+    q1_ArrayOfAPSEngineBuilderDetail:
+      title: q1_ArrayOfAPSEngineBuilderDetail
+      type: object
+      properties:
+        APSEngineBuilderDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSEngineBuilderDetail'
+      description: ""
+    q1_APSEngineBuilderDetail:
+      title: q1_APSEngineBuilderDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CountryCode:
+              type: string
+            CountryName:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            EmailAddress:
+              type: string
+            EngineBuilderFullName:
+              type: string
+            EngineBuilderLargestCode:
+              type: string
+            EngineBuilderShortName:
+              type: string
+            Facsimile:
+              type: string
+            FullAddress:
+              type: string
+            Telephone:
+              type: string
+            Telex:
+              type: string
+            TownCode:
+              type: string
+            TownName:
+              type: string
+            Website:
+              type: string
+    q1_ArrayOfAPSFixtureDetail:
+      title: q1_ArrayOfAPSFixtureDetail
+      type: object
+      properties:
+        APSFixtureDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSFixtureDetail'
+      description: ""
+    q1_APSFixtureDetail:
+      title: q1_APSFixtureDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CharterPartyCommodity:
+              type: string
+            CharterPartyDates:
+              type: string
+            CharterPartyRate:
+              type: string
+            CharterPartyTerms:
+              type: string
+            CharterPartyTonnage:
+              type: string
+            Charterer:
+              type: string
+            ChartererCode:
+              type: string
+            Commodity:
+              type: string
+            CommoditySubtype:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            DateOffFixture:
+              type: string
+              format: date-time
+            DateOnFixture:
+              type: string
+              format: date-time
+            DateReported:
+              type: string
+              format: date-time
+            DestinationArea:
+              type: string
+            DestinationPort:
+              type: string
+            DestinationPortCode:
+              type: string
+            FixtureID:
+              type: string
+            LRNO:
+              type: string
+            OriginArea:
+              type: string
+            OriginPort:
+              type: string
+            OriginPortCode:
+              type: string
+            ShipnameReported:
+              type: string
+            Size:
+              type: string
+            TimeCharterRate:
+              type: string
+    q1_ArrayOfAPSFlagHistoryDetail:
+      title: q1_ArrayOfAPSFlagHistoryDetail
+      type: object
+      properties:
+        APSFlagHistoryDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSFlagHistoryDetail'
+      description: ""
+    q1_APSFlagHistoryDetail:
+      title: q1_APSFlagHistoryDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            EffectiveDate:
+              type: string
+            Flag:
+              type: string
+            FlagCode:
+              type: string
+            LRNO:
+              type: string
+            Sequence:
+              type: string
+    q1_ArrayOfAPSFlagStateSpecialDetail:
+      title: q1_ArrayOfAPSFlagStateSpecialDetail
+      type: object
+      properties:
+        APSFlagStateSpecialDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSFlagStateSpecialDetail'
+      description: ""
+    q1_APSFlagStateSpecialDetail:
+      title: q1_APSFlagStateSpecialDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CountryOfRegistration:
+              type: string
+            CountryOfRegistrationCode:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            IMOCompanyNumber:
+              type: string
+            LastChangeDate:
+              type: string
+            OperationalAddress:
+              type: string
+            OwnerNameAdministrationNameStyle:
+              type: string
+            OwnerNameLRFNameStyle:
+              type: string
+            OwnerRegisteredAddressAdministrationSupplied:
+              type: string
+    q1_ArrayOfAPSGrossTonnageHistoryDetail:
+      title: q1_ArrayOfAPSGrossTonnageHistoryDetail
+      type: object
+      properties:
+        APSGrossTonnageHistoryDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSGrossTonnageHistoryDetail'
+      description: ""
+    q1_APSGrossTonnageHistoryDetail:
+      title: q1_APSGrossTonnageHistoryDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            EffectiveDate:
+              type: string
+            GT:
+              type: string
+            LRNO:
+              type: string
+            Sequence:
+              type: string
+    q1_ArrayOfAPSGroupBeneficialOwnerHistoryDetail:
+      title: q1_ArrayOfAPSGroupBeneficialOwnerHistoryDetail
+      type: object
+      properties:
+        APSGroupBeneficialOwnerHistoryDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSGroupBeneficialOwnerHistoryDetail'
+      description: ""
+    q1_APSGroupBeneficialOwnerHistoryDetail:
+      title: q1_APSGroupBeneficialOwnerHistoryDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CompanyStatus:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            EffectiveDate:
+              type: string
+            GroupBeneficialOwner:
+              type: string
+            GroupBeneficialOwnerCode:
+              type: string
+            LRNO:
+              type: string
+            Sequence:
+              type: string
+    q1_ArrayOfAPSIceClassDetail:
+      title: q1_ArrayOfAPSIceClassDetail
+      type: object
+      properties:
+        APSIceClassDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSIceClassDetail'
+      description: ""
+    q1_APSIceClassDetail:
+      title: q1_APSIceClassDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            IceClass:
+              type: string
+            IceClassCode:
+              type: string
+            LRNO:
+              type: string
+    q1_ArrayOfAPSInspectionDetail:
+      title: q1_ArrayOfAPSInspectionDetail
+      type: object
+      properties:
+        APSInspectionDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSInspectionDetail'
+      description: ""
+    q1_APSInspectionDetail:
+      title: q1_APSInspectionDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            Authorisation:
+              type: string
+            CallSign:
+              type: string
+            Cargo:
+              type: string
+            Charterer:
+              type: string
+            Class:
+              type: string
+            Country:
+              type: string
+            DWT:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Date_Release:
+              type: string
+              format: date-time
+            Detained:
+              type: string
+            Expanded_Inspection:
+              type: string
+            Flag:
+              type: string
+            Follow_Up_Inspection:
+              type: string
+            GT:
+              type: string
+            Inspection_Date:
+              type: string
+              format: date-time
+            Inspection_ID:
+              type: string
+            LRNO:
+              type: string
+            Manager:
+              type: string
+            No_Days_Detained:
+              type: string
+            No_Defects:
+              type: string
+            Number_Part_Days_Detained:
+              type: string
+            Other_Inspection_Type:
+              type: string
+            Owner:
+              type: string
+            Port:
+              type: string
+            Shipname:
+              type: string
+            Shiptype:
+              type: string
+            Source:
+              type: string
+            YOB:
+              type: string
+    q1_ArrayOfAPSInvestigationIndicatorsDetail:
+      title: q1_ArrayOfAPSInvestigationIndicatorsDetail
+      type: object
+      properties:
+        APSInvestigationIndicatorsDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSInvestigationIndicatorsDetail'
+      description: ""
+    q1_APSInvestigationIndicatorsDetail:
+      title: q1_APSInvestigationIndicatorsDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            ChangeType:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            EffectiveDate:
+              type: string
+            LRNO:
+              type: string
+            Notes:
+              type: string
+    q1_ArrayOfAPSLastRecordedPortOfCallDetail:
+      title: q1_ArrayOfAPSLastRecordedPortOfCallDetail
+      type: object
+      properties:
+        APSLastRecordedPortOfCallDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSLastRecordedPortOfCallDetail'
+      description: ""
+    q1_APSLastRecordedPortOfCallDetail:
+      title: q1_APSLastRecordedPortOfCallDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            ArrivalDateFull:
+              type: string
+              format: date-time
+            Country:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            HoursInPort:
+              type: string
+            LRNO:
+              type: string
+            MoveType:
+              type: string
+            Port:
+              type: string
+            SailDateFull:
+              type: string
+              format: date-time
+            WorldPortNumber:
+              type: string
+    q1_ArrayOfAPSLiftingGearDetail:
+      title: q1_ArrayOfAPSLiftingGearDetail
+      type: object
+      properties:
+        APSLiftingGearDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSLiftingGearDetail'
+      description: ""
+    q1_APSLiftingGearDetail:
+      title: q1_APSLiftingGearDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            GearType:
+              type: string
+            LRNO:
+              type: string
+            MaxSWLOfGear:
+              type: string
+            NumberOfGears:
+              type: string
+            Sequence:
+              type: string
+    q1_ArrayOfAPSMainEngineDetail:
+      title: q1_ArrayOfAPSMainEngineDetail
+      type: object
+      properties:
+        APSMainEngineDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSMainEngineDetail'
+      description: ""
+    q1_APSMainEngineDetail:
+      title: q1_APSMainEngineDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            BHPOfMainOilEngines:
+              type: string
+            Bore:
+              type: string
+            CylinderArrangementCode:
+              type: string
+            CylinderArrangementDecode:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            EngineBuilder:
+              type: string
+            EngineBuilderCode:
+              type: string
+            EngineDesigner:
+              type: string
+            EngineMakerCode:
+              type: string
+            EngineModel:
+              type: string
+            EngineType:
+              type: string
+            LRNO:
+              type: string
+            NumberOfCylinders:
+              type: string
+            Position:
+              type: string
+            PowerBHP:
+              type: string
+            PowerKW:
+              type: string
+            RPM:
+              type: string
+            Stroke:
+              type: string
+            StrokeType:
+              type: string
+    q1_ArrayOfAPSMainGeneratorDetail:
+      title: q1_ArrayOfAPSMainGeneratorDetail
+      type: object
+      properties:
+        APSMainGeneratorDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSMainGeneratorDetail'
+      description: ""
+    q1_APSMainGeneratorDetail:
+      title: q1_APSMainGeneratorDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            AC_DCIndicator:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Frequency:
+              type: string
+            GeneratorMaker:
+              type: string
+            GeneratorPosition:
+              type: string
+            KW:
+              type: string
+            LRNO:
+              type: string
+            Number:
+              type: string
+            SequenceNumber:
+              type: string
+            Voltage:
+              type: string
+    q1_ArrayOfAPSMovementDetail:
+      title: q1_ArrayOfAPSMovementDetail
+      type: object
+      properties:
+        APSMovementDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSMovementDetail'
+      description: ""
+    q1_APSMovementDetail:
+      title: q1_APSMovementDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            ArrivalDate:
+              type: string
+            ArrivalDateFull:
+              type: string
+              format: date-time
+            Country:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Destination:
+              type: string
+            ETA:
+              type: string
+              format: date-time
+            HoursInPort:
+              type: string
+            LRNO:
+              type: string
+            Movetype:
+              type: string
+            Port:
+              type: string
+            PortID:
+              type: string
+            SailDate:
+              type: string
+            SailDatefull:
+              type: string
+              format: date-time
+    q1_ArrayOfAPSNameHistoryDetail:
+      title: q1_ArrayOfAPSNameHistoryDetail
+      type: object
+      properties:
+        APSNameHistoryDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSNameHistoryDetail'
+      description: ""
+    q1_APSNameHistoryDetail:
+      title: q1_APSNameHistoryDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Effective_Date:
+              type: string
+            LRNO:
+              type: string
+            Sequence:
+              type: string
+            VesselName:
+              type: string
+    q1_ArrayOfAPSOFACReportDetail:
+      title: q1_ArrayOfAPSOFACReportDetail
+      type: object
+      properties:
+        APSOFACReportDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSOFACReportDetail'
+      description: ""
+    q1_APSOFACReportDetail:
+      title: q1_APSOFACReportDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            InspectedDate:
+              type: string
+              format: date-time
+            LRNO:
+              type: string
+    q1_ArrayOfAPSOperatorHistoryDetail:
+      title: q1_ArrayOfAPSOperatorHistoryDetail
+      type: object
+      properties:
+        APSOperatorHistoryDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSOperatorHistoryDetail'
+      description: ""
+    q1_APSOperatorHistoryDetail:
+      title: q1_APSOperatorHistoryDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CompanyStatus:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            EffectiveDate:
+              type: string
+            LRNO:
+              type: string
+            Operator:
+              type: string
+            OperatorCode:
+              type: string
+            Sequence:
+              type: string
+    q1_ArrayOfAPSOwnerHistoryDetail:
+      title: q1_ArrayOfAPSOwnerHistoryDetail
+      type: object
+      properties:
+        APSOwnerHistoryDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSOwnerHistoryDetail'
+      description: ""
+    q1_APSOwnerHistoryDetail:
+      title: q1_APSOwnerHistoryDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CompanyStatus:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            EffectiveDate:
+              type: string
+            LRNO:
+              type: string
+            Owner:
+              type: string
+            OwnerCode:
+              type: string
+            Sequence:
+              type: string
+    q1_ArrayOfAPSPandIHistory:
+      title: q1_ArrayOfAPSPandIHistory
+      type: object
+      properties:
+        APSPandIHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSPandIHistory'
+      description: ""
+    q1_APSPandIHistory:
+      title: q1_APSPandIHistory
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            EffectiveDate:
+              type: string
+            LRNO:
+              type: string
+            PandIClubCode:
+              type: string
+            PandIClubDecode:
+              type: string
+            Sequence:
+              type: string
+            Source:
+              type: string
+    q1_ArrayOfAPSPropellerDetail:
+      title: q1_ArrayOfAPSPropellerDetail
+      type: object
+      properties:
+        APSPropellerDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSPropellerDetail'
+      description: ""
+    q1_APSPropellerDetail:
+      title: q1_APSPropellerDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LRNO:
+              type: string
+            NozzleType:
+              type: string
+            PropellerPosition:
+              type: string
+            PropellerType:
+              type: string
+            PropellerTypeCode:
+              type: string
+            RPMMaximum:
+              type: string
+            RPMService:
+              type: string
+            Sequence:
+              type: string
+    q1_ArrayOfAPSRORODoorsDetail:
+      title: q1_ArrayOfAPSRORODoorsDetail
+      type: object
+      properties:
+        APSRORODoorsDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSRORODoorsDetail'
+      description: ""
+    q1_APSRORODoorsDetail:
+      title: q1_APSRORODoorsDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LRNO:
+              type: string
+            RORODoorHeight:
+              type: string
+            RORODoorPosition:
+              type: string
+            RORODoorWidth:
+              type: string
+            Sequence:
+              type: string
+    q1_ArrayOfAPSRORORampsDetail:
+      title: q1_ArrayOfAPSRORORampsDetail
+      type: object
+      properties:
+        APSRORORampsDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSRORORampsDetail'
+      description: ""
+    q1_APSRORORampsDetail:
+      title: q1_APSRORORampsDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LRNO:
+              type: string
+            NumberOfRORORamps:
+              type: string
+            RORORampInclinationDown:
+              type: string
+            RORORampInclinationUp:
+              type: string
+            RORORampLength:
+              type: string
+            RORORampMaximumAxleWeight:
+              type: string
+            RORORampPosition:
+              type: string
+            RORORampSWL:
+              type: string
+            RORORampType:
+              type: string
+            RORORampWidth:
+              type: string
+            Sequence:
+              type: string
+    q1_ArrayOfAPSRecentTerrestrialPositionDetail:
+      title: q1_ArrayOfAPSRecentTerrestrialPositionDetail
+      type: object
+      properties:
+        APSRecentTerrestrialPositionDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSRecentTerrestrialPositionDetail'
+      description: ""
+    q1_APSRecentTerrestrialPositionDetail:
+      title: q1_APSRecentTerrestrialPositionDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Heading:
+              type: string
+            LRNO:
+              type: string
+            LastUpdateReceived:
+              type: string
+              format: date-time
+            Latitude:
+              type: string
+            Longitude:
+              type: string
+            Speed:
+              type: string
+    q1_ArrayOfAPSSafetyManagementCertificateHistoryDetail:
+      title: q1_ArrayOfAPSSafetyManagementCertificateHistoryDetail
+      type: object
+      properties:
+        APSSafetyManagementCertificateHistoryDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSSafetyManagementCertificateHistoryDetail'
+      description: ""
+    q1_APSSafetyManagementCertificateHistoryDetail:
+      title: q1_APSSafetyManagementCertificateHistoryDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LRNO:
+              type: string
+            SafetyManagementCertificateAuditor:
+              type: string
+            SafetyManagementCertificateCompanyCode:
+              type: string
+            SafetyManagementCertificateConventionOrVol:
+              type: string
+            SafetyManagementCertificateDOCCompany:
+              type: string
+            SafetyManagementCertificateDateExpires:
+              type: string
+            SafetyManagementCertificateDateIssued:
+              type: string
+            SafetyManagementCertificateFlag:
+              type: string
+            SafetyManagementCertificateIssuer:
+              type: string
+            SafetyManagementCertificateOtherDescription:
+              type: string
+            SafetyManagementCertificateShipName:
+              type: string
+            SafetyManagementCertificateShipType:
+              type: string
+            SafetyManagementCertificateSource:
+              type: string
+            Sequence:
+              type: string
+    q1_ArrayOfAPSSalesDetail:
+      title: q1_ArrayOfAPSSalesDetail
+      type: object
+      properties:
+        APSSalesDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSSalesDetail'
+      description: ""
+    q1_APSSalesDetail:
+      title: q1_APSSalesDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LRNO:
+              type: string
+            ReportedSoldTo:
+              type: string
+            ReportedSoldToCode:
+              type: string
+            SaleDate:
+              type: string
+            SalePriceUSD:
+              type: string
+            SalesText:
+              type: string
+            Sequence:
+              type: string
+            Type:
+              type: string
+    q1_ArrayOfAPSScrubberDetail:
+      title: q1_ArrayOfAPSScrubberDetail
+      type: object
+      properties:
+        APSScrubberDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSScrubberDetail'
+      description: ""
+    q1_APSScrubberDetail:
+      title: q1_APSScrubberDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LRNO:
+              type: string
+            ScrubberDesigner:
+              type: string
+            ScrubberRetrofitted:
+              type: string
+            ScrubberRetrofittedYear:
+              type: string
+            ScrubberType:
+              type: string
+    q1_ArrayOfAPSShipBuilderAndSubContractorDetail:
+      title: q1_ArrayOfAPSShipBuilderAndSubContractorDetail
+      type: object
+      properties:
+        APSShipBuilderAndSubContractorDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSShipBuilderAndSubContractorDetail'
+      description: ""
+    q1_APSShipBuilderAndSubContractorDetail:
+      title: q1_APSShipBuilderAndSubContractorDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            BuilderCode:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LRNO:
+              type: string
+            Section:
+              type: string
+            SequenceNumber:
+              type: string
+    q1_ArrayOfAPSShipBuilderDetail:
+      title: q1_ArrayOfAPSShipBuilderDetail
+      type: object
+      properties:
+        APSShipBuilderDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSShipBuilderDetail'
+      description: ""
+    q1_APSShipBuilderDetail:
+      title: q1_APSShipBuilderDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            BuilderCode:
+              type: string
+            BuilderStatus:
+              type: string
+            Contact:
+              type: string
+            CountryCode:
+              type: string
+            CountryName:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            EmailAddress:
+              type: string
+            Facsimile:
+              type: string
+            FullAddress:
+              type: string
+            Shipbuilder:
+              type: string
+            ShipbuilderFullStyle:
+              type: string
+            Telephone:
+              type: string
+            Telex:
+              type: string
+            Town:
+              type: string
+            TownCode:
+              type: string
+            Website:
+              type: string
+    q1_ArrayOfAPSShipBuilderHistoryDetail:
+      title: q1_ArrayOfAPSShipBuilderHistoryDetail
+      type: object
+      properties:
+        APSShipBuilderHistoryDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSShipBuilderHistoryDetail'
+      description: ""
+    q1_APSShipBuilderHistoryDetail:
+      title: q1_APSShipBuilderHistoryDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            BuilderCode:
+              type: string
+            BuilderHistory:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+    q1_ArrayOfAPSShipCertificateDetail:
+      title: q1_ArrayOfAPSShipCertificateDetail
+      type: object
+      properties:
+        APSShipCertificateDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSShipCertificateDetail'
+      description: ""
+    q1_APSShipCertificateDetail:
+      title: q1_APSShipCertificateDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            Certificate_ID:
+              type: string
+            Certificate_Title:
+              type: string
+            Certificate_Title_Code:
+              type: string
+            Class_SOC_Of_Issuer:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Expiry_Date:
+              type: string
+              format: date-time
+            Inspection_ID:
+              type: string
+            Issue_Date:
+              type: string
+              format: date-time
+            Issuing_Authority:
+              type: string
+            Issuing_Authority_Code:
+              type: string
+            LRNO:
+              type: string
+            Last_Survey_Date:
+              type: string
+              format: date-time
+            Latest_Survey_Place:
+              type: string
+            Latest_Survey_Place_Code:
+              type: string
+            Other_Issuing_Authority:
+              type: string
+            Other_Survey_Authority:
+              type: string
+            Survey_Authority:
+              type: string
+            Survey_Authority_Code:
+              type: string
+            Survey_Authority_Type:
+              type: string
+    q1_ArrayOfAPSShipCertificateAllDetail:
+      title: q1_ArrayOfAPSShipCertificateAllDetail
+      type: object
+      properties:
+        APSShipCertificateAllDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSShipCertificateAllDetail'
+      description: ""
+    q1_APSShipCertificateAllDetail:
+      title: q1_APSShipCertificateAllDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            Certificate_ID:
+              type: string
+            Certificate_Title:
+              type: string
+            Certificate_Title_Code:
+              type: string
+            Class_SOC_Of_Issuer:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Expiry_Date:
+              type: string
+              format: date-time
+            Inspected_By:
+              type: string
+            Inspection_Date:
+              type: string
+            Inspection_ID:
+              type: string
+            Issue_Date:
+              type: string
+              format: date-time
+            Issuing_Authority:
+              type: string
+            Issuing_Authority_Code:
+              type: string
+            LRNO:
+              type: string
+            Last_Survey_Date:
+              type: string
+              format: date-time
+            Latest_Survey_Place:
+              type: string
+            Latest_Survey_Place_Code:
+              type: string
+            Other_Issuing_Authority:
+              type: string
+            Other_Survey_Authority:
+              type: string
+            Survey_Authority:
+              type: string
+            Survey_Authority_Code:
+              type: string
+            Survey_Authority_Type:
+              type: string
+    q1_ArrayOfAPSShipManagerHistoryDetail:
+      title: q1_ArrayOfAPSShipManagerHistoryDetail
+      type: object
+      properties:
+        APSShipManagerHistoryDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSShipManagerHistoryDetail'
+      description: ""
+    q1_APSShipManagerHistoryDetail:
+      title: q1_APSShipManagerHistoryDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CompanyStatus:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            EffectiveDate:
+              type: string
+            LRNO:
+              type: string
+            Sequence:
+              type: string
+            ShipManager:
+              type: string
+            ShipManagerCode:
+              type: string
+    q1_ArrayOfAPSShipThumbsIndexDetail:
+      title: q1_ArrayOfAPSShipThumbsIndexDetail
+      type: object
+      properties:
+        APSShipThumbsIndexDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSShipThumbsIndexDetail'
+      description: ""
+    q1_APSShipThumbsIndexDetail:
+      title: q1_APSShipThumbsIndexDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            Copyright:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            DateOfPhoto:
+              type: string
+              format: date-time
+            Height:
+              type: string
+            Item_ID:
+              type: string
+            LRNO:
+              type: string
+            LandScape:
+              type: string
+            PhotoFileName:
+              type: string
+            Width:
+              type: string
+    q1_ArrayOfAPSShipTrackHistoryDetail:
+      title: q1_ArrayOfAPSShipTrackHistoryDetail
+      type: object
+      properties:
+        APSShipTrackHistoryDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSShipTrackHistoryDetail'
+      description: ""
+    q1_APSShipTrackHistoryDetail:
+      title: q1_APSShipTrackHistoryDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            AutoID:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LastUpdateReceived:
+              type: string
+              format: date-time
+            Latitude:
+              type: string
+            Longitude:
+              type: string
+            MMSI:
+              type: string
+            Speed:
+              type: string
+    q1_ArrayOfAPSShipTypeHistoryDetail:
+      title: q1_ArrayOfAPSShipTypeHistoryDetail
+      type: object
+      properties:
+        APSShipTypeHistoryDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSShipTypeHistoryDetail'
+      description: ""
+    q1_APSShipTypeHistoryDetail:
+      title: q1_APSShipTypeHistoryDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            EffDate:
+              type: string
+            LRNO:
+              type: string
+            Sequence:
+              type: string
+            Shiptype:
+              type: string
+            ShiptypeCode:
+              type: string
+    q1_ArrayOfAPSSisterShipLinks:
+      title: q1_ArrayOfAPSSisterShipLinks
+      type: object
+      properties:
+        APSSisterShipLinks:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSSisterShipLinks'
+      description: ""
+    q1_APSSisterShipLinks:
+      title: q1_APSSisterShipLinks
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LinkedLRNO:
+              type: string
+            Lrno:
+              type: string
+    q1_ArrayOfAPSSpecialFeatureDetail:
+      title: q1_ArrayOfAPSSpecialFeatureDetail
+      type: object
+      properties:
+        APSSpecialFeatureDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSSpecialFeatureDetail'
+      description: ""
+    q1_APSSpecialFeatureDetail:
+      title: q1_APSSpecialFeatureDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LRNO:
+              type: string
+            Sequence:
+              type: string
+            SpecialFeature:
+              type: string
+            SpecialFeatureCode:
+              type: string
+    q1_ArrayOfAPSStatusHistoryDetail:
+      title: q1_ArrayOfAPSStatusHistoryDetail
+      type: object
+      properties:
+        APSStatusHistoryDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSStatusHistoryDetail'
+      description: ""
+    q1_APSStatusHistoryDetail:
+      title: q1_APSStatusHistoryDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LRNO:
+              type: string
+            Sequence:
+              type: string
+            Status:
+              type: string
+            StatusCode:
+              type: string
+            StatusDate:
+              type: string
+    q1_ArrayOfAPSStowageCommodityDetail:
+      title: q1_ArrayOfAPSStowageCommodityDetail
+      type: object
+      properties:
+        APSStowageCommodityDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSStowageCommodityDetail'
+      description: ""
+    q1_APSStowageCommodityDetail:
+      title: q1_APSStowageCommodityDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CommodityCode:
+              type: string
+            CommodityDecode:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LRNO:
+              type: string
+            Sequence:
+              type: string
+            StowageCode:
+              type: string
+            StowageDecode:
+              type: string
+    q1_ArrayOfAPSSurveyDatesDetail:
+      title: q1_ArrayOfAPSSurveyDatesDetail
+      type: object
+      properties:
+        APSSurveyDatesDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSSurveyDatesDetail'
+      description: ""
+    q1_APSSurveyDatesDetail:
+      title: q1_APSSurveyDatesDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            AnnualSurvey:
+              type: string
+            ClassSociety:
+              type: string
+            ClassSocietyCode:
+              type: string
+            ContinuousHullSurvey:
+              type: string
+            ContinuousMachinerySurvey:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            DockingSurvey:
+              type: string
+            LRNO:
+              type: string
+            SpecialSurvey:
+              type: string
+            SpecialSurveyLakes:
+              type: string
+            TailShaftSurvey:
+              type: string
+    q1_ArrayOfAPSSurveyDatesHistoryDetail:
+      title: q1_ArrayOfAPSSurveyDatesHistoryDetail
+      type: object
+      properties:
+        APSSurveyDatesHistoryDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSSurveyDatesHistoryDetail'
+      description: ""
+    q1_APSSurveyDatesHistoryDetail:
+      title: q1_APSSurveyDatesHistoryDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            ClassSociety:
+              type: string
+            ClassSocietyCode:
+              type: string
+            ContinuousSurvey:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            DockingSurvey:
+              type: string
+            LRNO:
+              type: string
+            SpecialSurvey:
+              type: string
+            TailshaftSurvey:
+              type: string
+    q1_ArrayOfAPSTankCoatingsDetail:
+      title: q1_ArrayOfAPSTankCoatingsDetail
+      type: object
+      properties:
+        APSTankCoatingsDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSTankCoatingsDetail'
+      description: ""
+    q1_APSTankCoatingsDetail:
+      title: q1_APSTankCoatingsDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LRNO:
+              type: string
+            Tank_Coat:
+              type: string
+            Tank_Type:
+              type: string
+    q1_ArrayOfAPSTechnicalManagerHistoryDetail:
+      title: q1_ArrayOfAPSTechnicalManagerHistoryDetail
+      type: object
+      properties:
+        APSTechnicalManagerHistoryDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSTechnicalManagerHistoryDetail'
+      description: ""
+    q1_APSTechnicalManagerHistoryDetail:
+      title: q1_APSTechnicalManagerHistoryDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CompanyStatus:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            EffectiveDate:
+              type: string
+            LRNO:
+              type: string
+            Sequence:
+              type: string
+            TechnicalManager:
+              type: string
+            TechnicalManagerCode:
+              type: string
+    q1_ArrayOfAPSThirdPartyIdentificationDetail:
+      title: q1_ArrayOfAPSThirdPartyIdentificationDetail
+      type: object
+      properties:
+        APSThirdPartyIdentificationDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSThirdPartyIdentificationDetail'
+      description: ""
+    q1_APSThirdPartyIdentificationDetail:
+      title: q1_APSThirdPartyIdentificationDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LRIMOIHSNO:
+              type: string
+            OfficialNumber:
+              type: string
+            OfficialNumberType:
+              type: string
+            SeqNo:
+              type: string
+    q1_ArrayOfAPSThrustersDetail:
+      title: q1_ArrayOfAPSThrustersDetail
+      type: object
+      properties:
+        APSThrustersDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSThrustersDetail'
+      description: ""
+    q1_APSThrustersDetail:
+      title: q1_APSThrustersDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LRNO:
+              type: string
+            NumberOfThrusters:
+              type: string
+            Sequence:
+              type: string
+            ThrusterBHP:
+              type: string
+            ThrusterKW:
+              type: string
+            ThrusterPosition:
+              type: string
+            ThrusterType:
+              type: string
+            ThrusterTypeCode:
+              type: string
+            TypeOfInstallation:
+              type: string
+    q1_ArrayOfAPSTradingZoneLastSeenDetail:
+      title: q1_ArrayOfAPSTradingZoneLastSeenDetail
+      type: object
+      properties:
+        APSTradingZoneLastSeenDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSTradingZoneLastSeenDetail'
+      description: ""
+    q1_APSTradingZoneLastSeenDetail:
+      title: q1_APSTradingZoneLastSeenDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            LRNO:
+              type: string
+            LastSeenDate:
+              type: string
+              format: date-time
+            TradingZone:
+              type: string
+    q1_ArrayOfAPSTurboChargerDetail:
+      title: q1_ArrayOfAPSTurboChargerDetail
+      type: object
+      properties:
+        APSTurboChargerDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSTurboChargerDetail'
+      description: ""
+    q1_APSTurboChargerDetail:
+      title: q1_APSTurboChargerDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            Builder:
+              type: string
+            CountryOfBuild:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Design:
+              type: string
+            Designation:
+              type: string
+            LRNO:
+              type: string
+            Main_AuxEng:
+              type: string
+            Model:
+              type: string
+            SequenceNumber:
+              type: string
+    q1_ArrayOfAPSUnderHijackDetail:
+      title: q1_ArrayOfAPSUnderHijackDetail
+      type: object
+      properties:
+        APSUnderHijackDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSUnderHijackDetail'
+      description: ""
+    q1_APSUnderHijackDetail:
+      title: q1_APSUnderHijackDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Description:
+              type: string
+            EffectiveDate:
+              type: string
+              format: date-time
+            EventTimeLine:
+              type: string
+            LRNO:
+              type: string
+    q1_APSShipSearchResult:
+      title: q1_APSShipSearchResult
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q1_APSStatusBase'
+        - type: object
+          properties:
+            Ships:
+              $ref: '#/components/schemas/q1_ArrayOfAPSShipDetail'
+            shipCount:
+              type: integer
+              format: int32
+    q1_ArrayOfAPSShipDetail:
+      title: q1_ArrayOfAPSShipDetail
+      type: object
+      properties:
+        APSShipDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSShipDetail'
+      description: ""
+    q1_APSShipMultiResult:
+      title: q1_APSShipMultiResult
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q1_APSStatusBase'
+        - type: object
+          properties:
+            ShipResult:
+              $ref: '#/components/schemas/q1_ArrayOfAPSShipResult'
+            shipCount:
+              type: integer
+              format: int32
+    q1_ArrayOfAPSShipResult:
+      title: q1_ArrayOfAPSShipResult
+      type: object
+      properties:
+        APSShipResult:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSShipResult'
+      description: ""
+    q1_ShipsCategory:
+      title: q1_ShipsCategory
+      type: string
+      description: ""
+      enum:
+        - CoreShipsOnly
+        - CoreAndNonCoreShips
+        - NonCoreShipsOnly
+    q1_APSCompanyResult:
+      title: q1_APSCompanyResult
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q1_APSStatusBase'
+        - type: object
+          properties:
+            APSCompanyCompliance:
+              $ref: '#/components/schemas/q1_APSCompanyCompliance'
+            APSCompanyComplianceDetails:
+              $ref: '#/components/schemas/q1_APSCompanyComplianceDetails'
+            APSCompanyInformationDetail:
+              $ref: '#/components/schemas/q1_APSCompanyInformationDetail'
+            companyCount:
+              type: integer
+              format: int32
+    q1_APSCompanyInformationDetail:
+      title: q1_APSCompanyInformationDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            CompanyStatus:
+              type: string
+            CountryName:
+              type: string
+            CountryOfRegistration:
+              type: string
+            CountryOfRegistrationCode:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Emailaddress:
+              type: string
+            Facsimile:
+              type: string
+            FullAddress:
+              type: string
+            FullName:
+              type: string
+            IMOCompanyNumber:
+              type: string
+            NationalityofControl:
+              type: string
+            NationalityofRegistration:
+              type: string
+            OWCODE:
+              type: string
+            OperationalAddress:
+              type: string
+            OwnerNameAdministrationNameStyle:
+              type: string
+            OwnerNameLRFNameStyle:
+              type: string
+            OwnerRegisteredAddressAdministrationSupplied:
+              type: string
+            ShortCompanyName:
+              type: string
+            StructuredAddress:
+              $ref: '#/components/schemas/q1_StructuredAddress'
+            Telephone:
+              type: string
+            Telex:
+              type: string
+            Website:
+              type: string
+    q1_StructuredAddress:
+      title: q1_StructuredAddress
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            Building:
+              type: string
+            Country:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            POB_After_Street:
+              type: string
+            POB_Before_Street:
+              type: string
+            get_Code_After_Town:
+              type: string
+            get_Code_Before_Town:
+              type: string
+            Street:
+              type: string
+            Street_Number:
+              type: string
+            Street_Number_After_Name_Indicator:
+              type: string
+            Town_Decode:
+              type: string
+    q1_APSCompanySearchResult:
+      title: q1_APSCompanySearchResult
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q1_APSStatusBase'
+        - type: object
+          properties:
+            Companies:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCompanyInformationDetail'
+            CompanyCompliance:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCompanyCompliance'
+            CompanyComplianceDetails:
+              $ref: '#/components/schemas/q1_ArrayOfAPSCompanyComplianceDetails'
+            companyCount:
+              type: object
+              properties:
+                APSCompanyInformationDetail:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/q1_APSCompanyInformationDetail'
+    q1_ArrayOfAPSCompanyInformationDetail:
+      title: q1_ArrayOfAPSCompanyInformationDetail
+      type: object
+      properties:
+        APSCompanyInformationDetail:
+          type: array
+          xml:
+            namespace: http://schemas.datacontract.org/2004/07/MaritimeWCF
+            prefix: q1
+            attribute: false
+            wrapped: false
+          items:
+            $ref: '#/components/schemas/q1_APSCompanyInformationDetail'
+      description: ""
+      xml:
+        name: ArrayOfAPSCompanyInformationDetail
+        namespace: http://schemas.datacontract.org/2004/07/MaritimeWCF
+        prefix: q1
+        attribute: false
+        wrapped: false
+    q1_APSAssociatedResult:
+      title: q1_APSAssociatedResult
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q1_APSStatusBase'
+        - type: object
+          properties:
+            APSAssociatedDetails:
+              $ref: '#/components/schemas/q1_ArrayOfAPSAssociatedDetail'
+            associatedCount:
+              type: integer
+              format: int32
+            associatedName:
+              type: string
+    q1_ArrayOfAPSAssociatedDetail:
+      title: q1_ArrayOfAPSAssociatedDetail
+      type: object
+      properties:
+        APSAssociatedDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSAssociatedDetail'
+      description: ""
+    q1_APSAssociatedDetail:
+      title: q1_APSAssociatedDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            Code:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Decode:
+              type: string
+    q1_APSAssociatedFlagISOResult:
+      title: q1_APSAssociatedFlagISOResult
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q1_APSStatusBase'
+        - type: object
+          properties:
+            APSAssociatedFlagISODetails:
+              $ref: '#/components/schemas/q1_ArrayOfAPSAssociatedFlagISODetail'
+            associatedCount:
+              type: integer
+              format: int32
+            associatedName:
+              type: object
+              properties: {}
+    q1_ArrayOfAPSAssociatedFlagISODetail:
+      title: q1_ArrayOfAPSAssociatedFlagISODetail
+      type: object
+      properties:
+        APSAssociatedFlagISODetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSAssociatedFlagISODetail'
+      description: ""
+    q1_APSAssociatedFlagISODetail:
+      title: q1_APSAssociatedFlagISODetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            Code:
+              type: string
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Decode:
+              type: string
+            ISO2:
+              type: string
+            ISO3:
+              type: string
+    q1_APSAssociatedShipTypeResult:
+      title: q1_APSAssociatedShipTypeResult
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q1_APSStatusBase'
+        - type: object
+          properties:
+            APSAssociatedShipTypeDetails:
+              $ref: '#/components/schemas/q1_ArrayOfAPSAssociatedShipTypeDetail'
+            associatedCount:
+              type: integer
+              format: int32
+            associatedName:
+              type: string
+    q1_ArrayOfAPSAssociatedShipTypeDetail:
+      title: q1_ArrayOfAPSAssociatedShipTypeDetail
+      type: object
+      properties:
+        APSAssociatedShipTypeDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_APSAssociatedShipTypeDetail'
+      description: ""
+    q1_APSAssociatedShipTypeDetail:
+      title: q1_APSAssociatedShipTypeDetail
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q11_Attribute'
+        - type: object
+          properties:
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            HullType:
+              type: string
+            Level2Code:
+              type: string
+            Level3Code:
+              type: string
+            Level4Code:
+              type: string
+            ShipTypeLevel1Code:
+              type: string
+            ShipTypeLevel2:
+              type: string
+            ShipTypeLevel3:
+              type: string
+            ShipTypeLevel4:
+              type: string
+            ShiptypeLevel1:
+              type: string
+            ShiptypeLevel5:
+              type: string
+            StatCode5:
+              type: string
+            SubGroup:
+              type: string
+            SubType:
+              type: string
+    q1_DownloadEntitlementResult:
+      title: q1_DownloadEntitlementResult
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q1_APSStatusBase'
+        - type: object
+          properties:
+            Current_Entitlement:
+              type: integer
+              format: int32
+            DataSetVersion:
+              $ref: '#/components/schemas/q1_WebServiceVersion'
+            Download_Count:
+              type: integer
+              format: int32
+            Order_Detail_No:
+              type: string
+    q1_APSShipCountResult:
+      title: q1_APSShipCountResult
+      description: ""
+      allOf:
+        - $ref: '#/components/schemas/q1_APSStatusBase'
+        - type: object
+          properties:
+            PeriodsCount:
+              type: integer
+              format: int32
+            ShipYearMonthCount:
+              $ref: '#/components/schemas/q1_ArrayOfYearMonthCount'
+    q1_ArrayOfYearMonthCount:
+      title: q1_ArrayOfYearMonthCount
+      type: object
+      properties:
+        YearMonthCount:
+          type: array
+          items:
+            $ref: '#/components/schemas/q1_YearMonthCount'
+      description: ""
+    q1_YearMonthCount:
+      title: q1_YearMonthCount
+      type: object
+      properties:
+        Count:
+          type: integer
+          format: int32
+        Month:
+          type: integer
+          format: int32
+        Year:
+          type: integer
+          format: int32
+      description: ""
+    q11_Attribute:
+      title: q11_Attribute
+      type: object
+      description: ""
+    IAPSShipsService_getAssociatedDataByName_OutputMessage:
+      title: IAPSShipsService_getAssociatedDataByName_OutputMessage
+      required:
+        - GetAssociatedDataByNameResponse
+      type: object
+      properties:
+        GetAssociatedDataByNameResponse:
+          $ref: '#/components/schemas/tns_GetAssociatedDataByNameResponse'
+    IAPSShipsService_getAssociatedFlagISOByName_OutputMessage:
+      title: IAPSShipsService_getAssociatedFlagISOByName_OutputMessage
+      required:
+        - GetAssociatedFlagISOByNameResponse
+      type: object
+      properties:
+        GetAssociatedFlagISOByNameResponse:
+          $ref: '#/components/schemas/tns_GetAssociatedFlagISOByNameResponse'
+    IAPSShipsService_getAssociatedShipTypeByName_OutputMessage:
+      title: IAPSShipsService_getAssociatedShipTypeByName_OutputMessage
+      required:
+        - GetAssociatedShipTypeByNameResponse
+      type: object
+      properties:
+        GetAssociatedShipTypeByNameResponse:
+          $ref: '#/components/schemas/tns_GetAssociatedShipTypeByNameResponse'
+    IAPSShipsService_getCompaniesByName_OutputMessage:
+      title: IAPSShipsService_getCompaniesByName_OutputMessage
+      required:
+        - GetCompaniesByNameResponse
+      type: object
+      properties:
+        GetCompaniesByNameResponse:
+          $ref: '#/components/schemas/tns_GetCompaniesByNameResponse'
+    IAPSShipsService_getCompanyChangesByLastUpdateDateRange_OutputMessage:
+      title: IAPSShipsService_getCompanyChangesByLastUpdateDateRange_OutputMessage
+      required:
+        - GetCompanyChangesByLastUpdateDateRangeResponse
+      type: object
+      properties:
+        GetCompanyChangesByLastUpdateDateRangeResponse:
+          $ref: '#/components/schemas/tns_GetCompanyChangesByLastUpdateDateRangeResponse'
+    IAPSShipsService_getCompanyDataByCode_OutputMessage:
+      title: IAPSShipsService_getCompanyDataByCode_OutputMessage
+      required:
+        - GetCompanyDataByCodeResponse
+      type: object
+      properties:
+        GetCompanyDataByCodeResponse:
+          $ref: '#/components/schemas/tns_GetCompanyDataByCodeResponse'
+    IAPSShipsService_getDownloadEntitlement_OutputMessage:
+      title: IAPSShipsService_getDownloadEntitlement_OutputMessage
+      required:
+        - GetDownloadEntitlementResponse
+      type: object
+      properties:
+        GetDownloadEntitlementResponse:
+          $ref: '#/components/schemas/tns_GetDownloadEntitlementResponse'
+    IAPSShipsService_getShipChangesByLastUpdate_OutputMessage:
+      title: IAPSShipsService_getShipChangesByLastUpdate_OutputMessage
+      required:
+        - GetShipChangesByLastUpdateResponse
+      type: object
+      properties:
+        GetShipChangesByLastUpdateResponse:
+          $ref: '#/components/schemas/tns_GetShipChangesByLastUpdateResponse'
+    IAPSShipsService_getShipChangesByLastUpdateDateRange_OutputMessage:
+      title: IAPSShipsService_getShipChangesByLastUpdateDateRange_OutputMessage
+      required:
+        - GetShipChangesByLastUpdateDateRangeResponse
+      type: object
+      properties:
+        GetShipChangesByLastUpdateDateRangeResponse:
+          $ref: '#/components/schemas/tns_GetShipChangesByLastUpdateDateRangeResponse'
+    IAPSShipsService_getShipCountByLastUpdateYearAndMonth_OutputMessage:
+      title: IAPSShipsService_getShipCountByLastUpdateYearAndMonth_OutputMessage
+      required:
+        - GetShipCountByLastUpdateYearAndMonthResponse
+      type: object
+      properties:
+        GetShipCountByLastUpdateYearAndMonthResponse:
+          $ref: '#/components/schemas/tns_GetShipCountByLastUpdateYearAndMonthResponse'
+    IAPSShipsService_getShipDataByCallSign_OutputMessage:
+      title: IAPSShipsService_getShipDataByCallSign_OutputMessage
+      required:
+        - GetShipDataByCallSignResponse
+      type: object
+      properties:
+        GetShipDataByCallSignResponse:
+          $ref: '#/components/schemas/tns_GetShipDataByCallSignResponse'
+    IAPSShipsService_getShipDataByIHSLRorIMO_OutputMessage:
+      title: IAPSShipsService_getShipDataByIHSLRorIMO_OutputMessage
+      required:
+        - GetShipDataByIHSLRorIMOResponse
+      type: object
+      properties:
+        GetShipDataByIHSLRorIMOResponse:
+          $ref: '#/components/schemas/tns_GetShipDataByIHSLRorIMOResponse'
+    IAPSShipsService_getShipDataByMMSI_OutputMessage:
+      title: IAPSShipsService_getShipDataByMMSI_OutputMessage
+      required:
+        - GetShipDataByMMSIResponse
+      type: object
+      properties:
+        GetShipDataByMMSIResponse:
+          $ref: '#/components/schemas/tns_GetShipDataByMMSIResponse'
+    IAPSShipsService_getShipsByExName_OutputMessage:
+      title: IAPSShipsService_getShipsByExName_OutputMessage
+      required:
+        - GetShipsByExNameResponse
+      type: object
+      properties:
+        GetShipsByExNameResponse:
+          $ref: '#/components/schemas/tns_GetShipsByExNameResponse'
+    IAPSShipsService_getShipsByIHSLRorIMONumbers_OutputMessage:
+      title: IAPSShipsService_getShipsByIHSLRorIMONumbers_OutputMessage
+      required:
+        - GetShipsByIHSLRorIMONumbersResponse
+      type: object
+      properties:
+        GetShipsByIHSLRorIMONumbersResponse:
+          $ref: '#/components/schemas/tns_GetShipsByIHSLRorIMONumbersResponse'
+    IAPSShipsService_getShipsByIHSLRorIMONumbersAll_OutputMessage:
+      title: IAPSShipsService_getShipsByIHSLRorIMONumbersAll_OutputMessage
+      required:
+        - GetShipsByIHSLRorIMONumbersAllResponse
+      type: object
+      properties:
+        GetShipsByIHSLRorIMONumbersAllResponse:
+          $ref: '#/components/schemas/tns_GetShipsByIHSLRorIMONumbersAllResponse'
+    IAPSShipsService_getShipsByName_OutputMessage:
+      title: IAPSShipsService_getShipsByName_OutputMessage
+      required:
+        - GetShipsByNameResponse
+      type: object
+      properties:
+        GetShipsByNameResponse:
+          $ref: '#/components/schemas/tns_GetShipsByNameResponse'
+    IAPSShipsService_getShipsByOfficialNumber_OutputMessage:
+      title: IAPSShipsService_getShipsByOfficialNumber_OutputMessage
+      required:
+        - GetShipsByOfficialNumberResponse
+      type: object
+      properties:
+        GetShipsByOfficialNumberResponse:
+          $ref: '#/components/schemas/tns_GetShipsByOfficialNumberResponse'
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic

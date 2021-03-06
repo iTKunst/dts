@@ -1,0 +1,24 @@
+#!/bin/bash
+# shellcheck disable=SC2086
+
+
+log_enter pENV_MOD
+
+source sENV.sh
+
+
+export PROJ_HOST=$SWAG_HOST
+export PROJ_PASSWORD=$SWAG_PASSWORD
+export PROJ_PORT_EXT=$SWAG_PORT_EXT
+export PROJ_USER=$SWAG_USER
+
+export PROJ_API_URI=$HTTP$COLON$SLASH$SLASH$SWAG_UI_HOST$COLON$SWAG_UI_PORT_EXT
+export PROJ_ART=$SWAG_ART
+export PROJ_FILE=$SWAG_FILE
+export PROJ_GEN_HOST=$SWAG_UI_CONT
+export PROJ_GRP=$SWAG_GRP
+export PROJ_PKG=$SWAG_PKG
+export PROJ_REPO=$MVN_REPO_URI
+export PROJ_VER=$SWAG_VER
+
+log_exit pENV_MOD

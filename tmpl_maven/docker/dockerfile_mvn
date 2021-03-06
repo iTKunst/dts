@@ -1,0 +1,41 @@
+FROM maven:3.6.3-jdk-11 AS build
+
+USER root
+
+ARG CONT_DIR
+ARG HOST_CFG_DIR
+ARG HOST_DIR
+ARG SYS_DIR
+
+RUN echo CONT_DIR is ${CONT_DIR}
+RUN echo HOST_CFG_DIR is ${HOST_CFG_DIR}
+RUN echo HOST_DIR is ${HOST_DIR}
+RUN echo SYS_DIR is ${SYS_DIR}
+RUN echo USER is ${USER}
+
+RUN mkdir -p ${CONT_DIR}
+RUN mkdir -p ${MAVEN_CONFIG}
+
+WORKDIR ${CONT_DIR}
+
+COPY .${HOST_DIR}/src ./src/
+COPY .${HOST_DIR}/pom.xml .
+COPY .${HOST_CFG_DIR}/settings.xml ${MAVEN_CONFIG}
+
+RUN mvn clean package
+
+
+#FROM openjdk:11-jre-slim
+
+#ARG CONT_DIR
+
+#EXPOSE 8080
+
+#RUN mkdir /app
+
+#COPY --from=build ${CONT_DIR}/target/*.jar /app/spring-boot-application.jar
+
+#ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-Djava.security.egd=file:/dev/./urandom","-jar","/app/spring-boot-application.jar"]
+#ENTRYPOINT ["java", "-jar", "/app/spring-boot-application.jar"]
+
+ENTRYPOINT ["/bin/sh"]

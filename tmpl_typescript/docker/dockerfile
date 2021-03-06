@@ -1,0 +1,16 @@
+FROM node
+
+USER root
+
+ARG CONT_DIR
+ARG FILE_NAME
+
+WORKDIR ${CONT_DIR}
+
+COPY ${CONT_DIR}/${FILE_NAME} .
+
+RUN npm init
+
+COPY ./Code .
+
+ENTRYPOINT ["npm", "start"]

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="APSShipsService" targetNamespace="http://maritimewebservices.ihs.com/MaritimeWCF/"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:i1="http://tempuri.org/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="http://maritimewebservices.ihs.com/MaritimeWCF/"
+                  xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+                  xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:wsa10="http://www.w3.org/2005/08/addressing"
+                  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+                  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:i0="MaritimeWCF"
+                  xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+                  xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+    <wsdl:import namespace="MaritimeWCF"
+                 location="http://maritimewebservices.ihs.com/MaritimeWCF/APSShipService.svc?wsdl=wsdl0"/>
+    <wsdl:import namespace="http://tempuri.org/"
+                 location="http://maritimewebservices.ihs.com/MaritimeWCF/APSShipService.svc?wsdl=wsdl1"/>
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://maritimewebservices.ihs.com/MaritimeWCF/Imports">
+            <xsd:import schemaLocation="http://maritimewebservices.ihs.com/MaritimeWCF/APSShipService.svc?xsd=xsd0"
+                        namespace="http://maritimewebservices.ihs.com/MaritimeWCF/"/>
+            <xsd:import schemaLocation="http://maritimewebservices.ihs.com/MaritimeWCF/APSShipService.svc?xsd=xsd1"
+                        namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+            <xsd:import schemaLocation="http://maritimewebservices.ihs.com/MaritimeWCF/APSShipService.svc?xsd=xsd2"
+                        namespace="http://schemas.datacontract.org/2004/07/MaritimeWCF"/>
+            <xsd:import schemaLocation="http://maritimewebservices.ihs.com/MaritimeWCF/APSShipService.svc?xsd=xsd3"
+                        namespace="http://schemas.datacontract.org/2004/07/System"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="IAPSShipsService_GetShipDataByIHSLRorIMO_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipDataByIHSLRorIMO"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipDataByIHSLRorIMO_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipDataByIHSLRorIMOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipsByIHSLRorIMONumbers_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipsByIHSLRorIMONumbers"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipsByIHSLRorIMONumbers_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipsByIHSLRorIMONumbersResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipsByIHSLRorIMONumbersAll_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipsByIHSLRorIMONumbersAll"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipsByIHSLRorIMONumbersAll_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipsByIHSLRorIMONumbersAllResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipDataByMMSI_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipDataByMMSI"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipDataByMMSI_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipDataByMMSIResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipDataByCallSign_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipDataByCallSign"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipDataByCallSign_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipDataByCallSignResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipsByName_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipsByName"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipsByName_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipsByNameResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipChangesByLastUpdate_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipChangesByLastUpdate"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipChangesByLastUpdate_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipChangesByLastUpdateResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipChangesByLastUpdateDateRange_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipChangesByLastUpdateDateRange"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipChangesByLastUpdateDateRange_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipChangesByLastUpdateDateRangeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetCompanyDataByCode_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetCompanyDataByCode"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetCompanyDataByCode_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetCompanyDataByCodeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetCompaniesByName_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetCompaniesByName"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetCompaniesByName_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetCompaniesByNameResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetCompanyChangesByLastUpdateDateRange_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetCompanyChangesByLastUpdateDateRange"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetCompanyChangesByLastUpdateDateRange_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetCompanyChangesByLastUpdateDateRangeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetAssociatedDataByName_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetAssociatedDataByName"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetAssociatedDataByName_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetAssociatedDataByNameResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetAssociatedFlagISOByName_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetAssociatedFlagISOByName"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetAssociatedFlagISOByName_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetAssociatedFlagISOByNameResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetAssociatedShipTypeByName_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetAssociatedShipTypeByName"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetAssociatedShipTypeByName_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetAssociatedShipTypeByNameResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipsByExName_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipsByExName"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipsByExName_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipsByExNameResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipsByOfficialNumber_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipsByOfficialNumber"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipsByOfficialNumber_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipsByOfficialNumberResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetDownloadEntitlement_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetDownloadEntitlement"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetDownloadEntitlement_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetDownloadEntitlementResponse"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipCountByLastUpdateYearAndMonth_InputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipCountByLastUpdateYearAndMonth"/>
+    </wsdl:message>
+    <wsdl:message name="IAPSShipsService_GetShipCountByLastUpdateYearAndMonth_OutputMessage">
+        <wsdl:part name="parameters" element="tns:GetShipCountByLastUpdateYearAndMonthResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="IAPSShipsService">
+        <wsdl:operation name="GetShipDataByIHSLRorIMO">
+            <wsdl:input
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipDataByIHSLRorIMO"
+                    message="tns:IAPSShipsService_GetShipDataByIHSLRorIMO_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipDataByIHSLRorIMOResponse"
+                    message="tns:IAPSShipsService_GetShipDataByIHSLRorIMO_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetShipsByIHSLRorIMONumbers">
+            <wsdl:input
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipsByIHSLRorIMONumbers"
+                    message="tns:IAPSShipsService_GetShipsByIHSLRorIMONumbers_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipsByIHSLRorIMONumbersResponse"
+                    message="tns:IAPSShipsService_GetShipsByIHSLRorIMONumbers_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetShipsByIHSLRorIMONumbersAll">
+            <wsdl:input
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipsByIHSLRorIMONumbersAll"
+                    message="tns:IAPSShipsService_GetShipsByIHSLRorIMONumbersAll_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipsByIHSLRorIMONumbersAllResponse"
+                    message="tns:IAPSShipsService_GetShipsByIHSLRorIMONumbersAll_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetShipDataByMMSI">
+            <wsdl:input wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipDataByMMSI"
+                        message="tns:IAPSShipsService_GetShipDataByMMSI_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipDataByMMSIResponse"
+                    message="tns:IAPSShipsService_GetShipDataByMMSI_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetShipDataByCallSign">
+            <wsdl:input
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipDataByCallSign"
+                    message="tns:IAPSShipsService_GetShipDataByCallSign_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipDataByCallSignResponse"
+                    message="tns:IAPSShipsService_GetShipDataByCallSign_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetShipsByName">
+            <wsdl:input wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipsByName"
+                        message="tns:IAPSShipsService_GetShipsByName_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipsByNameResponse"
+                    message="tns:IAPSShipsService_GetShipsByName_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetShipChangesByLastUpdate">
+            <wsdl:input
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipChangesByLastUpdate"
+                    message="tns:IAPSShipsService_GetShipChangesByLastUpdate_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipChangesByLastUpdateResponse"
+                    message="tns:IAPSShipsService_GetShipChangesByLastUpdate_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetShipChangesByLastUpdateDateRange">
+            <wsdl:input
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipChangesByLastUpdateDateRange"
+                    message="tns:IAPSShipsService_GetShipChangesByLastUpdateDateRange_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipChangesByLastUpdateDateRangeResponse"
+                    message="tns:IAPSShipsService_GetShipChangesByLastUpdateDateRange_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCompanyDataByCode">
+            <wsdl:input
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetCompanyDataByCode"
+                    message="tns:IAPSShipsService_GetCompanyDataByCode_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetCompanyDataByCodeResponse"
+                    message="tns:IAPSShipsService_GetCompanyDataByCode_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCompaniesByName">
+            <wsdl:input wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetCompaniesByName"
+                        message="tns:IAPSShipsService_GetCompaniesByName_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetCompaniesByNameResponse"
+                    message="tns:IAPSShipsService_GetCompaniesByName_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetCompanyChangesByLastUpdateDateRange">
+            <wsdl:input
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetCompanyChangesByLastUpdateDateRange"
+                    message="tns:IAPSShipsService_GetCompanyChangesByLastUpdateDateRange_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetCompanyChangesByLastUpdateDateRangeResponse"
+                    message="tns:IAPSShipsService_GetCompanyChangesByLastUpdateDateRange_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetAssociatedDataByName">
+            <wsdl:input
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetAssociatedDataByName"
+                    message="tns:IAPSShipsService_GetAssociatedDataByName_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetAssociatedDataByNameResponse"
+                    message="tns:IAPSShipsService_GetAssociatedDataByName_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetAssociatedFlagISOByName">
+            <wsdl:input
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetAssociatedFlagISOByName"
+                    message="tns:IAPSShipsService_GetAssociatedFlagISOByName_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetAssociatedFlagISOByNameResponse"
+                    message="tns:IAPSShipsService_GetAssociatedFlagISOByName_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetAssociatedShipTypeByName">
+            <wsdl:input
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetAssociatedShipTypeByName"
+                    message="tns:IAPSShipsService_GetAssociatedShipTypeByName_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetAssociatedShipTypeByNameResponse"
+                    message="tns:IAPSShipsService_GetAssociatedShipTypeByName_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetShipsByExName">
+            <wsdl:input wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipsByExName"
+                        message="tns:IAPSShipsService_GetShipsByExName_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipsByExNameResponse"
+                    message="tns:IAPSShipsService_GetShipsByExName_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetShipsByOfficialNumber">
+            <wsdl:input
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipsByOfficialNumber"
+                    message="tns:IAPSShipsService_GetShipsByOfficialNumber_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipsByOfficialNumberResponse"
+                    message="tns:IAPSShipsService_GetShipsByOfficialNumber_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetDownloadEntitlement">
+            <wsdl:input
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetDownloadEntitlement"
+                    message="tns:IAPSShipsService_GetDownloadEntitlement_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetDownloadEntitlementResponse"
+                    message="tns:IAPSShipsService_GetDownloadEntitlement_OutputMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetShipCountByLastUpdateYearAndMonth">
+            <wsdl:input
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipCountByLastUpdateYearAndMonth"
+                    message="tns:IAPSShipsService_GetShipCountByLastUpdateYearAndMonth_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://maritimewebservices.ihs.com/MaritimeWCF/IAPSShipsService/GetShipCountByLastUpdateYearAndMonthResponse"
+                    message="tns:IAPSShipsService_GetShipCountByLastUpdateYearAndMonth_OutputMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:service name="APSShipsService">
+        <wsdl:port name="WSHttpBinding_IAPSShipsService" binding="i0:WSHttpBinding_IAPSShipsService">
+            <soap12:address location="http://maritimewebservices.ihs.com/MaritimeWCF/APSShipService.svc"/>
+            <wsa10:EndpointReference>
+                <wsa10:Address>http://maritimewebservices.ihs.com/MaritimeWCF/APSShipService.svc</wsa10:Address>
+                <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+                    <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+                        <X509Data>
+                            <X509Certificate>
+                                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
+                            </X509Certificate>
+                        </X509Data>
+                    </KeyInfo>
+                </Identity>
+            </wsa10:EndpointReference>
+        </wsdl:port>
+        <wsdl:port name="BasicHttpBinding_IAPSShipsService" binding="i0:BasicHttpBinding_IAPSShipsService">
+            <soap:address location="http://maritimewebservices.ihs.com/MaritimeWCF/APSShipService.svc/basic"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
