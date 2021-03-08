@@ -8,11 +8,11 @@ pCLONE_TMPL () {
 	log_enter pCLONE_TMPL
 
 
-	if [ -z $DIR_TMPL ]; then
-		log_invalid DIR_TMPL
-		exit
+	if [ -z $DIR_DTS ]; then
+		log_invalid DIR_DTS
+		return 1
 	fi
-	log_var DIR_TMPL $DIR_TMPL
+	log_var DIR_DTS $DIR_DTS
 
 	if [ -z $TMPL_NAME ]; then
 		log_invalid TMPL_NAME
@@ -22,6 +22,8 @@ pCLONE_TMPL () {
 
   export RES=0
 
+  export DIR_TMPL=$DIR_DTS$DIR_TMPL$TMPL_NAME
+	log_var DIR_TMPL $DIR_TMPL
 
 	if [ ! -d $DIR_TMPL ]; then
 		pCLONE_REPO $TMPL_GIT $DIR_TMPL

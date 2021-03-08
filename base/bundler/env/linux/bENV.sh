@@ -4,8 +4,9 @@
 
 log_enter bENV
 
-
+source settings.sh
 source bENV_CAT.sh
+source bENV_NAME.sh
 source bENV_TKN.sh
 
 
@@ -38,7 +39,7 @@ log_var PROJ_NAME $PROJ_NAME
 
 if [ -z "$SYS_NAME" ]; then
   log_invalid SYS_NAME
-  log_cmd "Mkust set it in settings.sh!"
+  log_cmd "Must set it in settings.sh!"
   return 1
 fi
 log_var SYS_NAME $SYS_NAME
@@ -51,6 +52,8 @@ if [ -z $TMPL_NAME ]; then
 fi
 log_var TMPL_NAME $TMPL_NAME
 
+export TMPL_FLDR=$SLASH$_TMPL$SLASH$TMPL_NAME$SLASH"*"
+log_var TMPL_FLDR $TMPL_FLDR
 
 log_exit bENV
 
