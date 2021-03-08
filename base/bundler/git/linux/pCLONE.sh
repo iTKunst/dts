@@ -20,8 +20,7 @@ pCLONE () {
 
   INIT=1
 
-#	pCLONE_GLBL
-#	pCLONE_TMPL
+	pCLONE_TMPL
 #	pCLONE_SYS
 
 #	log_var INIT $INIT
