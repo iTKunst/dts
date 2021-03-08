@@ -40,7 +40,7 @@ export LOG_UNLOAD_ON=0
 export LOG_VAR_ON=0
 
 # DIRECTORIES
-export DIR_BNDL=bundler
+export DIR_DTS=dts
 
 # LOGGING - SUPPLEMENTAL
 export LOG_CLONE_ERR_ON=1
