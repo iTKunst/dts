@@ -18,6 +18,10 @@ pINIT () {
 
   CLONE=0
 
+  export DIR_GLBL=$DIR_DTS/base/global
+  export DIR_SYS=../system
+  export DIR_TMPL=$DIR_DTS/tmpl/$TMPL_NAME
+
 	pINIT_BNDL
 	pINIT_GLBL
 	pINIT_SYS
