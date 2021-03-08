@@ -8,17 +8,21 @@ pCLONE_REPO () {
 	log_enter pCLONE_REPO
 
 
-	GIT=$1
+	FLDR=$1
 	DIR=$2
 
-	log_var GIT $GIT
+	log_var FLDR $FLDR
 	log_var DIR $DIR
 
 	log_info Cloning $DIR
 
 	export RES=0
 
-	git clone $GIT $DIR
+  git config core.sparsecheckout true
+  echo $FLDR/* >> .git/info/sparse-checkout
+
+  git pull origin master
+
 	RES=$?
 	if [ $RES -ne 0 ]; then
 		log_clone_err $GIT

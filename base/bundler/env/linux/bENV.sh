@@ -10,6 +10,7 @@ source bENV_TKN.sh
 
 
 DEF_PROJ_MODE=d
+DEF_URI_DTS_GIT=https://github.com/iTKunst/dts
 
 if [ -z "$PROJ_MODE" ]; then
   log_cmd "PROJ_MODE nay be set it in settings.sh!"

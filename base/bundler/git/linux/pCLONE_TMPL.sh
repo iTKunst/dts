@@ -14,13 +14,14 @@ pCLONE_TMPL () {
 	fi
 	log_var DIR_TMPL $DIR_TMPL
 
-	if [ -z $TMPL_GIT ]; then
-		log_invalid TMPL_GIT
+	if [ -z $TMPL_NAME ]; then
+		log_invalid TMPL_NAME
 		exit
 	fi
-	log_var TMPL_GIT $TMPL_GIT
+	log_var TMPL_NAME $TMPL_NAME
 
   export RES=0
+
 
 	if [ ! -d $DIR_TMPL ]; then
 		pCLONE_REPO $TMPL_GIT $DIR_TMPL
