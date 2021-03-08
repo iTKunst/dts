@@ -45,7 +45,7 @@ init() {
   fi
   # echo URI_TMPL_GIT_BASE is $URI_TMPL_GIT_BASE [VAR]
 
-  REPO=$URI_TMPL_GIT_BASE/$BNDL_NAME;
+  REPO=$URI_TMPL_GIT_BASE/"base/"$BNDL_NAME;
   # echo REPO is $REPO [VAR]
 
   git clone $REPO $DIR_BNDL
