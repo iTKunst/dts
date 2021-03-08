@@ -5,26 +5,77 @@
 # echo init.sh [LOAD]
 
 
+DEF_URI_DTS_GIT=https://github.com/iTKunst/dts
+DEF_DIR_DTS=dts
+
 if [ ! -f settings.sh ]; then
   echo settings.sh not found [FILE_ERR]
   return 1
 fi
 source settings.sh
 
-if [ -z "$DIR_BNDL" ]; then
-  echo !!!!!ERROR!!!!! DIR_BNDL is invalid [INVALID]
-  echo You must set it in ./settings.sh! [CMD]
-  echo Default value is 'base_bundler' [INFO]
-  return 1
-fi
-# echo DIR_BNDL is $DIR_BNDL [VAR]
+
+clone_dts()
+{
+  echo clone_dts [ENTER]
+
+  if [ -z "$DIR_DTS" ]; then
+    echo DIR_DTS may be set in settings.sh. [INFO]
+    echo Setting to default value. [INFO]
+    export DIR_DTS=$DEF_DIR_DTS
+  fi
+  echo DIR_DTS is $DIR_DTS [VAR]
+
+  mkdir -p $DIR_DTS
+  cd $DIR_DTS
+
+  git init
+
+  if [ -z "$URI_DTS_GIT" ]; then
+    echo URI_DTS_GIT may be set in settings_uri.sh. [INFO]
+    echo Setting to default value [INFO].
+    export URI_DTS_GIT=$DEF_URI_DTS_GIT
+  fi
+  echo URI_DTS_GIT is $URI_DTS_GIT [VAR]
+
+  git remote add origin -f $URI_DTS_GIT
+  # git remote add origin -f https://github.com/iTKunst/dts
+
+  git config core.sparsecheckout true
+
+  echo "base/*" >> .git/info/sparse-checkout
+  # echo "base/*" >> .git/info/sparse-checkout
+
+	if [ -z $TMPL_NAME ]; then
+		log_invalid TMPL_NAME
+		exit
+	fi
+	log_var TMPL_NAME $TMPL_NAME
+
+  export TMPL_FLDR="tmpl/"$TMPL_NAME"/*"
+	log_var TMPL_FLDR $TMPL_FLDR
+
+  echo $TMPL_FLDR >> .git/info/sparse-checkout
+  # echo "tmpl/smtp/*" >> .git/info/sparse-checkout
+
+  git pull origin master
+
+  if [ $?  -ne 0 ]; then
+      echo !!!!!ERROR!!!!! Unable to clone DTS base [CLONE_ERR]
+      return $?
+  fi
+
+  cd ..
+}
+
+
 
 init() {
 
-  # echo init [ENTER]
+  echo init [ENTER]
 
 
-  if [ -d $DIR_BNDL ]; then
+  if [ -d dts ]; then
     echo Already initialized[INFO]
     source ./bin/mSET_PATH.sh
     echo Run pUPDATE [CMD]
@@ -37,31 +88,15 @@ init() {
   fi
 
 
-  if [ -z "$URI_TMPL_GIT_BASE" ]; then
-    echo !!!!!ERROR!!!!! URI_TMPL_GIT_BASE is invalid [INVALID]
-    echo You must set it in ./settings.sh! [CMD]
-    echo Default value is https://github.com/itkunst [INFO]
-    return 1
-  fi
-  # echo URI_TMPL_GIT_BASE is $URI_TMPL_GIT_BASE [VAR]
+  clone_dts
 
-  REPO=$URI_TMPL_GIT_BASE/"base/"$BNDL_NAME;
-  # echo REPO is $REPO [VAR]
+  export DIR_BNDL=$DIR_DTS/base/bundler
+  export DIR_GLBL=$DIR_DTS/base/global
+  export DIR_SYS=../system
 
-  mkdir -p dts
-  cd dts
-  git init
-  git remote add origin -f $URI_TMPL_GIT_BASE
-
-  git clone $REPO $DIR_BNDL
-  if [ $?  -ne 0 ]; then
-      echo !!!!!ERROR!!!!! Unable to clone $DIR_BNDL [CLONE_ERR]
-      return $?
-  fi
-
-  source ./$DIR_BNDL/log/linux/LOG.sh
-  source ./$DIR_BNDL/init.sh
-  source ./bin/mSET_PATH.sh
+  source $DIR_BNDL/log/linux/LOG.sh
+  source $DIR_BNDL/init.sh
+  source bin/mSET_PATH.sh
   source bENV.sh
   source pINIT.sh
 

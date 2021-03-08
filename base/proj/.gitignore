@@ -3,11 +3,8 @@
 node_modules/
 
 bin/
-bundler/
-global/
-system/
+dts/
 target/
-template/
 
 code/src/
 

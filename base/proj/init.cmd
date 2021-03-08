@@ -41,7 +41,7 @@
   )
   :: echo URI_TMPL_GIT_BASE is %URI_TMPL_GIT_BASE%
 
-  SET "REPO=%URI_TMPL_GIT_BASE%/%BNDL_NAME%"
+  SET "REPO=%URI_TMPL_GIT_BASE%/"base/"%BNDL_NAME%"
   :: echo REPO is %REPO%
 
   git clone %REPO% %DIR_BNDL%

@@ -6,10 +6,7 @@
 
 
 # TEMPLATE GIT BASE URI
-export URI_TMPL_GIT_BASE=https://github.com/iTKunst
-
-# BUNDLER TEMPLATE GIT NAME
-export BNDL_NAME=base_bundler
+export URI_TMPL_GIT_BASE=https://github.com/iTKunst/dts
 
 
 # echo  settings_uri [UNLOADED]
