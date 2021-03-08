@@ -41,9 +41,6 @@ export LOG_VAR_ON=0
 
 # DIRECTORIES
 export DIR_BNDL=bundler
-export DIR_GLBL=global
-export DIR_SYS=system
-export DIR_TMPL=template
 
 # LOGGING - SUPPLEMENTAL
 export LOG_CLONE_ERR_ON=1
