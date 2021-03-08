@@ -2,8 +2,8 @@
 # shellcheck disable=SC2086
 
 
-log_enter /$DIR_GLBL/docker_$DIR_GLBL/init
+log_enter /$DIR_GLBL/docker_global/init
 
-cp ./$DIR_GLBL/docker_$DIR_GLBL/linux/*.sh ./bin
+cp ./$DIR_GLBL/docker_global/linux/*.sh ./bin
 
-log_exit /$DIR_GLBL/docker_$DIR_GLBL/init
+log_exit /$DIR_GLBL/docker_global/init
