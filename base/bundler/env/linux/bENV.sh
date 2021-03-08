@@ -9,7 +9,6 @@ source bENV_CAT.sh
 source bENV_TKN.sh
 
 
-DEF_URI_DTS_GIT=https://github.com/iTKunst/dts
 DEF_PROJ_MODE=d
 
 if [ -z "$PROJ_MODE" ]; then
