@@ -52,8 +52,6 @@ if [ -z $TMPL_NAME ]; then
 fi
 log_var TMPL_NAME $TMPL_NAME
 
-export TMPL_FLDR=$SLASH$_TMPL$SLASH$TMPL_NAME$SLASH"*"
-log_var TMPL_FLDR $TMPL_FLDR
 
 log_exit bENV
 
