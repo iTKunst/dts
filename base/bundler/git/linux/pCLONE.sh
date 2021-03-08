@@ -20,17 +20,17 @@ pCLONE () {
 
   INIT=1
 
-	pCLONE_GLBL
-	pCLONE_TMPL
-	pCLONE_SYS
+#	pCLONE_GLBL
+#	pCLONE_TMPL
+#	pCLONE_SYS
 
-	log_var INIT $INIT
-	if [ $INIT -eq 0 ]; then
-		log_cmd "Please run pUPDATE.sh to get the latest changes."
-		exit
-	fi
+#	log_var INIT $INIT
+#	if [ $INIT -eq 0 ]; then
+#		log_cmd "Please run pUPDATE.sh to get the latest changes."
+#		exit
+#	fi
 
-	pINIT
+#	pINIT
 
 	log_exit pCLONE
 
