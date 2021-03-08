@@ -4,7 +4,6 @@
 
 # echo pINIT.sh [LOADED]
 
-source ./$DIR_BNDL/git/linux/pINIT_BNDL.sh
 source ./$DIR_BNDL/git/linux/pINIT_GLBL.sh
 source ./$DIR_BNDL/git/linux/pINIT_PROJ.sh
 source ./$DIR_BNDL/git/linux/pINIT_SYS.sh
@@ -15,13 +14,11 @@ pINIT () {
 
 	log_enter pINIT
 
-  CLONE=0
 
   export DIR_GLBL=$DIR_DTS/base/global
   export DIR_SYS=../system
   export DIR_TMPL=$DIR_DTS/tmpl/$TMPL_NAME
 
-	pINIT_BNDL
 	pINIT_GLBL
 	pINIT_SYS
   pINIT_TMPL
@@ -29,10 +26,6 @@ pINIT () {
 
 	chmod +x ./bin/*.sh
 
-
-	if [ $CLONE -eq 1 ]; then
-		pCLONE
-	fi
 
 	log_exit pINIT
 
