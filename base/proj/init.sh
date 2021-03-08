@@ -48,6 +48,11 @@ init() {
   REPO=$URI_TMPL_GIT_BASE/"base/"$BNDL_NAME;
   # echo REPO is $REPO [VAR]
 
+  mkdir -p dts
+  cd dts
+  git init
+  git remote add origin -f $URI_TMPL_GIT_BASE
+
   git clone $REPO $DIR_BNDL
   if [ $?  -ne 0 ]; then
       echo !!!!!ERROR!!!!! Unable to clone $DIR_BNDL [CLONE_ERR]
