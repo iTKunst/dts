@@ -4,7 +4,7 @@
 
 log_enter bENV_NAME
 
-export GLBL_NAME=base_global
+export GLBL_NAME=global
 
 log_exit bENV_NAME
 
