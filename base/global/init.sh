@@ -5,7 +5,7 @@
 log_enter /$DIR_GLBL/init
 
 source ./$DIR_GLBL/docker_compose/init.sh
-source ./$DIR_GLBL/docker_$DIR_GLBL/init.sh
+source ./$DIR_GLBL/docker_global/init.sh
 source ./$DIR_GLBL/docker_project/init.sh
 source ./$DIR_GLBL/docker_system/init.sh
 source ./$DIR_GLBL/env/init.sh
