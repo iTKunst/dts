@@ -6,20 +6,20 @@ pINIT_PROJ() {
 
 	log_enter pINIT_PROJ
 
-	if [ -z $DIR_TMPL ]; then
-		log_invalid DIR_TMPL
+	if [ -z $TMPL_FLDR ]; then
+		log_invalid TMPL_FLDR
 		return 1
 	fi
-	log_var DIR_TMPL $DIR_TMPL
+	log_var TMPL_FLDR $TMPL_FLDR
 
-	if [ -d "$DIR_TMPL" ]; then
+	if [ -d "$TMPL_FLDR" ]; then
 
 	    if [ ! -d "project" ]; then
 	      mkdir project
 	    fi
 
 	    if [ ! -f "project/pENV_MOD.sh" ]; then
-	      cp $DIR_TMPL/env/linux/pENV_MOD.sample.sh \
+	      cp $TMPL_FLDR/env/linux/pENV_MOD.sample.sh \
 	         project/pENV_MOD.sh
 	    fi
 

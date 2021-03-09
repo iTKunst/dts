@@ -1,8 +1,12 @@
-@echo off
+@ECHO off
 
 
 
-:: echo init.cmd [LOADED]
+:: ECHO init.cmd [LOADED]
+
+SET "DEF_URI_DTS_GIT=https://github.com/iTKunst/dts"
+SET "DEF_DIR_DTS=dts"
+
 
   if not exist settings.cmd (
     ECHO settings.cmd not found [FILE_ERR]
@@ -10,45 +14,55 @@
   )
   CALL settings
 
-  if [%DIR_BNDL%]==[] (
-    ECHO DIR_BNDL is invalid [INVALID].
-    ECHO You must set it in .\settings.cmd! [CMD]
-    ECHO Default value is 'bundler' [CMD]
-    GOTO :EOF
+  if [%DIR_DTS%]==[] (
+    ECHO DIR_DTS may be set in settings.sh. [INFO]
+    ECHO Setting to default value. [INFO]
+    SET "DIR_DTS=%DEF_DIR_DTS%"
   )
-  :: echo DIR_BNDL is %DIR_BNDL%
+  ECHO DIR_DTS is %DIR_DTS%
 
-
-  if exist %DIR_BNDL% (
+  if exist %DIR_DTS% (
     CALL .\bin\mSET_PATH
     ECHO Already Initialized [INFO]
     ECHO Run pUPDATE [CMD]
     GOTO :EOF
   )
 
-  :: echo %DIR_BNDL% does not exist [INFO]
+  if [%TMPL_NAME%]==[] (
+    ECHO TMPL_NAME [INVALID]
+    ECHO TMPL_NAME must be set in settings.sh. [INFO]
+    GOTO :EOF
+  )
+  ECHO TMPL_NAME is %TMPL_NAME%
+
+  if [%URI_DTS_GIT%]==[] (
+    ECHO URI_DTS_GIT may be set in settings_uri.sh. [INFO]
+    ECHO Setting to default value [INFO].
+    SET "URI_DTS_GIT=%DEF_URI_DTS_GIT%"
+  )
+  ECHO URI_DTS_GIT is %URI_DTS_GIT% [INFO]
+
+  SET "TMPL_FLDR='tmpl/'$TMPL_NAME'/*'"
+  ECHO TMPL_FLDR is %TMPL_FLDR% [INFO]
+
+  mkdir -p %DIR_DTS%
+  cd %DIR_DTS%
+
+  git init
+  git remote add origin -f %URI_DTS_GIT%
+  git config core.sparsecheckout true
+
+  ECHO "base/*" >> .git/info/sparse-checkout
+  ECHO %TMPL_FLDR% >> .git/info/sparse-checkout
+
+  git pull origin master
 
   IF NOT EXIST bin (
-    :: echo create bin
+    :: ECHO create bin
     mkdir bin
   )
 
-  if [%URI_TMPL_GIT_BASE%]==[] (
-    ECHO URI_TMPL_GIT_BASE is invalid [INVALID].
-    ECHO You must set it in .\settings_uri.cmd! [CMD]
-    ECHO Default value is https://github.com/itkunst [CMD]
-    GOTO :EOF
-  )
-  :: echo URI_TMPL_GIT_BASE is %URI_TMPL_GIT_BASE%
 
-  SET "REPO=%URI_TMPL_GIT_BASE%/"base/"%BNDL_NAME%"
-  :: echo REPO is %REPO%
-
-  git clone %REPO% %DIR_BNDL%
-  IF %ERRORLEVEL% NEQ 0 (
-    ECHO Error cloning %REPO%
-    goto :EOF
-  )
 
   CALL .\%DIR_BNDL%\init
   CALL .\bin\mSET_PATH

@@ -15,14 +15,33 @@ pINIT () {
 
 	log_enter pINIT
 
-
   export DIR_GLBL=$DIR_DTS/base/global
   export DIR_SYS=../../system
-  export DIR_TMPL=$DIR_DTS/tmpl/$TMPL_NAME
 
-	pINIT_GLBL
-	pINIT_SYS
-  pINIT_TMPL
+	if [ ! -d "$DIR_GLBL" ]; then
+		log_err_dir DIR_GLBL
+		exit
+	fi
+	source $DIR_GLBL/init.sh
+
+	if [ ! -d "$DIR_SYS" ]; then
+		log_err_dir DIR_SYS
+		exit
+	fi
+	source $DIR_SYS/init.sh
+
+	if [ ! -d "$TMPL_FLDR" ]; then
+		log_err_dir TMPL_FLDR
+		exit
+	fi
+	source $TMPL_FLDR/init.sh
+
+	if [ ! -d "$TMPL_FLDR" ]; then
+		log_err_dir TMPL_FLDR
+		exit
+	fi
+	source $TMPL_FLDR/init.sh
+
   pINIT_PROJ
 
 	chmod +x ./bin/*.sh
