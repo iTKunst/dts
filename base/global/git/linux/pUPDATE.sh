@@ -4,14 +4,10 @@ source settings.sh
 source LOG.sh
 
 
-log_load pUPDATE.sh
+log_load pUPDATE
 
 
 
-if [ -z $DIR_DTS ]; then
-	log_invalid DIR_DTS
-	exit 1
-fi
 
 source LOG.sh
 source pINIT.sh
@@ -23,6 +19,7 @@ source pUPDATE_SUBMODULE.sh
 pUPDATE() {
 
 	log_enter pUPDATE
+
 
   if [ -z $DIR_DTS ]; then
     log_invalid DIR_DTS
@@ -36,7 +33,8 @@ pUPDATE() {
 		return $?
 	fi
 
-#	pINIT
+
+	pINIT
 
 	log_exit pUPDATE
 
