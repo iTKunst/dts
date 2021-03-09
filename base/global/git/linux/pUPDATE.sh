@@ -30,7 +30,7 @@ pUPDATE() {
   fi
   log_var DIR_DTS $DIR_DTS
 
-	updateRepo $DIR_BNDL
+	updateRepo $DIR_DTS
 	log_var RES $J
 	if [ $? -ne 0 ]; then
 		return $?
