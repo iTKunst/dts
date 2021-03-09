@@ -30,6 +30,8 @@ cd ..
 
 CALL pINIT
 
+:EOF
+
 call LOG_EXIT pUPDATE
 
 

@@ -11,7 +11,7 @@ log_load pUPDATE
 
 pUPDATE() {
 
-	log_enter pUPDATE
+  log_enter pUPDATE
 
   if [ -z $DIR_DTS ]; then
     echo DIR_DTS may be set in settings.sh. [INFO]
@@ -30,16 +30,16 @@ pUPDATE() {
   source pSET_TRACE.sh
 
 
-	cd $DIR_DTS
+  cd $DIR_DTS
   git pull origin master
   cd ..
 
-	pINIT
+  pINIT
 
-	log_exit pUPDATE
+  log_exit pUPDATE
 
 
-	log_cmd "Please run pBUILD.sh to create the docker image"
+  log_cmd "Please run pBUILD.sh to create the docker image"
 
   return 0
 }
