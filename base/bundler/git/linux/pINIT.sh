@@ -4,6 +4,7 @@
 
 # echo pINIT.sh [LOADED]
 
+source settings.sh
 source ./$DIR_BNDL/git/linux/pINIT_GLBL.sh
 source ./$DIR_BNDL/git/linux/pINIT_PROJ.sh
 source ./$DIR_BNDL/git/linux/pINIT_SYS.sh
@@ -16,7 +17,7 @@ pINIT () {
 
 
   export DIR_GLBL=$DIR_DTS/base/global
-  export DIR_SYS=../system
+  export DIR_SYS=../../system
   export DIR_TMPL=$DIR_DTS/tmpl/$TMPL_NAME
 
 	pINIT_GLBL

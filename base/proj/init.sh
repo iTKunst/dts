@@ -15,9 +15,9 @@ fi
 source settings.sh
 
 
-clone_dts()
-{
-  echo clone_dts [ENTER]
+init() {
+
+  echo init [ENTER]
 
   if [ -z "$DIR_DTS" ]; then
     echo DIR_DTS may be set in settings.sh. [INFO]
@@ -26,10 +26,12 @@ clone_dts()
   fi
   echo DIR_DTS is $DIR_DTS [VAR]
 
-  mkdir -p $DIR_DTS
-  cd $DIR_DTS
-
-  git init
+  if [ -d "$DIR_DTS" ]; then
+    echo Already initialized[INFO]
+    source ./bin/mSET_PATH.sh
+    echo Run pUPDATE [CMD]
+    return 0
+  fi
 
   if [ -z "$URI_DTS_GIT" ]; then
     echo URI_DTS_GIT may be set in settings_uri.sh. [INFO]
@@ -37,6 +39,20 @@ clone_dts()
     export URI_DTS_GIT=$DEF_URI_DTS_GIT
   fi
   echo URI_DTS_GIT is $URI_DTS_GIT [VAR]
+
+	if [ -z $TMPL_NAME ]; then
+		log_invalid TMPL_NAME
+    echo TMPL_NAME must be set in settings.sh. [INFO]
+		exit
+	fi
+	log_var TMPL_NAME $TMPL_NAME
+
+
+  mkdir -p $DIR_DTS
+  cd $DIR_DTS
+
+  git init
+
 
   git remote add origin -f $URI_DTS_GIT
   # git remote add origin -f https://github.com/iTKunst/dts
@@ -46,11 +62,6 @@ clone_dts()
   echo "base/*" >> .git/info/sparse-checkout
   # echo "base/*" >> .git/info/sparse-checkout
 
-	if [ -z $TMPL_NAME ]; then
-		log_invalid TMPL_NAME
-		exit
-	fi
-	log_var TMPL_NAME $TMPL_NAME
 
   export TMPL_FLDR="tmpl/"$TMPL_NAME"/*"
 	log_var TMPL_FLDR $TMPL_FLDR
@@ -66,21 +77,7 @@ clone_dts()
   fi
 
   cd ..
-}
 
-
-
-init() {
-
-  echo init [ENTER]
-
-
-  if [ -d dts ]; then
-    echo Already initialized[INFO]
-    source ./bin/mSET_PATH.sh
-    echo Run pUPDATE [CMD]
-    return 0
-  fi
 
   if [ ! -d bin ]; then
     mkdir bin
@@ -92,7 +89,7 @@ init() {
 
   export DIR_BNDL=$DIR_DTS/base/bundler
   export DIR_GLBL=$DIR_DTS/base/global
-  export DIR_SYS=../system
+  export DIR_SYS=../../system
 
   source $DIR_BNDL/log/linux/LOG.sh
   source $DIR_BNDL/init.sh
