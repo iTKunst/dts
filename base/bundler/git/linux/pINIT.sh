@@ -5,10 +5,7 @@
 # echo pINIT.sh [LOADED]
 
 source settings.sh
-source ./$DIR_BNDL/git/linux/pINIT_GLBL.sh
 source ./$DIR_BNDL/git/linux/pINIT_PROJ.sh
-source ./$DIR_BNDL/git/linux/pINIT_SYS.sh
-source ./$DIR_BNDL/git/linux/pINIT_TMPL.sh
 source ./$DIR_BNDL/misc/linux/mSET_PATH.sh
 
 pINIT () {
