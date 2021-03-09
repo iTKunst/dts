@@ -27,6 +27,10 @@ pUPDATE() {
   fi
   log_var DIR_DTS $DIR_DTS
 
+  export TMPL_FLDR="tmpl/"$TMPL_NAME"/*"
+  echo TMPL_FLDR is $TMPL_FLDR [VAR]
+
+
 	cd $DIR_DTS
   git pull origin master
   cd ..
