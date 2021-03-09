@@ -4,6 +4,7 @@
 
 # echo pINIT.sh [LOADED]
 
+source logs.sh
 source settings.sh
 source ./$DIR_BNDL/git/linux/pINIT_PROJ.sh
 source ./$DIR_BNDL/misc/linux/mSET_PATH.sh
