@@ -1,41 +1,32 @@
 @echo off
 CALL settings
 
+SET "DEF_URI_DTS_GIT=https://github.com/iTKunst/dts"
+SET "DEF_DIR_DTS=dts"
+
 
 call LOG_ENTER pUPDATE
 
-IF NOT EXIST %DIR_BNDL% (
-  call LOG_DIR_ERR %DIR_BNDL%
-  call LOG_CMD The %DIR_BNDL% module has not been cloned. Must call init!
+if [%DIR_DTS%]==[] (
+  ECHO DIR_DTS may be set in settings.sh. [INFO]
+  ECHO Setting to default value. [INFO]
+  SET "DIR_DTS=%DEF_DIR_DTS%"
+)
+CALL lOG_VAR DIR_DTS %DIR_DTS%
+
+if not exist %DIR_DTS% (
+  call LOG_DIR_ERR %DIR_DTS%
+  call LOG_CMD DTS has not been cloned. Must call init!
   goto :EOF
 )
 
-IF NOT EXIST %DIR_GLBL% (
-  call LOG_DIR_ERR %DIR_GLBL%
-  call LOG_CMD The %DIR_GLBL% module has not been cloned. Must call init!
-  goto :EOF
-)
+SET "DIR_BNDL=$DIR_DTS/base/bundler"
+call LOG_VAR DIR_BNDL $DIR_BNDL
 
-IF NOT EXIST %DIR_SYS% (
-  call LOG_DIR_ERR %DIR_SYS%
-  call LOG_CMD The %DIR_SYS% module has not been cloned. Must call init!
-  goto :EOF
-)
 
-IF NOT EXIST %DIR_TMPL% (
-  call LOG_DIR_ERR %DIR_TMPL%
-  call LOG_CMD The %DIR_TMPL% module has not been cloned. Must call init!
-  goto :EOF
-)
-
-CALL pUPDATE_REPO %DIR_BNDL%
-CALL pUPDATE_REPO %DIR_GLBL%
-CALL pUPDATE_REPO %DIR_TMPL%
-CALL pUPDATE_SUB %DIR_SYS%
-
-REM git pull --recurse-submodules
-
-:EOF
+cd %DIR_DTS%
+git pull origin master
+cd ..
 
 CALL pINIT
 

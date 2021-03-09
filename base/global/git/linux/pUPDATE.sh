@@ -3,32 +3,31 @@
 source settings.sh
 source LOG.sh
 
+DEF_URI_DTS_GIT=https://github.com/iTKunst/dts
+DEF_DIR_DTS=dts
 
 log_load pUPDATE
-
-
-export DIR_BNDL=$DIR_DTS/base/bundler
-echo DIR_BNDL is $DIR_BNDL [VAR]
-
-
-source LOG.sh
-source pINIT.sh
-source pSET_TRACE.sh
 
 
 pUPDATE() {
 
 	log_enter pUPDATE
 
-
   if [ -z $DIR_DTS ]; then
-    log_invalid DIR_DTS
-    exit 1
+    echo DIR_DTS may be set in settings.sh. [INFO]
+    echo Setting to default value. [INFO]
+    export DIR_DTS=$DEF_DIR_DTS
   fi
   log_var DIR_DTS $DIR_DTS
 
+  export DIR_BNDL=$DIR_DTS/base/bundler
+  echo DIR_BNDL is $DIR_BNDL [VAR]
+
   export TMPL_FLDR="tmpl/"$TMPL_NAME"/*"
   echo TMPL_FLDR is $TMPL_FLDR [VAR]
+
+  source pINIT.sh
+  source pSET_TRACE.sh
 
 
 	cd $DIR_DTS
