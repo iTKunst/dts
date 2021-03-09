@@ -14,8 +14,6 @@ echo DIR_BNDL is $DIR_BNDL [VAR]
 source LOG.sh
 source pINIT.sh
 source pSET_TRACE.sh
-source pUPDATE_REPO.sh
-source pUPDATE_SUBMODULE.sh
 
 
 pUPDATE() {
@@ -29,12 +27,9 @@ pUPDATE() {
   fi
   log_var DIR_DTS $DIR_DTS
 
-	updateRepo $DIR_DTS
-	log_var RES $J
-	if [ $? -ne 0 ]; then
-		return $?
-	fi
-
+	cd $DIR_DTS
+  git pull origin master
+  cd ..
 
 	pINIT
 
