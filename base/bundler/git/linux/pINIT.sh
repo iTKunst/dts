@@ -15,6 +15,7 @@ pINIT () {
 
   export DIR_GLBL=$DIR_DTS/base/global
   export DIR_SYS=../../system
+  export DIR_TMPL=.$DIR_DTS/$TMPL_FLDR
 
 	if [ ! -d "$DIR_GLBL" ]; then
 		log_dir_err DIR_GLBL
@@ -28,17 +29,11 @@ pINIT () {
 	fi
 	source $DIR_SYS/init.sh
 
-	if [ ! -d "$TMPL_FLDR" ]; then
-		log_dir_err TMPL_FLDR
+	if [ ! -d "$DIR_TMPL" ]; then
+		log_dir_err $DIR_TMPL
 		exit
 	fi
-	source $TMPL_FLDR/init.sh
-
-	if [ ! -d "$TMPL_FLDR" ]; then
-		log_dir_err TMPL_FLDR
-		exit
-	fi
-	source $TMPL_FLDR/init.sh
+	source $DIR_TMPL/init.sh
 
   pINIT_PROJ
 
