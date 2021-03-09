@@ -15,7 +15,7 @@ pINIT () {
 
   export DIR_GLBL=$DIR_DTS/base/global
   export DIR_SYS=../../system
-  export DIR_TMPL=.$DIR_DTS/$TMPL_FLDR
+  export DIR_TMPL=.$DIR_DTS/tmpl/$TMPL_NAME
 
 	if [ ! -d "$DIR_GLBL" ]; then
 		log_dir_err DIR_GLBL
