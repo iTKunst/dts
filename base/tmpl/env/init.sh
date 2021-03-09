@@ -4,14 +4,14 @@
 
 log_enter /$DIR_TMPL/env/init
 
-cp ./$DIR_TMPL/env/linux/pENV.sh ./bin
+cp ./$DIR_TMPL/env/linux/tENV.sh ./bin
 
 if [ ! -d ./project ]; then
   mkdir project
 fi
 
-if [ ! -f ./project/pENV_MOD.sh ]; then
-  cp ./$DIR_TMPL/env/linux/pENV_MOD.sample.sh ./project/pENV_MOD.sh
+if [ ! -f ./project/pENV.sh ]; then
+  cp ./$DIR_TMPL/env/linux/pENV.sample.sh ./project/pENV.sh
 fi
 
 log_exit /$DIR_TMPL/env/init
