@@ -7,6 +7,8 @@ source LOG.sh
 log_load pUPDATE
 
 
+export DIR_BNDL=$DIR_DTS/base/bundler
+echo DIR_BNDL is $DIR_BNDL [VAR]
 
 
 source LOG.sh
