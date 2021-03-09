@@ -8,16 +8,14 @@
 DEF_URI_DTS_GIT=https://github.com/iTKunst/dts
 DEF_DIR_DTS=dts
 
-if [ ! -f settings.sh ]; then
-  ECHO settings.sh not found [FILE_ERR]
-  return 1
-fi
-source settings.sh
+init()
+{
 
-
-init() {
-
-  ECHO init [ENTER]
+  if [ ! -f settings.sh ]; then
+    ECHO settings.sh not found [FILE_ERR]
+    return 1
+  fi
+  source settings.sh
 
   if [ -z "$DIR_DTS" ]; then
     ECHO DIR_DTS may be set in settings.sh. [INFO]
@@ -40,15 +38,18 @@ init() {
   fi
   ECHO URI_DTS_GIT is $URI_DTS_GIT [VAR]
 
-	if [ -z $TMPL_NAME ]; then
+  if [ -z $TMPL_NAME ]; then
     ECHO TMPL_NAME [INVALID]
     ECHO TMPL_NAME must be set in settings.sh. [INFO]
-		exit
-	fi
-	log_var TMPL_NAME $TMPL_NAME
+	exit
+  fi
+  ECHO TMPL_NAME is $TMPL_NAME [VAR]
 
   export TMPL_FLDR="tmpl/"$TMPL_NAME"/*"
-	log_var TMPL_FLDR $TMPL_FLDR
+  ECHO TMPL_FLDR is $TMPL_FLDR [VAR]
+
+  export DIR_BNDL=$DIR_DTS/base/bundler
+  ECHO DIR_BNDL is $DIR_BNDL [VAR]
 
   mkdir -p $DIR_DTS
   cd $DIR_DTS
@@ -71,12 +72,11 @@ init() {
 
   if [ ! -d bin ]; then
     mkdir bin
-    # ECHO create bin
+    ECHO create bin
   fi
 
   export DIR_BNDL=$DIR_DTS/base/bundler
 
-  source $DIR_BNDL/log/linux/LOG.sh
   source $DIR_BNDL/init.sh
   source bin/mSET_PATH.sh
   source bENV.sh
@@ -84,7 +84,6 @@ init() {
 
   pINIT
 
-  log_exit init
   
   return 0
 

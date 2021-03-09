@@ -45,6 +45,9 @@ SET "DEF_DIR_DTS=dts"
   SET "TMPL_FLDR='tmpl/'$TMPL_NAME'/*'"
   ECHO TMPL_FLDR is %TMPL_FLDR% [INFO]
 
+  SET "DIR_BNDL=%DIR_DTS%/base/bundler
+  ECHO TMPL_FLDR is %DIR_BNDL% [INFO]
+
   mkdir -p %DIR_DTS%
   cd %DIR_DTS%
 
@@ -58,14 +61,13 @@ SET "DEF_DIR_DTS=dts"
   git pull origin master
 
   IF NOT EXIST bin (
-    :: ECHO create bin
+    ECHO bin created [INFO]
     mkdir bin
   )
 
 
-
-  CALL .\%DIR_BNDL%\init
-  CALL .\bin\mSET_PATH
+  CALL %DIR_BNDL%\init
+  CALL bin\mSET_PATH
   CALL bENV
 
   CALL pINIT
