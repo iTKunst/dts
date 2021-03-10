@@ -18,9 +18,9 @@ pINIT_PROJ() {
 	      mkdir project
 	    fi
 
-	    if [ ! -f "project/pENV_MOD.sh" ]; then
-	      cp $TMPL_FLDR/env/linux/pENV_MOD.sample.sh \
-	         project/pENV_MOD.sh
+	    if [ ! -f "project/pENV.sh" ]; then
+	      cp $TMPL_FLDR/env/linux/pENV.sample.sh \
+	         project/pENV.sh
 	    fi
 
   fi
