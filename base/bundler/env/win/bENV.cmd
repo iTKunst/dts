@@ -4,7 +4,6 @@
 call LOG_ENTER bENV
 
 CALL settings
-CALL bENV_CAT
 CALL bENV_NAME
 CALL bENV_TKN
 

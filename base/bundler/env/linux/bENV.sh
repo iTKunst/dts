@@ -5,7 +5,6 @@
 log_enter bENV
 
 source settings.sh
-source bENV_CAT.sh
 source bENV_NAME.sh
 source bENV_TKN.sh
 
