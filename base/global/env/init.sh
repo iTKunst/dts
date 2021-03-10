@@ -2,8 +2,8 @@
 # shellcheck disable=SC2086
 
 
-log_enter /$DIR_GLBL/env/init
+log_enter $GLBL_DIR/env/init
 
-cp ./$DIR_GLBL/env/linux/*.sh ./bin
+cp .$GLBL_DIR/env/linux/*.sh ./bin
 
-log_exit /$DIR_GLBL/env/init
+log_exit $GLBL_DIR/env/init

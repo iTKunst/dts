@@ -2,15 +2,15 @@
 # shellcheck disable=SC2086
 
 
-log_enter /$DIR_GLBL/init
+log_enter $GLBL_DIR/init
 
-source ./$DIR_GLBL/docker_compose/init.sh
-source ./$DIR_GLBL/docker_global/init.sh
-source ./$DIR_GLBL/docker_project/init.sh
-source ./$DIR_GLBL/docker_system/init.sh
-source ./$DIR_GLBL/env/init.sh
-source ./$DIR_GLBL/git/init.sh
-source ./$DIR_GLBL/kube/init.sh
-source ./$DIR_GLBL/openshift/init.sh
+source .$GLBL_DIR/docker_compose/init.sh
+source .$GLBL_DIR/docker_global/init.sh
+source .$GLBL_DIR/docker_project/init.sh
+source .$GLBL_DIR/docker_system/init.sh
+source .$GLBL_DIR/env/init.sh
+source .$GLBL_DIR/git/init.sh
+source .$GLBL_DIR/kube/init.sh
+source .$GLBL_DIR/openshift/init.sh
 
-log_exit /$DIR_GLBL/init
+log_exit $GLBL_DIR/init
