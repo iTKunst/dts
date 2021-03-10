@@ -20,7 +20,6 @@ export GIS=gis
 export GO=go
 export IMG=img
 export IPA=ipa
-export JAVA=java
 export JFROG=jfrog
 export KEY=key
 export LIB=lib
