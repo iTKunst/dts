@@ -5,8 +5,8 @@ source $DIR_BNDL/log/linux/LOG.sh
 
 log_enter /$DIR_DTS/init
 
-source .$DIR_BASE/init.sh
-source .$DIR_TMPL/init.sh
+source .$DIR_DTS$DIR_BASE$INIT
+source .$DIR_DTS$DIR_TMPL$INIT
 
 log_exit /$DIR_DTS/init
 
