@@ -2,7 +2,7 @@
 # shellcheck disable=SC2086
 
 
-log_enter pENV
+log_enter tENV
 
 source sENV.sh
 if [ -f "project/pENV_MOD.sh" ]; then
