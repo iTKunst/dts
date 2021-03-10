@@ -2,7 +2,7 @@
 # shellcheck disable=SC2086
 
 
-log_enter pENV_MOD
+log_enter tENV
 
 source sENV.sh
 
