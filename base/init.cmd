@@ -3,9 +3,9 @@
 
 CALL %DIR_BNDL%\log\win\LOG_LOAD \%DIR_BASE%\init
 
-CALL %DIR_BASE%\env\init
-CALL %DIR_BASE%\git\init
-CALL %DIR_BASE%\log\init
-CALL %DIR_BASE%\misc\init
+CALL %DIR_BNDL%\init
+CALL %DIR_GLBL%\init
+CALL %DIR_PROJ%\init
+CALL %DIR_SYS%\init
 
 CALL %DIR_BNDL%\log\win\LOG_UNLOAD \%DIR_BASE%\init
