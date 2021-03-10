@@ -4,6 +4,7 @@
 
 log_enter bENV_NAME
 
+export GIT=git
 export SYSTEM=system
 export TMPL=tmpl
 
