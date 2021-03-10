@@ -19,7 +19,7 @@ USER=$PROJ_USER
 log_var CONT_DIR $CONT_DIR
 log_var DCKR_URI $DCKR_URI
 log_var DIR_SYS $DIR_SYS
-log_var TEMPLATE_DIR $TEMPLATE_DIR
+log_var TMPL_DIR $TMPL_DIR
 log_var HOST_DIR $HOST_DIR
 log_var IMG $IMG
 log_var MVN_REPO_IP $MVN_REPO_IP
@@ -34,7 +34,7 @@ DOCKER_BUILDKIT=1 \
           --build-arg CONT_DIR=$CONT_DIR \
           --build-arg HOST_DIR=$HOST_DIR \
           --build-arg SYS_DIR=$DIR_SYS \
-          --build-arg TMPL_DIR=$TEMPLATE_DIR \
+          --build-arg TMPL_DIR=$TMPL_DIR \
           --add-host=$MVN_REPO_URI:$MVN_REPO_IP \
           -f $DCKR_URI \
           -t $IMG \

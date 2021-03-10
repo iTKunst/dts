@@ -12,7 +12,7 @@ log_enter pINSTALL
 source pENV.sh
 
 log_var DIR_SYS $DIR_SYS
-log_var TEMPLATE_DIR $TEMPLATE_DIR
+log_var TMPL_DIR $TMPL_DIR
 log_var PROJ_NAME $PROJ_NAME
 log_var SYS_NAME $SYS_NAME
 
@@ -30,7 +30,7 @@ cp -r $SOURCE/* $TARGET
 export TARGET=code/
 log_var TARGET $TARGET
 
-export SOURCE=./$TEMPLATE_DIR/mvn
+export SOURCE=./$TMPL_DIR/mvn
 log_var SOURCE $SOURCE
 
 mkdir -p $TARGET

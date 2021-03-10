@@ -20,7 +20,7 @@ log_var DCKR_URI $DCKR_URI
 log_var HOST_DIR $HOST_DIR
 log_var IMG $IMG
 log_var SYS_DIR $SYS_DIR
-log_var TEMPLATE_DIR $TEMPLATE_DIR
+log_var TMPL_DIR $TMPL_DIR
 
 DOCKER_BUILDKIT=1 \
           docker  \
@@ -29,7 +29,7 @@ DOCKER_BUILDKIT=1 \
           --build-arg CONT_DIR=$CONT_DIR \
           --build-arg HOST_DIR=$HOST_DIR \
           --build-arg SYS_DIR=$SYS_DIR \
-          --build-arg TMPL_DIR=$TEMPLATE_DIR \
+          --build-arg TMPL_DIR=$TMPL_DIR \
           -f $DCKR_URI \
           -t $IMG \
           .
