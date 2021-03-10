@@ -17,11 +17,10 @@ IMG=$PROJ_IMG
 
 log_var CONT_DIR $CONT_DIR
 log_var DCKR_URI $DCKR_URI
-log_var DIR_SYS $DIR_SYS
-log_var DIR_TMPL $DIR_TMPL
 log_var HOST_DIR $HOST_DIR
 log_var IMG $IMG
-log_var TMPL_NAME $TMPL_NAME
+log_var SYS_DIR $SYS_DIR
+log_var TEMPLATE_DIR $TEMPLATE_DIR
 
 DOCKER_BUILDKIT=1 \
           docker  \
@@ -29,8 +28,8 @@ DOCKER_BUILDKIT=1 \
           --no-cache \
           --build-arg CONT_DIR=$CONT_DIR \
           --build-arg HOST_DIR=$HOST_DIR \
-          --build-arg SYS_DIR=$DIR_SYS \
-          --build-arg TMPL_DIR=$DIR_TMPL \
+          --build-arg SYS_DIR=$SYS_DIR \
+          --build-arg TMPL_DIR=$TEMPLATE_DIR \
           -f $DCKR_URI \
           -t $IMG \
           .

@@ -2,8 +2,8 @@
 # shellcheck disable=SC2086
 
 
-log_enter /$DIR_TMPL/env/init
+log_enter /$TEMPLATE_DIR/env/init
 
-cp ./$DIR_TMPL/env/linux/pENV.sh ./bin
+cp ./$TEMPLATE_DIR/env/linux/pENV.sh ./bin
 
-log_exit /$DIR_TMPL/env/init
+log_exit /$TEMPLATE_DIR/env/init
