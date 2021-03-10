@@ -1,48 +1,32 @@
 @echo off
 
 
-:: echo pINIT.cmd [LOADED]
+echo pINIT.cmd [LOADED]
 
 
-SET "CLONE=0"
-
-CALL LOG_VAR DIR_BNDL %DIR_BNDL%
-
-if NOT exist %DIR_BNDL% (
-  EXIT /B 1
+if not exist %DIR_GLBL% (
+  CALL LOG_DIR_ERR DIR_GLBL
+  GOTO :EOF
 )
-CALL %DIR_BNDL%\init
-
-CALL LOG_VAR DIR_GLBL %DIR_GLBL%
-
-if exist %DIR_GLBL% (
-  CALL %DIR_GLBL%\init
-) else (
-  SET "CLONE=1"
-)
+CALL %DIR_GLBL%\init
 
 if exist %DIR_SYS% (
-  CALL pINIT_SYS
-) else (
-  SET "CLONE=1"
+  CALL LOG_DIR_ERR DIR_SYS
+  GOTO :EOF
 )
-
-CALL LOG_VAR DIR_TMPL %DIR_TMPL%
+CALL %DIR_SYS%\init
 
 if exist %DIR_TMPL% (
-  CALL %DIR_TMPL%\init
-  CALL pINIT_PROJ
-) else (
-  SET "CLONE=1"
+  CALL LOG_DIR_ERR DIR_TMPL
+  GOTO :EOF
 )
+CALL %DIR_TMPL%\init
+
+CALL pINIT_PROJ
 
 
-:CLONE
-call LOG_VAR CLONE %CLONE%
 
-if %CLONE% EQU 1 (
-  CALL pCLONE
-)
+:EOF
 
 call LOG_EXIT pINIT
 
