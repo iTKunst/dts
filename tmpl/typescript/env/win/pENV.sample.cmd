@@ -1,7 +1,7 @@
 @echo off
 
 
-CALL LOG_ENTER tENV
+CALL LOG_ENTER pENV
 
 CALL sENV
 
