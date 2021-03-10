@@ -24,7 +24,7 @@ CALL LOG_VAR IMG %IMG%
 CALL LOG_VAR MVN_REPO_IP %MVN_REPO_IP%
 CALL LOG_VAR MVN_REPO_URI %MVN_REPO_URI%
 CALL LOG_VAR SYS_DIR %SYS_DIR%
-CALL LOG_VAR TEMPLATE_DIR %TEMPLATE_DIR%
+CALL LOG_VAR TMPL_DIR %TMPL_DIR%
 CALL LOG_VAR USER %USER%
 
 CALL LOG_VAR ART %ART%
@@ -38,7 +38,7 @@ docker  build ^
         --build-arg CONT_DIR=%CONT_DIR% ^
         --build-arg HOST_DIR=%HOST_DIR% ^
         --build-arg SYS_DIR=%SYS_DIR% ^
-        --build-arg TMPL_DIR=%TEMPLATE_DIR% ^
+        --build-arg TMPL_DIR=%TMPL_DIR% ^
         --build-arg ART=%ART% ^
         --build-arg GRP=%GRP% ^
         --build-arg REPO_URL=%REPO_URL% ^

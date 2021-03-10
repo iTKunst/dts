@@ -20,7 +20,7 @@ call LOG_VAR HOST_DIR %HOST_DIR%
 call LOG_VAR IMG %IMG%
 call LOG_VAR MVN_REPO_IP %MVN_REPO_IP%
 call LOG_VAR MVN_REPO_URI %MVN_REPO_URI%
-call LOG_VAR TEMPLATE_DIR %TEMPLATE_DIR%
+call LOG_VAR TMPL_DIR %TMPL_DIR%
 call LOG_VAR USER %USER%
 
 REM DOCKER_BUILDKIT=1 ^
@@ -30,7 +30,7 @@ docker  build ^
         --build-arg HOST_CFG_DIR=%HOST_CFG_DIR% ^
         --build-arg HOST_DIR=%HOST_DIR% ^
         --build-arg SYS_DIR=%DIR_SYS% ^
-        --build-arg TMPL_DIR=%TEMPLATE_DIR% ^
+        --build-arg TMPL_DIR=%TMPL_DIR% ^
         --add-host=%MVN_REPO_URI%:%MVN_REPO_IP% ^
         -f %DCKR_URI% ^
         -t %IMG% ^
