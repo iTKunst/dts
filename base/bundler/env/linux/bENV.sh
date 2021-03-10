@@ -5,8 +5,7 @@
 log_enter bENV
 
 source settings.sh
-source bENV_NAMES.sh
-source bENV_TKNS.sh
+source bENV_DIRS.sh
 
 
 DEF_PROJ_MODE=d
