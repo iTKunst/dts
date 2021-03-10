@@ -1,7 +1,7 @@
 @echo off
 
 
-call LOG_ENTER pENV
+CALL LOG_ENTER tENV
 
 call sENV
 if exist project\pENV_MOD (
