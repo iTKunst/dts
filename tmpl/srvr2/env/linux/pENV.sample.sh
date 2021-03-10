@@ -2,9 +2,9 @@
 # shellcheck disable=SC2086
 
 
-log_enter tENV
+log_enter pENV
 
-source sENV.sh
+source tENV.sh
 
 
 export PROJ_HOST=$SRVR2_HOST
