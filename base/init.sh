@@ -2,12 +2,12 @@
 # shellcheck disable=SC2086
 
 
-log_enter $DIR_DTS/$DIR_BASE/init
+log_enter $DIR_DTS$DIR_BASE$CMD_INIT
 
-source $DIR_DTS$DIR_BNDL/env/init.sh
-source $DIR_DTS$DIR_BNDL/git/init.sh
-source $DIR_DTS$DIR_BNDL/log/init.sh
-source $DIR_DTS$DIR_BNDL/misc/init.sh
+source $DIR_DTS$DIR_BASE$DIR_BNDLER$CMD_INIT
+source $DIR_DTS$DIR_BASE$DIR_GLOBAL$CMD_INIT
+source $DIR_DTS$DIR_BASE$DIR_TEMPLATE$CMD_INIT
+source $DIR_DTS$DIR_BASE$DIR_PROJECT$CMD_INIT
 
-log_exit $DIR_DTS/$DIR_BASE/init
+log_exit $DIR_DTS$DIR_BASE$CMD_INIT
 
