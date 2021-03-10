@@ -4,7 +4,7 @@
 
 log_enter /$DIR_TMPL/env/init
 
-cp ./$DIR_TMPL/env/linux/tENV.sh ./bin
+cp $TMPL_DIR//env/linux/tENV.sh ./bin
 
 
 log_exit /$DIR_TMPL/env/init
