@@ -4,9 +4,10 @@
 
 log_enter bENV_NAME
 
-export GIT=git
+export BASE=base
+export GLOBAL=global
 export SYSTEM=system
-export TMPL=tmpl
+export TEMPL=tmpl
 
 log_exit bENV_NAME
 
