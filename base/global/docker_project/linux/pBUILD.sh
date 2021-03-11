@@ -19,8 +19,8 @@ log_var CONT_DIR $CONT_DIR
 log_var DCKR_URI $DCKR_URI
 log_var HOST_DIR $HOST_DIR
 log_var IMG $IMG
-log_var SYS_DIR $SYS_DIR
-log_var TMPL_DIR $TMPL_DIR
+log_var SYS_DIR $DIR_SYS
+log_var TMPL_DIR $DIR_TMPL
 
 DOCKER_BUILDKIT=1 \
           docker  \
