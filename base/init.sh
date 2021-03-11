@@ -1,17 +1,6 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-ENV=env
-GIT=git
-LOG=log
-MISC=misc
-OS=linux
-
-DIR_ENV=$SLASH$ENV
-DIR_GIT=$SLASH$GIT
-DIR_LOG=$SLASH$LOG
-DIR_MISC=$SLASH$MISC
-DIR_OS=$SLASH$OS
 
 DIR=$DIR_DTS$DIR_BASE
 
