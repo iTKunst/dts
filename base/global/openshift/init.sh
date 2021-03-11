@@ -2,8 +2,8 @@
 # shellcheck disable=SC2086
 
 
-log_enter $GLBL_DIR/openshift/init
+log_enter $DIR_DTS$DIR_BASE$DIR_GLOBAL/openshift/init
 
-cp .$GLBL_DIR/openshift/linux/*.sh ./bin
+cp $DIR_DTS$DIR_BASE$DIR_GLOBAL/openshift/linux/*.sh ./bin
 
-log_exit $GLBL_DIR/openshift/init
+log_exit $DIR_DTS$DIR_BASE$DIR_GLOBAL/openshift/init
