@@ -4,10 +4,12 @@
 
 echo bENV_TKNS [ENTER]
 
+export BCK_SLASH=\\
 export DOT=.
 export FOR_SLASH=/
 export SPLIT=_
-export UP=../
+
+export UP=$DOT$DOT$FOR_SLASH
 
 echo bENV_TKNS [EXIT]
 
