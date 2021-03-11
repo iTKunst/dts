@@ -9,6 +9,6 @@ log_var DIR $DIR
 log_var DIR $DIR_OS
 log_var DIR $DIR_BIN
 
-cp $DIR/$DIR_OS/*.sh $DIR_BIN
+cp $DIR/$DIR_OS/*.sh .$DIR_BIN
 
 log_exit $DIR$CMD_INIT
