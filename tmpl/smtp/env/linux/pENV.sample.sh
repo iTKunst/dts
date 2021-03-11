@@ -13,4 +13,4 @@ export PROJ_PORT_EXT=$SMTP_PORT_EXT
 export PROJ_USER=$SMTP_USER
 
 
-log_exit pENV_MOD
+log_exit pENV

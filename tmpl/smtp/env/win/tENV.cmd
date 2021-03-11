@@ -1,12 +1,9 @@
 @echo off
 
 
-CALL LOG_ENTER pENV
+CALL LOG_ENTER tENV
 
 call sENV
-if exist project\pENV_MOD (
-  call project\pENV_MOD
-)
 
 SET "PROJ_LABEL=%SYS_NAME%"
 SET "PROJ_NET=%SYS_NET%"
@@ -19,4 +16,4 @@ SET "PROJ_HOST_MNT_DIR=%SMTP_HOST_MNT_DIR%"
 SET "PROJ_IMG=%SMTP_IMG%"
 SET "PROJ_PORT_INT=%SMTP_PORT_INT%"
 
-call LOG_EXIT pENV
+call LOG_EXIT tENV

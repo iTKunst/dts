@@ -4,9 +4,6 @@
 log_enter tENV
 
 source sENV.sh
-if [ -f "project/pENV_MOD.sh" ]; then
-  source project/pENV_MOD.sh
-fi
 
 
 export PROJ_LABEL=$SYS_NAME
@@ -21,4 +18,4 @@ export PROJ_IMG=$SMTP_IMG
 export PROJ_PORT_INT=$SMTP_PORT_INT
 
 
-log_exit pENV
+log_exit tENV
