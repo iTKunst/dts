@@ -2,8 +2,8 @@
 # shellcheck disable=SC2086
 
 
-log_enter $DIR_DTS$DIR_BASE$DIR_GLOBAL/kube/init
+log_enter $GLBL_DIR/kube/init
 
-cp $DIR_DTS$DIR_BASE$DIR_GLOBAL/kube/linux/*.sh ./bin
+cp $GLBL_DIR/kube/linux/*.sh ./bin
 
-log_exit $DIR_DTS$DIR_BASE$DIR_GLOBAL/kube/init
+log_exit $GLBL_DIR/kube/init
