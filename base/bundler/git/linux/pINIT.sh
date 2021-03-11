@@ -6,7 +6,6 @@
 
 source LOG.sh
 source settings.sh
-source $BNDL_DIR/git/linux/pINIT_PROJ.sh
 source $BNDL_DIR/misc/linux/mSET_PATH.sh
 
 pINIT () {
