@@ -51,7 +51,7 @@ fi
 # echo TMPL_NAME is $TMPL_NAME
 
 export DIR_BASE=$DIR_DTS$BASE_DIR
-echo DIR_BASE is $DIR_BASE
+# echo DIR_BASE is $DIR_BASE
 
 export DIR_BNDL=$DIR_BASE$BNDL_DIR
 # echo DIR_BNDL is $DIR_BNDL
