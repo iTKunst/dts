@@ -1,16 +1,16 @@
 @echo off
 
 
-CALL LOG_ENTER \%DIR_TMPL%\env\init
+CALL LOG_ENTER %TMPL_DIR%%DIR_ENV%%CMD_INIT%
 
-xcopy /q /y .\%DIR_TMPL%\env\win\*.cmd .%DIR_BIN% >NUL
+xcopy /q /y %TMPL_DIR%%DIR_ENV%%DIR_OS%\*.cmd .%DIR_BIN% >NUL
 
 if not exist project (
   mkdir project
 )
 
 if not exist project\pENV_MOD.cmd (
-  xcopy /q /y .\%DIR_TMPL%\env\win\pENV_MOD.sample.cmd .\project\pENV_MOD.cmd >NUL
+  xcopy /q /y %TMPL_DIR%%DIR_ENV%%DIR_OS%\pENV_MOD.sample.cmd .\project\pENV_MOD.cmd >NUL
 )
 
-CALL LOG_EXIT \%DIR_TMPL%\env\init
+CALL LOG_EXIT %TMPL_DIR%%DIR_ENV%%CMD_INIT%
