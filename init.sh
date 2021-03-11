@@ -3,12 +3,12 @@
 
 source $DIR_BNDL/log/linux/LOG.sh
 
-CMD_DIR=/$DIR_DTS
+DIR=/$DIR_DTS
 
-log_enter $CMD_DIR$CMD_INIT
+log_enter $DIR$CMD_INIT
 
-source $CMD_DIR$DIR_BASE$CMD_INIT
+source $DIR$DIR_BASE$CMD_INIT
 #source $CMD_DIR$DIR_TEMPLATE$CMD_INIT
 
-log_exit $CMD_DIR$CMD_INIT
+log_exit $DIR$CMD_INIT
 
