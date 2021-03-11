@@ -20,10 +20,8 @@ DIR_OS=$SLASH$OS
 
 source $DIR_DTS$DIR_BASE$DIR_BNDL$DIR_ENV$CMD_INIT
 source .$DIR_BIN/bENV.sh
-echo DIR_LOG is $DIR_LOG
-echo DIR_OS is $DIR_OS
 source $BNDL_DIR$DIR_LOG$DIR_OS$CMD_LOG
-sleep 10
+
 log_enter $DIR_DTS$CMD_INIT
 
 source $DIR_DTS$DIR_BASE$CMD_INIT
