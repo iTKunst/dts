@@ -4,6 +4,6 @@
 
 log_enter $TMPL_DIR$DIR_ENV$CMD_INIT
 
-cp $TMPL_DIR$DIR_ENV$DIR_OS/pENV.sh ./bin
+cp $TMPL_DIR$DIR_ENV$DIR_OS/pENV.sh .%DIR_BIN%
 
 log_exit $TMPL_DIR$DIR_ENV$CMD_INIT
