@@ -18,7 +18,7 @@ if exist %DIR_TMPL% (
     )
 
     if NOT exist project\pENV_MOD.cmd (
-      xcopy %DIR_TMPL%\env\linux\pENV.sample.cmd ^
+      xcopy %DIR_TMPL%%ENV_DIR%\linux\pENV.sample.cmd ^
             project\pENV.cmd
     )
 

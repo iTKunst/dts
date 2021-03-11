@@ -7,7 +7,7 @@ CALL .\%DIR_GLBL%\docker_compose\init
 CALL .\%DIR_GLBL%\docker_global\init
 CALL .\%DIR_GLBL%\docker_project\init
 CALL .\%DIR_GLBL%\docker_system\init
-CALL .\%DIR_GLBL%\env\init
+CALL .\%DIR_GLBL%%ENV_DIR%\init
 CALL .\%DIR_GLBL%\git\init
 CALL .\%DIR_GLBL%\kube\init
 CALL .\%DIR_GLBL%\openshift\init
