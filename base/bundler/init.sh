@@ -1,13 +1,14 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
+DIR=$DIR_DTS$DIR_BASE$DIR_BUNDLER
 
-log_enter /$DIR_BNDL/init
+log_enter $DIR$CMD_INIT
 
-#source ./$DIR_BNDL/env/init.sh
-#source ./$DIR_BNDL/git/init.sh
-#source ./$DIR_BNDL/log/init.sh
-#source ./$DIR_BNDL/misc/init.sh
+#source $DIR/env/init.sh
+#source $DIR/git/init.sh
+#source $DIR/log/init.sh
+#source $DIR/misc/init.sh
 
-log_exit /$DIR_BNDL/init
+log_exit $DIR$CMD_INIT
 
