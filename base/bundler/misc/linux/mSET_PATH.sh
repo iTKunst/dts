@@ -4,7 +4,7 @@ source settings.sh
 
 mSET_PATH() {
 
-	echo mSET_PATH [ENTER]
+	# echo mSET_PATH [ENTER]
 
 	subPATH=$PWD/bin:$PWD/bin
 
@@ -17,7 +17,7 @@ mSET_PATH() {
 		echo Please run 'source path.txt' [CMD]
 	fi
 
-	echo mSET_PATH [EXIT]
+	# echo mSET_PATH [EXIT]
 }
 
 mSET_PATH
