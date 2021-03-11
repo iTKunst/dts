@@ -1,8 +1,8 @@
 @echo off
 
 
-call LOG_ENTER \%DIR_SYS%\init
+log_enter %SYS_DIR%%CMD_INIT%
 
-CALL .\%DIR_SYS%\env\init
+source %SYS_DIR%%DIR_ENV%%CMD_INIT%
 
-call LOG_EXIT \%DIR_SYS%\init
+log_exit %SYS_DIR%%CMD_INIT%
