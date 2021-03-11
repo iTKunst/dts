@@ -2,9 +2,8 @@
 # shellcheck disable=SC2086
 
 
-log_enter /$DIR_TMPL/env/init
+log_enter $DIR_DTS$DIR_TEMPLATE$DIR_TMPL$DIR_ENV$CMD_INIT
 
-cp $TMPL_DIR//env/linux/tENV.sh ./bin
+cp $DIR_DTS$DIR_TEMPLATE$DIR_TMPL$DIR_ENV$CMD_INIT$DIR_OS/tENV.sh .DIR_BIN
 
-
-log_exit /$DIR_TMPL/env/init
+log_exit $DIR_DTS$DIR_TEMPLATE$DIR_TMPL$DIR_ENV$CMD_INIT
