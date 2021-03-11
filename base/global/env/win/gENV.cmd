@@ -6,6 +6,7 @@ call LOG_ENTER gENV
 REM Automatically generated or default values
 
 CALL settings
+CALL bENV
 CALL gENV_DIRS
 CALL gENV_FILES
 CALL gENV_TAGS
