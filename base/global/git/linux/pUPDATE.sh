@@ -1,6 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 source settings.sh
+source project/pENV.sh
 source LOG.sh
 source pINIT.sh
 
@@ -27,7 +28,7 @@ pUPDATE() {
   cd ..
 
   source $DIR_DTS$CMD_INIT
-  source gENV.sh
+  source project/pENV.sh
   pINIT
 
   log_exit pUPDATE
