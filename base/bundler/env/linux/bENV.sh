@@ -2,7 +2,7 @@
 # shellcheck disable=SC2086
 
 
-log_enter bENV
+echo bENV [ENTER]
 
 source settings.sh
 source bENV_DIRS.sh
@@ -51,6 +51,6 @@ fi
 echo TMPL_NAME is $TMPL_NAME
 
 
-log_exit bENV
+echo bENV [EXIT]
 
 return 0
