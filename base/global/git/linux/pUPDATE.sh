@@ -2,6 +2,7 @@
 # shellcheck disable=SC2086
 source settings.sh
 source LOG.sh
+source pINIT.sh
 
 DEF_URI_DTS_GIT=https://github.com/iTKunst/dts
 DEF_DIR_DTS=dts
@@ -19,15 +20,6 @@ pUPDATE() {
     export DIR_DTS=$DEF_DIR_DTS
   fi
   log_var DIR_DTS $DIR_DTS
-
-  export DIR_BNDL=$DIR_DTS/base/bundler
-  echo DIR_BNDL is $DIR_BNDL [VAR]
-
-  export TMPL_FLDR="tmpl/"$TMPL_NAME"/*"
-  echo TMPL_FLDR is $TMPL_FLDR [VAR]
-
-  source pINIT.sh
-  source pSET_TRACE.sh
 
 
   cd $DIR_DTS
