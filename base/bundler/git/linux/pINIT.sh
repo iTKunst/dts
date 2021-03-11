@@ -26,7 +26,7 @@ pINIT () {
 	    fi
 
 	    if [ ! -f "project/pENV.sh" ]; then
-	      cp $DIR_TMPL/env$OS_DIR/pENV.sample.sh \
+	      cp $DIR_TMPL_CURR$ENV_DIR$OS_DIR/pENV.sample.sh \
 	         project/pENV.sh
 	    fi
 

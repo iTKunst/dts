@@ -5,6 +5,6 @@
 log_enter $DIR_TMPL_CURR$CMD_INIT
 
 source $DIR_TMPL_CURR$DCKR_DIR$CMD_INIT
-source ./$DIR_TMPL/env$CMD_INIT
+source ./$DIR_TMPL$ENV_DIR$CMD_INIT
 
 log_exit $DIR_TMPL_CURR$CMD_INIT
