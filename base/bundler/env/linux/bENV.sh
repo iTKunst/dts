@@ -5,8 +5,8 @@
 echo bENV [ENTER]
 
 source settings.sh
-source bENV_DIRS.sh
-source bENV_NAMES.sh
+source $BIN_DIR/bENV_DIRS.sh
+source $BIN_DIR/bENV_NAMES.sh
 
 
 DEF_PROJ_MODE=d

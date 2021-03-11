@@ -4,8 +4,8 @@
 echo bENV_DIRS [ENTER]
 
 source settings.sh
-source bENV_NAMES.sh
-source bENV_TKNS.sh
+source $BIN_DIR/bENV_NAMES.sh
+source $BIN_DIR/bENV_TKNS.sh
 
 
 export DIR_BASE=$FOR_SLASH$BASE
