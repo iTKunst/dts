@@ -1,19 +1,23 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
+BNDL=bundler
 ENV=env
 GIT=git
 LOG=log
 MISC=misc
 OS=linux
 
+CMD_LOG=LOG.sh
+
+DIR_BNDL=$SLASH$BNDL
 DIR_ENV=$SLASH$ENV
 DIR_GIT=$SLASH$GIT
 DIR_LOG=$SLASH$LOG
 DIR_MISC=$SLASH$MISC
 DIR_OS=$SLASH$OS
 
-source $DIR_BNDL/log/linux/LOG.sh
+source $DIR_BNDL$DIR_LOG$DIR_OS$CMD_LOG
 
 log_enter $DIR$CMD_INIT
 
