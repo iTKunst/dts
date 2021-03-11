@@ -1,16 +1,13 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-export DIR=$DIR_DTS$DIR_BASE$DIR_BUNDLER
 
-log_enter $DIR$CMD_INIT
+log_enter $DIR_DTS$DIR_BASE$DIR_BUNDLER$CMD_INIT
 
-log_var DIR $DIR
+source $DIR_DTS$DIR_BASE$DIR_BUNDLER/env$CMD_INIT
+source $DIR_DTS$DIR_BASE$DIR_BUNDLER/git$CMD_INIT
+source $DIR_DTS$DIR_BASE$DIR_BUNDLER/log$CMD_INIT
+source $DIR_DTS$DIR_BASE$DIR_BUNDLER/misc$CMD_INIT
 
-source $DIR/env$CMD_INIT
-source $DIR/git$CMD_INIT
-source $DIR/log$CMD_INIT
-source $DIR/misc$CMD_INIT
-
-log_exit $DIR$CMD_INIT
+log_exit $DIR_DTS$DIR_BASE$DIR_BUNDLER$CMD_INIT
 
