@@ -5,8 +5,6 @@
 
 log_enter $BSE_DIR$CMD_INIT
 
-log_var GLBL_DIR $GLBL_DIR
-sleep 10
 
 source $BNDL_DIR$CMD_INIT
 source $GLBL_DIR$CMD_INIT
