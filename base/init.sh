@@ -1,6 +1,14 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
+ENV=env
+LOG=log
+OS=linux
+
+DIR_ENV=$SLASH$ENV
+DIR_LOG=$SLASH$LOG
+DIR_OS=$SLASH$OS
+
 DIR=$DIR_DTS$DIR_BASE
 
 log_enter $DIR$CMD_INIT
