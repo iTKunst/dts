@@ -19,8 +19,4 @@ export DIR_SYS=$SLASH$SYS
 export DIR_TMPL=$SLASH$TMPL_NAME
 export DIR_TMPL_CUR=$SLASH$TMPL_NAME
 
-
-echo DIR_LOG is $DIR_LOG
-echo DIR_OS is $DIR_OS
-
 echo bENV_DIRS [EXIT]
