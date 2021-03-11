@@ -9,7 +9,7 @@ source sENV.sh
 
 log_var SYS_DIR $SYS_DIR
 
-export sPATH=$DIR_SYS/docker-compose
+export sPATH=$SYS_DIR/docker-compose
 log_var sPATH $sPATH
 
 docker-compose -p $sPATH

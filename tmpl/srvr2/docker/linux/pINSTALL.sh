@@ -11,13 +11,13 @@ log_enter pINSTALL
 
 source pENV.sh
 
-log_var DIR_SYS $DIR_SYS
+log_var SYS_DIR $SYS_DIR
 log_var TMPL_DIR $TMPL_DIR
 log_var PROJ_NAME $PROJ_NAME
 log_var SYS_NAME $SYS_NAME
 
 
-export SOURCE=./$DIR_SYS/api/$PROJ_NAME
+export SOURCE=./$SYS_DIR/api/$PROJ_NAME
 log_var SOURCE $SOURCE
 
 export TARGET=code/src-gen/swag

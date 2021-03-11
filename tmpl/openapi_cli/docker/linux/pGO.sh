@@ -41,7 +41,7 @@ log_var VOL $VOL
 log_var VOL_DIR $VOL_DIR
 
 log_var API_HOST $API_HOST
-log_var DIR_SYS $DIR_DIR
+log_var SYS_DIR $DIR_DIR
 log_var API_NAME $API_NAME
 
 docker 	run --rm \

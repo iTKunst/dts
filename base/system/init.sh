@@ -2,8 +2,8 @@
 # shellcheck disable=SC2086
 
 
-log_enter /$DIR_SYS/init
+log_enter /$SYS_DIR/init
 
-source ./$DIR_SYS/env/init.sh
+source ./$SYS_DIR/env/init.sh
 
-log_exit /$DIR_SYS/init
+log_exit /$SYS_DIR/init

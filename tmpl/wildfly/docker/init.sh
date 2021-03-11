@@ -2,8 +2,8 @@
 # shellcheck disable=SC2086
 
 
-log_enter /$DIR_TMPL/docker/init
+log_enter /$TMPL_DIR/docker/init
 
-cp ./$DIR_TMPL/docker/linux/*.sh ./bin
+cp ./$TMPL_DIR/docker/linux/*.sh ./bin
 
-log_exit /$DIR_TMPL/docker/init
+log_exit /$TMPL_DIR/docker/init

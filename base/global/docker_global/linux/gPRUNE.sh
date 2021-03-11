@@ -6,6 +6,6 @@ source LOG.sh
 
 log_enter gPRUNE
 
-docker $DIR_SYS prune
+docker $SYS_DIR prune
 
 log_exit gPRUNE

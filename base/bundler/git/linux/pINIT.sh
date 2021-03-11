@@ -6,25 +6,25 @@
 
 source LOG.sh
 source settings.sh
-source ./$DIR_BNDL/git/linux/pINIT_PROJ.sh
-source ./$DIR_BNDL/misc/linux/mSET_PATH.sh
+source $BNDL_DIR/git/linux/pINIT_PROJ.sh
+source $BNDL_DIR/misc/linux/mSET_PATH.sh
 
 pINIT () {
 
 	log_enter pINIT
 
 
-	if [ ! -d "$DIR_GLBL" ]; then
-		log_dir_err DIR_GLBL
+	if [ ! -d "$GLBL_DIR" ]; then
+		log_dir_err GLBL_DIR
 		exit
 	fi
-	source $DIR_GLBL/init.sh
+	source $GLBL_DIR/init.sh
 
-	if [ ! -d "$DIR_SYS" ]; then
-		log_dir_err DIR_SYS
+	if [ ! -d "$SYS_DIR" ]; then
+		log_dir_err SYS_DIR
 		exit
 	fi
-	source $DIR_SYS/init.sh
+	source $SYS_DIR/init.sh
 
 	if [ ! -d "$DIR_TMPL" ]; then
 		log_dir_err $DIR_TMPL

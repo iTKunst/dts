@@ -6,7 +6,7 @@ source LOG.sh
 
 log_enter kDEL
 
-docker-compose  -f ./$DIR_SYS/docker-compose/docker-compose.yml \
+docker-compose  -f ./$SYS_DIR/docker-compose/docker-compose.yml \
                 down
 
 log_exit kDEL

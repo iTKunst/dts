@@ -24,7 +24,7 @@ VER=$PROJ_VER
 
 log_var CONT_DIR $CONT_DIR
 log_var DCKR_URI $DCKR_URI
-log_var DIR_SYS $DIR_SYS
+log_var SYS_DIR $SYS_DIR
 log_var TMPL_DIR $TMPL_DIR
 log_var HOST_DIR $HOST_DIR
 log_var IMG $IMG
@@ -45,7 +45,7 @@ DOCKER_BUILDKIT=1 \
           --no-cache \
           --build-arg CONT_DIR=$CONT_DIR \
           --build-arg HOST_DIR=$HOST_DIR \
-          --build-arg SYS_DIR=$DIR_SYS \
+          --build-arg SYS_DIR=$SYS_DIR \
           --build-arg TMPL_DIR=$TMPL_DIR \
           --build-arg ART=$ART \
           --build-arg GRP=$GRP \

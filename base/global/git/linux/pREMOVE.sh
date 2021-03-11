@@ -41,16 +41,16 @@ if [ -d $DIR_BNDL ]; then
   deleteClone $DIR_BNDL
 fi
 
-if [ -d $DIR_GLBL ]; then
-  deleteClone $DIR_GLBL
+if [ -d $GLBL_DIR ]; then
+  deleteClone $GLBL_DIR
 fi
 
 if [ -d $DIR_TMPL ]; then
   deleteClone $DIR_TMPL
 fi
 
-if [ -d $DIR_SYS ]; then
-  deleteClone $DIR_SYS
+if [ -d $SYS_DIR ]; then
+  deleteClone $SYS_DIR
 fi
 
 if [ -d bin ]; then

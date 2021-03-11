@@ -6,20 +6,20 @@ pINIT_PROJ() {
 
 	log_enter pINIT_PROJ
 
-	if [ -z $DIR_TMPL ]; then
-		log_invalid DIR_TMPL
+	if [ -z $TMPL_DIR ]; then
+		log_invalid TMPL_DIR
 		return 1
 	fi
-	log_var DIR_TMPL $DIR_TMPL
+	log_var TMPL_DIR $TMPL_DIR
 
-	if [ -d "$DIR_TMPL" ]; then
+	if [ -d "$TMPL_DIR" ]; then
 
 	    if [ ! -d "project" ]; then
 	      mkdir project
 	    fi
 
 	    if [ ! -f "project/pENV.sh" ]; then
-	      cp $DIR_TMPL/env/linux/pENV.sample.sh \
+	      cp $TMPL_DIR/env/linux/pENV.sample.sh \
 	         project/pENV.sh
 	    fi
 
