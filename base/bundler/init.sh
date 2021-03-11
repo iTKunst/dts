@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-DIR=$DIR_DTS$DIR_BASE$DIR_BUNDLER
+export DIR=$DIR_DTS$DIR_BASE$DIR_BUNDLER
 
 log_enter $DIR$CMD_INIT
 
