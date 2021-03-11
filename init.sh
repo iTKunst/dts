@@ -2,13 +2,15 @@
 # shellcheck disable=SC2086
 
 BNDL=bundler
+DOT=.
 ENV=env
+EXT=sh
 GIT=git
-LOG=log
+LOG=LOG
 MISC=misc
 OS=linux
 
-CMD_LOG=LOG.sh
+CMD_LOG=$SLASH$LOG$DOT$EXT
 
 DIR_BNDL=$SLASH$BNDL
 DIR_ENV=$SLASH$ENV
