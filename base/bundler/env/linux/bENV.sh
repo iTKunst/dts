@@ -50,6 +50,23 @@ if [ -z $TMPL_NAME ]; then
 fi
 echo TMPL_NAME is $TMPL_NAME
 
+export BSE_DIR=$DIR_DTS$DIR_BASE
+echo BSE_DIR is $BSE_DIR
+
+export BNDL_DIR=$BSE_DIR$DIR_BNDL
+echo BNDL_DIR is $BNDL_DIR
+
+export GLBL_DIR=$BSE_DIR$DIR_GLBL
+echo GLBL_DIR is $GLBL_DIR
+
+export SYS_DIR=$UP$UP$DIR_SYS
+echo SYS_DIR is $SYS_DIR
+
+export TMPL_DIR=$DIR_DTS$DIR_TMPL$DIR_TMPL_CUR
+echo TMPL_DIR is $TMPL_DIR
+
+
+sleep 20
 
 echo bENV [EXIT]
 
