@@ -17,7 +17,6 @@ export OS=linux
 export SYS=system
 export TMPL=tmpl
 
-
 # echo bENV_NAMES [EXIT]
 
 return 0

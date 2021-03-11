@@ -1,7 +1,7 @@
 @echo off
 
 
-echo bENV_DIRS [ENTER]
+REM echo bENV_DIRS [ENTER]
 
 CALL settings
 CALL bin/bENV_NAMES
@@ -21,4 +21,4 @@ SET "SYS_DIR=%BCK_SLASH%%SYS%"
 SET "TMPL_DIR=%BCK_SLASH%%TMPL%"
 SET "TMPL_CURR_DIR=%BCK_SLASH%%TMPL_NAME%"
 
-echo bENV_DIRS [EXIT]
+REM echo bENV_DIRS [EXIT]

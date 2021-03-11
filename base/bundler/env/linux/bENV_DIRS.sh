@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-echo bENV_DIRS [ENTER]
+# echo bENV_DIRS [ENTER]
 
 source settings.sh
 source bin/bENV_NAMES.sh
@@ -21,6 +21,4 @@ export SYS_DIR=$FOR_SLASH$SYS
 export TMPL_DIR=$FOR_SLASH$TMPL
 export TMPL_CURR_DIR=$FOR_SLASH$TMPL_NAME
 
-# echo GLBL_DIR is $GLBL_DIR
-
-echo bENV_DIRS [EXIT]
+# echo bENV_DIRS [EXIT]

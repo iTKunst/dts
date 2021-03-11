@@ -1,7 +1,7 @@
 @echo off
 
 
-call LOG_ENTER bENV_TKNS
+REM echo bENV_TKNS [ENTER]
 
 SET "BCK_SLASH=\\"
 SET "DOT=."
@@ -10,4 +10,4 @@ SET "SPLIT=_"
 
 SET "UP=%DOT%%DOT%%FOR_SLASH%
 
-call LOG_EXIT bENV_TKNS
+REM echo bENV_TKNS [EXIT]

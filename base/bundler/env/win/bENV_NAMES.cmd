@@ -1,7 +1,7 @@
 @echo off
 
 
-call LOG_ENTER bENV_NAMES
+REM echo bENV_NAMES [ENTER]
 
 SET "BASE=base"
 SET "BNDL=bundler"
@@ -16,5 +16,5 @@ SET "OS=linux"
 SET "SYS=system"
 SET "TMPL=tmpl"
 
-call LOG_EXIT bENV_NAMES
+REM echo bENV_NAMES [EXIT]
 
