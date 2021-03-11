@@ -2,9 +2,9 @@
 # shellcheck disable=SC2086
 
 
-log_enter /$TMPL_DIR$CMD_INIT
+log_enter $DIR_TMPL$CMD_INIT
 
-source ./$TMPL_DIR$DCKR_DIR$CMD_INIT
-source $TMPL_DIR//env$CMD_INIT
+source $DIR_TMPL$DCKR_DIR$CMD_INIT
+source $DIR_TMPL$ENV_DIR$CMD_INIT
 
-log_exit /$TMPL_DIR$CMD_INIT
+log_exit $DIR_TMPL$CMD_INIT

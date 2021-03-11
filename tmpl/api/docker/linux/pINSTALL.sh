@@ -30,7 +30,7 @@ cp -r $SOURCE/* $TARGET
 export TARGET=code/
 log_var TARGET $TARGET
 
-export SOURCE=./$TMPL_DIR/mvn
+export SOURCE=.$DIR_TMPL/mvn
 log_var SOURCE $SOURCE
 
 mkdir -p $TARGET
