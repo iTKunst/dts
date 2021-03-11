@@ -4,8 +4,8 @@
 call LOG_ENTER bENV
 
 CALL settings
-CALL bin\bENV_NAME
-CALL bin\bENV_TKN
+CALL bin\bENV_NAMES
+CALL bin\bENV_TKNS
 
 SET "DEF_PROJ_MODE=d"
 SET "DEF_URI_DTS_GIT=https://github.com/iTKunst/dts"
