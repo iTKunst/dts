@@ -10,7 +10,7 @@ log_enter pBUILD
 
 
 source pSTOP.sh
-source pENV.sh
+source project/pENV.sh
 
 CONT_DIR=$PROJ_CONT_DIR
 HOST_DIR=$PROJ_HOST_DIR

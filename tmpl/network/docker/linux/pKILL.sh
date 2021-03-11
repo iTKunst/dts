@@ -6,7 +6,7 @@ source LOG.sh
 
 log_load pKILL
 
-source pENV.sh
+source project/pENV.sh
 
 NET=$PROJ_NET
 log_var NET $NET

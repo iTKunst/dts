@@ -6,7 +6,7 @@ source LOG.sh
 
 log_load pPUBLISH
 
-source pENV.sh
+source project/pENV.sh
 
 CONT=$PROJ_CONT
 CONT_DIR=$PROJ_CONT_DIR
