@@ -6,7 +6,7 @@ source LOG.sh
 
 log_enter pVIEW
 
-source pENV.sh
+source project/pENV.sh
 
 CONT=$PROJ_CONT
 IMG=$PROJ_IMG

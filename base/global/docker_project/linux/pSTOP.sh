@@ -7,7 +7,7 @@ source LOG.sh
 log_enter pSTOP
 
 
-source pENV.sh
+source project/pENV.sh
 
 CONT=$PROJ_CONT
 log_var CONT $CONT

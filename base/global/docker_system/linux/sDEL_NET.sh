@@ -7,7 +7,7 @@ source LOG.sh
 log_enter sDEL_NET
 
 
-source pENV.sh
+source project/pENV.sh
 
 FILTER="label=$SYS_NAME"
 
