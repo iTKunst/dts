@@ -27,6 +27,7 @@ pUPDATE() {
   cd ..
 
   source $DIR_DTS$CMD_INIT
+  source gENV.sh
   pINIT
 
   log_exit pUPDATE
