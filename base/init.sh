@@ -3,11 +3,11 @@
 
 
 
-log_enter $BSE_DIR$CMD_INIT
+log_enter $DIR_BASE$CMD_INIT
 
 
-source $BNDL_DIR$CMD_INIT
-source $GLBL_DIR$CMD_INIT
+source $DIR_BNDL$CMD_INIT
+source $DIR_GLBL$CMD_INIT
 
-log_exit $BSE_DIR$CMD_INIT
+log_exit $DIR_BASE$CMD_INIT
 
