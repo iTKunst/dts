@@ -4,7 +4,7 @@ CALL settings
 
 call LOG_ENTER sVIEW
 
-CALL pENV
+CALL project\pENV
 
 SET IMG_FILTER="reference=%SYS_NAME%*"
 SET CONT_FILTER="label=%SYS_NAME%"

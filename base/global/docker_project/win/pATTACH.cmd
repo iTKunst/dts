@@ -4,7 +4,7 @@ CALL settings
 
 call LOG_ENTER pATTACH
 
-CALL pENV
+CALL project\pENV
 
 SET CONT=%PROJ_CONT%
 call LOG_VAR CONT %CONT%

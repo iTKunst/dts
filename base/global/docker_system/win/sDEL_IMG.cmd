@@ -4,7 +4,7 @@ CALL settings
 
 call LOG_ENTER sDEL_IMG
 
-CALL pENV
+CALL project\pENV
 
 SET "FILTER='reference=%SYS_NAME%*'"
 

@@ -4,7 +4,7 @@ CALL settings
 
 call LOG_ENTER pDEL
 
-CALL pENV
+CALL project\pENV
 
 SET IMG=%PROJ_IMG%
 

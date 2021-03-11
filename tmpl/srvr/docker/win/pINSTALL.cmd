@@ -4,7 +4,7 @@ CALL settings
 
 call LOG_ENTER pINSTALL
 
-CALL pENV
+CALL project\pENV
 
 
 CALL LOG_VAR DIR_SYS %DIR_SYS%

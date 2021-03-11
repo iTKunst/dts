@@ -5,7 +5,7 @@ CALL settings
 call LOG_ENTER pTAG
 
 
-CALL pENV
+CALL project\pENV
 
 IMG=$PROJ_IMG
 REPO=$DCKR_REPO_HST

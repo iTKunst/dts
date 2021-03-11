@@ -4,7 +4,7 @@ CALL settings
 
 call LOG_ENTER pVIEW
 
-CALL pENV
+CALL project\pENV
 
 SET CONT=%PROJ_CONT%
 SET IMG=%PROJ_IMG%

@@ -4,7 +4,7 @@ CALL settings
 
 call LOG_ENTER sDEL_CONT
 
-CALL pENV
+CALL project\pENV
 
 SET "FILTER='label=%SYS_NAME%'"
 
