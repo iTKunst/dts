@@ -5,6 +5,6 @@ DIR=$DIR_DTS$DIR_BASE$DIR_BUNDLER$DIR_ENV
 
 log_enter $DIR$CMD_INIT
 
-cp $DIR/linux/*.sh $DIR_BIN
+cp $DIR/$DIR_OS/*.sh $DIR_BIN
 
 log_exit $DIR$CMD_INIT
