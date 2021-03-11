@@ -2,7 +2,7 @@
 # shellcheck disable=SC2086
 
 
-log_enter bENV_NAME
+echo bENV_NAME [ENTER]
 
 export BASE=base
 export BUNDLER=bundler
@@ -10,6 +10,6 @@ export GLOBAL=global
 export SYSTEM=system
 export TEMPL=tmpl
 
-log_exit bENV_NAME
+echo bENV_NAME [EXIT]
 
 return 0

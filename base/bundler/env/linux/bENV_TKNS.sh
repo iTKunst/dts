@@ -2,13 +2,13 @@
 # shellcheck disable=SC2086
 
 
-log_enter bENV_TKN
+echo bENV_TKN [ENTER]
 
 export DOT=.
 export FOR_SLASH=/
 export SPLIT=_
 export UP=../
 
-log_exit bENV_TKN
+echo bENV_TKN [EXIT]
 
 return 0

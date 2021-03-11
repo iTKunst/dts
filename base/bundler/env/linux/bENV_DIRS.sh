@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-log_enter gENV_DIRS
+echo bENV_DIRS [ENTER]
 
 source settings.sh
 source bENV_NAMES.sh
@@ -20,4 +20,4 @@ export SYS_DIR=$UP$UP$SYSTEM_DIR
 export TMPL_DIR=$DIR_DTS$TEMPL_DIR$TMPL_NAME
 
 
-log_exit gENV_DIRS
+echo bENV_DIRS [EXIT]
