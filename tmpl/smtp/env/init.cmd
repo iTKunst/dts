@@ -1,9 +1,8 @@
 @echo off
 
 
-CALL LOG_ENTER \%DIR_TMPL%\env\init
+CALL LOG_ENTER %DIR_DTS%%DIR_TEMPLATE%%DIR_TMPL%%DIR_ENV%%CMD_INIT%
 
-xcopy /q /y .\%DIR_TMPL%\env\win\tENV.cmd .\bin >NUL
+xcopy /q /y %DIR_DTS%%DIR_TEMPLATE%%DIR_TMPL%%DIR_ENV%%DIR_OS\*.cmd .%DIR_BIN% >NUL
 
-
-CALL LOG_EXIT \%DIR_TMPL%\env\init
+CALL LOG_EXIT %DIR_DTS%%DIR_TEMPLATE%%DIR_TMPL%%c%%CMD_INIT%
