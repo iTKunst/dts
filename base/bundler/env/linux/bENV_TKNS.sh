@@ -5,7 +5,7 @@
 log_enter bENV_TKN
 
 export DOT=.
-export SLASH=/
+export FOR_SLASH=/
 export SPLIT=_
 export UP=../
 
