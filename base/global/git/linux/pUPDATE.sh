@@ -1,8 +1,8 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 source settings.sh
-source project/pENV.sh
 source LOG.sh
+source project/pENV.sh
 source pINIT.sh
 
 DEF_URI_DTS_GIT=https://github.com/iTKunst/dts
