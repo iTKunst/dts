@@ -67,8 +67,6 @@ export TMPL_DIR=$DIR_DTS$DIR_TMPL$DIR_TMPL_CUR
 echo TMPL_DIR is $TMPL_DIR
 
 
-sleep 20
-
 echo bENV [EXIT]
 
 return 0
