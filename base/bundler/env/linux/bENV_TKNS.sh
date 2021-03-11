@@ -2,7 +2,7 @@
 # shellcheck disable=SC2086
 
 
-echo bENV_TKNS [ENTER]
+# echo bENV_TKNS [ENTER]
 
 export BCK_SLASH=\\
 export DOT=.
@@ -11,6 +11,6 @@ export SPLIT=_
 
 export UP=$DOT$DOT$FOR_SLASH
 
-echo bENV_TKNS [EXIT]
+# echo bENV_TKNS [EXIT]
 
 return 0
