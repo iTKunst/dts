@@ -27,5 +27,7 @@ log_enter $DIR_DTS$CMD_INIT
 source $DIR_DTS$DIR_BASE$CMD_INIT
 source $DIR_DTS$DIR_TEMPLATE$CMD_INIT
 
+sleep 10
+
 log_exit $DIR_DTS$CMD_INIT
 
