@@ -5,6 +5,7 @@
 log_enter bENV_NAME
 
 export BASE=base
+export BUNDLER=bundler
 export GLOBAL=global
 export SYSTEM=system
 export TEMPL=tmpl
