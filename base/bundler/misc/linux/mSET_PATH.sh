@@ -1,7 +1,6 @@
  #!/bin/bash
 # shellcheck disable=SC2086
 source settings.sh
-source LOG.sh
 
 mSET_PATH() {
 
@@ -10,15 +9,15 @@ mSET_PATH() {
 	subPATH=$PWD/bin:$PWD/bin
 
 	if echo "$PATH" | grep -q "$subPATH" 1>nul; then
-		log_info "PATH already set for project";
+		echo PATH already set for project [INFO]
 	else
-		log_info "PATH not yet set for project";
+		echo PATH not yet set for project [INFO]
 		echo "export PATH=$subPATH:$PATH">path.txt;
 		export PATH=$subPATH:$PATH
-		log_cmd "Please run 'source path.txt'"
+		echo Please run 'source path.txt' [CMD]
 	fi
 
-	#log_exit mSET_PATH
+	echo mSET_PATH [EXIT]
 }
 
 mSET_PATH
