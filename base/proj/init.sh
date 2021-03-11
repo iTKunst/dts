@@ -77,8 +77,8 @@ init()
 
   export DIR_BNDL=$DIR_DTS/base/bundler
 
-  source ./$DIR_BNDL/log/linux/LOG.sh
-  source $DIR_BNDL/init.sh
+  source ./$DIR_BNDL/log$OS_DIR/LOG.sh
+  source $DIR_BNDL$CMD_INIT
   source bin/mSET_PATH.sh
   source bENV.sh
   source pINIT.sh

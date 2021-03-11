@@ -4,6 +4,6 @@
 
 log_enter /$DIR_TMPL$DCKR_DIR/init
 
-cp $TMPL_DIR/$DCKR_DIR/linux/*.sh .$DIR_BIN
+cp $TMPL_DIR/$DCKR_DIR$OS_DIR/*.sh .$DIR_BIN
 
 log_exit /$DIR_TMPL$DCKR_DIR/init

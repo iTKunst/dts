@@ -2,8 +2,8 @@
 # shellcheck disable=SC2086
 
 
-log_enter $GLBL_DIR/git/init
+log_enter $DIR_GLBL$GIT_DIR$CMD_INIT
 
-cp $GLBL_DIR/git/linux/*.sh ./bin
+cp $DIR_GLBL$GIT_DIR$OS_DIR/*.sh ./bin
 
-log_exit $GLBL_DIR/git/linux$GLBL_DIR/git/init
+log_exit $DIR_GLBL$GIT_DIR$CMD_INIT

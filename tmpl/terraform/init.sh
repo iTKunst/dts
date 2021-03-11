@@ -4,7 +4,7 @@
 
 log_enter $TMPL_DIR$CMD_INIT
 
-source ./$DIR_TMPL$DCKR_DIR/init.sh
-source ./$DIR_TMPL/env/init.sh
+source ./$DIR_TMPL$DCKR_DIR$CMD_INIT
+source ./$DIR_TMPL/env$CMD_INIT
 
 log_exit $TMPL_DIR$CMD_INIT

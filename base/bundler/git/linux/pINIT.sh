@@ -6,7 +6,7 @@
 
 source LOG.sh
 source settings.sh
-source $DIR_BNDL/misc/linux/mSET_PATH.sh
+source $DIR_BNDL/misc$OS_DIR/mSET_PATH.sh
 
 pINIT () {
 
@@ -26,7 +26,7 @@ pINIT () {
 	    fi
 
 	    if [ ! -f "project/pENV.sh" ]; then
-	      cp $DIR_TMPL/env/linux/pENV.sample.sh \
+	      cp $DIR_TMPL/env$OS_DIR/pENV.sample.sh \
 	         project/pENV.sh
 	    fi
 

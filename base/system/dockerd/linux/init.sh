@@ -2,7 +2,7 @@
 # shellcheck disable=SC2086
 
 
-echo dockerd/linux/init called
+echo dockerd$OS_DIR/init called
 
 
 cp ../daemon.json /etc/docker
@@ -19,4 +19,4 @@ sudo cp ../certs/server-key.pem $DCKR_DIR
 sudo systemctl daemon-reload
 sudo systemctl restart docker.service
 
-echo dockerd/linux/init exited
+echo dockerd$OS_DIR/init exited
