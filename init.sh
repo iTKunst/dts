@@ -26,6 +26,7 @@ log_enter $DIR_DTS$CMD_INIT
 
 source $DIR_DTS$DIR_BASE$CMD_INIT
 source $DIR_DTS$DIR_TMPL$CMD_INIT
+source $SYS_DIR$CMD_INIT
 
 
 log_exit $DIR_DTS$CMD_INIT
