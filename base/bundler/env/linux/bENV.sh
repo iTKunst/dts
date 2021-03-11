@@ -6,6 +6,7 @@ echo bENV [ENTER]
 
 source settings.sh
 source bENV_DIRS.sh
+source bENV_NAMES.sh
 
 
 DEF_PROJ_MODE=d
@@ -59,7 +60,7 @@ echo BNDL_DIR is $BNDL_DIR
 export GLBL_DIR=$BSE_DIR$DIR_GLBL
 echo GLBL_DIR is $GLBL_DIR
 
-export SYS_DIR=$UP$UP$DIR_SYS
+export SYS_DIR=$UP$UP$SYS
 echo SYS_DIR is $SYS_DIR
 
 export TMPL_DIR=$DIR_DTS$DIR_TMPL$DIR_TMPL_CUR
