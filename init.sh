@@ -3,7 +3,7 @@
 
 source $DIR_BNDL/log/linux/LOG.sh
 
-DIR=/$DIR_DTS
+DIR=$DIR_DTS
 
 log_enter $DIR$CMD_INIT
 
