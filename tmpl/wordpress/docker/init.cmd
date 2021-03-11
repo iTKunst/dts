@@ -1,7 +1,7 @@
 @echo off
 
-call LOG_ENTER \%DIR_TMPL%\docker\init
+call LOG_ENTER %TMPL_DIR%%DIR_DCKR%%CMD_INIT%
 
-xcopy /q /y .\%DIR_TMPL%\docker\win\*.cmd .\bin >NUL
+xcopy /q /y %TMPL_DIR%%DIR_DCKR%%DIR_OS%\*.cmd .%DIR_BIN% >NUL
 
-call LOG_EXIT \%DIR_TMPL%\docker\init
+call LOG_EXIT %TMPL_DIR%%DIR_DCKR%%CMD_INIT%

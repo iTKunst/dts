@@ -3,6 +3,6 @@
 
 CALL LOG_ENTER \%DIR_TMPL%\env\init
 
-xcopy /q /y .\%DIR_TMPL%\env\win\*.cmd .\bin >NUL
+xcopy /q /y .\%DIR_TMPL%\env\win\*.cmd .%DIR_BIN% >NUL
 
 CALL LOG_EXIT \%DIR_TMPL%\env\init
