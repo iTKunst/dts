@@ -14,25 +14,24 @@ pINIT () {
 	log_enter pINIT
 
 
-	if [ ! -d "$GLBL_DIR" ]; then
-		log_dir_err GLBL_DIR
-		exit
+	if [ -z $TMPL_DIR ]; then
+		log_invalid TMPL_DIR
+		return 1
 	fi
-	source $GLBL_DIR/init.sh
+	log_var TMPL_DIR $TMPL_DIR
 
-	if [ ! -d "$SYS_DIR" ]; then
-		log_dir_err SYS_DIR
-		exit
-	fi
-	source $SYS_DIR/init.sh
+	if [ -d "$TMPL_DIR" ]; then
 
-	if [ ! -d "$DIR_TMPL" ]; then
-		log_dir_err $DIR_TMPL
-		exit
-	fi
-	source $DIR_TMPL/init.sh
+	    if [ ! -d "project" ]; then
+	      mkdir project
+	    fi
 
-  pINIT_PROJ
+	    if [ ! -f "project/pENV.sh" ]; then
+	      cp $TMPL_DIR/env/linux/pENV.sample.sh \
+	         project/pENV.sh
+	    fi
+
+  fi
 
 	chmod +x ./bin/*.sh
 
