@@ -34,6 +34,7 @@ pUPDATE() {
   git pull origin master
   cd ..
 
+  source $DIR_DTS$CMD_INIT
   pINIT
 
   log_exit pUPDATE
