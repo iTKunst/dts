@@ -2,8 +2,8 @@
 # shellcheck disable=SC2086
 
 
-log_enter $TMPL_DIR$DCKR_DIR$CMD_INIT
+log_enter $DIR_TMPL_CURR$DCKR_DIR$CMD_INIT
 
 cp $TMPL_DIR/$DCKR_DIR$OS_DIR/*.sh .$DIR_BIN
 
-log_exit $TMPL_DIR$DCKR_DIR$CMD_INIT
+log_exit $DIR_TMPL_CURR$DCKR_DIR$CMD_INIT
