@@ -4,27 +4,24 @@
 echo pINIT.cmd [LOADED]
 
 
-if not exist %DIR_GLBL% (
-  CALL LOG_DIR_ERR DIR_GLBL
+if [%DIR_TMPL_CURR%]==[] (
+  CALL LOG_INVALID DIR_TMPL_CURR
   GOTO :EOF
 )
-CALL %DIR_GLBL%\init
+CALL LOG_VAR DIR_TMPL_CURR %DIR_TMPL_CURR%
 
-if exist %DIR_SYS% (
-  CALL LOG_DIR_ERR DIR_SYS
-  GOTO :EOF
+if exist %DIR_TMPL_CURR% (
+
+    if NOT exist project (
+      mkdir project
+    )
+
+    if NOT exist project\pENV.cmd (
+      xcopy %DIR_TMPL_CURR%%ENV_DIR%%OS_DIR%\pENV.sample.cmd ^
+            project\pENV.cmd
+    )
+
 )
-CALL %DIR_SYS%\init
-
-if exist %DIR_TMPL% (
-  CALL LOG_DIR_ERR DIR_TMPL
-  GOTO :EOF
-)
-CALL %DIR_TMPL%\init
-
-CALL pINIT_PROJ
-
-
 
 :EOF
 

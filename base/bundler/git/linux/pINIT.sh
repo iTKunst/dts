@@ -13,13 +13,13 @@ pINIT () {
 	log_enter pINIT
 
 
-	if [ -z $DIR_TMPL ]; then
-		log_invalid DIR_TMPL
+	if [ -z $DIR_TMPL_CURR ]; then
+		log_invalid DIR_TMPL_CURR
 		return 1
 	fi
-	log_var DIR_TMPL $DIR_TMPL
+	log_var DIR_TMPL_CURR $DIR_TMPL_CURR
 
-	if [ -d "$DIR_TMPL" ]; then
+	if [ -d "$DIR_TMPL_CURR" ]; then
 
 	    if [ ! -d "project" ]; then
 	      mkdir project
