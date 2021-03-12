@@ -5,6 +5,7 @@
 # echo bENV_NAMES [ENTER]
 
 export BASE=base
+export BIN=bin
 export BNDL=bundler
 export DCKR=docker
 export ENV=env

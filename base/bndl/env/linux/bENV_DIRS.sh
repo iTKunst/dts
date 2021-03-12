@@ -9,6 +9,7 @@ source bin/bENV_TKNS.sh
 
 
 export BASE_DIR=$FOR_SLASH$BASE
+export BIN_DIR=$BIN
 export BNDL_DIR=$FOR_SLASH$BNDL
 export DCKR_DIR=$FOR_SLASH$DCKR
 export ENV_DIR=$FOR_SLASH$ENV
