@@ -73,7 +73,7 @@ init()
     echo Setting to default value. [INFO]
     export DIR_DTS=$DEF_DIR_DTS
   fi
-  echo DIR_DTS is $DIR_DTS [VAR]
+  # echo DIR_DTS is $DIR_DTS [VAR]
 
   if [ -d "$DIR_BIN" ]; then
     echo Already initialized[INFO]
@@ -87,19 +87,19 @@ init()
     echo Setting to default value [INFO].
     export URI_DTS_GIT=$DEF_URI_DTS_GIT
   fi
-  echo URI_DTS_GIT is $URI_DTS_GIT [VAR]
+  # echo URI_DTS_GIT is $URI_DTS_GIT [VAR]
 
   if [ -z $TMPL_NAME ]; then
     echo TMPL_NAME [INVALID]
     echo TMPL_NAME must be set in settings.sh. [INFO]
 	exit
   fi
-  echo TMPL_NAME is $TMPL_NAME [VAR]
+  # echo TMPL_NAME is $TMPL_NAME [VAR]
 
   export DIR_TMPL_CURR=$DIR_TMPL$DIR_SLASH$TMPL_NAME
-  echo DIR_TMPL_CURR is $DIR_TMPL_CURR [VAR]
+  # echo DIR_TMPL_CURR is $DIR_TMPL_CURR [VAR]
 
-  echo DIR_BIN is $DIR_BIN [VAR]
+  # echo DIR_BIN is $DIR_BIN [VAR]
   if [ ! -d $DIR_BIN ]; then
     mkdir $DIR_BIN
     echo create $DIR_BIN
