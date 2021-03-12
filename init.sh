@@ -30,7 +30,7 @@ if [ ! -d $DIR_BIN ]; then
 fi
 
 source $DIR_ENV$CMD_INIT
-source $BIN_DIR/bENV.sh
+source $DIR_BIN/bENV.sh
 source $DIR_BNDL$LOG_DIR$OS_DIR$CMD_LOG
 
 log_enter $DIR_DTS$CMD_INIT
