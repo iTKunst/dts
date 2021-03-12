@@ -53,6 +53,9 @@ fi
 export DIR_BASE=$DIR_DTS$BASE_DIR
 # echo DIR_BASE is $DIR_BASE
 
+export DIR_BIN=$BIN_DIR
+# echo DIR_BIN is $DIR_BIN
+
 export DIR_BNDL=$DIR_BASE$BNDL_DIR
 # echo DIR_BNDL is $DIR_BNDL
 
