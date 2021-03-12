@@ -10,6 +10,7 @@ export FOR_SLASH=/
 export SPLIT=_
 
 export UP=$DOT$DOT$FOR_SLASH
+export DIR_SLASH=$FOR_SLASH
 
 # echo bENV_TKNS [EXIT]
 
