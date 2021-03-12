@@ -22,10 +22,10 @@ export OS_DIR=$SLASH$OS
 export DIR_ENV=$DIR_DTS$BASE_DIR$BNDL_DIR$ENV_DIR
 echo DIR_ENV is $DIR_ENV [VAR]
 
-echo DIR_BIN is $DIR_BIN [VAR]
-if [ ! -d $DIR_BIN ]; then
-  mkdir $DIR_BIN
-  echo create $DIR_BIN
+echo BIN_DIR is BIN_DIR [VAR]
+if [ ! -d $BIN_DIR ]; then
+  mkdir $BIN_DIR
+  echo create $BIN_DIR
 fi
 
 source $DIR_ENV$CMD_INIT
