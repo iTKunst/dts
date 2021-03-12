@@ -12,7 +12,7 @@
   REM NAMES
   SET "BIN=bin"
   SET "BASE=base"
-  SET "BNDL=bundler"
+  SET "BNDL=bndl"
   SET "COM=com"
   SET "DTS=dts"
   SET "EXT=cmd"

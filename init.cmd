@@ -2,7 +2,7 @@
 
 SET "BASE=base"
 SET "BIN=bin"
-SET "BNDL=bundler"
+SET "BNDL=bndl"
 SET "DOT=."
 SET "ENV=env"
 SET "EXT="
