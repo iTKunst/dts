@@ -4,6 +4,7 @@
 REM echo bENV_NAMES [ENTER]
 
 SET "BASE=base"
+SET "BIN=bin"
 SET "BNDL=bndl"
 SET "DCKR=docker"
 SET "ENV=env"
