@@ -23,19 +23,19 @@ export ENV_DIR=$DIR_SLASH$ENV
 export OS_DIR=$DIR_SLASH$OS
 
 export DIR_BASE=$DTS_DIR$BASE_DIR
-# echo DIR_BASE is $DIR_BASE [VAR]
+ echo DIR_BASE is $DIR_BASE [VAR]
 
 export DIR_BIN=$BIN_DIR
-# echo DIR_BIN is $DIR_BIN [VAR]
+ echo DIR_BIN is $DIR_BIN [VAR]
 
 export DIR_BNDL=$DIR_BASE$BNDL_DIR
-# echo DIR_BNDL is $DIR_BNDL [VAR]
+ echo DIR_BNDL is $DIR_BNDL [VAR]
 
 export DIR_ENV=$DIR_BNDL$ENV_DIR
-# echo DIR_ENV is $DIR_ENV [VAR]
+ echo DIR_ENV is $DIR_ENV [VAR]
 
 export FILES=$OS_DIR$STAR$DOT$EXT
-# echo FILES is $FILES [VAR]
+ echo FILES is $FILES [VAR]
 
 if [ ! -d $DIR_BIN ]; then
   mkdir $DIR_BIN
