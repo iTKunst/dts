@@ -42,9 +42,9 @@ call LOG_VAR DB_NAME %DB_NAME%
 docker run ^
        -%MODE% ^
        -p %HOST%:%PORT_EXT%:%PORT_INT% ^
-       -v $HOST_DIR:$CONT_DIR \
-       -e KEYCLOAK_USER=$USER \
-       -e KEYCLOAK_PASSWORD=$PASSWORD \
+       -v %HOST_DIR%:%CONT_DIR% \
+       -e KEYCLOAK_USER=%USER% \
+       -e KEYCLOAK_PASSWORD=%PASSWORD% \
        --label=%LABEL% ^
        --name=%CONT% ^
        --network=%NET% ^

@@ -42,7 +42,7 @@ SET "DEF_DIR_DTS=dts"
   )
   ECHO URI_DTS_GIT is %URI_DTS_GIT% [INFO]
 
-  SET "TMPL_FLDR='tmpl/'$TMPL_NAME'/*'"
+  SET "TMPL_FLDR='tmpl/'%TMPL_NAME%'/*'"
   ECHO TMPL_FLDR is %TMPL_FLDR% [INFO]
 
   SET "DIR_BNDL=%DIR_DTS%/base/bundler

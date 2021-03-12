@@ -48,7 +48,7 @@ if [%TMPL_NAME%]==[] (
   echo You must set it in settings.sh! [CMD]
   GOTO :EOF
 )
-REM echo TMPL_NAME is $TMPL_NAME
+REM echo TMPL_NAME is %TMPL_NAME%
 
 SET "DIR_BASE=%DIR_DTS%%BASE_DIR%"
 REM echo DIR_BASE is %DIR_BASE%

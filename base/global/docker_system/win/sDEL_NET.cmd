@@ -16,7 +16,7 @@ SET "ARTIFACTS=%( docker network ls -q -f %FILTER% )%"
 call LOG_VAR ARTIFACTS %ARTIFACTS%
 if NOT [%ARTIFACTS%]==[] (
   call LOG_WARN "removing networks"
-  docker rm -f $ARTIFACTS
+  docker rm -f %ARTIFACTS%
 )
 
 call LOG_EXIT sDEL_CONT

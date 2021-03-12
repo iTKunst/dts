@@ -20,8 +20,8 @@ if not exist %DIR_DTS% (
   goto :EOF
 )
 
-SET "DIR_BNDL=$DIR_DTS/base/bundler"
-call LOG_VAR DIR_BNDL $DIR_BNDL
+SET "DIR_BNDL=%DIR_DTS%/base/bundler"
+call LOG_VAR DIR_BNDL %DIR_BNDL%
 
 
 cd %DIR_DTS%
