@@ -4,6 +4,6 @@
 
 log_enter $DIR_GLBL/docker_system$CMD_INIT
 
-cp $DIR_GLBL/docker_system$OS_DIR/*.sh ./bin
+cp $DIR_GLBL/docker_system$OS_DIR/*.sh $DIR_BIN
 
 log_exit $DIR_GLBL/docker_system$CMD_INIT

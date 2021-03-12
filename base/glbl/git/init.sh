@@ -4,6 +4,6 @@
 
 log_enter $DIR_GLBL$GIT_DIR$CMD_INIT
 
-cp $DIR_GLBL$GIT_DIR$OS_DIR/*.sh ./bin
+cp $DIR_GLBL$GIT_DIR$OS_DIR/*.sh $DIR_BIN
 
 log_exit $DIR_GLBL$GIT_DIR$CMD_INIT

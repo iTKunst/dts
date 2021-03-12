@@ -32,7 +32,7 @@ pINIT () {
 
   fi
 
-	chmod +x ./bin/*.sh
+	chmod +x $DIR_BIN/*.sh
 
 
 	log_exit pINIT
