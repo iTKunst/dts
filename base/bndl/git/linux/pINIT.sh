@@ -4,9 +4,6 @@
 
 # echo pINIT.sh [LOADED]
 
-source LOG.sh
-source settings.sh
-source $DIR_BNDL$MISC_DIR$OS_DIR/mSET_PATH.sh
 
 pINIT () {
 
@@ -42,4 +39,3 @@ pINIT () {
 }
 
 
-# echo pINIT.sh [UNLOADED]
