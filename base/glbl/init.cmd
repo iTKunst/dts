@@ -1,15 +1,15 @@
 @echo off
 
 
-call LOG_ENTER \%DIR_GLBL%\init
+call LOG_ENTER \%DIR_GLBL%%CMD_INIT%
 
-CALL .\%DIR_GLBL%\docker_compose\init
-CALL .\%DIR_GLBL%\docker_global\init
-CALL .\%DIR_GLBL%\docker_project\init
-CALL .\%DIR_GLBL%\docker_system\init
-CALL .\%DIR_GLBL%%ENV_DIR%\init
-CALL .\%DIR_GLBL%\git\init
-CALL .\%DIR_GLBL%\kube\init
-CALL .\%DIR_GLBL%\openshift\init
+CALL %DIR_GLBL%\docker_compose%CMD_INIT%
+CALL %DIR_GLBL%\docker_global%CMD_INIT%
+CALL %DIR_GLBL%\docker_project%CMD_INIT%
+CALL %DIR_GLBL%\docker_system%CMD_INIT%
+CALL %DIR_GLBL%%ENV_DIR%%CMD_INIT%
+CALL %DIR_GLBL%\git%CMD_INIT%
+CALL %DIR_GLBL%\kube%CMD_INIT%
+CALL %DIR_GLBL%\openshift%CMD_INIT%
 
-call LOG_EXIT \%DIR_GLBL%\init
+call LOG_EXIT \%DIR_GLBL%%CMD_INIT%

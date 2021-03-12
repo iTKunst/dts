@@ -1,8 +1,8 @@
 @echo off
 
 
-call LOG_ENTER \%GLBL_DIR%\kube\init
+call LOG_ENTER \%GLBL_DIR%\kube%CMD_INIT%
 
-xcopy /q /y .\%DIR_GLBL%\kube\win\*.cmd .\bin >NUL
+xcopy /q /y %DIR_GLBL%\kube\win\*.cmd %DIR_BIN% >NUL
 
-call LOG_EXIT \%DIR_GLBL%\kube\init
+call LOG_EXIT \%DIR_GLBL%\kube%CMD_INIT%
