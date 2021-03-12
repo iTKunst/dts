@@ -4,6 +4,6 @@
 
 log_enter /$DIR_TMPL/docker$CMD_INIT
 
-cp $DIR_TMPL_CURR$DCKR_DIR$OS_DIR/*.sh .$DIR_BIN
+cp $DIR_TMPL_CURR$DCKR_DIR$OS_DIR/*.sh $DIR_BIN
 
 log_exit /$DIR_TMPL/docker$CMD_INIT

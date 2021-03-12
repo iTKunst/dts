@@ -4,7 +4,7 @@
 
 log_enter /$DIR_TMPL$ENV_DIR/init
 
-cp $DIR_TMPL_CURR$ENV_DIR$OS_DIR/tENV.sh .$DIR_BIN
+cp $DIR_TMPL_CURR$ENV_DIR$OS_DIR/tENV.sh $DIR_BIN
 
 if [ ! -d ./project ]; then
   mkdir project
