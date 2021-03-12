@@ -34,7 +34,7 @@ export DIR_BNDL=$DIR_BASE$BNDL_DIR
 export DIR_ENV=$DIR_BNDL$ENV_DIR
  echo DIR_ENV is $DIR_ENV [VAR]
 
-export FILES=$OS_DIR$STAR$DOT$EXT
+export FILES=$OS_DIR$DIR_SLASH$STAR$DOT$EXT
  echo FILES is $FILES [VAR]
 
 if [ ! -d $DIR_BIN ]; then
