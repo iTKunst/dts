@@ -32,6 +32,7 @@ source $DIR_BASE$CMD_INIT
 source $DIR_TMPL_CURR$CMD_INIT
 source $DIR_SYS$CMD_INIT
 
+source %DIR_BIN%%DIR_SLASH%mSET_PATH.sh
 source pINIT.sh
 pINIT
 
