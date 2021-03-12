@@ -6,12 +6,12 @@
 
 export BASE=base
 export BIN=bin
-export BNDL=bundler
+export BNDL=bndl
 export DCKR=docker
 export ENV=env
 export EXT=sh
 export GIT=git
-export GLBL=global
+export GLBL=glbl
 export LOG=log
 export MISC=misc
 export OS=linux
