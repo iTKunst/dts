@@ -1,25 +1,25 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-BASE=base
-BIN=bin
-BNDL=bndl
-DOT=.
-ENV=env
-EXT=sh
-OS=linux
-SLASH=/
+export BASE=base
+export BIN=bin
+export BNDL=bndl
+export DOT=.
+export ENV=env
+export EXT=sh
+export OS=linux
+export SLASH=/
 
-CMD_INIT=$SLASH"init"$DOT$EXT
-CMD_LOG=$SLASH"LOG"$DOT$EXT
+export CMD_INIT=$SLASH"init"$DOT$EXT
+export CMD_LOG=$SLASH"LOG"$DOT$EXT
 
-BASE_DIR=$SLASH$BASE
-BIN_DIR=$BIN
-BNDL_DIR=$SLASH$BNDL
-ENV_DIR=$SLASH$ENV
-OS_DIR=$SLASH$OS
+export BASE_DIR=$SLASH$BASE
+export BIN_DIR=$BIN
+export BNDL_DIR=$SLASH$BNDL
+export ENV_DIR=$SLASH$ENV
+export OS_DIR=$SLASH$OS
 
-DIR_ENV=$DIR_DTS$BASE_DIR$BNDL_DIR$ENV_DIR
+export DIR_ENV=$DIR_DTS$BASE_DIR$BNDL_DIR$ENV_DIR
 echo DIR_ENV is $DIR_ENV [VAR]
 
 echo DIR_BIN is $DIR_BIN [VAR]
