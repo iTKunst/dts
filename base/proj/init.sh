@@ -53,8 +53,11 @@ export DEF_DIR_DTS=$DTS
 export DEF_URI_DTS_GIT=$HOST_GITHUB$ITK$DIR_DTS
 
 
-rm -fr dts
-rm -fr bin
+echo Removing $DEF_DIR_DTS. [INFO]
+rm -fr $DEF_DIR_DTS
+
+echo Removing $DIR_BIN. [INFO]
+rm -fr $DIR_BIN
 
 init()
 {
@@ -72,7 +75,7 @@ init()
   fi
   echo DIR_DTS is $DIR_DTS [VAR]
 
-  if [ -d "$BIN" ]; then
+  if [ -d "$DIR_BIN" ]; then
     echo Already initialized[INFO]
     source $FILE_SETPATH
     echo Run pUPDATE [CMD]
@@ -95,6 +98,12 @@ init()
 
   export DIR_TMPL_CURR=$DIR_TMPL$DIR_SLASH$TMPL_NAME
   echo DIR_TMPL_CURR is $DIR_TMPL_CURR [VAR]
+
+  echo DIR_BIN is $DIR_BIN [VAR]
+  if [ ! -d $DIR_BIN ]; then
+    mkdir $DIR_BIN
+    echo create $DIR_BIN
+  fi
 
   mkdir -p $DIR_DTS
   cd $DIR_DTS
@@ -120,20 +129,9 @@ init()
 
   cd ..
 
-  if [ ! -d $DIR_BIN ]; then
-    mkdir $DIR_BIN
-    echo create $DIR_BIN
-  fi
 
+  source $DIR_DTS$FILE_INIT
 
-  source $FILE_INIT
-  source $FILE_SETPATH
-  source bENV.sh
-  source pINIT.sh
-
-  pINIT
-
-  
   return 0
 
 }

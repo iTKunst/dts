@@ -22,6 +22,12 @@ OS_DIR=$SLASH$OS
 DIR_ENV=$DIR_DTS$BASE_DIR$BNDL_DIR$ENV_DIR
 echo DIR_ENV is $DIR_ENV [VAR]
 
+echo DIR_BIN is $DIR_BIN [VAR]
+if [ ! -d $DIR_BIN ]; then
+  mkdir $DIR_BIN
+  echo create $DIR_BIN
+fi
+
 source $DIR_ENV$CMD_INIT
 source $BIN_DIR/bENV.sh
 source $DIR_BNDL$LOG_DIR$OS_DIR$CMD_LOG
