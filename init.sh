@@ -3,7 +3,7 @@
 
 BASE=base
 BIN=bin
-BNDL=bundler
+BNDL=bndl
 DOT=.
 ENV=env
 EXT=sh
