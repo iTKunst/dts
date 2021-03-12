@@ -4,35 +4,38 @@
 
 # echo update.sh [LOAD]
 
-BASE=base
-BIN=bin
-BUNDLER=bundler
-DOT=.
-INIT=init
-SH=sh
-SLASH=/
-STAR=*
-TEMPLATE=tmpl
+# TOKENS
+export BCK_SLASH=\\
+export COLON=:
+export DOT=.
+export FOR_SLASH=/
+export STAR=*
 
-DEF_URI_DTS_GIT=https://github.com/iTKunst/dts
-DEF_DIR_DTS=dts
+# NAMES
+export DTS=dts
+export EXT=sh
+export INIT=init
+export SETTINGS=settings
 
-CMD_INIT=$SLASH$INIT$DOT$SH
+# DIRS
+export DIR_SLASH=$FOR_SLASH
 
-DIR_BASE=$SLASH$BASE
-DIR_BIN=$SLASH$BIN
-DIR_BUNDLER=$SLASH$BUNDLER
-DIR_TEMPLATE=$SLASH$TEMPLATE
+# FILES
+export FILE_INIT=$DIR_SLASH$INIT$DOT$EXT
+export FILE_SETTINGS=$SETTINGS$DOT$EXT
+
+# DEFS
+export DEF_DIR_DTS=dts
 
 
 update()
 {
 
-  if [ ! -f settings.sh ]; then
-    echo settings.sh not found [FILE_ERR]
+  if [ ! -f $FILE_SETTINGS ]; then
+    echo $FILE_SETTINGS not found [FILE_ERR]
     return 1
   fi
-  source settings.sh
+  source $FILE_SETTINGS
 
   if [ -z "$DIR_DTS" ]; then
     echo DIR_DTS may be set in settings.sh. [INFO]
@@ -42,17 +45,13 @@ update()
   # echo DIR_DTS is $DIR_DTS [VAR]
 
   cd $DIR_DTS
+
   git pull origin master
+
   cd ..
 
-  source $DIR_DTS$CMD_INIT
-  source .$DIR_BIN/mSET_PATH.sh
-  source bENV.sh
-  source pINIT.sh
+  source $DIR_DTS$FILE_INIT
 
-  pINIT
-
-  
   return 0
 
 }

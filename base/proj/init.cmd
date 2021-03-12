@@ -1,5 +1,6 @@
 @ECHO off
 
+
 :: ECHO init.cmd [LOADED]
 
   REM TOKENS
@@ -10,34 +11,32 @@
   SET "STAR=*"
 
   REM NAMES
-  SET "BIN=bin"
   SET "BASE=base"
   SET "BNDL=bndl"
   SET "COM=com"
   SET "DTS=dts"
   SET "EXT=cmd"
+  SET "GIT=git"
   SET "GIT_HUB=github"
+  SET "GLBL=glbl"
   SET "HTTPS=https"
   SET "INFO=info"
   SET "INIT=init"
   SET "ITK=iTKunst"
-  SET "SET_PATH=mSET_PATH"
   SET "SETTINGS=settings"
-  SET "SPRS_CHKOUT=sparse-checkout
-  SET "TEMPLATE=template"
+  SET "SPRS_CHKOUT=sparse-checkout"
   SET "TMPL=tmpl"
 
   REM DIRS
   SET "DIR_SLASH=%BCK_SLASH%"
 
   SET "DIR_BASE=%DIR_SLASH%%BASE%"
-  SET "DIR_BIN=%BIN%"
   SET "DIR_BNDL=%DIR_SLASH%%BNDL%"
-  SET "DIR_TMPL=%DIR_SLASH%%TEMPLATE%"
+  SET "DIR_GLBL=%DIR_SLASH%%GLBL%"
+  SET "DIR_TMPL=%DIR_SLASH%%TMPL%"
 
   REM FILES
-  SET "FILE_INIT=%DIR_SLASH%%INIT%%DOT%%EXT%"
-  SET "FILE_SETPATH=%BIN%%DIR_SLASH%%SET_PATH%%DOT%%EXT%"
+  SET "FILE_INIT=%INIT%%DOT%%EXT%"
   SET "FILE_SETTINGS=%SETTINGS%%DOT%%EXT%"
   SET "FILE_SPRS_CHKOUT=%DOT%%GIT%%DIR_SLASH%%INFO%%DIR_SLASH%%SPRS_CHKOUT%"
 
@@ -62,19 +61,11 @@
   )
   :: ECHO DIR_DTS is %DIR_DTS%
 
-  if exist %FILE_SETPATH% (
-    CALL %FILE_SETPATH%
+  if exist %DIR_DTS% (
     ECHO Already Initialized [INFO]
     ECHO Run pUPDATE [CMD]
     GOTO :EOF
   )
-
-  if [%TMPL_NAME%]==[] (
-    ECHO TMPL_NAME [INVALID]
-    ECHO TMPL_NAME must be set in settings.sh. [INFO]
-    GOTO :EOF
-  )
-  :: ECHO TMPL_NAME is %TMPL_NAME%
 
   if [%URI_DTS_GIT%]==[] (
     ECHO URI_DTS_GIT may be set in settings_uri.sh. [INFO]
@@ -83,13 +74,15 @@
   )
   :: ECHO URI_DTS_GIT is %URI_DTS_GIT% [INFO]
 
-  SET "TMPL_FLDR=%TMPL%%FOR_SLASH%%TMPL_NAME%%FOR_SLASH%%STAR%"
-  :: ECHO TMPL_FLDR is %TMPL_FLDR% [INFO]
+  if [%TMPL_NAME%]==[] (
+    ECHO TMPL_NAME [INVALID]
+    ECHO TMPL_NAME must be set in settings.sh. [INFO]
+    GOTO :EOF
+  )
+  :: ECHO TMPL_NAME is %TMPL_NAME%
 
-  SET "DIR_BNDL=%DIR_DTS%%DIR_BASE%%DIR_BNDL%"
-  :: ECHO TMPL_FLDR is %DIR_BNDL% [INFO]
-
-  SET DIR_TMPL=%DIR_TMPL%%SLASH%%TMPL_NAME%
+  SET "DIR_TMPL_CURR=%DIR_TMPL%%DIR_SLASH%%TMPL_NAME%"
+  :: ECHO DIR_TMPL_CURR is %DIR_TMPL_CURR% [INFO]
 
   mkdir -p %DIR_DTS%
   cd %DIR_DTS%
@@ -100,24 +93,17 @@
 
   (
     ECHO %FILE_INIT%
-    ECHO %DIR_BASE%%SLASH%%STAR%
-    ECHO %DIR_TMPL%%FILE_INIT%
-    ECHO %DIR_TMPL%%SLASH%%STAR%
+    ECHO %DIR_BASE%%FILE_INIT%
+    ECHO %DIR_BASE%%DIR_BNDL%%DIR_SLASH%%STAR%
+    ECHO %DIR_BASE%%DIR_GLBL%%DIR_SLASH%%STAR%
+    ECHO %DIR_TMPL_CURR%%DIR_SLASH%%STAR%
   ) >> %FILE_SPRS_CHKOUT%
 
   git pull origin master
 
-  IF NOT EXIST bin (
-    :: ECHO bin created [INFO]
-    mkdir bin
-  )
+  cd ..
 
-
-  CALL %DIR_DTS%%FILE_INIT%
-  CALL %FILE_SETPATH%
-  CALL bENV
-
-  CALL pINIT
+  CALL %DIR_DTS%%DIR_SLASH%%FILE_INIT%
 
 :EOF
 
