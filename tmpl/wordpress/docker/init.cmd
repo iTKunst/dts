@@ -2,6 +2,6 @@
 
 call LOG_ENTER %TMPL_DIR%%DCKR_DIR%%CMD_INIT%
 
-xcopy /q /y %TMPL_DIR%%DCKR_DIR%%OS_DIR%\*.cmd .%DIR_BIN% >NUL
+xcopy /q /y %TMPL_DIR%%DCKR_DIR%%OS_DIR%\*.cmd %DIR_BIN% >NUL
 
 call LOG_EXIT %TMPL_DIR%%DCKR_DIR%%CMD_INIT%
