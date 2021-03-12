@@ -3,6 +3,6 @@
 
 CALL LOG_ENTER \%DIR_GLBL%%ENV_DIR%%CMD_INIT%
 
-xcopy /q /y %DIR_GLBL%%ENV_DIR%\win\*.cmd %DIR_BIN% >NUL
+xcopy /q /y %DIR_GLBL%%ENV_DIR%%OS_DIR%\*.cmd %DIR_BIN% >NUL
 
 CALL LOG_EXIT \%DIR_GLBL%%ENV_DIR%%CMD_INIT%

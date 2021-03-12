@@ -9,6 +9,7 @@ export ENV=env
 export EXT=sh
 export OS=linux
 export SLASH=/
+export STAR=*
 
 export CMD_INIT=$SLASH"init"$DOT$EXT
 export CMD_LOG=$SLASH"LOG"$DOT$EXT
@@ -21,11 +22,21 @@ export BNDL_DIR=$DIR_SLASH$BNDL
 export ENV_DIR=$DIR_SLASH$ENV
 export OS_DIR=$DIR_SLASH$OS
 
-export DIR_ENV=$DIR_DTS$BASE_DIR$BNDL_DIR$ENV_DIR
-# echo DIR_ENV is $DIR_ENV [VAR]
+export DIR_BASE=$DTS_DIR$BASE_DIR
+# echo DIR_BASE is $DIR_BASE [VAR]
 
 export DIR_BIN=$BIN_DIR
 # echo DIR_BIN is $DIR_BIN [VAR]
+
+export DIR_BNDL=$DIR_BASE$BNDL_DIR
+# echo DIR_BNDL is $DIR_BNDL [VAR]
+
+export DIR_ENV=$DIR_BNDL$ENV_DIR
+# echo DIR_ENV is $DIR_ENV [VAR]
+
+export FILES=$OS_DIR$STAR$DOT$EXT
+# echo FILES is $FILES [VAR]
+
 if [ ! -d $DIR_BIN ]; then
   mkdir $DIR_BIN
   echo create $DIR_BIN
