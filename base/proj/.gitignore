@@ -13,6 +13,6 @@ code/src/
 /path.cmd
 
 /code/pom.sample.xml
-/project/pENV_MOD.sample.sh
+/project/pENV.sample.sh
 
 *.iml

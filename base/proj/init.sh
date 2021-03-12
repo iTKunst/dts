@@ -4,18 +4,66 @@
 
 # echo init.sh [LOAD]
 
+# TOKENS
+export BCK_SLASH=\\
+export COLON=:
+export DOT=.
+export FOR_SLASH=/
+export STAR=*
 
-DEF_URI_DTS_GIT=https://github.com/iTKunst/dts
-DEF_DIR_DTS=dts
+# NAMES
+export BIN=bin
+export BASE=base
+export BNDL=bndl
+export COM=com
+export DTS=dts
+export EXT=sh
+export GIT=git
+export GIT_HUB=github
+export GLBL=glbl
+export HTTPS=https
+export INFO=info
+export INIT=init
+export ITK=iTKunst
+export SET_PATH=mSET_PATH
+export SETTINGS=settings
+export SPRS_CHKOUT=sparse-checkout
+export TMPL=tmpl
+
+# DIRS
+export DIR_SLASH=$FOR_SLASH
+
+export DIR_BASE=$DIR_SLASH$BASE
+export DIR_BIN=$DIR_SLASH$BIN
+export DIR_BNDL=$DIR_SLASH$BNDL
+export DIR_GLBL=$DIR_SLASH$GLBL
+export DIR_TMPL=$DIR_SLASH$TMPL
+
+# FILES
+export FILE_INIT=$DIR_SLASH$INIT$DOT$EXT
+export FILE_SETPATH=$BIN$DIR_SLASH$SET_PATH$DOT$EXT
+export FILE_SETTINGS=$SETTINGS$DOT$EXT
+export FILE_SPRS_CHKOUT=$DOT$GIT$DIR_SLASH$INFO$DIR_SLASH$SPRS_CHKOUT
+
+# HOSTS
+export HOST_GITHUB=$HTTPS$COLON$FOR_SLASH$FOR_SLASH$GIT_HUB$DOT$COM
+
+# DEFS
+export DEF_DIR_DTS=$DTS
+export DEF_URI_DTS_GIT=$HOST_GITHUB$ITK$DIR_DTS
+
+
+rm -fr dts
+rm -fr bin
 
 init()
 {
 
-  if [ ! -f settings.sh ]; then
-    echo settings.sh not found [FILE_ERR]
+  if [ ! -f $FILE_SETTINGS ]; then
+    echo $FILE_SETTINGS not found [FILE_ERR]
     return 1
   fi
-  source settings.sh
+  source $FILE_SETTINGS
 
   if [ -z "$DIR_DTS" ]; then
     echo DIR_DTS may be set in settings.sh. [INFO]
@@ -24,9 +72,9 @@ init()
   fi
   echo DIR_DTS is $DIR_DTS [VAR]
 
-  if [ -d "$DIR_DTS" ]; then
+  if [ -d "$BIN" ]; then
     echo Already initialized[INFO]
-    source ./bin/mSET_PATH.sh
+    source $FILE_SETPATH
     echo Run pUPDATE [CMD]
     return 0
   fi
@@ -45,11 +93,8 @@ init()
   fi
   echo TMPL_NAME is $TMPL_NAME [VAR]
 
-  export TMPL_FLDR="tmpl/"$TMPL_NAME"/*"
-  echo TMPL_FLDR is $TMPL_FLDR [VAR]
-
-  export DIR_BNDL=$DIR_DTS/base/bundler
-  echo DIR_BNDL is $DIR_BNDL [VAR]
+  export DIR_TMPL_CURR=$DIR_TMPL$DIR_SLASH$TMPL_NAME
+  echo DIR_TMPL_CURR is $DIR_TMPL_CURR [VAR]
 
   mkdir -p $DIR_DTS
   cd $DIR_DTS
@@ -58,8 +103,13 @@ init()
   git remote add origin -f $URI_DTS_GIT
   git config core.sparsecheckout true
 
-  echo "base/*" >> .git/info/sparse-checkout
-  echo $TMPL_FLDR >> .git/info/sparse-checkout
+  {
+    echo $FILE_INIT
+    echo $DIR_BASE$FILE_INIT
+    echo $DIR_BASE$DIR_BNDL$DIR_SLASH$STAR
+    echo $DIR_BASE$DIR_GLBL$DIR_SLASH$STAR
+    echo $DIR_TMPL_CURR$DIR_SLASH$STAR
+  } >> $FILE_SPRS_CHKOUT
 
   git pull origin master
 
@@ -70,16 +120,14 @@ init()
 
   cd ..
 
-  if [ ! -d bin ]; then
-    mkdir bin
-    echo create bin
+  if [ ! -d $DIR_BIN ]; then
+    mkdir $DIR_BIN
+    echo create $DIR_BIN
   fi
 
-  export DIR_BNDL=$DIR_DTS/base/bundler
 
-  source ./$DIR_BNDL/log$OS_DIR/LOG.sh
-  source $DIR_BNDL$CMD_INIT
-  source bin/mSET_PATH.sh
+  source $FILE_INIT
+  source $FILE_SETPATH
   source bENV.sh
   source pINIT.sh
 
@@ -93,4 +141,4 @@ init()
 init
 
 
-# echo init.sh [UNLOAD]
+echo init.sh [UNLOAD]
