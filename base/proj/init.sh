@@ -23,6 +23,7 @@ export HTTPS=https
 export INFO=info
 export INIT=init
 export ITK=iTKunst
+export PROJ=proj
 export SETTINGS=settings
 export SPRS_CHKOUT=sparse-checkout
 export TMPL=tmpl
@@ -34,6 +35,7 @@ export DIR_SLASH=$FOR_SLASH
 export DIR_BASE=$DIR_SLASH$BASE
 export DIR_BNDL=$DIR_SLASH$BNDL
 export DIR_GLBL=$DIR_SLASH$GLBL
+export DIR_PROJ=$DIR_SLASH$PROJ
 export DIR_TMPL=$DIR_SLASH$TMPL
 
 # FILES
@@ -99,7 +101,7 @@ init()
 
   {
     echo $FILE_INIT
-    echo $DIR_BASE$FILE_INIT
+    echo $DIR_BASE$DIR_SLASH$FILE_INIT
     echo $DIR_BASE$DIR_BNDL$DIR_SLASH$STAR
     echo $DIR_BASE$DIR_GLBL$DIR_SLASH$STAR
     echo $DIR_BASE$DIR_PROJ$DIR_SLASH$FILE_INIT
