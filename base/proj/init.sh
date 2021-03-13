@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
- echo init.sh [LOAD]
+# echo init.sh [LOAD]
 
 # TOKENS
 export BCK_SLASH=\\
@@ -122,4 +122,4 @@ init()
 init
 
 
- echo init.sh [UNLOAD]
+# echo init.sh [UNLOAD]
