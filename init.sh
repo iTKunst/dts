@@ -1,6 +1,8 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
+echo dts/init.sh [ENTER]
+
 export BASE=base
 export BIN=bin
 export BNDL=bndl

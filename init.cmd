@@ -1,5 +1,7 @@
 @echo off
 
+echo dts\init.cmd [ENTER]
+
 SET "BASE=base"
 SET "BIN=bin"
 SET "BNDL=bndl"
