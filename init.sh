@@ -8,6 +8,7 @@ export DOT=.
 export ENV=env
 export EXT=sh
 export OS=linux
+export PROJ=linux
 export SLASH=/
 export STAR=*
 
@@ -21,6 +22,7 @@ export BIN_DIR=$BIN
 export BNDL_DIR=$DIR_SLASH$BNDL
 export ENV_DIR=$DIR_SLASH$ENV
 export OS_DIR=$DIR_SLASH$OS
+export PROJ_DIR=$DIR_SLASH$PROJ
 
 export DIR_BASE=$DIR_DTS$BASE_DIR
  echo DIR_BASE is $DIR_BASE [VAR]
@@ -30,6 +32,9 @@ export DIR_BIN=$BIN_DIR
 
 export DIR_BNDL=$DIR_BASE$BNDL_DIR
  echo DIR_BNDL is $DIR_BNDL [VAR]
+
+export DIR_PROJ=$DIR_BASE$PROJ_DIR
+ echo DIR_PROJ is $DIR_PROJ [VAR]
 
 export DIR_ENV=$DIR_BNDL$ENV_DIR
  echo DIR_ENV is $DIR_ENV [VAR]
