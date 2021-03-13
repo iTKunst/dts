@@ -8,7 +8,7 @@ export DOT=.
 export ENV=env
 export EXT=sh
 export OS=linux
-export PROJ=c
+export PROJ=proj
 export SLASH=/
 export STAR=*
 
