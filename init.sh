@@ -65,3 +65,6 @@ pINIT
 
 log_exit $DIR_DTS$CMD_INIT
 
+echo dts/init.sh [EXIT]
+
+
