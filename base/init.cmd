@@ -8,8 +8,8 @@ CALL LOG_LOAD %DIR_BASE%%CMD_INIT%
 CALL %DIR_BNDL%%CMD_INIT%
 CALL %DIR_GLBL%%CMD_INIT%
 
-xcopy /q /y %DIR_PROJ%%CMD_INIT% project >NUL
-xcopy /q /y %DIR_PROJ%%CMD_UPDATE% project >NUL
+xcopy /q /y %DIR_PROJ%%CMD_INIT% . >NUL
+xcopy /q /y %DIR_PROJ%%CMD_UPDATE% . >NUL
 
 
 CALL LOG_UNLOAD %DIR_BASE%%CMD_INIT%
