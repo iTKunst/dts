@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-# echo init.sh [LOAD]
+ echo init.sh [LOAD]
 
 # TOKENS
 export BCK_SLASH=\\
@@ -26,6 +26,7 @@ export ITK=iTKunst
 export SETTINGS=settings
 export SPRS_CHKOUT=sparse-checkout
 export TMPL=tmpl
+export UPDATE=update
 
 # DIRS
 export DIR_SLASH=$FOR_SLASH
@@ -39,6 +40,7 @@ export DIR_TMPL=$DIR_SLASH$TMPL
 export FILE_INIT=$INIT$DOT$EXT
 export FILE_SETTINGS=$SETTINGS$DOT$EXT
 export FILE_SPRS_CHKOUT=$DOT$GIT$DIR_SLASH$INFO$DIR_SLASH$SPRS_CHKOUT
+export FILE_UPDATE=$UPDATE$DOT$EXT
 
 # HOSTS
 export HOST_GITHUB=$HTTPS$COLON$FOR_SLASH$FOR_SLASH$GIT_HUB$DOT$COM
@@ -100,6 +102,8 @@ init()
     echo $DIR_BASE$FILE_INIT
     echo $DIR_BASE$DIR_BNDL$DIR_SLASH$STAR
     echo $DIR_BASE$DIR_GLBL$DIR_SLASH$STAR
+    echo $DIR_BASE$DIR_PROJ$DIR_SLASH$FILE_INIT
+    echo $DIR_BASE$DIR_PROJ$DIR_SLASH$FILE_UPDATE
     echo $DIR_TMPL_CURR$DIR_SLASH$STAR
   } >> $FILE_SPRS_CHKOUT
 
@@ -116,4 +120,4 @@ init()
 init
 
 
-# echo init.sh [UNLOAD]
+ echo init.sh [UNLOAD]
