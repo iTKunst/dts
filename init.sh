@@ -13,9 +13,11 @@ export OS=linux
 export PROJ=proj
 export SLASH=/
 export STAR=*
+export UPDATE=update
 
 export CMD_INIT=$SLASH"init"$DOT$EXT
 export CMD_LOG=$SLASH"LOG"$DOT$EXT
+export CMD_UPDATE=$SLASH$UPDATE$DOT$EXT
 
 export DIR_SLASH=$SLASH
 
