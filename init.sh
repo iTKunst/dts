@@ -106,16 +106,16 @@ echo dts/init.sh [ENTER]
   source $DIR_ENV$FILE_INIT
   source $DIR_BNDL$LOG_DIR$OS_DIR$FILE_LOG
 
-  log_enter $DIR_DTS$CMD_INIT
+  log_enter $DIR_DTS$DIR_SLASH$FILE_INIT
 
-  source $DIR_BASE$FILE_INIT
-  source $DIR_TMPL_CURR$FILE_INIT
-  source $DIR_SYS$FILE_INIT
+  source $DIR_BASE$DIR_SLASH$FILE_INIT
+  source $DIR_TMPL_CURR$DIR_SLASH$FILE_INIT
+  source $DIR_SYS$DIR_SLASH$FILE_INIT
 
   source $DIR_BIN$DIR_SLASH"mSET_PATH.sh"
   source pINIT.sh
   pINIT
 
-  log_exit $DIR_DTS$FILE_INIT
+  log_exit $DIR_DTS$DIR_SLASH$FILE_INIT
 
 echo dts/init.sh [EXIT]
