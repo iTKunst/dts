@@ -18,7 +18,7 @@ SET "INIT=init"
 SET "SETTINGS=settings"
 
 REM DIRS
-SET "DIR_SLASH=%FOR_SLASH%"
+SET "DIR_SLASH=%BCK_SLASH%"
 
 REM FILES
 SET "FILE_INIT=%DIR_SLASH%%INIT%%DOT%%EXT%"
@@ -31,13 +31,13 @@ SET "DEF_DIR_DTS=dts"
 update()
 {
 
-  if [ ! -f %FILE_SETTINGS% ]; then
+  if not exist %FILE_SETTINGS% (
     echo %FILE_SETTINGS% not found [FILE_ERR]
     return 1
   fi
   source %FILE_SETTINGS%
 
-  if [ -z "%DIR_DTS%" ]; then
+  if [%DIR_DTS%]==[] (
     echo DIR_DTS may be set in settings.sh. [INFO]
     echo Setting to default value. [INFO]
     SET "DIR_DTS=%DEF_DIR_DTS%"
