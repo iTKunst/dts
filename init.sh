@@ -103,7 +103,7 @@ echo dts/init.sh [ENTER]
   fi
 
   source $DIR_ENV$DIR_SLASH$FILE_INIT
-  source $DIR_BNDL$LOG_DIR$OS_DIR$FILE_LOG
+  source $DIR_BNDL$LOG_DIR$OS_DIR$DIR_SLASH$FILE_LOG
 
   log_enter $DIR_DTS$DIR_SLASH$FILE_INIT
 
