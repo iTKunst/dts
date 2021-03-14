@@ -1,7 +1,7 @@
 @echo off
 
 
-call LOG_ENTER \%DIR_GLBL%%CMD_INIT%
+call LOG_ENTER %DIR_GLBL%%CMD_INIT%
 
 CALL %DIR_GLBL%\docker_compose%CMD_INIT%
 CALL %DIR_GLBL%\docker_global%CMD_INIT%
@@ -12,4 +12,4 @@ CALL %DIR_GLBL%%GIT_DIR%%CMD_INIT%
 CALL %DIR_GLBL%\kube%CMD_INIT%
 CALL %DIR_GLBL%\openshift%CMD_INIT%
 
-call LOG_EXIT \%DIR_GLBL%%CMD_INIT%
+call LOG_EXIT %DIR_GLBL%%CMD_INIT%
