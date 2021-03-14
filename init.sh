@@ -85,7 +85,7 @@ echo dts/init.sh [ENTER]
   # echo TMPL_NAME is $TMPL_NAME [VAR]
 
   export TMPL_CURR_DIR=TMPL_DIR$DIR_SLASH$TMPL_NAME
-  # echo TMPL_CURR_DIR is $TMPL_CURR_DIR [VAR]
+   echo TMPL_CURR_DIR is $TMPL_CURR_DIR [VAR]
 
   cd $DIR_DTS
 
