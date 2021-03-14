@@ -3,67 +3,119 @@
 
 echo dts/init.sh [ENTER]
 
-export BASE=base
-export BIN=bin
-export BNDL=bndl
-export DOT=.
-export ENV=env
-export EXT=sh
-export OS=linux
-export PROJ=proj
-export SLASH=/
-export STAR=*
-export UPDATE=update
 
-export CMD_INIT=$SLASH"init"$DOT$EXT
-export CMD_LOG=$SLASH"LOG"$DOT$EXT
+  # TOKENS
+  export BCK_SLASH=\\
+  export COLON=:
+  export DOT=.
+  export FOR_SLASH=/
+  export STAR=*
 
-export DIR_SLASH=$SLASH
+  # NAMES
+  export BASE=base
+  export BIN=bin
+  export BNDL=bndl
+  export COM=com
+  export DTS=dts
+  export ENV=env
+  export EXT=sh
+  export GIT=git
+  export GIT_HUB=github
+  export GLBL=glbl
+  export HTTPS=https
+  export INFO=info
+  export INIT=init
+  export ITK=iTKunst
+  export OS=linux
+  export PROJ=proj
+  export SETTINGS=settings
+  export TMPL=tmpl
 
-export BASE_DIR=$DIR_SLASH$BASE
-export BIN_DIR=$BIN
-export BNDL_DIR=$DIR_SLASH$BNDL
-export ENV_DIR=$DIR_SLASH$ENV
-export OS_DIR=$DIR_SLASH$OS
-export PROJ_DIR=$DIR_SLASH$PROJ
+  # DIRS
+  export DIR_SLASH=$FOR_SLASH
 
-export DIR_BASE=$DIR_DTS$BASE_DIR
- echo DIR_BASE is $DIR_BASE [VAR]
+  export BASE_DIR=$DIR_SLASH$BASE
+  export BIN_DIR=$BIN
+  export BNDL_DIR=$DIR_SLASH$BNDL
+  export ENV_DIR=$DIR_SLASH$ENV
+  export GLBL_DIR=$DIR_SLASH$GLBL
+  export OS_DIR=$DIR_SLASH$OS
+  export PROJ_DIR=$DIR_SLASH$PROJ
+  export TMPL_DIR=$DIR_SLASH$TMPL
 
-export DIR_BIN=$BIN_DIR
- echo DIR_BIN is $DIR_BIN [VAR]
+  # FILES
+  export FILE_INIT=$INIT$DOT$EXT
+  export FILE_SETTINGS=$SETTINGS$DOT$EXT
 
-export DIR_BNDL=$DIR_BASE$BNDL_DIR
- echo DIR_BNDL is $DIR_BNDL [VAR]
+  export DIR_BASE=$DIR_DTS$BASE_DIR
+   echo DIR_BASE is $DIR_BASE [VAR]
 
-export DIR_ENV=$DIR_BNDL$ENV_DIR
- echo DIR_ENV is $DIR_ENV [VAR]
+  export DIR_BIN=$BIN_DIR
+   echo DIR_BIN is $DIR_BIN [VAR]
 
-export DIR_PROJ=$DIR_BASE$PROJ_DIR
- echo DIR_PROJ is $DIR_PROJ [VAR]
+  export DIR_BNDL=$DIR_BASE$BNDL_DIR
+   echo DIR_BNDL is $DIR_BNDL [VAR]
 
-export FILES=$OS_DIR$DIR_SLASH$STAR$DOT$EXT
- echo FILES is $FILES [VAR]
+  export DIR_ENV=$DIR_BNDL$ENV_DIR
+   echo DIR_ENV is $DIR_ENV [VAR]
 
-if [ ! -d $DIR_BIN ]; then
-  mkdir $DIR_BIN
-  echo create $DIR_BIN
-fi
+  export DIR_PROJ=$DIR_BASE$PROJ_DIR
+   echo DIR_PROJ is $DIR_PROJ [VAR]
 
-source $DIR_ENV$CMD_INIT
-source $DIR_BIN/bENV.sh
-source $DIR_BNDL$LOG_DIR$OS_DIR$CMD_LOG
+  export FILES=$OS_DIR$DIR_SLASH$STAR$DOT$EXT
+   echo FILES is $FILES [VAR]
 
-log_enter $DIR_DTS$CMD_INIT
+  if [ -z $TMPL_NAME ]; then
+    echo TMPL_NAME [INVALID]
+    echo TMPL_NAME must be set in settings.sh. [INFO]
+	  exit
+  fi
+  # echo TMPL_NAME is $TMPL_NAME [VAR]
 
-source $DIR_BASE$CMD_INIT
-source $DIR_TMPL_CURR$CMD_INIT
-source $DIR_SYS$CMD_INIT
+  export DIR_TMPL_CURR=$DIR_TMPL$DIR_SLASH$TMPL_NAME
+  # echo DIR_TMPL_CURR is $DIR_TMPL_CURR [VAR]
 
-source $DIR_BIN$DIR_SLASH"mSET_PATH.sh"
-source pINIT.sh
-pINIT
 
-log_exit $DIR_DTS$CMD_INIT
+  if [ -z $TMPL_NAME ]; then
+    echo TMPL_NAME [INVALID]
+    echo TMPL_NAME must be set in settings.sh. [INFO]
+	  exit
+  fi
+  # echo TMPL_NAME is $TMPL_NAME [VAR]
+
+  export DIR_TMPL_CURR=$DIR_TMPL$DIR_SLASH$TMPL_NAME
+  # echo DIR_TMPL_CURR is $DIR_TMPL_CURR [VAR]
+
+  cd $DIR_DTS
+
+  git sparse-checkout set \
+    $DIR_BASE$DIR_SLASH$STAR \
+    $DIR_BNDL \
+    $DIR_GLBL \
+    $DIR_PROJ \
+    $DIR_TMPL_CURR
+
+  cd ..
+
+  if [ ! -d $DIR_BIN ]; then
+    mkdir $DIR_BIN
+    echo create $DIR_BIN
+  fi
+
+  source $DIR_ENV$CMD_INIT
+  source $DIR_BIN/bENV.sh
+  source $DIR_BNDL$LOG_DIR$OS_DIR$CMD_LOG
+
+  log_enter $DIR_DTS$CMD_INIT
+
+  source $DIR_BASE$CMD_INIT
+  source $DIR_TMPL_CURR$CMD_INIT
+  source $DIR_SYS$CMD_INIT
+
+  source $DIR_BIN$DIR_SLASH"mSET_PATH.sh"
+  source pINIT.sh
+  pINIT
+
+  log_exit $DIR_DTS$CMD_INIT
 
 echo dts/init.sh [EXIT]
