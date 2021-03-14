@@ -26,7 +26,6 @@
   SET "PROJ=proj"
   SET "SETTINGS=settings"
   SET "TMPL=tmpl"
-  SET "UPDATE=update"
 
   REM DIRS
   SET "DIR_SLASH=%BCK_SLASH%"

@@ -29,7 +29,6 @@ init()
   export PROJ=proj
   export SETTINGS=settings
   export TMPL=tmpl
-  export UPDATE=update
 
   # DIRS
   export DIR_SLASH=$FOR_SLASH
@@ -94,12 +93,12 @@ init()
 
   git sparse-checkout init --cone
 
-  git sparse-checkout \
-      set $DIR_BASE$DIR_SLASH$STAR \
-          $DIR_BASE$DIR_BNDL \
-          $DIR_BASE$DIR_GLBL \
-          $DIR_BASE$DIR_PROJ \
-          $DIR_TMPL_CURR
+  git sparse-checkout set \
+    $DIR_BASE$DIR_SLASH$STAR \
+    $DIR_BASE$DIR_BNDL \
+    $DIR_BASE$DIR_GLBL \
+    $DIR_BASE$DIR_PROJ \
+    $DIR_TMPL_CURR
 
   cd ..
 
