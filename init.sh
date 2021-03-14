@@ -26,6 +26,7 @@ echo dts/init.sh [ENTER]
   export INFO=info
   export INIT=init
   export ITK=iTKunst
+  export LOG=log
   export OS=linux
   export PROJ=proj
   export SETTINGS=settings
@@ -39,6 +40,7 @@ echo dts/init.sh [ENTER]
   export BNDL_DIR=$DIR_SLASH$BNDL
   export ENV_DIR=$DIR_SLASH$ENV
   export GLBL_DIR=$DIR_SLASH$GLBL
+  export LOG_DIR=$DIR_SLASH$LOG
   export OS_DIR=$DIR_SLASH$OS
   export PROJ_DIR=$DIR_SLASH$PROJ
   export TMPL_DIR=$DIR_SLASH$TMPL
