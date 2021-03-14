@@ -84,18 +84,17 @@ echo dts/init.sh [ENTER]
   fi
   # echo TMPL_NAME is $TMPL_NAME [VAR]
 
-  export DIR_TMPL_CURR=$DIR_TMPL$DIR_SLASH$TMPL_NAME
-  # echo DIR_TMPL_CURR is $DIR_TMPL_CURR [VAR]
+  export TMPL_CURR_DIR=TMPL_DIR$DIR_SLASH$TMPL_NAME
+  # echo TMPL_CURR_DIR is $TMPL_CURR_DIR [VAR]
 
   cd $DIR_DTS
 
   git sparse-checkout set \
-    $DIR_BASE$DIR_SLASH$STAR \
-    $DIR_BNDL \
-    $DIR_GLBL \
-    $DIR_PROJ \
-    $DIR_TMPL_CURR
-
+    $BASE_DIR$DIR_SLASH$STAR \
+    $BASE_DIR$BNDL_DIR \
+    $BASE_DIR$GLBL_DIR \
+    $BASE_DIR$PROJ_DIR \
+    $TMPL_CURR_DIR
   cd ..
 
   if [ ! -d $DIR_BIN ]; then
