@@ -45,6 +45,7 @@ echo dts/init.sh [ENTER]
 
   # FILES
   export FILE_INIT=$INIT$DOT$EXT
+  export FILE_LOG=$SLASH"LOG"$DOT$EXT
   export FILE_SETTINGS=$SETTINGS$DOT$EXT
 
   export DIR_BASE=$DIR_DTS$BASE_DIR
@@ -102,20 +103,19 @@ echo dts/init.sh [ENTER]
     echo create $DIR_BIN
   fi
 
-  source $DIR_ENV$CMD_INIT
-  source $DIR_BIN/bENV.sh
-  source $DIR_BNDL$LOG_DIR$OS_DIR$CMD_LOG
+  source $DIR_ENV$FILE_INIT
+  source $DIR_BNDL$LOG_DIR$OS_DIR$FILE_LOG
 
   log_enter $DIR_DTS$CMD_INIT
 
-  source $DIR_BASE$CMD_INIT
-  source $DIR_TMPL_CURR$CMD_INIT
-  source $DIR_SYS$CMD_INIT
+  source $DIR_BASE$FILE_INIT
+  source $DIR_TMPL_CURR$FILE_INIT
+  source $DIR_SYS$FILE_INIT
 
   source $DIR_BIN$DIR_SLASH"mSET_PATH.sh"
   source pINIT.sh
   pINIT
 
-  log_exit $DIR_DTS$CMD_INIT
+  log_exit $DIR_DTS$FILE_INIT
 
 echo dts/init.sh [EXIT]
