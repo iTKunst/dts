@@ -1,1 +1,1 @@
-find ./ -name 'linux.sh' -execdir rename 's/linux.sh$CMD_INIT/g' '{}' \;
+find ./ -name 'linux.sh' -execdir rename 's/linux.sh$DIR_SLASH$FILE_INIT/g' '{}' \;

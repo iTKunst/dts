@@ -2,8 +2,8 @@
 # shellcheck disable=SC2086
 
 
-log_enter $DIR_GLBL/openshift$CMD_INIT
+log_enter $DIR_GLBL/openshift$DIR_SLASH$FILE_INIT
 
 cp $DIR_GLBL/openshift$FILES $DIR_BIN
 
-log_exit $DIR_GLBL/openshift$CMD_INIT
+log_exit $DIR_GLBL/openshift$DIR_SLASH$FILE_INIT
