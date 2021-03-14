@@ -25,7 +25,6 @@
   SET "ITK=iTKunst"
   SET "PROJ=proj"
   SET "SETTINGS=settings"
-  SET "SPRS_CHKOUT=sparse-checkout"
   SET "TMPL=tmpl"
   SET "UPDATE=update"
 
@@ -41,8 +40,6 @@
   REM FILES
   SET "FILE_INIT=%INIT%%DOT%%EXT%"
   SET "FILE_SETTINGS=%SETTINGS%%DOT%%EXT%"
-  SET "FILE_SPRS_CHKOUT=%DOT%%GIT%%DIR_SLASH%%INFO%%DIR_SLASH%%SPRS_CHKOUT%"
-  SET "FILE_UPDATE=%UPDATE%%DOT%%EXT%"
 
   REM HOSTS
   SET "HOST_GITHUB=%HTTPS%%COLON%%FOR_SLASH%%FOR_SLASH%%GIT_HUB%%DOT%%COM%"
@@ -88,24 +85,17 @@
   SET "DIR_TMPL_CURR=%DIR_TMPL%%DIR_SLASH%%TMPL_NAME%"
   :: ECHO DIR_TMPL_CURR is %DIR_TMPL_CURR% [INFO]
 
-  mkdir -p %DIR_DTS%
+  git clone %URI_DTS_GIT% --no-checkout %DIR_DTS%
   cd %DIR_DTS%
 
-  git init
-  git remote add origin -f %URI_DTS_GIT%
-  git config core.sparsecheckout true
+  git sparse-checkout init --cone
 
-  (
-    ECHO %FILE_INIT%
-    ECHO %DIR_BASE%%DIR_SLASH%%FILE_INIT%
-    ECHO %DIR_BASE%%DIR_BNDL%%DIR_SLASH%%STAR%
-    ECHO %DIR_BASE%%DIR_GLBL%%DIR_SLASH%%STAR%
-    ECHO %DIR_BASE%%DIR_PROJ%%DIR_SLASH%%FILE_INIT%
-    ECHO %DIR_BASE%%DIR_PROJ%%DIR_SLASH%%FILE_UPDATE%
-    ECHO %DIR_TMPL_CURR%%DIR_SLASH%%STAR%
-  ) >> %FILE_SPRS_CHKOUT%
-
-  git pull origin master
+  git sparse-checkout set ^
+    %DIR_BASE%%DIR_SLASH%%STAR% ^
+    %DIR_BASE%%DIR_BNDL% ^
+    %DIR_BASE%%DIR_GLBL% ^
+    %DIR_BASE%%DIR_PROJ% ^
+    %DIR_TMPL_CURR%
 
   cd ..
 

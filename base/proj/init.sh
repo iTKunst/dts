@@ -3,57 +3,54 @@
 
 # echo init.sh [LOAD]
 
-# TOKENS
-export BCK_SLASH=\\
-export COLON=:
-export DOT=.
-export FOR_SLASH=/
-export STAR=*
-
-# NAMES
-export BASE=base
-export BNDL=bndl
-export COM=com
-export DTS=dts
-export EXT=sh
-export GIT=git
-export GIT_HUB=github
-export GLBL=glbl
-export HTTPS=https
-export INFO=info
-export INIT=init
-export ITK=iTKunst
-export PROJ=proj
-export SETTINGS=settings
-export SPRS_CHKOUT=sparse-checkout
-export TMPL=tmpl
-export UPDATE=update
-
-# DIRS
-export DIR_SLASH=$FOR_SLASH
-
-export DIR_BASE=$DIR_SLASH$BASE
-export DIR_BNDL=$DIR_SLASH$BNDL
-export DIR_GLBL=$DIR_SLASH$GLBL
-export DIR_PROJ=$DIR_SLASH$PROJ
-export DIR_TMPL=$DIR_SLASH$TMPL
-
-# FILES
-export FILE_INIT=$INIT$DOT$EXT
-export FILE_SETTINGS=$SETTINGS$DOT$EXT
-export FILE_SPRS_CHKOUT=$DOT$GIT$DIR_SLASH$INFO$DIR_SLASH$SPRS_CHKOUT
-export FILE_UPDATE=$UPDATE$DOT$EXT
-
-# HOSTS
-export HOST_GITHUB=$HTTPS$COLON$FOR_SLASH$FOR_SLASH$GIT_HUB$DOT$COM
-
-# DEFS
-export DEF_DIR_DTS=$DTS
-export DEF_URI_DTS_GIT=$HOST_GITHUB$ITK$DIR_DTS
-
-
 init()
 {
+
+  # TOKENS
+  export BCK_SLASH=\\
+  export COLON=:
+  export DOT=.
+  export FOR_SLASH=/
+  export STAR=*
+
+  # NAMES
+  export BASE=base
+  export BNDL=bndl
+  export COM=com
+  export DTS=dts
+  export EXT=sh
+  export GIT=git
+  export GIT_HUB=github
+  export GLBL=glbl
+  export HTTPS=https
+  export INFO=info
+  export INIT=init
+  export ITK=iTKunst
+  export PROJ=proj
+  export SETTINGS=settings
+  export TMPL=tmpl
+  export UPDATE=update
+
+  # DIRS
+  export DIR_SLASH=$FOR_SLASH
+
+  export DIR_BASE=$DIR_SLASH$BASE
+  export DIR_BNDL=$DIR_SLASH$BNDL
+  export DIR_GLBL=$DIR_SLASH$GLBL
+  export DIR_PROJ=$DIR_SLASH$PROJ
+  export DIR_TMPL=$DIR_SLASH$TMPL
+
+  # FILES
+  export FILE_INIT=$INIT$DOT$EXT
+  export FILE_SETTINGS=$SETTINGS$DOT$EXT
+  
+  # HOSTS
+  export HOST_GITHUB=$HTTPS$COLON$FOR_SLASH$FOR_SLASH$GIT_HUB$DOT$COM
+
+  # DEFS
+  export DEF_DIR_DTS=$DTS
+  export DEF_URI_DTS_GIT=$HOST_GITHUB$ITK$DIR_DTS
+
 
   if [ ! -f $FILE_SETTINGS ]; then
     echo $FILE_SETTINGS not found [FILE_ERR]
@@ -92,24 +89,17 @@ init()
   # echo DIR_TMPL_CURR is $DIR_TMPL_CURR [VAR]
 
 
-  mkdir -p $DIR_DTS
+  git clone $URI_DTS_GIT --no-checkout $DIR_DTS
   cd $DIR_DTS
 
-  git init
-  git remote add origin -f $URI_DTS_GIT
-  git config core.sparsecheckout true
+  git sparse-checkout init --cone
 
-  {
-    echo $FILE_INIT
-    echo $DIR_BASE$DIR_SLASH$FILE_INIT
-    echo $DIR_BASE$DIR_BNDL$DIR_SLASH$STAR
-    echo $DIR_BASE$DIR_GLBL$DIR_SLASH$STAR
-    echo $DIR_BASE$DIR_PROJ$DIR_SLASH$FILE_INIT
-    echo $DIR_BASE$DIR_PROJ$DIR_SLASH$FILE_UPDATE
-    echo $DIR_TMPL_CURR$DIR_SLASH$STAR
-  } >> $FILE_SPRS_CHKOUT
-
-  git pull origin master
+  git sparse-checkout \
+      set $DIR_BASE$DIR_SLASH$STAR \
+          $DIR_BASE$DIR_BNDL \
+          $DIR_BASE$DIR_GLBL \
+          $DIR_BASE$DIR_PROJ \
+          $DIR_TMPL_CURR
 
   cd ..
 
