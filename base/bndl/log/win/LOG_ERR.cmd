@@ -7,7 +7,7 @@ IF %LOG_ERR_ON% NEQ 1 (
   GOTO :EOF
 )
 
-CALL .\Bundler\log%OS_DIR%\LOG_MSG %* [ERROR]
+CALL .\BundlerLOG_DIR%OS_DIR%\LOG_MSG %* [ERROR]
 
 :EOF
 
