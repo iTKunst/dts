@@ -40,6 +40,7 @@ echo dts/init.sh [ENTER]
   export BNDL_DIR=$DIR_SLASH$BNDL
   export ENV_DIR=$DIR_SLASH$ENV
   export GLBL_DIR=$DIR_SLASH$GLBL
+  export GIT_DIR=$DIR_SLASH$GIT
   export LOG_DIR=$DIR_SLASH$LOG
   export OS_DIR=$DIR_SLASH$OS
   export PROJ_DIR=$DIR_SLASH$PROJ
