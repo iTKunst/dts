@@ -122,7 +122,8 @@
   log_enter $DIR_DTS$DIR_SLASH$FILE_INIT
 
   source $DIR_BASE$DIR_SLASH$FILE_INIT
-  source $DIR_SYS$DIR_SLASH$FILE_INIT
+  source $TMPL_CURR_DIR$DIR_SLASH$FILE_INIT
+  source ../../system$DIR_SLASH$FILE_INIT
 
   source $DIR_BIN$DIR_SLASH"mSET_PATH.sh"
   source pINIT.sh
