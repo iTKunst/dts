@@ -77,6 +77,7 @@
     git clone %URI_DTS_GIT% --no-checkout %DIR_DTS%
     cd %DIR_DTS%
     git sparse-checkout init --cone
+    git sparse-checkout set "base/*" "base/bndl" "base/glbl" "base/proj" "tmpl/%TMPL_NAME%"
     cd ..
   )
 

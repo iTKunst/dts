@@ -53,7 +53,6 @@ init()
   fi
   # echo DIR_DTS is $DIR_DTS [VAR]
 
-
   if [ -z "$URI_DTS_GIT" ]; then
     echo URI_DTS_GIT may be set in settings_uri.sh. [INFO]
     echo Setting to default value [INFO].
