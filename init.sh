@@ -27,7 +27,7 @@ echo dts/init.sh [ENTER]
   export INIT=init
   export ITK=iTKunst
   export LOG=log
-  export MISC=log
+  export MISC=misc
   export OS=linux
   export PROJ=proj
   export SETTINGS=settings
@@ -44,6 +44,7 @@ echo dts/init.sh [ENTER]
   export GIT_DIR=$DIR_SLASH$GIT
   export LOG_DIR=$DIR_SLASH$LOG
   export OS_DIR=$DIR_SLASH$OS
+  export MISC_DIR=$DIR_SLASH$MISC
   export PROJ_DIR=$DIR_SLASH$PROJ
   export TMPL_DIR=$DIR_SLASH$TMPL
 
