@@ -16,6 +16,7 @@
   export BIN=bin
   export BNDL=bndl
   export COM=com
+  export DCKR=docker
   export DTS=dts
   export ENV=env
   export EXT=sh
@@ -40,6 +41,7 @@
   export BASE_DIR=$DIR_SLASH$BASE
   export BIN_DIR=$BIN
   export BNDL_DIR=$DIR_SLASH$BNDL
+  export DCKR_DIR=$DIR_SLASH$DCKR
   export ENV_DIR=$DIR_SLASH$ENV
   export GLBL_DIR=$DIR_SLASH$GLBL
   export GIT_DIR=$DIR_SLASH$GIT
