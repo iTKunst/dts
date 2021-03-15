@@ -80,6 +80,11 @@ init()
     git clone $URI_DTS_GIT --no-checkout $DIR_DTS
     cd $DIR_DTS
     git sparse-checkout init --cone
+    git sparse-checkout set base/*
+    git sparse-checkout set base/bndl/
+    git sparse-checkout set base/glbl/
+    git sparse-checkout set base/proj/
+    git sparse-checkout set tmpl/$TMPL_NAME
     cd ..
   fi
 
