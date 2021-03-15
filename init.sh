@@ -106,8 +106,10 @@
   cd $DIR_DTS
 
   if [ -d "$BASE_DIR" ]; then
+    echo git pull origin master
     git pull origin master
   else
+    echo git sparse-checkout set \
     git sparse-checkout set \
       $BASE_DIR$DIR_SLASH$STAR \
       $BASE_DIR$BNDL_DIR \
@@ -117,6 +119,8 @@
   fi
 
   cd ..
+
+  sleep 10
 
   if [ ! -d $DIR_BIN ]; then
     mkdir $DIR_BIN
