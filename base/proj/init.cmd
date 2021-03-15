@@ -11,30 +11,19 @@
   SET "STAR=*"
 
   REM NAMES
-  SET "BASE=base"
-  SET "BNDL=bndl"
   SET "COM=com"
   SET "DTS=dts"
   SET "EXT=cmd"
-  SET "GIT=git"
   SET "GIT_HUB=github"
-  SET "GLBL=glbl"
   SET "HTTPS=https"
   SET "INFO=info"
   SET "INIT=init"
   SET "ITK=iTKunst"
-  SET "PROJ=proj"
   SET "SETTINGS=settings"
   SET "TMPL=tmpl"
 
   REM DIRS
   SET "DIR_SLASH=%BCK_SLASH%"
-
-  SET "DIR_BASE=%DIR_SLASH%%BASE%"
-  SET "DIR_BNDL=%DIR_SLASH%%BNDL%"
-  SET "DIR_GLBL=%DIR_SLASH%%GLBL%"
-  SET "DIR_PROJ=%DIR_SLASH%%PROJ%"
-  SET "DIR_TMPL=%DIR_SLASH%%TMPL%"
 
   REM FILES
   SET "FILE_INIT=%INIT%%DOT%%EXT%"
@@ -61,12 +50,6 @@
   )
   :: ECHO DIR_DTS is %DIR_DTS%
 
-  if exist %DIR_DTS% (
-    ECHO Already Initialized [INFO]
-    ECHO Run pUPDATE [CMD]
-    GOTO :EOF
-  )
-
   if [%URI_DTS_GIT%]==[] (
     ECHO URI_DTS_GIT may be set in settings_uri.sh. [INFO]
     ECHO Setting to default value [INFO].
@@ -84,19 +67,19 @@
   SET "DIR_TMPL_CURR=%DIR_TMPL%%DIR_SLASH%%TMPL_NAME%"
   :: ECHO DIR_TMPL_CURR is %DIR_TMPL_CURR% [INFO]
 
-  git clone %URI_DTS_GIT% --no-checkout %DIR_DTS%
-  cd %DIR_DTS%
 
-  git sparse-checkout init --cone
+  if exist %DIR_DTS% (
+    cd $DIR_DTS
+    git pull origin master
+    cd ..
+  )
+  else (
+    git clone %URI_DTS_GIT% --no-checkout %DIR_DTS%
+    cd %DIR_DTS%
+    git sparse-checkout init --cone
+    cd ..
+  )
 
-  git sparse-checkout set ^
-    %DIR_BASE%%DIR_SLASH%%STAR% ^
-    %DIR_BASE%%DIR_BNDL% ^
-    %DIR_BASE%%DIR_GLBL% ^
-    %DIR_BASE%%DIR_PROJ% ^
-    %DIR_TMPL_CURR%
-
-  cd ..
 
   CALL %DIR_DTS%%DIR_SLASH%%FILE_INIT%
 

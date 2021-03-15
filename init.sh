@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-echo dts/init.sh [ENTER]
+ echo dts/init.sh [ENTER]
 
 
   # TOKENS
@@ -56,35 +56,35 @@ echo dts/init.sh [ENTER]
   export FILE_SETTINGS=$SETTINGS$DOT$EXT
 
   export DIR_BASE=$DIR_DTS$BASE_DIR
-   echo DIR_BASE is $DIR_BASE [VAR]
+  # echo DIR_BASE is $DIR_BASE [VAR]
 
   export DIR_BIN=$BIN_DIR
-   echo DIR_BIN is $DIR_BIN [VAR]
+  # echo DIR_BIN is $DIR_BIN [VAR]
 
   export DIR_BNDL=$DIR_BASE$BNDL_DIR
-   echo DIR_BNDL is $DIR_BNDL [VAR]
+  # echo DIR_BNDL is $DIR_BNDL [VAR]
 
   export DIR_ENV=$DIR_BNDL$ENV_DIR
-   echo DIR_ENV is $DIR_ENV [VAR]
+  # echo DIR_ENV is $DIR_ENV [VAR]
 
   export DIR_GLBL=$DIR_BASE$GLBL_DIR
-   echo DIR_GLBL is $DIR_GLBL [VAR]
+  # echo DIR_GLBL is $DIR_GLBL [VAR]
 
   export DIR_PROJ=$DIR_BASE$PROJ_DIR
-   echo DIR_PROJ is $DIR_PROJ [VAR]
+  # echo DIR_PROJ is $DIR_PROJ [VAR]
 
-  export DIR_SYS=$DIR_BASE$SYS_DIR
-   echo DIR_SYS is $DIR_SYS [VAR]
+  export DIR_SYS=$DIR_BASE$PROJ_DIR
+  # echo DIR_SYS is $DIR_SYS [VAR]
 
   export DIR_TMPL=$DIR_DTS$TMPL_DIR
-   echo DIR_TMPL is $DIR_TMPL [VAR]
+  # echo DIR_TMPL is $DIR_TMPL [VAR]
 
   export FILES=$OS_DIR$DIR_SLASH$STAR$DOT$EXT
-   echo FILES is $FILES [VAR]
+  # echo FILES is $FILES [VAR]
 
   if [ -z $TMPL_NAME ]; then
-    echo TMPL_NAME [INVALID]
-    echo TMPL_NAME must be set in settings.sh. [INFO]
+   # echo TMPL_NAME [INVALID]
+   # echo TMPL_NAME must be set in settings.sh. [INFO]
 	  exit
   fi
   # echo TMPL_NAME is $TMPL_NAME [VAR]
@@ -94,28 +94,33 @@ echo dts/init.sh [ENTER]
 
 
   if [ -z $TMPL_NAME ]; then
-    echo TMPL_NAME [INVALID]
-    echo TMPL_NAME must be set in settings.sh. [INFO]
+   # echo TMPL_NAME [INVALID]
+   # echo TMPL_NAME must be set in settings.sh. [INFO]
 	  exit
   fi
   # echo TMPL_NAME is $TMPL_NAME [VAR]
 
   export TMPL_CURR_DIR=$TMPL_DIR$DIR_SLASH$TMPL_NAME
-   echo TMPL_CURR_DIR is $TMPL_CURR_DIR [VAR]
+  # echo TMPL_CURR_DIR is $TMPL_CURR_DIR [VAR]
 
   cd $DIR_DTS
 
-  git sparse-checkout set \
-    $BASE_DIR$DIR_SLASH$STAR \
-    $BASE_DIR$BNDL_DIR \
-    $BASE_DIR$GLBL_DIR \
-    $BASE_DIR$PROJ_DIR \
-    $TMPL_CURR_DIR
+  if [ -d "$BASE_DIR" ]; then
+    git pull origin master
+  else
+    git sparse-checkout set \
+      $BASE_DIR$DIR_SLASH$STAR \
+      $BASE_DIR$BNDL_DIR \
+      $BASE_DIR$GLBL_DIR \
+      $BASE_DIR$PROJ_DIR \
+      $TMPL_CURR_DIR
+  fi
+
   cd ..
 
   if [ ! -d $DIR_BIN ]; then
     mkdir $DIR_BIN
-    echo create $DIR_BIN
+   # echo create $DIR_BIN
   fi
 
   source $DIR_ENV$DIR_SLASH$FILE_INIT
