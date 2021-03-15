@@ -109,7 +109,7 @@
     echo git pull origin master
     git pull origin master
   else
-    echo git sparse-checkout set \
+    echo git sparse-checkout set
     git sparse-checkout set \
       $BASE_DIR$DIR_SLASH$STAR \
       $BASE_DIR$BNDL_DIR \
