@@ -35,6 +35,7 @@ echo dts\init.cmd [ENTER]
 
   REM DIRS
   SET "DIR_SLASH=%BCK_SLASH%"
+  echo DIR_SLASH is %DIR_SLASH%
 
   SET "BASE_DIR=%DIR_SLASH%%BASE%"
   SET "BIN_DIR=%BIN%"
@@ -99,12 +100,14 @@ echo dts\init.cmd [ENTER]
      echo create %DIR_BIN%
    )
 
-  CALL %DIR_ENV%%DIR_SLASH%%FILE_INIT%
-  CALL %DIR_BIN%%DIR_SLASH%bENV
-
   echo DIR_DTS is %DIR_DTS%
   echo DIR_SLASH is %DIR_SLASH%
   echo FILE_INIT is %FILE_INIT%
+
+  CALL %DIR_BIN%%DIR_SLASH%"mSET_PATH"
+  CALL %DIR_ENV%%DIR_SLASH%%FILE_INIT%
+  CALL %DIR_BIN%%DIR_SLASH%bENV
+
 
   CALL LOG_LOAD %DIR_DTS%%DIR_SLASH%%FILE_INIT%
 
