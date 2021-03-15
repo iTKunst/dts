@@ -105,7 +105,8 @@
 
   cd $DIR_DTS
 
-  echo pwd is pwd()
+  echo BASE_DIR is $BASE_DIR
+
   if [ -d $BASE_DIR ]; then
     echo git pull origin master
     git pull origin master
