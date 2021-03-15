@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-# echo bENV [ENTER]
+echo bENV [ENTER]
 
 source settings.sh
 source bin/bENV_DIRS.sh
@@ -75,6 +75,6 @@ export DIR_TMPL_CURR=$DIR_TMPL$TMPL_CURR_DIR
 export CMD_INIT=$SLASH$INIT$DOT$EXT
 # echo CMD_INIT is $DIR_SLASH$FILE_INIT
 
-# echo bENV [EXIT]
+ echo bENV [EXIT]
 
 return 0
