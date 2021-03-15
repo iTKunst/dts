@@ -108,8 +108,7 @@
   echo BASE is $BASE
 
   if [ -d $BASE ]; then
-    echo git pull origin master
-    git pull origin master
+    echo already pulled
   else
     echo git sparse-checkout set
     git sparse-checkout set \
