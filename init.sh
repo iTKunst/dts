@@ -75,7 +75,7 @@
   export DIR_PROJ=$DIR_BASE$PROJ_DIR
   # echo DIR_PROJ is $DIR_PROJ [VAR]
 
-  export DIR_SYS=$DIR_BASE$SYS_DIR
+  export DIR_SYS=../../system
   # echo DIR_SYS is $DIR_SYS [VAR]
 
   export DIR_TMPL=$DIR_DTS$TMPL_DIR
