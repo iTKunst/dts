@@ -108,16 +108,6 @@
 
   echo BASE is $BASE
 
-  if [ -d $BASE ]; then
-    echo already pulled
-  else
-    echo git sparse-checkout set
-    git sparse-checkout set $BASE_DIR$DIR_SLASH$STAR
-    git sparse-checkout set $BASE_DIR$BNDL_DIR
-    git sparse-checkout set $BASE_DIR$GLBL_DIR
-    git sparse-checkout set $BASE_DIR$PROJ_DIR
-    git sparse-checkout set $TMPL_CURR_DIR
-  fi
 
   cd ..
 
