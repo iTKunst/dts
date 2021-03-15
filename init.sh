@@ -122,8 +122,6 @@
 
   cd ..
 
-  sleep 10
-
   if [ ! -d $DIR_BIN ]; then
     mkdir $DIR_BIN
    # echo create $DIR_BIN
