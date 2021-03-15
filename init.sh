@@ -138,6 +138,4 @@
   source pINIT.sh
   pINIT
 
-  log_exit $DIR_DTS$DIR_SLASH$FILE_INIT
-
-echo dts/init.sh [EXIT]
+log_exit $DIR_DTS$DIR_SLASH$FILE_INIT
