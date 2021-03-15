@@ -69,7 +69,7 @@
 
 
   if exist %DIR_DTS% (
-    cd $DIR_DTS
+    cd %DIR_DTS%
     git pull origin master
     cd ..
   )
