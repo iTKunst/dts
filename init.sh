@@ -111,7 +111,6 @@
     echo already pulled
   else
     echo git sparse-checkout set
-    git sparse-checkout init --cone
     git sparse-checkout set \
       $BASE_DIR$DIR_SLASH$STAR \
       $BASE_DIR$BNDL_DIR \
