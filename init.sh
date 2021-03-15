@@ -105,9 +105,9 @@
 
   cd $DIR_DTS
 
-  echo BASE_DIR is $BASE_DIR
+  echo BASE is $BASE
 
-  if [ -d $BASE_DIR ]; then
+  if [ -d $BASE ]; then
     echo git pull origin master
     git pull origin master
   else
