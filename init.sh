@@ -71,6 +71,9 @@ echo dts/init.sh [ENTER]
   export DIR_PROJ=$DIR_BASE$PROJ_DIR
    echo DIR_PROJ is $DIR_PROJ [VAR]
 
+  export DIR_TMPL=$DIR_DTS$TMPL_DIR
+   echo DIR_TMPL is $DIR_TMPL [VAR]
+
   export FILES=$OS_DIR$DIR_SLASH$STAR$DOT$EXT
    echo FILES is $FILES [VAR]
 
