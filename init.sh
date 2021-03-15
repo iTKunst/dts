@@ -27,6 +27,7 @@ echo dts/init.sh [ENTER]
   export INIT=init
   export ITK=iTKunst
   export LOG=log
+  export MISC=log
   export OS=linux
   export PROJ=proj
   export SETTINGS=settings

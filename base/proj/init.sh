@@ -14,30 +14,19 @@ init()
   export STAR=*
 
   # NAMES
-  export BASE=base
-  export BNDL=bndl
   export COM=com
   export DTS=dts
   export EXT=sh
-  export GIT=git
   export GIT_HUB=github
-  export GLBL=glbl
   export HTTPS=https
   export INFO=info
   export INIT=init
   export ITK=iTKunst
-  export PROJ=proj
   export SETTINGS=settings
   export TMPL=tmpl
 
   # DIRS
   export DIR_SLASH=$FOR_SLASH
-
-  export DIR_BASE=$DIR_SLASH$BASE
-  export DIR_BNDL=$DIR_SLASH$BNDL
-  export DIR_GLBL=$DIR_SLASH$GLBL
-  export DIR_PROJ=$DIR_SLASH$PROJ
-  export DIR_TMPL=$DIR_SLASH$TMPL
 
   # FILES
   export FILE_INIT=$INIT$DOT$EXT
@@ -64,11 +53,6 @@ init()
   fi
   # echo DIR_DTS is $DIR_DTS [VAR]
 
-  if [ -d "$DIR_DTS" ]; then
-    echo Already initialized [INFO]
-    echo Run pUPDATE [CMD]
-    return 0
-  fi
 
   if [ -z "$URI_DTS_GIT" ]; then
     echo URI_DTS_GIT may be set in settings_uri.sh. [INFO]
@@ -88,19 +72,16 @@ init()
   # echo DIR_TMPL_CURR is $DIR_TMPL_CURR [VAR]
 
 
-  git clone $URI_DTS_GIT --no-checkout $DIR_DTS
-  cd $DIR_DTS
-
-  git sparse-checkout init --cone
-
-  git sparse-checkout set \
-    $DIR_BASE$DIR_SLASH$STAR \
-    $DIR_BASE$DIR_BNDL \
-    $DIR_BASE$DIR_GLBL \
-    $DIR_BASE$DIR_PROJ \
-    $DIR_TMPL_CURR
-
-  cd ..
+  if [ -d "$DIR_DTS" ]; then
+    cd $DIR_DTS
+    git pull origin master
+    cd ..
+  else
+    git clone $URI_DTS_GIT --no-checkout $DIR_DTS
+    cd $DIR_DTS
+    git sparse-checkout init --cone
+    cd ..
+  fi
 
   source $DIR_DTS$DIR_SLASH$FILE_INIT
 
