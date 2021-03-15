@@ -65,6 +65,9 @@ echo dts/init.sh [ENTER]
   export DIR_ENV=$DIR_BNDL$ENV_DIR
    echo DIR_ENV is $DIR_ENV [VAR]
 
+  export DIR_GLBL=$DIR_BASE$GLBL_DIR
+   echo DIR_GLBL is $DIR_GLBL [VAR]
+
   export DIR_PROJ=$DIR_BASE$PROJ_DIR
    echo DIR_PROJ is $DIR_PROJ [VAR]
 
