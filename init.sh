@@ -31,6 +31,7 @@ echo dts/init.sh [ENTER]
   export OS=linux
   export PROJ=proj
   export SETTINGS=settings
+  export SYS=sys
   export TMPL=tmpl
 
   # DIRS
@@ -46,6 +47,7 @@ echo dts/init.sh [ENTER]
   export OS_DIR=$DIR_SLASH$OS
   export MISC_DIR=$DIR_SLASH$MISC
   export PROJ_DIR=$DIR_SLASH$PROJ
+  export SYS_DIR=$DIR_SLASH$SYS
   export TMPL_DIR=$DIR_SLASH$TMPL
 
   # FILES
@@ -70,6 +72,9 @@ echo dts/init.sh [ENTER]
 
   export DIR_PROJ=$DIR_BASE$PROJ_DIR
    echo DIR_PROJ is $DIR_PROJ [VAR]
+
+  export DIR_SYS=$DIR_BASE$PROJ_DIR
+   echo DIR_SYS is $DIR_SYS [VAR]
 
   export DIR_TMPL=$DIR_DTS$TMPL_DIR
    echo DIR_TMPL is $DIR_TMPL [VAR]
