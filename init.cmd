@@ -4,7 +4,7 @@
 echo dts\init.cmd [ENTER]
 
 
- goto :EOF
+ GOTO :END
 
   REM TOKENS
   SET "BCK_SLASH=\"
@@ -126,7 +126,7 @@ rem     echo create %DIR_BIN%
 rem CALL LOG_LOAD %DIR_DTS%%DIR_SLASH%%FILE_INIT%
 
 
-:EOF
-echo EOF
+:END
+echo reached  END
 
 echo dts\init.cmd [EXIT]
