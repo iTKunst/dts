@@ -1,7 +1,7 @@
 @echo off
 
 
-echo bENV [ENTER]
+rem echo bENV [ENTER]
 
 CALL settings
 CALL bin\bENV_NAMES
@@ -12,7 +12,7 @@ SET "DEF_URI_DTS_GIT=https://github.com/iTKunst/dts"
 
 
 IF  [%PROJ_MODE%]==[] (
-  echo PROJ_MODE nay be set it in settings.sh. [CMD]
+  echo PROJ_MODE may be set it in settings.sh. [CMD]
   echo Setting to default. [INFO]
   SET "PROJ_MODE=DEF_PROJ_MODE"
 )
@@ -48,29 +48,29 @@ if [%TMPL_NAME%]==[] (
   echo You must set it in settings.sh! [CMD]
   GOTO :EOF
 )
-REM echo TMPL_NAME is %TMPL_NAME%
+REM rem echo TMPL_NAME is %TMPL_NAME%
 
 SET "DIR_BASE=%DIR_DTS%%BASE_DIR%"
-REM echo DIR_BASE is %DIR_BASE%
+REM rem echo DIR_BASE is %DIR_BASE%
 
 SET "DIR_BIN=%BIN_DIR%"
-REM echo DIR_BIN is %DIR_BIN%
+REM rem echo DIR_BIN is %DIR_BIN%
 
 SET "DIR_BNDL=%DIR_BASE%%BNDL_DIR%"
-REM echo DIR_BNDL is %DIR_BASE%
+REM rem echo DIR_BNDL is %DIR_BASE%
 
 SET "DIR_GLBL=%DIR_BASE%%GLBL_DIR%"
-REM echo DIR_GLBL is %DIR_GLBL%
+REM rem echo DIR_GLBL is %DIR_GLBL%
 
 SET "DIR_SYS=%UP%%UP%%SYS%"
-REM echo DIR_SYS is %DIR_SYS%
+REM rem echo DIR_SYS is %DIR_SYS%
 
 SET "DIR_TMPL=%DIR_DTS%%TMPL_DIR%"
-REM echo TMPL_DIR is %TMPL_DIR%
+REM rem echo TMPL_DIR is %TMPL_DIR%
 
 SET "DIR_TMPL_CURR=%DIR_TMPL%%TMPL_CURR_DIR%"
-REM echo DIR_TMPL_CURR is %DIR_TMPL_CURR%
+REM rem echo DIR_TMPL_CURR is %DIR_TMPL_CURR%
 
 
-echo bENV [EXIT]
+rem echo bENV [EXIT]
 
