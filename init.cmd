@@ -115,6 +115,6 @@ echo dts\init.cmd [ENTER]
   CALL "..\..\system"%DIR_SLASH%%FILE_INIT%
 
   CALL %DIR_BIN%%DIR_SLASH%"mSET_PATH"
-  CALL pINIT
+  rem CALL pINIT
 
 CALL LOG_LOAD %DIR_DTS%%DIR_SLASH%%FILE_INIT%
