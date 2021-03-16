@@ -47,7 +47,6 @@ echo dts\init.cmd [ENTER]
   SET "PROJ_DIR=\%PROJ%"
   SET "SYS_DIR=\%SYS%"
   SET "TMPL_DIR=\%TMPL%"
- GOTO :END
 
   REM FILES
   SET "FILE_INIT=%INIT%%DOT%%EXT%"
@@ -84,6 +83,8 @@ echo dts\init.cmd [ENTER]
 
   SET "FILES=%OS_DIR%\%STAR%%DOT%%EXT%"
   ECHO FILES is %FILES% [INFO]
+
+ GOTO :END
 
   if [%TMPL_NAME%]==[] (
     ECHO TMPL_NAME [INVALID]
