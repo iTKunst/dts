@@ -68,10 +68,8 @@ echo dts\init.cmd [ENTER]
   SET "DIR_BNDL=%DIR_BASE%%BNDL_DIR%"
   ECHO DIR_BNDL is %DIR_BNDL% [INFO]
 
-
   SET "DIR_GLBL=%DIR_BNDL%%GLBL_DIR%"
   ECHO DIR_GLBL is %DIR_GLBL% [INFO]
-
 
   SET "DIR_PROJ=%DIR_BASE%%PROJ_DIR%"
   ECHO DIR_PROJ is %DIR_PROJ% [INFO]
@@ -85,7 +83,6 @@ echo dts\init.cmd [ENTER]
   SET "FILES=%OS_DIR%%DIR_SLASH%%STAR%%DOT%%EXT%"
   ECHO FILES is %FILES% [INFO]
 
-
   if [%TMPL_NAME%]==[] (
     ECHO TMPL_NAME [INVALID]
     ECHO TMPL_NAME must be set in settings.sh. [INFO]
@@ -96,16 +93,14 @@ echo dts\init.cmd [ENTER]
   SET "DIR_TMPL_CURR=%DIR_TMPL%%DIR_SLASH%%TMPL_NAME%"
   ECHO DIR_TMPL_CURR is %DIR_TMPL_CURR% [INFO]
 
-
   echo DIR_DTS is %DIR_DTS%
   echo DIR_SLASH is %DIR_SLASH%
   echo FILE_INIT is %FILE_INIT%
 
-   if not exist %DIR_BIN% (
-     mkdir %DIR_BIN%
-     echo create %DIR_BIN%
-   )
-
+  if not exist %DIR_BIN% (
+    mkdir %DIR_BIN%
+    echo create %DIR_BIN%
+  )
 
   SET "CMD_BNDL=%DIR_BNDL%%DIR_SLASH%%FILE_INIT%"
   echo CMD_BNDL is %CMD_BNDL%

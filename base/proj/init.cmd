@@ -1,29 +1,25 @@
 @ECHO off
 
 
-:: ECHO init.cmd [LOADED]
+ ECHO init.cmd [LOADED]
 
   REM TOKENS
-  SET "BCK_SLASH=\"
   SET "COLON=:"
   SET "DOT=."
   SET "FOR_SLASH=/"
-  SET "STAR=*"
 
   REM NAMES
   SET "COM=com"
   SET "DTS=dts"
   SET "EXT=cmd"
+  SET "GIT=git"
   SET "GIT_HUB=github"
   SET "HTTPS=https"
   SET "INFO=info"
   SET "INIT=init"
   SET "ITK=iTKunst"
   SET "SETTINGS=settings"
-  SET "TMPL=tmpl"
 
-  REM DIRS
-  SET "DIR_SLASH=%BCK_SLASH%"
 
   REM FILES
   SET "FILE_INIT=%INIT%%DOT%%EXT%"
@@ -34,7 +30,7 @@
 
   REM DEFS
   SET "DEF_DIR_DTS=%DTS%
-  SET "DEF_URI_DTS_GIT=%HOST_GITHUB%%ITK%%DIR_DTS%
+  SET "DEF_URI_DTS_GIT=%HOST_GITHUB%%FOR_SLASH%%ITK%%DIR_DTS%%DOT%%GIT%
 
 
   if not exist %FILE_SETTINGS% (
@@ -48,43 +44,33 @@
     ECHO Setting to default value. [INFO]
     SET "DIR_DTS=%DEF_DIR_DTS%"
   )
-  :: ECHO DIR_DTS is %DIR_DTS%
+   ECHO DIR_DTS is %DIR_DTS%
 
   if [%URI_DTS_GIT%]==[] (
     ECHO URI_DTS_GIT may be set in settings_uri.sh. [INFO]
     ECHO Setting to default value [INFO].
     SET "URI_DTS_GIT=%DEF_URI_DTS_GIT%"
   )
-  :: ECHO URI_DTS_GIT is %URI_DTS_GIT% [INFO]
+   ECHO URI_DTS_GIT is %URI_DTS_GIT% [INFO]
 
-  if [%TMPL_NAME%]==[] (
-    ECHO TMPL_NAME [INVALID]
-    ECHO TMPL_NAME must be set in settings.sh. [INFO]
-    GOTO :EOF
-  )
-  :: ECHO TMPL_NAME is %TMPL_NAME%
-
-  SET "DIR_TMPL_CURR=%DIR_TMPL%%DIR_SLASH%%TMPL_NAME%"
-  :: ECHO DIR_TMPL_CURR is %DIR_TMPL_CURR% [INFO]
 
 
   if exist %DIR_DTS% (
+    echo pulling changes from dts
     cd %DIR_DTS%
     git pull origin master
     cd ..
-  )
-  else (
-    git clone %URI_DTS_GIT% --no-checkout %DIR_DTS%
-    cd %DIR_DTS%
-    git sparse-checkout init --cone
-    git sparse-checkout set "base/*" "base/bndl" "base/glbl" "base/proj" "tmpl/%TMPL_NAME%"
-    cd ..
+  ) ELSE (
+    echo cloning dts repo
+    git clone %URI_DTS_GIT% %DIR_DTS%
   )
 
+  SET "SRC=%DIR_DTS%\%FILE_INIT%"
+  echo SRC is %SRC%
 
-  CALL %DIR_DTS%%DIR_SLASH%%FILE_INIT%
+  CALL %SRC%
 
-:EOF
+:END
+echo reached end
 
-
-:: CALL LOG_UNLOAD init
+echo init [EXIT]

@@ -6,6 +6,8 @@ bin/
 dts/
 target/
 
+dts\
+
 code/src/
 
 /nul
