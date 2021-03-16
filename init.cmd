@@ -107,7 +107,7 @@ echo dts\init.cmd [ENTER]
 
 
   CALL %DIR_ENV%%DIR_SLASH%%FILE_INIT%
-  rem CALL %DIR_BIN%%DIR_SLASH%bENV
+  CALL %DIR_BIN%%DIR_SLASH%bENV
 
  GOTO :END
 
