@@ -1,10 +1,11 @@
 @echo off
 CALL settings
 
-
-call %DIR_BIN%%DIR_SLASH%LOG_ENTER pBUILD
+echo Hello
 
 CALL project\pENV
+
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pBUILD
 
 SET "CONT_DIR=%PROJ_CONT_DIR%"
 SET "HOST_DIR=%PROJ_HOST_DIR%"
