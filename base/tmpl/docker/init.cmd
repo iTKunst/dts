@@ -1,7 +1,7 @@
 @echo off
 
 
-CALL LOG_ENTER \%DIR_TMPL%\docker%DIR_SLASH%%FILE_INIT%
+CALL %DIR_BIN%%DIR_SLASH%LOG_ENTER \%DIR_TMPL%\docker%DIR_SLASH%%FILE_INIT%
 
 xcopy /q /y %DIR_TMPL%\docker%FILES% %DIR_BIN% >NUL
 

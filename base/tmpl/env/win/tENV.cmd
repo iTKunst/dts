@@ -1,7 +1,7 @@
 @echo off
 
 
-CALL LOG_ENTER tENV
+CALL %DIR_BIN%%DIR_SLASH%LOG_ENTER tENV
 
 call sENV
 if exist project\pENV (

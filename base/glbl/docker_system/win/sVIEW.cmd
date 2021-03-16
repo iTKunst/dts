@@ -2,7 +2,7 @@
 CALL settings
 
 
-call LOG_ENTER sVIEW
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER sVIEW
 
 CALL project\pENV
 
