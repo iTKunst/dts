@@ -36,6 +36,7 @@ echo dts\init.cmd [ENTER]
 
   REM DIRS
   SET "DIR_SLASH=\"
+
   SET "BASE_DIR=%DIR_SLASH%%BASE%"
   SET "BIN_DIR=%BIN%"
   SET "BNDL_DIR=%DIR_SLASH%%BNDL%"
