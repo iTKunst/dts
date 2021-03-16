@@ -57,19 +57,19 @@ echo dts\init.cmd [ENTER]
 
 
   SET "DTS_DIR=dts"
-rem ECHO DTS_DIR is %DTS_DIR% [INFO]
+  rem ECHO DTS_DIR is %DTS_DIR% [INFO]
 
   SET "DIR_BASE=%DTS_DIR%%BASE_DIR%"
-rem ECHO DIR_BASE is %DIR_BASE% [INFO]
+  rem ECHO DIR_BASE is %DIR_BASE% [INFO]
 
   SET "DIR_BIN=%BIN_DIR%"
-rem ECHO DIR_BIN is %DIR_BIN% [INFO]
+  rem ECHO DIR_BIN is %DIR_BIN% [INFO]
 
   SET "DIR_BNDL=%DIR_BASE%%BNDL_DIR%"
-rem ECHO DIR_BNDL is %DIR_BNDL% [INFO]
+  rem ECHO DIR_BNDL is %DIR_BNDL% [INFO]
 
   SET "DIR_GLBL=%DIR_BASE%%GLBL_DIR%"
-rem ECHO DIR_GLBL is %DIR_GLBL% [INFO]
+  rem ECHO DIR_GLBL is %DIR_GLBL% [INFO]
 
   SET "DIR_PROJ=%DIR_BASE%%PROJ_DIR%"
   rem ECHO DIR_PROJ is %DIR_PROJ% [INFO]
@@ -84,8 +84,8 @@ rem ECHO DIR_GLBL is %DIR_GLBL% [INFO]
   rem ECHO FILES is %FILES% [INFO]
 
   if [%TMPL_NAME%]==[] (
-    rem ECHO TMPL_NAME [INVALID]
-    rem ECHO TMPL_NAME must be set in settings.sh. [INFO]
+    ECHO TMPL_NAME [INVALID]
+    ECHO TMPL_NAME must be set in settings.sh. [INFO]
     GOTO :EOF
   )
   rem ECHO TMPL_NAME is %TMPL_NAME%

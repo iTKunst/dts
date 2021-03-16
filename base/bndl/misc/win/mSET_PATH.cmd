@@ -6,9 +6,9 @@ echo mSET_PATH [ENTER]
 rem CALL %DIR_BIN%%DIR_SLASH%LOG_VAR PATH %PATH%
 rem echo PATH is %PATH%
 
-SET "FIND=%CD%\bin"
+SET "FIND=%CD%%DIR_SLASH%%DIR_BIN"
 rem CALL %DIR_BIN%%DIR_SLASH%LOG_VAR FIND %FIND%
-echo  FIND  is %FIND%
+echo  FIND is %FIND%
 
 ECHO "%PATH%" | findstr /C:"%FIND%">nul && (
   rem CALL %DIR_BIN%%DIR_SLASH%LOG_DUP PATH
@@ -16,8 +16,8 @@ ECHO "%PATH%" | findstr /C:"%FIND%">nul && (
   GOTO :END
 )
 
-SET "PATH=%PATH%;%CD%%DIR_BIN%"
-ECHO SET "PATH=%PATH%;%CD%\bin" >path.cmd
+SET "PATH=%CD%%DIR_SLASH%%DIR_BIN%;%PATH%"
+ECHO SET "PATH=%CD%%DIR_SLASH%%DIR_BIN%;%PATH%" >path.cmd
 
 
 :END
