@@ -4,6 +4,7 @@
 echo dts\init.cmd [ENTER]
 
 
+ GOTO :END
 
   REM TOKENS
   SET "COLON=:"
@@ -54,7 +55,6 @@ echo dts\init.cmd [ENTER]
   SET "FILE_LOG=\LOG%DOT%%EXT%"
   SET "FILE_SETTINGS=%SETTINGS%%DOT%%EXT%"
 
- GOTO :END
 
   SET "DTS_DIR=dts"
   ECHO DTS_DIR is %DTS_DIR% [INFO]
