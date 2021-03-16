@@ -105,11 +105,11 @@ echo dts\init.cmd [ENTER]
      echo create %DIR_BIN%
    )
 
- GOTO :END
 
-  rem CALL %DIR_ENV%\%FILE_INIT%
+  CALL %DIR_ENV%\%FILE_INIT%
   rem CALL %DIR_BIN%\bENV
 
+ GOTO :END
 
   rem CALL LOG_LOAD %DIR_DTS%\%FILE_INIT%
 
