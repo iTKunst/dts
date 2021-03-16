@@ -1,8 +1,11 @@
 @echo off
 
+echo hello
+sleep 10
+rem rem call %DIR_BIN%%DIR_SLASH%LOG_ENTER %GLBL_DIR%%DIR_SLASH%docker_compose%DIR_SLASH%%FILE_INIT%
+echo %DIR_GLBL%%DIR_SLASH%docker_compose%DIR_SLASH%%FILE_INIT% [ENTER]
 
-call %DIR_BIN%%DIR_SLASH%LOG_ENTER %GLBL_DIR%\docker_compose%DIR_SLASH%%FILE_INIT%
+xcopy /q /y %DIR_GLBL%%DIR_SLASH%docker_compose%FILES% %DIR_BIN% >NUL
 
-xcopy /q /y %DIR_GLBL%\docker_compose%FILES% %DIR_BIN% >NUL
-
-call %DIR_BIN%%DIR_SLASH%LOG_EXIT %DIR_GLBL%\docker_compose%DIR_SLASH%%FILE_INIT%
+rem call %DIR_BIN%%DIR_SLASH%LOG_EXIT %DIR_GLBL%\docker_compose%DIR_SLASH%%FILE_INIT%
+echo %DIR_GLBL%%DIR_SLASH%docker_compose%DIR_SLASH%%FILE_INIT% [EXIT]
