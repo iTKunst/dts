@@ -1,7 +1,7 @@
 @echo off
 
 
-CALL LOG_LOAD mSET_PATH
+echo mSET_PATH
 
 CALL %DIR_BNDL%%LOG_DIR%%OS_DIR%\LOG_VAR PATH %PATH%
 
@@ -19,7 +19,7 @@ ECHO SET "PATH=%PATH%;%CD%\bin" >path.cmd
 
 :EOF
 
-CALL LOG_UNLOAD mSET_PATH
+echo mSET_PATH
 
 EXIT /B %ERRORLEVEL%
 
