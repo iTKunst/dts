@@ -1,7 +1,7 @@
 @echo off
 
 SET "CMD_LE=%DIR_BIN%%DIR_SLASH%LOG_ENTER"
-echo CMD_LE is %CMD_LE%
+rem echo CMD_LE is %CMD_LE%
 
 rem call %CMD_LE% %DIR_GLBL%%DIR_SLASH%%FILE_INIT%
 rem echo %DIR_GLBL%%DIR_SLASH%%FILE_INIT% [ENTER]
