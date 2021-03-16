@@ -36,18 +36,18 @@ echo dts\init.cmd [ENTER]
 
   REM DIRS
 
-  SET "BASE_DIR='\\'%BASE%"
+  SET "BASE_DIR=\%BASE%"
   SET "BIN_DIR=%BIN%"
-  SET "BNDL_DIR='\\'%BNDL%"
-  SET "ENV_DIR='\\'%ENV%"
-  SET "GLBL_DIR='\\'%GLBL%"
-  SET "GIT_DIR='\\'%GIT%"
-  SET "LOG_DIR='\\'%LOG%"
-  SET "OS_DIR='\\'%OS%"
-  SET "MISC_DIR='\\'%MISC%"
-  SET "PROJ_DIR='\\'%PROJ%"
-  SET "SYS_DIR='\\'%SYS%"
-  SET "TMPL_DIR='\\'%TMPL%"
+  SET "BNDL_DIR=\%BNDL%"
+  SET "ENV_DIR=\%ENV%"
+  SET "GLBL_DIR=\%GLBL%"
+  SET "GIT_DIR=\%GIT%"
+  SET "LOG_DIR=\%LOG%"
+  SET "OS_DIR=\%OS%"
+  SET "MISC_DIR=\%MISC%"
+  SET "PROJ_DIR=\%PROJ%"
+  SET "SYS_DIR=\%SYS%"
+  SET "TMPL_DIR=\%TMPL%"
 
   REM FILES
   SET "FILE_INIT=%INIT%%DOT%%EXT%"
@@ -83,7 +83,7 @@ echo dts\init.cmd [ENTER]
   SET "DIR_TMPL=%DIR_BASE%%SYS_DIR%"
   ECHO DIR_TMPL is %DIR_TMPL% [INFO]
 
-  SET "FILES=%OS_DIR%'\\'%STAR%%DOT%%EXT%"
+  SET "FILES=%OS_DIR%\%STAR%%DOT%%EXT%"
   ECHO FILES is %FILES% [INFO]
 
   if [%TMPL_NAME%]==[] (
@@ -93,13 +93,13 @@ echo dts\init.cmd [ENTER]
   )
   ECHO TMPL_NAME is %TMPL_NAME%
 
-  SET "DIR_TMPL_CURR=%DIR_TMPL%'\\'%TMPL_NAME%"
+  SET "DIR_TMPL_CURR=%DIR_TMPL%\%TMPL_NAME%"
   ECHO DIR_TMPL_CURR is %DIR_TMPL_CURR% [INFO]
 
 
 
   echo DIR_DTS is %DIR_DTS%
-  echo DIR_SLASH is '\\'
+  echo DIR_SLASH is \
   echo FILE_INIT is %FILE_INIT%
 
    if not exist %DIR_BIN% (
@@ -107,20 +107,20 @@ rem     mkdir %DIR_BIN%
 rem     echo create %DIR_BIN%
    )
 
-  rem CALL %DIR_ENV%'\\'%FILE_INIT%
-  rem CALL %DIR_BIN%'\\'bENV
+  rem CALL %DIR_ENV%\%FILE_INIT%
+  rem CALL %DIR_BIN%\bENV
 
 
-  rem CALL LOG_LOAD %DIR_DTS%'\\'%FILE_INIT%
+  rem CALL LOG_LOAD %DIR_DTS%\%FILE_INIT%
 
-  rem CALL %DIR_BASE%'\\'%FILE_INIT%
-  rem CALL %DIR_TMPL_CURR%'\\'%FILE_INIT%
-  rem CALL "..\..\system"'\\'%FILE_INIT%
+  rem CALL %DIR_BASE%\%FILE_INIT%
+  rem CALL %DIR_TMPL_CURR%\%FILE_INIT%
+  rem CALL "..\..\system"\%FILE_INIT%
 
-  rem CALL %DIR_BIN%'\\'"mSET_PATH"
+  rem CALL %DIR_BIN%\"mSET_PATH"
   rem CALL pINIT
 
-rem CALL LOG_LOAD %DIR_DTS%'\\'%FILE_INIT%
+rem CALL LOG_LOAD %DIR_DTS%\%FILE_INIT%
 
 
 :END
