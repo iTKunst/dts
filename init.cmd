@@ -33,7 +33,6 @@ echo dts\init.cmd [ENTER]
   SET "SETTINGS=settings"
   SET "SYS=sys"
   SET "TMPL=tmpl"
- GOTO :END
 
   REM DIRS
 
@@ -49,6 +48,7 @@ echo dts\init.cmd [ENTER]
   SET "PROJ_DIR=\%PROJ%"
   SET "SYS_DIR=\%SYS%"
   SET "TMPL_DIR=\%TMPL%"
+ GOTO :END
 
   REM FILES
   SET "FILE_INIT=%INIT%%DOT%%EXT%"
