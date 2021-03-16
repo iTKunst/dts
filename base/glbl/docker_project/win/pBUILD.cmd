@@ -15,9 +15,17 @@ call LOG_VAR CONT_DIR %CONT_DIR%
 call LOG_VAR DCKR_URI %DCKR_URI%
 call LOG_VAR HOST_DIR %HOST_DIR%
 call LOG_VAR IMG %IMG%
+call LOG_VAR SYS_DIR %SYS_DIR%
+call LOG_VAR TMPL_DIR %TMPL_DIR%
 
-REM DOCKER_BUILDKIT=1 ^
-docker  build --build-arg CONT_DIR=%CONT_DIR% --build-arg HOST_DIR=%HOST_DIR% -f %DCKR_URI% -t %IMG% .
+docker  build ^
+        --build-arg CONT_DIR=%CONT_DIR% ^
+        --build-arg HOST_DIR=%HOST_DIR% ^
+        --build-arg SYS_DIR=%SYS_DIR% ^
+        --build-arg TMPL_DIR=%TMPL_DIR% ^
+        -f %DCKR_URI% ^
+        -t %IMG% ^
+        .
 
 call LOG_VAR ERRORLEVEL %ERRORLEVEL%
 
