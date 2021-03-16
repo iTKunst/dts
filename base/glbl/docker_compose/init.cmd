@@ -1,7 +1,5 @@
 @echo off
 
-echo hello
-sleep 10
 rem rem call %DIR_BIN%%DIR_SLASH%LOG_ENTER %GLBL_DIR%%DIR_SLASH%docker_compose%DIR_SLASH%%FILE_INIT%
 rem echo %DIR_GLBL%%DIR_SLASH%docker_compose%DIR_SLASH%%FILE_INIT% [ENTER]
 
