@@ -36,7 +36,7 @@ echo dts\init.cmd [ENTER]
   SET "TMPL=tmpl"
 
   REM DIRS
-  SET "DIR_SLASH=$BCK_SLASH"
+  SET "DIR_SLASH=%BCK_SLASH%"
 
   SET "BASE_DIR=%DIR_SLASH%%BASE%"
   SET "BIN_DIR=%BIN%"
