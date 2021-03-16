@@ -1,7 +1,7 @@
 @ECHO off
 
 
- ECHO init.cmd [LOADED]
+rem  ECHO init.cmd [LOADED]
 
   REM TOKENS
   SET "COLON=:"
@@ -30,7 +30,7 @@
 
   REM DEFS
   SET "DEF_DIR_DTS=%DTS%
-  SET "DEF_URI_DTS_GIT=%HOST_GITHUB%%FOR_SLASH%%ITK%%DIR_DTS%%DOT%%GIT%
+  SET "DEF_URI_DTS_GIT=%HOST_GITHUB%%FOR_SLASH%%ITK%%FOR_SLASH%%DTS%%DOT%%GIT%
 
 
   if not exist %FILE_SETTINGS% (
@@ -44,14 +44,14 @@
     ECHO Setting to default value. [INFO]
     SET "DIR_DTS=%DEF_DIR_DTS%"
   )
-   ECHO DIR_DTS is %DIR_DTS%
+  rem ECHO DIR_DTS is %DIR_DTS%
 
   if [%URI_DTS_GIT%]==[] (
     ECHO URI_DTS_GIT may be set in settings_uri.sh. [INFO]
     ECHO Setting to default value [INFO].
     SET "URI_DTS_GIT=%DEF_URI_DTS_GIT%"
   )
-   ECHO URI_DTS_GIT is %URI_DTS_GIT% [INFO]
+  rem ECHO URI_DTS_GIT is %URI_DTS_GIT% [INFO]
 
 
 
@@ -71,6 +71,6 @@
   CALL %SRC%
 
 :END
-echo reached end
+rem echo reached end
 
-echo init [EXIT]
+rem echo init [EXIT]
