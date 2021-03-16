@@ -56,7 +56,6 @@ echo dts\init.cmd [ENTER]
   SET "FILE_LOG=%SLASH%'LOG'%DOT%%EXT%"
   SET "FILE_SETTINGS=%SETTINGS%%DOT%%EXT%"
 
-  goto :EOF
 
   SET "DTS_DIR=dts"
   ECHO DTS_DIR is %DTS_DIR% [INFO]
@@ -97,6 +96,8 @@ echo dts\init.cmd [ENTER]
 
   SET "DIR_TMPL_CURR=%DIR_TMPL%%DIR_SLASH%%TMPL_NAME%"
   ECHO DIR_TMPL_CURR is %DIR_TMPL_CURR% [INFO]
+
+  goto :EOF
 
 
   echo DIR_DTS is %DIR_DTS%
