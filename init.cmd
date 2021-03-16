@@ -118,9 +118,8 @@ rem echo dts\init.cmd [ENTER]
   rem ECHO CMD_SRC is %CMD_SRC%
   CALL %CMD_SRC%
 
-  CALL CMD_SRC
 
- GOTO :END
+  GOTO :END
 
   rem CALL pINIT
 
