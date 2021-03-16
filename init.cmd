@@ -3,6 +3,7 @@
 
 echo dts\init.cmd [ENTER]
 
+ goto :EOF
 
   REM TOKENS
   SET "BCK_SLASH=\"
@@ -97,7 +98,6 @@ echo dts\init.cmd [ENTER]
   SET "DIR_TMPL_CURR=%DIR_TMPL%%DIR_SLASH%%TMPL_NAME%"
   ECHO DIR_TMPL_CURR is %DIR_TMPL_CURR% [INFO]
 
-  goto :EOF
 
 
   echo DIR_DTS is %DIR_DTS%
