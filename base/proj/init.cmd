@@ -66,7 +66,7 @@
   )
 
   SET "SRC=%DIR_DTS%\%FILE_INIT%"
-  echo SRC is %SRC%
+  rem echo SRC is %SRC%
 
   CALL %SRC%
 
