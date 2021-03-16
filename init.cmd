@@ -95,14 +95,15 @@ echo dts\init.cmd [ENTER]
   SET "DIR_TMPL_CURR=%DIR_TMPL%%DIR_SLASH%%TMPL_NAME%"
   ECHO DIR_TMPL_CURR is %DIR_TMPL_CURR% [INFO]
 
-   if not exist %DIR_BIN% (
-     mkdir %DIR_BIN%
-     echo create %DIR_BIN%
-   )
 
   echo DIR_DTS is %DIR_DTS%
   echo DIR_SLASH is %DIR_SLASH%
   echo FILE_INIT is %FILE_INIT%
+
+   if not exist %DIR_BIN% (
+rem     mkdir %DIR_BIN%
+rem     echo create %DIR_BIN%
+   )
 
   rem CALL %DIR_ENV%%DIR_SLASH%%FILE_INIT%
   rem CALL %DIR_BIN%%DIR_SLASH%bENV
