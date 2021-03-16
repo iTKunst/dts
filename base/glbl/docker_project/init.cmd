@@ -6,5 +6,5 @@ echo %DIR_GLBL%%DIR_SLASH%docker_project%DIR_SLASH%%FILE_INIT% [ENTER]
 
 xcopy /q /y %DIR_GLBL%%DIR_SLASH%docker_project%FILES% %DIR_BIN% >NUL
 
-call %DIR_BIN%%DIR_SLASH%LOG_EXIT %DIR_GLBL%%DIR_SLASH%docker_project%DIR_SLASH%%FILE_INIT%
+rem call %DIR_BIN%%DIR_SLASH%LOG_EXIT %DIR_GLBL%%DIR_SLASH%docker_project%DIR_SLASH%%FILE_INIT%
 echo %DIR_GLBL%%DIR_SLASH%docker_project%DIR_SLASH%%FILE_INIT% [EXIT]
