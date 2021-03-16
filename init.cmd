@@ -4,7 +4,6 @@
 echo dts\init.cmd [ENTER]
 
 
- GOTO :END
 
   REM TOKENS
   SET "COLON=:"
@@ -12,6 +11,7 @@ echo dts\init.cmd [ENTER]
   SET "FOR_SLASH=/"
   SET "STAR=*"
 
+ GOTO :END
   REM NAMES
   SET "BASE=base"
   SET "BIN=bin"
