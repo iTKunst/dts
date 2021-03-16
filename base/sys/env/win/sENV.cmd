@@ -2,7 +2,8 @@
 
 
 
-call LOG_LOAD sENV
+rem call LOG_LOAD sENV
+echo sENV [LOAD]
 
 CALL gENV
 CALL sENV_DCKR
@@ -245,4 +246,5 @@ SET "WP_USER=root"
 SET "WP_TABLE_PREFIX=pre"
 
 
-call LOG_UNLOAD sENV
+rem call LOG_UNLOAD sENV
+echo sENV [UNLOAD]

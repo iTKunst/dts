@@ -1,7 +1,8 @@
 @echo off
 
 
-CALL LOG_LOAD sENV_DCKR
+rem CALL LOG_LOAD sENV_DCKR
+echo sENV_DCKR [LOAD]
 
 
 REM DOCKER REPO GROUP
@@ -19,4 +20,5 @@ SET "DCKR_PWD=pjldooley@gmail.com"
 
 
 
-CALL LOG_UNLOAD sENV_DCKR
+rem CALL LOG_UNLOAD sENV_DCKR
+echo sENV_DCKR [UNLOAD]
