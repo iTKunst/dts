@@ -1,7 +1,7 @@
 @echo off
 
 
-echo dts\init.cmd [ENTER]
+rem echo dts\init.cmd [ENTER]
 
 
 
@@ -78,7 +78,7 @@ echo dts\init.cmd [ENTER]
   rem ECHO DIR_SYS is %DIR_SYS% [INFO]
 
   SET "DIR_TMPL=%DIR_BASE%%TMPL_DIR%"
-  ECHO DIR_TMPL is %DIR_TMPL% [INFO]
+  rem ECHO DIR_TMPL is %DIR_TMPL% [INFO]
 
   SET "FILES=%OS_DIR%%DIR_SLASH%%STAR%%DOT%%EXT%"
   rem ECHO FILES is %FILES% [INFO]
@@ -91,7 +91,7 @@ echo dts\init.cmd [ENTER]
   rem ECHO TMPL_NAME is %TMPL_NAME%
 
   SET "DIR_TMPL_CURR=%DTS_DIR%%TMPL_DIR%%DIR_SLASH%%TMPL_NAME%"
-  ECHO DIR_TMPL_CURR is %DIR_TMPL_CURR% [INFO]
+  rem ECHO DIR_TMPL_CURR is %DIR_TMPL_CURR% [INFO]
 
   rem ECHO DIR_DTS is %DIR_DTS%
   rem ECHO DIR_SLASH is %DIR_SLASH%
@@ -126,6 +126,6 @@ rem CALL LOG_LOAD %DIR_DTS%%DIR_SLASH%%FILE_INIT%
 
 
 :END
-echo reached  END
+rem echo reached  END
 
-echo dts\init.cmd [EXIT]
+rem echo dts\init.cmd [EXIT]
