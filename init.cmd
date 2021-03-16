@@ -84,7 +84,6 @@ echo dts\init.cmd [ENTER]
   SET "FILES=%OS_DIR%\%STAR%%DOT%%EXT%"
   ECHO FILES is %FILES% [INFO]
 
- GOTO :END
 
   if [%TMPL_NAME%]==[] (
     ECHO TMPL_NAME [INVALID]
@@ -97,15 +96,16 @@ echo dts\init.cmd [ENTER]
   ECHO DIR_TMPL_CURR is %DIR_TMPL_CURR% [INFO]
 
 
-
   echo DIR_DTS is %DIR_DTS%
   echo DIR_SLASH is \
   echo FILE_INIT is %FILE_INIT%
 
    if not exist %DIR_BIN% (
-rem     mkdir %DIR_BIN%
-rem     echo create %DIR_BIN%
+     mkdir %DIR_BIN%
+     echo create %DIR_BIN%
    )
+
+ GOTO :END
 
   rem CALL %DIR_ENV%\%FILE_INIT%
   rem CALL %DIR_BIN%\bENV
