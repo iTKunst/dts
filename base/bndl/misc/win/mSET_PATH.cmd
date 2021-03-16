@@ -4,7 +4,7 @@
 echo mSET_PATH [ENTER]
 
 rem CALL %DIR_BIN%%DIR_SLASH%LOG_VAR PATH %PATH%
-echo PATH is %PATH%
+rem echo PATH is %PATH%
 
 SET "FIND=%CD%\bin"
 rem CALL %DIR_BIN%%DIR_SLASH%LOG_VAR FIND %FIND%
