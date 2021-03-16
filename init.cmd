@@ -3,7 +3,6 @@
 
 echo dts\init.cmd [ENTER]
 
-  goto :EOF
 
   REM TOKENS
   SET "BCK_SLASH=\"
@@ -56,6 +55,8 @@ echo dts\init.cmd [ENTER]
   SET "FILE_INIT=%INIT%%DOT%%EXT%"
   SET "FILE_LOG=%SLASH%'LOG'%DOT%%EXT%"
   SET "FILE_SETTINGS=%SETTINGS%%DOT%%EXT%"
+
+  goto :EOF
 
   SET "DTS_DIR=dts"
   ECHO DTS_DIR is %DTS_DIR% [INFO]
