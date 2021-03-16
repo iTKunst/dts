@@ -19,7 +19,7 @@ if not exist project\pENV.cmd (
   SET "SRC_PROJ=%DIR_TMPL_CURR%%ENV_DIR%%OS_DIR%%DIR_SLASH%pENV.sample.cmd"
   echo SRC_PROJ is %SRC_PROJ%
 
-  xcopy /q /y %SRC_PROJ% project\pENV.cmd >NUL
+  xcopy /q /y %SRC_PROJ% project
 )
 
 rem CALL LOG_EXIT \%DIR_TMPL%%ENV_DIR%%DIR_SLASH%%FILE_INIT%
