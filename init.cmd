@@ -6,7 +6,7 @@ echo dts\init.cmd [ENTER]
 
 
   REM TOKENS
-  SET "BCK_SLASH=\"
+  SET "BCK_SLASH=\\"
   SET "COLON=:"
   SET "DOT=."
   SET "FOR_SLASH=/"
