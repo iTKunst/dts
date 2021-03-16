@@ -11,7 +11,6 @@ echo dts\init.cmd [ENTER]
   SET "FOR_SLASH=/"
   SET "STAR=*"
 
- GOTO :END
   REM NAMES
   SET "BASE=base"
   SET "BIN=bin"
@@ -34,6 +33,7 @@ echo dts\init.cmd [ENTER]
   SET "SETTINGS=settings"
   SET "SYS=sys"
   SET "TMPL=tmpl"
+ GOTO :END
 
   REM DIRS
 
