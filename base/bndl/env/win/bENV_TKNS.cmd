@@ -3,7 +3,7 @@
 
 REM echo bENV_TKNS [ENTER]
 
-SET "BCK_SLASH=\\"
+SET "BCK_SLASH=\"
 SET "DOT=."
 SET "FOR_SLASH=/"
 SET "SPLIT=_"
