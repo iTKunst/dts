@@ -41,7 +41,6 @@ echo dts\init.cmd [ENTER]
   SET "BNDL_DIR=\%BNDL%"
   SET "ENV_DIR=\%ENV%"
   SET "GLBL_DIR=\%GLBL%"
-  SET "GIT_DIR=\%GIT%"
   SET "LOG_DIR=\%LOG%"
   SET "OS_DIR=\%OS%"
   SET "MISC_DIR=\%MISC%"
