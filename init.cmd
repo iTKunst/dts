@@ -115,7 +115,7 @@ echo dts\init.cmd [ENTER]
   echo CMD_ENV is %CMD_ENV%
   CALL %CMD_ENV%
 
-  SET "CMD_LOG=%DIR_LOG%%DIR_SLASH%FILE_INIT%"
+  SET "CMD_LOG=%DIR_LOG%%DIR_SLASH%%FILE_INIT%"
   echo CMD_LOG is %CMD_LOG%
   CALL %CMD_LOG%
 
