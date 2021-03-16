@@ -1,7 +1,7 @@
 @echo off
 
 
-REM echo bENV [ENTER]
+echo bENV [ENTER]
 
 CALL settings
 CALL bin\bENV_NAMES
@@ -72,5 +72,5 @@ SET "DIR_TMPL_CURR=%DIR_TMPL%%TMPL_CURR_DIR%"
 REM echo DIR_TMPL_CURR is %DIR_TMPL_CURR%
 
 
-call LOG_EXIT bENV
+echo bENV [EXIT]
 
