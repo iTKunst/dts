@@ -15,4 +15,4 @@ IF %ERRORLEVEL% NEQ 0 (
   docker exec -it %CONT% /bin/sh
 )
 
-call %DIR_BIN%%DIR_SLASH%LOG_ENTER pATTACH
+call %DIR_BIN%%DIR_SLASH%LOG_EXIT pATTACH
