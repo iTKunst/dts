@@ -1,7 +1,7 @@
 @echo off
 
 
-call LOG_ENTER pREMOVE_SUB
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pREMOVE_SUB
 
 SET sDIR=%1
 

@@ -2,7 +2,7 @@
 CALL settings
 
 
-call LOG_ENTER pVIEW
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pVIEW
 
 CALL project\pENV
 
@@ -15,5 +15,5 @@ call LOG_VAR IMG %IMG%
 docker images %IMG%
 docker ps -f name=%CONT%
 
-call LOG_EXIT pVIEW
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pVIEW
 

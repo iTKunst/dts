@@ -1,7 +1,7 @@
 @echo off
 
 
-call LOG_ENTER %DIR_GLBL%\openshift%DIR_SLASH%%FILE_INIT%
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER %DIR_GLBL%\openshift%DIR_SLASH%%FILE_INIT%
 
 xcopy /q /y %DIR_GLBL%\openshift%FILES% %DIR_BIN% >NUL
 

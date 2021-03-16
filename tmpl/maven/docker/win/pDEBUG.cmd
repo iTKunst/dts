@@ -2,7 +2,7 @@
 CALL settings
 
 
-call LOG_ENTER pDEBUG
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pDEBUG
 
 CALL project\pENV
 

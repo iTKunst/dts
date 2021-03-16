@@ -2,7 +2,7 @@
 CALL settings
 
 
-call LOG_ENTER pDEL
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pDEL
 
 CALL project\pENV
 
@@ -12,4 +12,4 @@ call LOG_VAR IMG %IMG%
 
 docker rmi -f  %IMG%
 
-call LOG_EXIT pDEL
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pDEL

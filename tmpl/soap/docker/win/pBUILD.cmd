@@ -2,7 +2,7 @@
 CALL settings
 
 
-call LOG_ENTER pBUILD
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pBUILD
 
 CALL project\pENV
 

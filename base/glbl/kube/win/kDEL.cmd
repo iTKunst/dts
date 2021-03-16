@@ -2,7 +2,7 @@
 CALL settings
 
 
-call LOG_ENTER cCHECK
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER cCHECK
 
 SET DC=./%DIR_SYS%/docker-compose/docker-compose.yml
 docker-compose -f %DC% down

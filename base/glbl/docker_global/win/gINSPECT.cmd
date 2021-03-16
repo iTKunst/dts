@@ -2,7 +2,7 @@
 CALL settings
 
 
-call LOG_ENTER gINSPECT
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER gINSPECT
 
 SET VOL_FILTER="label=SYS"
 
@@ -23,5 +23,5 @@ call LOG_MSG " "
 docker volume inspect %WF_VOL%
 call LOG_MSG " "
 
-call LOG_EXIT gINSPECT
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER gINSPECT
 

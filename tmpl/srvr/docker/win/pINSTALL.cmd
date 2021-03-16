@@ -2,7 +2,7 @@
 CALL settings
 
 
-call LOG_ENTER pINSTALL
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pINSTALL
 
 CALL project\pENV
 

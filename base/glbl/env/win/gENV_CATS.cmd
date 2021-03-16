@@ -1,7 +1,7 @@
 @echo off
 
 
-call LOG_ENTER gENV_CATS
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER gENV_CATS
 
 REM These may be changed
 

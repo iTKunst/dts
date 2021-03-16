@@ -1,7 +1,7 @@
 @echo off
 
 
-call LOG_ENTER pUPDATE_REPO
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pUPDATE_REPO
 
 SET sDIR=%1
 

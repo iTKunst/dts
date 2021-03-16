@@ -48,5 +48,5 @@ docker run ^
        --network=%NET% ^
        %IMG%
 
-call LOG_EXIT pGO
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pGO
 

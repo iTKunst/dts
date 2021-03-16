@@ -1,6 +1,6 @@
 @echo off
 
-call LOG_ENTER pGO
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pGO
 
 CALL project\pENV
 

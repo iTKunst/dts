@@ -2,7 +2,7 @@
 CALL settings
 
 
-call LOG_ENTER pREMOVE
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pREMOVE
 
 CALL pSET_TRACE
 

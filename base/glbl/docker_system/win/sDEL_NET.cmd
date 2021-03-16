@@ -2,7 +2,7 @@
 CALL settings
 
 
-call LOG_ENTER sDEL_CONT
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER sDEL_CONT
 
 CALL project\pENV
 
@@ -19,5 +19,5 @@ if NOT [%ARTIFACTS%]==[] (
   docker rm -f %ARTIFACTS%
 )
 
-call LOG_EXIT sDEL_CONT
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER sDEL_CONT
 

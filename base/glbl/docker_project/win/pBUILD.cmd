@@ -2,7 +2,7 @@
 CALL settings
 
 
-call LOG_ENTER pBUILD
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pBUILD
 
 CALL project\pENV
 
@@ -26,5 +26,5 @@ IF %ERRORLEVEL% EQU 0 (
   call LOG_ERR "Unable to build image"
 )
 
-call LOG_EXIT pBUILD
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pBUILD
 

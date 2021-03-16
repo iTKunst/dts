@@ -2,7 +2,7 @@
 CALL settings
 
 
-call LOG_ENTER pTAG
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pTAG
 
 
 CALL project\pENV
@@ -33,5 +33,5 @@ IF %ERRORLEVEL% EQU 0 (
 )
 
 
-call LOG_EXIT pTAG
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pTAG
 

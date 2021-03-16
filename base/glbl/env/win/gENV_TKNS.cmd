@@ -1,7 +1,7 @@
 @echo off
 
 
-call LOG_ENTER gENV_TKNS
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER gENV_TKNS
 
 SET "COLON=:"
 SET "DASH=-"

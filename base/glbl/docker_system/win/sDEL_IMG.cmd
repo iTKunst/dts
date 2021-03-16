@@ -2,7 +2,7 @@
 CALL settings
 
 
-call LOG_ENTER sDEL_IMG
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER sDEL_IMG
 
 CALL project\pENV
 
@@ -19,6 +19,6 @@ if NOT [%ARTIFACTS%]==[] (
   docker image rm -f %ARTIFACTS%
 )
 
-call LOG_EXIT sDEL_IMG
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER sDEL_IMG
 
 

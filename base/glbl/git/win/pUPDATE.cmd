@@ -5,7 +5,7 @@ SET "DEF_URI_DTS_GIT=https://github.com/iTKunst/dts"
 SET "DEF_DIR_DTS=dts"
 
 
-call LOG_ENTER pUPDATE
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pUPDATE
 
 if [%DIR_DTS%]==[] (
   ECHO DIR_DTS may be set in settings.sh. [INFO]

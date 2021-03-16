@@ -1,7 +1,7 @@
 @echo off
 
 
-call LOG_ENTER gENV_DIRS
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER gENV_DIRS
 
 CALL settings
 CALL gENV_CATS

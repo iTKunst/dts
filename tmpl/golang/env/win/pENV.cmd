@@ -1,7 +1,7 @@
 @echo off
 
 
-call LOG_ENTER pENV
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pENV
 
 call sENV
 if exist project\pENV_MOD (

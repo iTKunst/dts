@@ -2,7 +2,7 @@
 CALL settings
 
 
-call LOG_ENTER sSTOP
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER sSTOP
 
 CALL project\pENV
 
@@ -12,5 +12,5 @@ call LOG_VAR CONT %CONT%
 
 docker stop %CONT%
 
-call LOG_EXIT sSTOP
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER sSTOP
 

@@ -1,7 +1,7 @@
 @echo off
 
 
-call LOG_ENTER pREMOVE_REPO
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pREMOVE_REPO
 
 SET sDIR=%1
 

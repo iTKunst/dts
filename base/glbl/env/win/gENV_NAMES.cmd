@@ -1,7 +1,7 @@
 @echo off
 
 
-call LOG_ENTER gENV_NAMES
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER gENV_NAMES
 
 REM These values may not be changed.  Technologies depend on these
 

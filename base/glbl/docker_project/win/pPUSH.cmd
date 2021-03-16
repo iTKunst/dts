@@ -2,7 +2,7 @@
 CALL settings
 
 
-call LOG_ENTER pPUSH
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pPUSH
 
 
 CALL pTAG
@@ -34,5 +34,5 @@ IF %ERRORLEVEL% EQU 0 (
 )
 
 
-call LOG_EXIT pPUSH
+call %DIR_BIN%%DIR_SLASH%LOG_ENTER pPUSH
 
