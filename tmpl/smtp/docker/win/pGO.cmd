@@ -51,5 +51,5 @@ docker run ^
        %IMG%
 
 rem call LOG_EXIT pGO
-echo pGO [ENTER]
+echo pGO [EXIT]
 
