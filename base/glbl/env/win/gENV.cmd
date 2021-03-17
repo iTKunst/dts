@@ -1,8 +1,8 @@
 @echo off
 
 
-call LOG_ENTER gENV
-rem echo gENV [ENTER]
+rem call LOG_ENTER gENV
+echo gENV [ENTER]
 
 REM Automatically generated or default values
 
@@ -581,7 +581,7 @@ SET "WP_PORT_INT_APPS=80"
 SET "WP_PORT_INT_DBG=90"
 SET "WP_TABLE_PREFIX=%SYS_NAME%%SPLIT%"
 
- call LOG_EXIT gENV
-rem echo gENV [EXIT]
+rem call LOG_EXIT gENV
+echo gENV [EXIT]
 
 
