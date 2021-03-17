@@ -1,7 +1,7 @@
 @echo off
 
 
-rem call %DIR_BIN%%DIR_SLASH%LOG_ENTER gENV_TAGS
+call LOG_ENTER gENV_TAGS
 echo gENV_TAGS [ENTER]
 
 CALL gENV_CATS
