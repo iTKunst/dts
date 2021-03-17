@@ -1,8 +1,8 @@
 @echo off
-CALL settings
 
 echo pBUILD [ENTER]
 
+CALL settings
 CALL project\pENV
 
 rem call LOG_ENTER pBUILD
