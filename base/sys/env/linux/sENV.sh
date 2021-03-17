@@ -177,8 +177,8 @@ export REACT_USER=
 # SMTP
 
 export SMTP_DB_NAME=
-export SMTP_PASSWORD=
-export SMTP_USER=
+export SMTP_PASSWORD=secret
+export SMTP_USER=myuser
 
 export SMTP_ALIASES=*.mysmtp.com
 
