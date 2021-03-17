@@ -1,7 +1,7 @@
 @echo off
 
 
-call LOG_ENTER gENV_TAGS
+rem call LOG_ENTER gENV_TAGS
 echo gENV_TAGS [ENTER]
 
 CALL gENV_CATS
