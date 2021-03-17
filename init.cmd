@@ -119,9 +119,7 @@ rem echo dts\init.cmd [ENTER]
   CALL %CMD_SRC%
 
 
-  GOTO :END
-
-  rem CALL pINIT
+  CALL pINIT
 
 rem CALL LOG_LOAD %DIR_DTS%%DIR_SLASH%%FILE_INIT%
 
