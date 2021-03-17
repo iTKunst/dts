@@ -1,7 +1,7 @@
 @echo off
 
 
-call %DIR_BIN%%DIR_SLASH%LOG_ENTER gENV_TKNS
+rem call %DIR_BIN%%DIR_SLASH%LOG_ENTER gENV_TKNS
 echo gENV_TKNS [ENTER]
 
 SET "COLON=:"
