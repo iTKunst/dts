@@ -28,6 +28,7 @@ if exist %DIR_TMPL_CURR% (
 
 :EOF
 
-call LOG_EXIT pINIT
+rem call LOG_EXIT pINIT
+echo pINIT [EXIT]
 
 EXIT /B %ERRORLEVEL%
