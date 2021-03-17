@@ -4,6 +4,7 @@
 rem echo bENV [ENTER]
 
 CALL settings
+CALL bin\bENV_DIRS
 CALL bin\bENV_NAMES
 CALL bin\bENV_TKNS
 
