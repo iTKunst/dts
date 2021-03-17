@@ -12,12 +12,12 @@ SET "CONT_DIR=%PROJ_CONT_DIR%"
 SET "HOST_DIR=%PROJ_HOST_DIR%"
 SET "IMG=%PROJ_IMG%"
 
-call LOG_VAR CONT_DIR %CONT_DIR%
-call LOG_VAR DCKR_URI %DCKR_URI%
-call LOG_VAR HOST_DIR %HOST_DIR%
-call LOG_VAR IMG %IMG%
-call LOG_VAR SYS_DIR %SYS_DIR%
-call LOG_VAR TMPL_DIR %TMPL_DIR%
+rem call LOG_VAR CONT_DIR %CONT_DIR%
+rem call LOG_VAR DCKR_URI %DCKR_URI%
+rem call LOG_VAR HOST_DIR %HOST_DIR%
+rem call LOG_VAR IMG %IMG%
+rem call LOG_VAR SYS_DIR %SYS_DIR%
+rem call LOG_VAR TMPL_DIR %TMPL_DIR%
 
 docker  build ^
         --build-arg CONT_DIR=%CONT_DIR% ^
@@ -28,7 +28,7 @@ docker  build ^
         -t %IMG% ^
         .
 
-call LOG_VAR ERRORLEVEL %ERRORLEVEL%
+rem call LOG_VAR ERRORLEVEL %ERRORLEVEL%
 
 IF %ERRORLEVEL% EQU 0 (
   call LOG_CMD "Please run pGO to create and run the container"
