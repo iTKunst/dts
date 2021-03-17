@@ -5,7 +5,8 @@ echo Hello
 
 CALL project\pENV
 
-call %DIR_BIN%%DIR_SLASH%LOG_ENTER pBUILD
+rem call LOG_ENTER pBUILD
+echo pBUILD [ENTER]
 
 SET "CONT_DIR=%PROJ_CONT_DIR%"
 SET "HOST_DIR=%PROJ_HOST_DIR%"
@@ -35,5 +36,6 @@ IF %ERRORLEVEL% EQU 0 (
   call LOG_ERR "Unable to build image"
 )
 
-call %DIR_BIN%%DIR_SLASH%LOG_ENTER pBUILD
+rem call LOG_EXIT pBUILD
+echo pBUILD [ENTER]
 
