@@ -1,7 +1,7 @@
 @echo off
 
 
-call %DIR_BIN%%DIR_SLASH%LOG_ENTER gENV_DIRS
+rem call %DIR_BIN%%DIR_SLASH%LOG_ENTER gENV_DIRS
 echo gENV_DIRS [ENTER]
 
 CALL settings
