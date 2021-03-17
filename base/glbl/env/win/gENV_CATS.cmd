@@ -1,7 +1,8 @@
 @echo off
 
 
-call %DIR_BIN%%DIR_SLASH%LOG_ENTER gENV_CATS
+rem call %DIR_BIN%%DIR_SLASH%LOG_ENTER gENV_CATS
+echo gENV_CATS [ENTER]
 
 REM These may be changed
 
@@ -45,4 +46,5 @@ SET "WF=wf"
 SET "WP=wp"
 
 
-call LOG_EXIT gENV_CATS
+rem call LOG_EXIT gENV_CATS
+echo gENV_CATS [EXIT]

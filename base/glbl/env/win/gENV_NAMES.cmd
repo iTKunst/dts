@@ -2,6 +2,7 @@
 
 
 call %DIR_BIN%%DIR_SLASH%LOG_ENTER gENV_NAMES
+echo gENV_NAMES [ENTER]
 
 REM These values may not be changed.  Technologies depend on these
 
@@ -59,5 +60,6 @@ SET "VAR=var"
 SET "WIN=win"
 SET "WWW=www"
 
-call LOG_EXIT gENV_NAMES
+rem call LOG_EXIT gENV_NAMES
+echo gENV_NAMES [EXIT]
 
