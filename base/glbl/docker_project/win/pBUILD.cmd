@@ -44,5 +44,5 @@ IF %ERRORLEVEL% EQU 0 (
 )
 
 rem call LOG_EXIT pBUILD
-echo pBUILD [ENTER]
+echo pBUILD [EXIT]
 
