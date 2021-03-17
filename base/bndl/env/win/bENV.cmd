@@ -1,7 +1,7 @@
 @echo off
 
 
-rem echo bENV [ENTER]
+echo bENV [ENTER]
 
 CALL settings
 CALL bin\bENV_DIRS
@@ -53,5 +53,5 @@ REM rem echo TMPL_NAME is %TMPL_NAME%
 
 
 
-rem echo bENV [EXIT]
+echo bENV [EXIT]
 
