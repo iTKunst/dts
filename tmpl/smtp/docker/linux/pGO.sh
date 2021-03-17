@@ -24,6 +24,7 @@ PORT_INT=$PROJ_PORT_INT
 USER=$PROJ_USER
 VOL=$PROJ_VOL
 
+ALIASES=$PROJ_ALIASES
 
 log_var CONT $CONT
 log_var CONT_DIR $CONT_DIR
@@ -41,11 +42,17 @@ log_var PORT_INT $PORT_INT
 log_var USER $USER
 log_var VOL $VOL
 
+log_var ALIASES $ALIASES
+
 mkdir -p $HOST_MNT_DIR
 
 docker run \
        -$MODE \
        -p $HOST:$PORT_EXT:$PORT_INT \
+       -e SMARTHOST_ADDRESS=$DB_NAME \
+       -e SMARTHOST_PORT=$USER \
+       -e SMARTHOST_PASSWORD=$PASSWORD \
+       -e SMARTHOST_ALIASES=$ALIASES \
        --label=$LABEL \
        --mount type=bind,source=$HOST_MNT_DIR,target=$CONT_MNT_DIR \
        --name=$CONT \
