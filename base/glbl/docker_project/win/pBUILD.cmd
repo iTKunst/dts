@@ -13,11 +13,17 @@ SET "HOST_DIR=%PROJ_HOST_DIR%"
 SET "IMG=%PROJ_IMG%"
 
 rem call LOG_VAR CONT_DIR %CONT_DIR%
+echo CONT_DIR is %CONT_DIR%
 rem call LOG_VAR DCKR_URI %DCKR_URI%
+echo DCKR_URI is %DCKR_URI%
 rem call LOG_VAR HOST_DIR %HOST_DIR%
+echo HOST_DIR is %HOST_DIR%
 rem call LOG_VAR IMG %IMG%
+echo IMG is %IMG%
 rem call LOG_VAR SYS_DIR %SYS_DIR%
+echo SYS_DIR is %SYS_DIR%
 rem call LOG_VAR TMPL_DIR %TMPL_DIR%
+echo TMPL_DIR is %TMPL_DIR%
 
 docker  build ^
         --build-arg CONT_DIR=%CONT_DIR% ^
