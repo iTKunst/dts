@@ -180,6 +180,8 @@ export SMTP_DB_NAME=
 export SMTP_PASSWORD=
 export SMTP_USER=
 
+export SMTP_ALIASES=*.mysmtp.com
+
 # SOAP
 
 export SOAP_DB_NAME=
