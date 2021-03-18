@@ -184,7 +184,6 @@ SET "SMTP_USER=myuser"
 SET "SMTP_SH_ADDRESS=mail.mysmtp.com"
 SET "SMTP_SH_ALIASES=*.mysmtp.com"
 SET "SMTP_SH_PORT=587"
-
 REM SOAP
 
 SET "SOAP_DB_NAME="
