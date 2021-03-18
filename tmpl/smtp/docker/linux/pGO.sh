@@ -13,6 +13,7 @@ CONT_DIR=$PROJ_CONT_DIR
 CONT_MNT_DIR=$PROJ_CONT_MNT_DIR
 HOST=$PROJ_HOST
 HOST_DIR=$(pwd)$PROJ_HOST_DIR
+HOST_IP=$PROJ_HOST_IP
 HOST_MNT_DIR=$(pwd)$PROJ_HOST_MNT_DIR
 IMG=$PROJ_IMG
 LABEL=$PROJ_LABEL
@@ -31,6 +32,7 @@ log_var CONT_DIR $CONT_DIR
 log_var CONT_MNT_DIR $CONT_MNT_DIR
 log_var HOST $HOST
 log_var HOST_DIR $HOST_DIR
+log_var HOST_IP $HOST_IP
 log_var HOST_MNT_DIR $HOST_MNT_DIR
 log_var IMG $IMG
 log_var LABEL $LABEL
@@ -54,6 +56,7 @@ docker run \
        -e SMARTHOST_PORT=$PORT_INT \
        -e SMARTHOST_PASSWORD=$PASSWORD \
        -e SMARTHOST_USER=$USER \
+       --add-host=$HOST:$REPO_IP \
        --label=$LABEL \
        --mount type=bind,source=$HOST_MNT_DIR,target=$CONT_MNT_DIR \
        --name=$CONT \
