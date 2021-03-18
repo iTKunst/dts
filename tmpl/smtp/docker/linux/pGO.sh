@@ -56,7 +56,7 @@ docker run \
        -e SMARTHOST_PORT=$PORT_INT \
        -e SMARTHOST_PASSWORD=$PASSWORD \
        -e SMARTHOST_USER=$USER \
-       --add-host=$HOST:$REPO_IP \
+       --add-host=$HOST:$HOST_IP \
        --label=$LABEL \
        --mount type=bind,source=$HOST_MNT_DIR,target=$CONT_MNT_DIR \
        --name=$CONT \
