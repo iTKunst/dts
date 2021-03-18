@@ -49,10 +49,11 @@ mkdir -p $HOST_MNT_DIR
 docker run \
        -$MODE \
        -p $HOST:$PORT_EXT:$PORT_INT \
-       -e SMARTHOST_ADDRESS=$DB_NAME \
-       -e SMARTHOST_PORT=$USER \
-       -e SMARTHOST_PASSWORD=$PASSWORD \
+       -e SMARTHOST_ADDRESS=$HOST \
        -e SMARTHOST_ALIASES=$ALIASES \
+       -e SMARTHOST_PORT=$PORT_INT \
+       -e SMARTHOST_PASSWORD=$PASSWORD \
+       -e SMARTHOST_USER=$USER \
        --label=$LABEL \
        --mount type=bind,source=$HOST_MNT_DIR,target=$CONT_MNT_DIR \
        --name=$CONT \
