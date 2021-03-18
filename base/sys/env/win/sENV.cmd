@@ -181,7 +181,9 @@ SET "SMTP_DB_NAME="
 SET "SMTP_PASSWORD=secret"
 SET "SMTP_USER=myuser"
 
-SET "SMTP_ALIASES=*.mysmtp.com"
+SET "SMTP_SH_ADDRESS=mail.mysmtp.com"
+SET "SMTP_SH_ALIASES=*.mysmtp.com"
+SET "SMTP_SH_PORT=587"
 
 REM SOAP
 

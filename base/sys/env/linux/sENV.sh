@@ -180,7 +180,9 @@ export SMTP_DB_NAME=
 export SMTP_PASSWORD=secret
 export SMTP_USER=myuser
 
-export SMTP_ALIASES=*.mysmtp.com
+export SMTP_SH_ADDRESS=mail.mysmtp.com
+export SMTP_SH_ALIASES=*.mysmtp.com
+export SMTP_SH_PORT=587
 
 # SOAP
 
