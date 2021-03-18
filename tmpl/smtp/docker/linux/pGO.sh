@@ -13,9 +13,9 @@ CONT_DIR=$PROJ_CONT_DIR
 CONT_MNT_DIR=$PROJ_CONT_MNT_DIR
 HOST=$PROJ_HOST
 HOST_DIR=$(pwd)$PROJ_HOST_DIR
-HOST_IP=$PROJ_HOST_IP
 HOST_MNT_DIR=$(pwd)$PROJ_HOST_MNT_DIR
 IMG=$PROJ_IMG
+IP=$PROJ_IP
 LABEL=$PROJ_LABEL
 MODE=$PROJ_MODE
 NET=$PROJ_NET
@@ -32,9 +32,9 @@ log_var CONT_DIR $CONT_DIR
 log_var CONT_MNT_DIR $CONT_MNT_DIR
 log_var HOST $HOST
 log_var HOST_DIR $HOST_DIR
-log_var HOST_IP $HOST_IP
 log_var HOST_MNT_DIR $HOST_MNT_DIR
 log_var IMG $IMG
+log_var IP $IP
 log_var LABEL $LABEL
 log_var MODE $MODE
 log_var NET $NET
@@ -56,7 +56,7 @@ docker run \
        -e SMARTHOST_PORT=$PORT_INT \
        -e SMARTHOST_PASSWORD=$PASSWORD \
        -e SMARTHOST_USER=$USER \
-       --add-host=$HOST:$HOST_IP \
+       --add-host=$HOST:$IP \
        --label=$LABEL \
        --mount type=bind,source=$HOST_MNT_DIR,target=$CONT_MNT_DIR \
        --name=$CONT \
