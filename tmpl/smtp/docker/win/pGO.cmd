@@ -10,7 +10,7 @@ SET "CONT=%PROJ_CONT%"
 SET "CONT_DIR=%PROJ_CONT_DIR%"
 SET "CONT_MNT_DIR=%PROJ_CONT_MNT_DIR%"
 SET "HOST=%PROJ_HOST%"
-SET "HOST_IP=%HOST_IP%"
+SET "IP=%IP%"
 SET "HOST_DIR=%CD%%PROJ_HOST_DIR%"
 SET "HOST_MNT_DIR=%CD%%PROJ_HOST_MNT_DIR%"
 SET "IMG=%PROJ_IMG%"
@@ -35,8 +35,8 @@ rem CALL LOG_VAR HOST %HOST%
 echo HOST is %HOST%
 rem CALL LOG_VAR HOST_DIR %HOST_DIR%
 echo HOST_DIR is %HOST_DIR%
-rem CALL LOG_VAR HOST_IP %HOST_IP%
-echo HOST_IP is %HOST_IP%
+rem CALL LOG_VAR IP %IP%
+echo IP is %IP%
 rem CALL LOG_VAR HOST_MNT_DIR %HOST_MNT_DIR%
 echo HOST_MNT_DIR is %HOST_MNT_DIR%
 rem CALL LOG_VAR IMG %IMG%
@@ -71,7 +71,7 @@ docker run ^
        -e SMARTHOST_PASSWORD=%PASSWORD% ^
        -e SMARTHOST_PORT=%PORT_INT% ^
        -e SMARTHOST_USER=%USER% ^
-       --add-host=%HOST%:%HOST_IP% \
+       --add-host=%HOST%:%IP% \
        --label=%LABEL% ^
        --mount type=bind,src=%VOL%,dst=%CONT_MNT_DIR% ^
        --name=%CONT% ^
