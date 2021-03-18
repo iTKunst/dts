@@ -155,7 +155,7 @@ export REACT_PORT_EXT=8400
 
 # SMTP
 
-export SMTP_HOST=mail.mysmtp.com
+export SMTP_HOST=0.0.0.0
 export SMTP_IP=0.0.0.0
 export SMTP_PORT_EXT=8450
 
