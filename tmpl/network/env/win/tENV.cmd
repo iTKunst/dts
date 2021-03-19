@@ -1,11 +1,11 @@
 @echo off
 
 
-CALL LOG_ENTER tENV
+CALL %DIR_BIN%%DIR_SLASH%LOG_ENTER tENV
 
 call sENV
-if exist project\pENV_MOD (
-  call project\pENV_MOD
+if exist project\pENV (
+  call project\pENV
 )
 
 SET "PROJ_LABEL=%SYS_NAME%"
@@ -19,6 +19,5 @@ SET "PROJ_HOST_DIR=%NET_HOST_DIR%"
 SET "PROJ_IMG=%NET_IMG%"
 SET "PROJ_PORT_INT=%NET_PORT_INT%"
 SET "PROJ_VOL=%NET_VOL%"
-SET "PROJ_VOL_DIR=%NET_VOL_DIR%"
 
 call LOG_EXIT pENV

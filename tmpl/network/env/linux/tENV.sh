@@ -5,10 +5,9 @@
 log_enter tENV
 
 source sENV.sh
-if [ -f "project/pENV_MOD.sh" ]; then
-  source project/pENV_MOD.sh
+if [ -f "project/pENV.sh" ]; then
+  source project/pENV.sh
 fi
-
 
 
 export PROJ_LABEL=$SYS_NAME
@@ -22,6 +21,5 @@ export PROJ_HOST_DIR=$NET_HOST_DIR
 export PROJ_IMG=$NET_IMG
 export PROJ_PORT_INT=$NET_PORT_INT
 export PROJ_VOL=$NET_VOL
-export PROJ_VOL_DIR=$NET_VOL_DIR
 
 log_exit pENV
