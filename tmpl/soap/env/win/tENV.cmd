@@ -1,11 +1,11 @@
 @echo off
 
 
-CALL LOG_ENTER pENV
+CALL %DIR_BIN%%DIR_SLASH%LOG_ENTER tENV
 
 call sENV
-if exist project\pENV_MOD (
-  call project\pENV_MOD
+if exist project\pENV (
+  call project\pENV
 )
 
 SET "PROJ_LABEL=%SYS_NAME%"
@@ -18,7 +18,6 @@ SET "PROJ_HOST_DIR=%SOAP_HOST_DIR%"
 SET "PROJ_HOST_MNT_DIR=%SOAP_HOST_MNT_DIR%"
 SET "PROJ_IMG=%SOAP_IMG%"
 SET "PROJ_PORT_INT=%SOAP_PORT_INT%"
+SET "PROJ_VOL=%SOAP_VOL%"
 
-
-CALL LOG_EXIT pENV
-
+call LOG_EXIT pENV

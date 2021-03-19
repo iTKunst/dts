@@ -1,11 +1,11 @@
 # Docker Templating System (DTS)
 Designed to simplify the process of creating and running containers
 
-## base_tmpl
+## base_proj
 
 Template for configuring and running a docker project
 
-### 1. Create the new repo with the base template
+### 1. Create the new repo with the project template
 
 Use:
 > <https://github.com/iTKunst/base_proj.git>

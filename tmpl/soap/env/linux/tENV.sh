@@ -1,14 +1,12 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-
 log_enter tENV
 
 source sENV.sh
-if [ -f "project/pENV_MOD.sh" ]; then
-  source project/pENV_MOD.sh
+if [ -f "project/pENV.sh" ]; then
+  source project/pENV.sh
 fi
-
 
 
 export PROJ_LABEL=$SYS_NAME
