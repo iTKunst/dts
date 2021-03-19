@@ -77,7 +77,7 @@ docker run ^
        -e SMARTHOST_PASSWORD=%PASSWORD% ^
        -e SMARTHOST_PORT=%SH_PORT% ^
        -e SMARTHOST_USER=%USER% ^
-       --add-host=%HOST%:%IP% \
+       --add-host=%HOST%:%IP% ^
        --label=%LABEL% ^
        --mount type=bind,src=%VOL%,dst=%CONT_MNT_DIR% ^
        --name=%CONT% ^
