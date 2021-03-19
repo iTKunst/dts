@@ -79,7 +79,6 @@ docker run ^
        -e SMARTHOST_USER=%USER% ^
        --add-host=%HOST%:%IP% ^
        --label=%LABEL% ^
-       --mount type=bind,src=%VOL%,dst=%CONT_MNT_DIR% ^
        --name=%CONT% ^
        --network=%NET% ^
        %IMG%
