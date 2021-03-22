@@ -5,7 +5,7 @@ CALL LOG_ENTER pENV
 
 call sENV
 if exist project%DIR_SLASH%pENV_MOD (
-  call project\pENV_MOD
+  call project\pENV
 )
 
 

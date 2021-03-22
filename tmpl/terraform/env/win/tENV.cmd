@@ -2,8 +2,8 @@
 CALL LOG_ENTER tENV
 
 call sENV
-if exist project\pENV_MOD (
-  call project\pENV_MOD
+if exist project\pENV (
+  call project\pENV
 )
 
 SET "PROJ_LABEL=%SYS_NAME%"

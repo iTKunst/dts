@@ -2,8 +2,8 @@
 call %DIR_BIN%%DIR_SLASH%LOG_ENTER pENV
 
 call sENV
-if exist project\pENV_MOD (
-  call project\pENV_MOD
+if exist project\pENV (
+  call project\pENV
 )
 
 SET PROJ_LABEL=%SYS_NAME%
