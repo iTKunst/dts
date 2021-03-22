@@ -102,24 +102,24 @@
 
   if [ ! -d $DIR_BIN ]; then
     mkdir $DIR_BIN
-   # echo create $DIR_BIN
+    echo create $DIR_BIN
   fi
 
   export CMD_BNDL=$DIR_BNDL$FILE_INIT
-  # ECHO CMD_BNDL is $CMD_BNDL [VAR]
+  ECHO CMD_BNDL is $CMD_BNDL [VAR]
   source $CMD_BNDL
 
   export CMD_SET_PATH=$DIR_BIN$FILE_SET_PATH
-  # ECHO CMD_SET_PATH is $CMD_SET_PATH [VAR]
+  ECHO CMD_SET_PATH is $CMD_SET_PATH [VAR]
   source $CMD_SET_PATH
 
   export CMD_BASE=$DIR_BASE$DIR_SLASH$FILE_INIT
-  # ECHO CMD_BASE is $CMD_BASE [VAR]
+  ECHO CMD_BASE is $CMD_BASE [VAR]
   source $CMD_BASE
 
   export UP=$DOT$DOT$DIR_SLASH
   export CMD_SRC=$UP$UP"system"$FILE_INIT
-  # ECHO CMD_SRC is $CMD_SRC [VAR]
+  ECHO CMD_SRC is $CMD_SRC [VAR]
   source $CMD_SRC
 
 
