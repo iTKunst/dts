@@ -9,7 +9,7 @@ source LOG.sh
 log_enter pBUILD
 
 
-source project/pENV.sh
+source tENV.sh
 
 CONT_DIR=$PROJ_CONT_DIR
 HOST_DIR=$PROJ_HOST_DIR
