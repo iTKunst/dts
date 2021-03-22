@@ -1,6 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
+source $DIR_BIN$DIR_SLASH"LOG.sh"
 
 log_enter $DIR_BNDL$DIR_SLASH$FILE_INIT
 
