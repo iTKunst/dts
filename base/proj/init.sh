@@ -29,7 +29,7 @@ init()
   export DIR_SLASH=$FOR_SLASH
 
   # FILES
-  export FILE_INIT=$INIT$DOT$EXT
+  export FILE_INIT=$DIR_SLASH$INIT$DOT$EXT
   export FILE_SETTINGS=$SETTINGS$DOT$EXT
   
   # HOSTS
