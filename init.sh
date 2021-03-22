@@ -106,20 +106,20 @@
   fi
 
   export CMD_BNDL=$DIR_BNDL$FILE_INIT
-  ECHO CMD_BNDL is $CMD_BNDL [VAR]
+  echo CMD_BNDL is $CMD_BNDL [VAR]
   source $CMD_BNDL
 
   export CMD_SET_PATH=$DIR_BIN$FILE_SET_PATH
-  ECHO CMD_SET_PATH is $CMD_SET_PATH [VAR]
+  echo CMD_SET_PATH is $CMD_SET_PATH [VAR]
   source $CMD_SET_PATH
 
   export CMD_BASE=$DIR_BASE$FILE_INIT
-  ECHO CMD_BASE is $CMD_BASE [VAR]
+  echo CMD_BASE is $CMD_BASE [VAR]
   source $CMD_BASE
 
   export UP=$DOT$DOT$DIR_SLASH
   export CMD_SRC=$UP$UP"system"$FILE_INIT
-  ECHO CMD_SRC is $CMD_SRC [VAR]
+  echo CMD_SRC is $CMD_SRC [VAR]
   source $CMD_SRC
 
 
