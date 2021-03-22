@@ -31,6 +31,7 @@
   export MISC=misc
   export OS=linux
   export PROJ=proj
+  export SET_PATH=mSET_PATH
   export SETTINGS=settings
   export SYS=sys
   export TMPL=tmpl
@@ -51,9 +52,9 @@
   export TMPL_DIR=$DIR_SLASH$TMPL
 
   # FILES
-  export FILE_INIT=$INIT$DOT$EXT
-  export FILE_LOG=$SLASH"LOG"$DOT$EXT
-  export FILE_SETTINGS=$SETTINGS$DOT$EXT
+  export FILE_INIT=$DIR_SLASH$INIT$DOT$EXT
+  export FILE_LOG=$DIR_SLASH"LOG"$DOT$EXT
+  export FILE_SET_PATH=$DIR_SLASH$SET_PATH$DOT$EXT
 
   export DTS_DIR=dts
   # echo DTS_DIR is DTS_DIR [VAR]
@@ -104,11 +105,11 @@
    # echo create $DIR_BIN
   fi
 
-  export CMD_BNDL=$DIR_BNDL$DIR_SLASH$FILE_INIT
+  export CMD_BNDL=$DIR_BNDL$FILE_INIT
   # ECHO CMD_BNDL is $CMD_BNDL [VAR]
   source $CMD_BNDL
 
-  export CMD_SET_PATH=$DIR_BIN$DIR_SLASH"mSET_PATH"
+  export CMD_SET_PATH=$DIR_BIN$FILE_SET_PATH
   # ECHO CMD_SET_PATH is $CMD_SET_PATH [VAR]
   source $CMD_SET_PATH
 
@@ -117,7 +118,7 @@
   source $CMD_BASE
 
   export UP=$DOT$DOT$DIR_SLASH
-  export CMD_SRC=$UP$UP"system"$DIR_SLASH$FILE_INIT
+  export CMD_SRC=$UP$UP"system"$FILE_INIT
   # ECHO CMD_SRC is $CMD_SRC [VAR]
   source $CMD_SRC
 
