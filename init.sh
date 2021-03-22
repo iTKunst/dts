@@ -41,10 +41,8 @@
   export BASE_DIR=$DIR_SLASH$BASE
   export BIN_DIR=$BIN
   export BNDL_DIR=$DIR_SLASH$BNDL
-  export DCKR_DIR=$DIR_SLASH$DCKR
   export ENV_DIR=$DIR_SLASH$ENV
   export GLBL_DIR=$DIR_SLASH$GLBL
-  export GIT_DIR=$DIR_SLASH$GIT
   export LOG_DIR=$DIR_SLASH$LOG
   export OS_DIR=$DIR_SLASH$OS
   export MISC_DIR=$DIR_SLASH$MISC
@@ -56,6 +54,9 @@
   export FILE_INIT=$INIT$DOT$EXT
   export FILE_LOG=$SLASH"LOG"$DOT$EXT
   export FILE_SETTINGS=$SETTINGS$DOT$EXT
+
+  export DTS_DIR=dts
+  # echo DTS_DIR is DTS_DIR [VAR]
 
   export DIR_BASE=$DIR_DTS$BASE_DIR
   # echo DIR_BASE is $DIR_BASE [VAR]
@@ -75,10 +76,10 @@
   export DIR_PROJ=$DIR_BASE$PROJ_DIR
   # echo DIR_PROJ is $DIR_PROJ [VAR]
 
-  export DIR_SYS=../../system
+  export DIR_SYS=$DIR_BASE$SYS_DIR
   # echo DIR_SYS is $DIR_SYS [VAR]
 
-  export DIR_TMPL=$DIR_DTS$TMPL_DIR
+  export DIR_TMPL=DIR_BASE$TMPL_DIR
   # echo DIR_TMPL is $DIR_TMPL [VAR]
 
   export FILES=$OS_DIR$DIR_SLASH$STAR$DOT$EXT
@@ -91,43 +92,36 @@
   fi
   # echo TMPL_NAME is $TMPL_NAME [VAR]
 
-  export DIR_TMPL_CURR=$DIR_TMPL$DIR_SLASH$TMPL_NAME
+  export DIR_TMPL_CURR=$DTS_DIR$TMPL_DIR$DIR_SLASH$TMPL_NAME
   # echo DIR_TMPL_CURR is $DIR_TMPL_CURR [VAR]
 
-
-  if [ -z $TMPL_NAME ]; then
-   # echo TMPL_NAME [INVALID]
-   # echo TMPL_NAME must be set in settings.sh. [INFO]
-	  exit
-  fi
-  # echo TMPL_NAME is $TMPL_NAME [VAR]
-
-  export TMPL_CURR_DIR=$DIR_TMPL$DIR_SLASH$TMPL_NAME
-  # echo TMPL_CURR_DIR is $TMPL_CURR_DIR [VAR]
-
-  echo DIR_DTS is $DIR_DTS
-  cd $DIR_DTS
-
-  echo BASE is $BASE
-
-
-  cd ..
+  # ECHO DIR_DTS is $DIR_DTS [VAR]
+  # ECHO DIR_SLASH is $DIR_SLASH [VAR]
+  # ECHO FILE_INIT is $FILE_INIT [VAR]
 
   if [ ! -d $DIR_BIN ]; then
     mkdir $DIR_BIN
    # echo create $DIR_BIN
   fi
 
-  source $DIR_ENV$DIR_SLASH$FILE_INIT
-  source $DIR_BNDL$LOG_DIR$OS_DIR$DIR_SLASH$FILE_LOG
+  export CMD_BNDL=$DIR_BNDL$DIR_SLASH$FILE_INIT
+  # ECHO CMD_BNDL is $CMD_BNDL [VAR]
+  CALL $CMD_BNDL
 
-  log_enter $DIR_DTS$DIR_SLASH$FILE_INIT
+  export CMD_SET_PATH=$DIR_BIN$DIR_SLASH"mSET_PATH"
+  # ECHO CMD_SET_PATH is $CMD_SET_PATH [VAR]
+  CALL $CMD_SET_PATH
 
-  source $DIR_BASE$DIR_SLASH$FILE_INIT
-  source $DIR_TMPL_CURR$DIR_SLASH$FILE_INIT
-  source ../../system$DIR_SLASH$FILE_INIT
+  export CMD_BASE=$DIR_BASE$DIR_SLASH$FILE_INIT
+  # ECHO CMD_BASE is $CMD_BASE [VAR]
+  CALL $CMD_BASE
 
-  source $DIR_BIN$DIR_SLASH"mSET_PATH.sh"
+  export UP=$DOT$DOT$DIR_SLASH
+  export CMD_SRC=$UP$UP"system"$DIR_SLASH$FILE_INIT
+  # ECHO CMD_SRC is $CMD_SRC [VAR]
+  CALL $CMD_SRC
+
+
   source pINIT.sh
   pINIT
 
