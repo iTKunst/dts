@@ -2,7 +2,7 @@
 # shellcheck disable=SC2086
 
 
-log_enter /$DIR_TMPL$DCKR_DIR$DIR_SLASH$FILE_INIT
+log_enter /$DIR_TMPL$DCKR_DIR$FILE_INIT
 
 cp $TMPL_DIR/$DCKR_DIR$FILES $DIR_BIN
 

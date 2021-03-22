@@ -27,7 +27,7 @@ pUPDATE() {
   git pull origin master
   cd ..
 
-  source $DIR_DTS$DIR_SLASH$FILE_INIT
+  source $DIR_DTS$FILE_INIT
   source project/pENV.sh
   pINIT
 

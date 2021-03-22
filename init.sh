@@ -113,7 +113,7 @@
   ECHO CMD_SET_PATH is $CMD_SET_PATH [VAR]
   source $CMD_SET_PATH
 
-  export CMD_BASE=$DIR_BASE$DIR_SLASH$FILE_INIT
+  export CMD_BASE=$DIR_BASE$FILE_INIT
   ECHO CMD_BASE is $CMD_BASE [VAR]
   source $CMD_BASE
 
@@ -126,4 +126,4 @@
   source pINIT.sh
   pINIT
 
-log_exit $DIR_DTS$DIR_SLASH$FILE_INIT
+log_exit $DIR_DTS$FILE_INIT
