@@ -2,15 +2,15 @@
 # shellcheck disable=SC2086
 
 
-log_enter $DIR_GLBL$DIR_SLASH$FILE_INIT
+log_enter $DIR_GLBL$FILE_INIT
 
-source $DIR_GLBL/docker_compose$DIR_SLASH$FILE_INIT
-source $DIR_GLBL/docker_global$DIR_SLASH$FILE_INIT
-source $DIR_GLBL/docker_project$DIR_SLASH$FILE_INIT
-source $DIR_GLBL/docker_system$DIR_SLASH$FILE_INIT
-source $DIR_GLBL$ENV_DIR$DIR_SLASH$FILE_INIT
-source $DIR_GLBL$GIT_DIR$DIR_SLASH$FILE_INIT
-source $DIR_GLBL/kube$DIR_SLASH$FILE_INIT
-source $DIR_GLBL/openshift$DIR_SLASH$FILE_INIT
+source $DIR_GLBL/docker_compose$FILE_INIT
+source $DIR_GLBL/docker_global$FILE_INIT
+source $DIR_GLBL/docker_project$FILE_INIT
+source $DIR_GLBL/docker_system$FILE_INIT
+source $DIR_GLBL$ENV_DIR$FILE_INIT
+source $DIR_GLBL$GIT_DIR$FILE_INIT
+source $DIR_GLBL/kube$FILE_INIT
+source $DIR_GLBL/openshift$FILE_INIT
 
-log_exit $DIR_GLBL$DIR_SLASH$FILE_INIT
+log_exit $DIR_GLBL$FILE_INIT

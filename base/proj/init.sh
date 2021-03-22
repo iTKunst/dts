@@ -83,7 +83,7 @@ init()
     cd ..
   fi
 
-  source $DIR_DTS$DIR_SLASH$FILE_INIT
+  source $DIR_DTS$FILE_INIT
 
   return 0
 
