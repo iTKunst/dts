@@ -4,8 +4,6 @@
 
 log_enter pENV
 
-source tENV.sh
-
 
 export PROJ_HOST=$SOAP_HOST
 export PROJ_PASSWORD=$SOAP_PASSWORD

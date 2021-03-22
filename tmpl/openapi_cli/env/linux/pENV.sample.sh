@@ -4,8 +4,6 @@
 
 log_enter pENV
 
-source tENV.sh
-
 
 export PROJ_HOST=$OA_CLI_HOST
 export PROJ_PASSWORD=$OA_CLI_PASSWORD

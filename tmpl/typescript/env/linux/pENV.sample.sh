@@ -4,8 +4,6 @@
 
 log_enter pENV
 
-source tENV.sh
-
 
 export PROJ_HOST=$TS_HOST
 export PROJ_PASSWORD=$TS_PASSWORD

@@ -4,8 +4,6 @@
 
 log_enter pENV
 
-source tENV.sh
-
 
 export PROJ_HOST=$REACT_HOST
 export PROJ_PASSWORD=$REACT_PASSWORD

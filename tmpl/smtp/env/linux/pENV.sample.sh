@@ -4,8 +4,6 @@
 
 log_enter pENV
 
-source tENV.sh
-
 
 export PROJ_HOST=$SMTP_HOST
 export PROJ_IP=$SMTP_IP

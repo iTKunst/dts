@@ -4,8 +4,6 @@
 
 log_enter pENV
 
-source tENV.sh
-
 
 export PROJ_FILE=$SWAG_CG_CLI_FILE
 

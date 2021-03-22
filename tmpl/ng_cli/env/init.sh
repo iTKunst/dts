@@ -10,8 +10,8 @@ if [ ! -d ./project ]; then
   mkdir project
 fi
 
-if [ ! -f ./project/pENV_MOD.sh ]; then
-  cp $DIR_TMPL_CURR$ENV_DIR$OS_DIR/pENV_MOD.sample.sh ./project/pENV_MOD.sh
+if [ ! -f ./project/pENV.sh ]; then
+  cp $DIR_TMPL_CURR$ENV_DIR$OS_DIR/pENV.sample.sh ./project/pENV.sh
 fi
 
 log_exit /$DIR_TMPL$ENV_DIR/init

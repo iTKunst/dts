@@ -4,8 +4,6 @@
 
 log_enter pENV
 
-source tENV.sh
-
 
 export PROJ_HOST=$SRVR2_HOST
 export PROJ_PASSWORD=$SRVR2_PASSWORD

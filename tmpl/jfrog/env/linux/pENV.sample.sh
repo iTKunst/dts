@@ -4,8 +4,6 @@
 
 log_enter pENV
 
-source tENV.sh
-
 
 export PROJ_HOST=$JFROG_HOST
 export PROJ_PASSWORD=$JFROG_PASSWORD

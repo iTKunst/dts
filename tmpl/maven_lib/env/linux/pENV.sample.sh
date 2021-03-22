@@ -4,8 +4,6 @@
 
 log_enter pENV
 
-source tENV.sh
-
 
 export PROJ_HOST=$MVN_LIB_HOST
 export PROJ_PASSWORD=$MVN_LIB_PASSWORD

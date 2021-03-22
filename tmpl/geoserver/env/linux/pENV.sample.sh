@@ -4,8 +4,6 @@
 
 log_enter pENV
 
-source tENV.sh
-
 
 export PROJ_HOST=$GEO_HOST
 export PROJ_PASSWORD=$GEO_PASSWORD

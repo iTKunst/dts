@@ -4,8 +4,6 @@
 
 log_enter pENV
 
-source tENV.sh
-
 
 export PROJ_HOST=$RHCOS_HOST
 export PROJ_PASSWORD=$RHCOS_PASSWORD
