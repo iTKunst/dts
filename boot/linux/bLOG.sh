@@ -58,6 +58,27 @@ log_enter()
   fi
 }
 
+log_env_enter()
+{
+  if [ $LOG_ENV_ENTER_ON -eq 1 ]; then
+    log "$1 [ENTER] "
+  fi
+}
+
+log_env_exit()
+{
+  if [ $LOG_ENV_EXIT_ON -eq 1 ]; then
+    log "$1 [EXIT] "
+  fi
+}
+
+log_env_var()
+{
+  if [ $LOG_ENV_VAR_ON -eq 1 ]; then
+    log "$1 [VAR] "
+  fi
+}
+
 log_err()
 {
   if [ $LOG_ERR_ON -eq 1 ]; then
