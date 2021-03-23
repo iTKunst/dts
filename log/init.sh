@@ -2,8 +2,9 @@
 # shellcheck disable=SC2086
 
 
-echo $DIR_LOG$FILE_INIT
 
-cp $DIR_LOG$FILES $DIR_BIN
+echo $DIR_LOG$FILE_INIT [ENTER]
 
-log_exit $DIR_LOG$FILE_INIT
+cp -r $DIR_LOG$FILES $DIR_BIN
+
+echo $DIR_LOG$FILE_INIT [EXIT]
