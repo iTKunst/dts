@@ -16,6 +16,8 @@ echo dts/init.sh [ENTER]
   echo CMD_ENV is $CMD_ENV [VAR]
   source $CMD_ENV
 
+  sleep 10
+
   export CMD_SET_PATH=$DIR_BIN$FILE_SET_PATH
   echo CMD_SET_PATH is $CMD_SET_PATH [VAR]
   source $CMD_SET_PATH
