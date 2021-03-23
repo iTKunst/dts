@@ -6,16 +6,7 @@
   source gENV.sh
 
 
-  # DIRS
-
-  export PROJ_DIR=$DIR_SLASH$PROJ
-  export SYS_DIR=$DIR_SLASH$SYS
-  export TMPL_DIR=$DIR_SLASH$TMPL
-
-  # FILES
-  export FILE_INIT=$DIR_SLASH$INIT$DOT$EXT
-  export FILE_LOG=$DIR_SLASH"LOG"$DOT$EXT
-  export FILE_SET_PATH=$DIR_SLASH$SET_PATH$DOT$EXT
+   # FILES
 
   export DTS_DIR=dts
   # echo DTS_DIR is DTS_DIR [VAR]

@@ -4,13 +4,12 @@
 echo gENV_PROJ [ENTER]
 
   source settings.sh
+
   source gENV_DEF.sh
   source gENV_DIRS.sh
+  source gENV_FILES.sh
   source gENV_NAMES.sh
   source gENV_WEB.sh
-
-  export DIR_CERT=$USR_DIR$LOCAL_DIR$SHARE_DIR$CA_CERT_DIR
-  export FILE_DCKR=$DIR_TMPL_CURR$DCKR_DIR$FOR_SLASH$DCKR_FILE
 
 
   if [ -z "$PROJ_MODE" ]; then
@@ -52,6 +51,10 @@ echo gENV_PROJ [ENTER]
   fi
   echo TMPL_NAME is $TMPL_NAME
 
+
+
+  export DIR_CERT=$USR_DIR$LOCAL_DIR$SHARE_DIR$CA_CERT_DIR
+
   export DIR_BASE=$DIR_DTS$BASE_DIR
   echo DIR_BASE is $DIR_BASE
 
@@ -74,8 +77,13 @@ echo gENV_PROJ [ENTER]
   export DIR_TMPL_CURR=$DIR_TMPL$TMPL_CURR_DIR
   echo DIR_TMPL_CURR is $DIR_TMPL_CURR
 
-  export CMD_INIT=$SLASH$INIT$DOT$EXT
-  echo CMD_INIT is $CMD_INIT
+  export FILE_INIT=$SLASH$INIT$DOT$EXT
+  echo FILE_INIT is $FILE_INIT
+
+  export FILE_DCKR=$DIR_TMPL_CURR$DCKR_DIR$FOR_SLASH$DCKR_FILE
+  export FILE_INIT=$DIR_SLASH$INIT_FILE
+  export FILE_LOG=$DIR_SLASH$LOG_FILE
+  export FILE_SET_PATH=$DIR_SLASH$SET_PATH_FILE
 
   echo bENV_PROJ [EXIT]
 
