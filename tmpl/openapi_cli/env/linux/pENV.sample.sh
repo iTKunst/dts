@@ -11,4 +11,4 @@ export PROJ_PORT_EXT=$OA_CLI_PORT_EXT
 export PROJ_USER=$OA_CLI_USER
 
 
-log_exit pENV_MOD
+log_exit pENV

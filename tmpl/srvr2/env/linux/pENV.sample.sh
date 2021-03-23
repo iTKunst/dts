@@ -24,4 +24,4 @@ export PROJ_DB_PASSWORD=$PG_DB_PASSWORD
 export PROJ_DB_USER=$PG_DB_USER
 export PROJ_DB_VENDOR=$PG_DB_VENDOR
 
-log_exit pENV_MOD
+log_exit pENV

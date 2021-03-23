@@ -12,4 +12,4 @@ export PROJ_USER=$MVN_USER
 
 export PROJ_PORT_EXT_DBG=$MVN_PORT_EXT_DBG
 
-log_exit pENV_MOD
+log_exit pENV

@@ -10,4 +10,4 @@ export PROJ_PASSWORD=$SOAP_PASSWORD
 export PROJ_PORT_EXT=$SOAP_PORT_EXT
 export PROJ_USER=$SOAP_USER
 
-log_exit pENV_MOD
+log_exit pENV

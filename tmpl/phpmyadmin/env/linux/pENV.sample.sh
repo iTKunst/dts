@@ -13,4 +13,4 @@ export PROJ_USER=$MS_ADMIN_USER
 export PROJ_DB_HOST=$MS_HOST
 export PROJ_DB_PORT=$MS_PORT_EXT
 
-log_exit pENV_MOD
+log_exit pENV

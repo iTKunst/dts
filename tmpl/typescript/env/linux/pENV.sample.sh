@@ -15,4 +15,4 @@ export PROJ_PORT_EXT_APPS=$TS_PORT_EXT_APPS
 export PROJ_PORT_EXT_DBG=$TS_PORT_EXT_DBG
 
 
-log_exit pENV_MOD
+log_exit pENV

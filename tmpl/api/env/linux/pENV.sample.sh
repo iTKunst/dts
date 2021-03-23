@@ -20,4 +20,4 @@ export PROJ_VER=$API_VER
 
 
 
-log_exit pENV_MOD
+log_exit pENV

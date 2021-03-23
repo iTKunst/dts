@@ -7,4 +7,4 @@ log_enter pENV
 
 export PROJ_FILE=$SWAG_CG_CLI_FILE
 
-log_exit pENV_MOD
+log_exit pENV

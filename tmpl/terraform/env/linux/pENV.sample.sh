@@ -11,4 +11,4 @@ export PROJ_PORT_EXT=$TER_PORT_EXT
 export PROJ_USER=$TER_USER
 
 
-log_exit pENV_MOD
+log_exit pENV

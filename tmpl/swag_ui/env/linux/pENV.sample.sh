@@ -12,4 +12,4 @@ export PROJ_USER=$SWAG_UI_USER
 
 export PROJ_JSON=$SWAG_UI_JSON
 
-log_exit pENV_MOD
+log_exit pENV

@@ -18,4 +18,4 @@ export PROJ_REG_REM=$JFROG_REG_REM
 export PROJ_REG_VIRT=$JFROG_REG_VIRT
 
 
-log_exit pENV_MOD
+log_exit pENV

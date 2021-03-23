@@ -12,4 +12,4 @@ export PROJ_USER=$NODE_USER
 
 export PROJ_LOG_LEVEL=$NODE_LOG_LEVEL
 
-log_exit pENV_MOD
+log_exit pENV

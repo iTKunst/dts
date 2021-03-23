@@ -19,4 +19,4 @@ export PROJ_PKG=$SWAG_PKG
 export PROJ_REPO=$MVN_REPO_URI
 export PROJ_VER=$SWAG_VER
 
-log_exit pENV_MOD
+log_exit pENV

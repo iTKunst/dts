@@ -12,4 +12,4 @@ export PROJ_USER=$GIS_USER
 
 export PROJ_DB_NAME=$GIS_DB_NAME
 
-log_exit pENV_MOD
+log_exit pENV
