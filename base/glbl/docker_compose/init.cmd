@@ -1,9 +1,9 @@
 @echo off
 
-rem rem call %DIR_BIN%%DIR_SLASH%LOG_ENTER %GLBL_DIR%%DIR_SLASH%docker_compose%DIR_SLASH%%FILE_INIT%
-rem echo %DIR_GLBL%%DIR_SLASH%docker_compose%DIR_SLASH%%FILE_INIT% [ENTER]
+rem rem call %DIR_BIN%%DIR_SLASH%LOG_ENTER %GLBL_DIR%%DIR_SLASH%docker_compose%FILE_INIT%
+rem echo %DIR_GLBL%%DIR_SLASH%docker_compose%FILE_INIT% [ENTER]
 
 xcopy /q /y %DIR_GLBL%%DIR_SLASH%docker_compose%FILES% %DIR_BIN% >NUL
 
-rem call %DIR_BIN%%DIR_SLASH%LOG_EXIT %DIR_GLBL%\docker_compose%DIR_SLASH%%FILE_INIT%
-rem echo %DIR_GLBL%%DIR_SLASH%docker_compose%DIR_SLASH%%FILE_INIT% [EXIT]
+rem call %DIR_BIN%%DIR_SLASH%LOG_EXIT %DIR_GLBL%\docker_compose%FILE_INIT%
+rem echo %DIR_GLBL%%DIR_SLASH%docker_compose%FILE_INIT% [EXIT]
