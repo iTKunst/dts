@@ -88,6 +88,7 @@ echo gENV_PROJ [ENTER]
   export FILE_LOG=$DIR_SLASH$LOG_FILE
   echo FILE_LOG is $FILE_LOG
 
-  echo bENV_PROJ [EXIT]
+
+echo gENV_PROJ [EXIT]
 
 return 0

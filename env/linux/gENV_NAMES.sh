@@ -3,8 +3,8 @@
 
 log_enter gENV_NAMES
 
-# These values may not be changed.
-# Technologies depend on these.
+  # These values may not be changed.
+  # Technologies depend on these.
 
   export ADMIN=admin
   export ANCH=anchors
