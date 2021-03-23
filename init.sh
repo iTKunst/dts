@@ -6,31 +6,6 @@
   source gENV.sh
 
 
-  # NAMES
-  export BASE=base
-  export BIN=bin
-  export BNDL=bndl
-  export COM=com
-  export DCKR=docker
-  export DTS=dts
-  export ENV=env
-  export EXT=sh
-  export GIT=git
-  export GIT_HUB=github
-  export GLBL=glbl
-  export HTTPS=https
-  export INFO=info
-  export INIT=init
-  export ITK=iTKunst
-  export LOG=log
-  export MISC=misc
-  export OS=linux
-  export PROJ=proj
-  export SET_PATH=mSET_PATH
-  export SETTINGS=settings
-  export SYS=sys
-  export TMPL=tmpl
-
   # DIRS
   export DIR_SLASH=$FOR_SLASH
 
