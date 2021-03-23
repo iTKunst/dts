@@ -5,7 +5,6 @@ echo gENV_PROJ [ENTER]
 
   source settings.sh
 
-  source gENV_DEF.sh
   source gENV_DIRS.sh
   source gENV_FILES.sh
   source gENV_NAMES.sh

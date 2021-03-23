@@ -23,4 +23,4 @@ source settings.sh
 
 
 
-log_exit gENV_WEBS
+log_exit gENV_WEB
