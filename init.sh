@@ -8,7 +8,7 @@ echo dts/init.sh [ENTER]
   export DIR_ENV=dts/env
   export DIR_BOOT=dts/boot
   export FILE_INIT=/init.sh
-  export FILE_LOG=/bLOG.sh
+  export FILE_LOG=bLOG.sh
   export FILE_PATH=/bPATH.sh
   export FILES=/linux/*.sh
 
