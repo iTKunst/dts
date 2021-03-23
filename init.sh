@@ -1,6 +1,8 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
+clear
+
 echo dts/init.sh [ENTER]
 
 
