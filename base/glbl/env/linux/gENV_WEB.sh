@@ -19,7 +19,7 @@ source settings.sh
   export ITK_WEB=$WEB_SLASH$ITK
 
   export WEB_GIT_HUB=$GIT_HUB$COM_WEB
-  export WEB_DTS_GIT=$HTTPS_WEB$GIT_HUB_WEB$ITK_WEB/dts
+  export WEB_DTS_GIT=$HTTPS_WEB$GIT_HUB_WEB$ITK_WEB$DTS_WEB
 
 
 

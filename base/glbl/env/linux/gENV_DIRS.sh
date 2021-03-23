@@ -10,7 +10,6 @@ source settings.sh
   source gENV_TKNS.sh
 
   export DIR_SLASH=$FOR_SLASH
-  export WEB_SLASH=$FOR_SLASH
 
   export ANCH_DIR=$DIR_SLASH$ANCH
   export API_DIR=$DIR_SLASH$API
