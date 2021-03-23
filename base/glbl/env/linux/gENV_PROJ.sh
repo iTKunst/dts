@@ -4,15 +4,13 @@
 echo gENV_PROJ [ENTER]
 
   source settings.sh
+  source gENV_DEF.sh
   source gENV_DIRS.sh
   source gENV_NAMES.sh
-
-  DEF_PROJ_MODE=d
-  DEF_URI_DTS_GIT=https://github.com/iTKunst/dts
-
+  source gENV_WEB.sh
 
   export DIR_CERT=$USR_DIR$LOCAL_DIR$SHARE_DIR$CA_CERT_DIR
-  export DCKR_URI=$DIR_TMPL_CURR$DCKR_DIR$FOR_SLASH$DCKR_FILE
+  export FILE_DCKR=$DIR_TMPL_CURR$DCKR_DIR$FOR_SLASH$DCKR_FILE
 
   DEF_PROJ_MODE=d
   DEF_URI_DTS_GIT=https://github.com/iTKunst/dts

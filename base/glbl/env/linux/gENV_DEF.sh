@@ -4,7 +4,6 @@
 echo gENV_DEF [ENTER]
 
 
-  DEF_PROJ_MODE=d
 
 echo bENV_DEF [EXIT]
 

@@ -59,6 +59,7 @@ log_enter gENV_NAMES
   export PG=postgresql
   export PKI=pki
   export PROJ=proj
+  export PROJ_MODE=d
   export RUN=run
   export SET_PATH=mSET_PATH
   export SETTINGS=settings
