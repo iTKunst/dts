@@ -11,6 +11,13 @@ echo gENV_PROJ [ENTER]
   DEF_URI_DTS_GIT=https://github.com/iTKunst/dts
 
 
+  export DIR_CERT=$USR_DIR$LOCAL_DIR$SHARE_DIR$CA_CERT_DIR
+  export DCKR_URI=$DIR_TMPL_CURR$DCKR_DIR$FOR_SLASH$DCKR_FILE
+
+  DEF_PROJ_MODE=d
+  DEF_URI_DTS_GIT=https://github.com/iTKunst/dts
+
+
   if [ -z "$PROJ_MODE" ]; then
     echo PROJ_MODE may be set it in settings.sh. [CMD]
     echo Setting to default. [INFO]

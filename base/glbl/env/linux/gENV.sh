@@ -11,15 +11,9 @@ source gENV_DIRS.sh
 source gENV_FILES.sh
 source gENV_TAGS.sh
 source gENV_TKNS.sh
+source gENV_PROJ.sh
+source gENV_WEB.sh
 
-DEF_PROJ_MODE=d
-DEF_URI_DTS_GIT=https://github.com/iTKunst/dts
-
-# PROJECT
-
-export PROJ_TAG=$SPLIT$PROJ_NAME
-export DIR_CERT=$USR_DIR$LOCAL_DIR$SHARE_DIR$CA_CERT_DIR
-export DCKR_URI=$DIR_TMPL_CURR$DCKR_DIR$FOR_SLASH$DCKR_FILE
 
 # SYS
 
