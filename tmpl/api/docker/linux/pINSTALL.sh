@@ -9,7 +9,7 @@ source LOG.sh
 log_enter pINSTALL
 
 
-source project/pENV.sh
+source tENV.sh
 
 log_var SYS_DIR $SYS_DIR
 log_var TMPL_DIR $TMPL_DIR

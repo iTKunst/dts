@@ -5,7 +5,7 @@ source LOG.sh
 
 log_enter pGO
 
-source project/pENV.sh
+source tENV.sh
 
 CONT=$PROJ_CONT
 CONT_DIR=$PROJ_CONT_DIR

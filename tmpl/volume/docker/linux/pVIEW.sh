@@ -5,7 +5,7 @@ source LOG.sh
 
 log_load pVIEW
 
-source project/pENV.sh
+source tENV.sh
 
 CONT=$PROJ_CONT
 

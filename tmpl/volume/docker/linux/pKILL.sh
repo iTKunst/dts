@@ -6,7 +6,7 @@ source LOG.sh
 
 log_load pKILL
 
-source project/pENV.sh
+source tENV.sh
 
 CONT=$PROJ_CONT
 

@@ -6,7 +6,7 @@ source LOG.sh
 
 log_load pBUILD
 
-source project/pENV.sh
+source tENV.sh
 
 CONT_DIR=$PROJ_CONT_HOME_DIR
 IMG=$PROJ_IMG
