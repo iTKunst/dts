@@ -6,6 +6,7 @@ echo dts/init.sh [ENTER]
 
   export DIR_BIN=bin
   export DIR_ENV=dts/env
+  export DIR_LOG=dts/log
   export FILE_INIT=/init.sh
 
 
@@ -13,6 +14,10 @@ echo dts/init.sh [ENTER]
     mkdir $DIR_BIN
     echo create $DIR_BIN
   fi
+
+  export CMD_LOG=$DIR_LOG$FILE_INIT
+  echo CMD_LOG is $CMD_LOG [VAR]
+  source $CMD_LOG
 
   export CMD_ENV=$DIR_ENV$FILE_INIT
   echo CMD_ENV is $CMD_ENV [VAR]
