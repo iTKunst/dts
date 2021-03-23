@@ -9,7 +9,7 @@
     echo create bin
   fi
 
-  export CMD_ENV=/dts/base/glbl/env/linux/genv.sh
+  export CMD_ENV=dts/base/glbl/env/linux/genv.sh
   echo CMD_ENV is $CMD_ENV [VAR]
   source $CMD_ENV
 
