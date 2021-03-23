@@ -1,10 +1,6 @@
 @echo off
 call %DIR_BIN%%DIR_SLASH%LOG_ENTER pENV
 
-call sENV
-if exist project\pENV (
-  call project\pENV
-)
 
 SET PROJ_LABEL=%SYS_NAME%
 SET PROJ_NET=%SYS_NET%
