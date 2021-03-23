@@ -119,11 +119,11 @@ rem echo dts\init.cmd [ENTER]
 
   SET "UP=%DOT%%DOT%%DIR_SLASH%"
   SET "CMD_SYS=%UP%%UP%system%FILE_INIT%"
-  rem ECHO CMD_SYS is %CMD_SYS% [VAR]
+  ECHO CMD_SYS is %CMD_SYS% [VAR]
   CALL %CMD_SYS%
 
   SET "CMD_TMPL=%DIR_TMPL_CURR%FILE_INIT%"
-  rem ECHO CMD_TMPL is %CMD_TMPL% [VAR]
+  ECHO CMD_TMPL is %CMD_TMPL% [VAR]
   CALL %CMD_TMPL%
 
 

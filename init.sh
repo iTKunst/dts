@@ -118,9 +118,13 @@
   source $CMD_BASE
 
   export UP=$DOT$DOT$DIR_SLASH
-  export CMD_SRC=$UP$UP"system"$FILE_INIT
-  echo CMD_SRC is $CMD_SRC [VAR]
-  source $CMD_SRC
+  export CMD_SYS=$UP$UP"system"$FILE_INIT
+  echo CMD_SYS is $CMD_SYS [VAR]
+  source $CMD_SYS
+
+  export CMD_TMPL=$DIR_TMPL_CURR$FILE_INIT
+  echo CMD_TMPL is $CMD_TMPL [VAR]
+  source $CMD_TMPL
 
 
   source pINIT.sh
