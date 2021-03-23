@@ -2,7 +2,7 @@
 # shellcheck disable=SC2086
 source settings.sh
 
-mSET_PATH() {
+bPATH() {
 
 	echo bPATH [ENTER]
 
@@ -20,4 +20,4 @@ mSET_PATH() {
 	echo bPATH [EXIT]
 }
 
-mSET_PATH
+bPATH
