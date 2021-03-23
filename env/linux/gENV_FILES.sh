@@ -9,9 +9,9 @@ log_enter gENV_FILES
 
   export API_JSON_FILE=$API$DOT$JSON
   export DCKR_FILE=$DCKR$FILE
-  export INIT_FILE=$INIT$DOT%EXT
-  export LOG_FILE=log$DOT%EXT
-  export SET_PATH_FILE=$SET_PATH$DOT%EXT
+  export INIT_FILE=$INIT$DOT$EXT
+  export LOG_FILE=log$DOT$EXT
+  export SET_PATH_FILE=$SET_PATH$DOT$EXT
 
 
 log_exit gENV_FILES
