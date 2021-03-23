@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
- echo dts/init.sh [ENTER]
+echo dts/init.sh [ENTER]
 
 
   if [ ! -d bin ]; then
@@ -9,7 +9,10 @@
     echo create bin
   fi
 
-  export CMD_ENV=dts/base/glbl/env/linux/genv.sh
+  export DIR_ENV=dts/env
+  export FILE_INIT=/init.sh
+
+  export CMD_ENV=$DIR_ENV$FILE_INIT
   echo CMD_ENV is $CMD_ENV [VAR]
   source $CMD_ENV
 
