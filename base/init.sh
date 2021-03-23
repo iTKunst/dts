@@ -12,6 +12,7 @@ log_enter $DIR_BASE$FILE_INIT
 
   cp $SRC .
 
+  sleep 10
 
 log_exit $DIR_BASE$FILE_INIT
 
