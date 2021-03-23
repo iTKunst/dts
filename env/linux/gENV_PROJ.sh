@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-echo gENV_PROJ [ENTER]
+log_env_enter gENV_PROJ
 
   source settings.sh
 
@@ -12,83 +12,83 @@ echo gENV_PROJ [ENTER]
 
 
   if [ -z "$PROJ_MODE" ]; then
-    echo PROJ_MODE may be set it in settings.sh. [CMD]
-    echo Setting to default. [INFO]
+    log_cmd PROJ_MODE may be set it in settings.sh.
+    log_info Setting to default.
     export PROJ_MODE=MODE
   fi
-  echo PROJ_MODE is $PROJ_MODE
+  log_var PROJ_MODE $PROJ_MODE
 
 
   if [ -z $URI_DTS_GIT ]; then
-    echo URI_DTS_GIT may be set it in settings_uri.sh. [INFO]
-    echo Setting to default. [INFO]
+    log_cmd URI_DTS_GIT may be set it in settings_uri.sh.
+    log_info Setting to default.
     URI_DTS_GIT=$WEB_DTS_GIT
   fi
-  echo URI_DTS_GIT is $URI_DTS_GIT
+  log_var URI_DTS_GIT $URI_DTS_GIT
 
 
   if [ -z "$PROJ_NAME" ]; then
-    echo PROJ_NAME [INVALID]
-    echo Must be set it in settings.sh! [CMD]
+    log_invalid PROJ_NAME
+    log_info Must be set it in settings.sh!
     return 1
   fi
-  echo PROJ_NAME is $PROJ_NAME
+  log_var PROJ_NAME $PROJ_NAME
 
 
   if [ -z "$SYS_NAME" ]; then
-    echo SYS_NAME [INVALID]
-    echo Must set it in settings.sh! [CMD]
+    log_invalid SYS_NAME
+    log_cmd Must set it in settings.sh!
     return 1
   fi
-  echo SYS_NAME is $SYS_NAME
+  log_var SYS_NAME $SYS_NAME
 
 
   if [ -z $TMPL_NAME ]; then
-    echo TMPL_NAME [INVALID]
-    echo You must set it in settings.sh! [CMD]
+    log_invalid TMPL_NAME
+    log_cmd You must set it in settings.sh!
     return 1
   fi
-  echo TMPL_NAME is $TMPL_NAME
+  log_var TMPL_NAME $TMPL_NAME
 
 
   export DIR_BASE=$DIR_DTS$BASE_DIR
-  echo DIR_BASE is $DIR_BASE
+  log_var DIR_BASE $DIR_BASE
 
   export DIR_BIN=$BIN_DIR
-  echo DIR_BIN is $DIR_BIN
+  log_var DIR_BIN $DIR_BIN
 
   export DIR_BNDL=$DIR_BASE$BNDL_DIR
-  echo DIR_BNDL is $DIR_BNDL
+  log_var DIR_BNDL $DIR_BNDL
 
   export DIR_CERT=$USR_DIR$LOCAL_DIR$SHARE_DIR$CA_CERT_DIR
-  echo DIR_CERT is $DIR_CERT
+  log_var DIR_CERT $DIR_CERT
 
-  echo GLBL_DIR is $GLBL_DIR
+  log_var GLBL_DIR $GLBL_DIR
   export DIR_GLBL=$DIR_BASE$GLBL_DIR
-  echo DIR_GLBL is $DIR_GLBL
+  log_var DIR_GLBL $DIR_GLBL
 
   export DIR_PROJ=$DIR_BASE$PROJ_DIR
-  echo DIR_PROJ is $DIR_PROJ [VAR]
+  log_var DIR_PROJ $DIR_PROJ
 
   export DIR_SYS=$UP$UP$SYS
-  echo DIR_SYS is $DIR_SYS
+  log_var DIR_SYS $DIR_SYS
 
   export DIR_TMPL=$DIR_DTS$TMPL_DIR
-  echo DIR_TMPL is $DIR_TMPL
+  log_var DIR_TMPL $DIR_TMPL
 
   export DIR_TMPL_CURR=$DIR_TMPL$TMPL_CURR_DIR
-  echo DIR_TMPL_CURR is $DIR_TMPL_CURR
+  log_var DIR_TMPL_CURR $DIR_TMPL_CURR
 
   export FILE_INIT=$DIR_SLASH$INIT_FILE
-  echo FILE_INIT is $FILE_INIT
+  log_var FILE_INIT $FILE_INIT
 
   export FILE_DCKR=$DIR_TMPL_CURR$DCKR_DIR$FOR_SLASH$DCKR_FILE
-  echo FILE_DCKR is $FILE_DCKR
+  log_var FILE_DCKR $FILE_DCKR
 
   export FILE_LOG=$DIR_SLASH$LOG_FILE
-  echo FILE_LOG is $FILE_LOG
+  log_var FILE_LOG $FILE_LOG
 
 
-echo gENV_PROJ [EXIT]
+log_env_exit gENV_PROJ
 
 return 0
