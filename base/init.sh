@@ -5,8 +5,6 @@
 log_enter $DIR_BASE$FILE_INIT
 
 
-source $DIR_BNDL$FILE_INIT
-
 source $DIR_GLBL$FILE_INIT
 
 cp $DIR_PROJ$FILE_INIT .
