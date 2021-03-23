@@ -8,7 +8,8 @@ echo dts/init.sh [ENTER]
   export DIR_ENV=dts/env
   export DIR_BOOT=dts/boot
   export FILE_INIT=/init.sh
-  export FILE_PATH=/mPATH.sh
+  export FILE_LOG=/bLOG.sh
+  export FILE_PATH=/bPATH.sh
   export FILES=/linux/*.sh
 
 
@@ -18,8 +19,8 @@ echo dts/init.sh [ENTER]
   fi
 
   export CMD_BOOT=$DIR_BOOT$FILE_INIT
-  echo CMD_BOOT is CMD_BOOT [VAR]
-  source CMD_BOOT
+  echo CMD_BOOT is $CMD_BOOT [VAR]
+  source $CMD_BOOT
 
   export CMD_ENV=$DIR_ENV$FILE_INIT
   echo CMD_ENV is $CMD_ENV [VAR]
