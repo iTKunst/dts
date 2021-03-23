@@ -19,7 +19,7 @@ echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   export FILE_INIT=/init.sh
   export FILE_LOG=bLOG.sh
   export FILE_PATH=/bPATH.sh
-  export FILES=/linux/%.sh
+  export FILES=/linux/*.sh
 
 
   if [ ! -d $DIR_BIN ]; then
