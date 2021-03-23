@@ -8,6 +8,7 @@ echo dts/init.sh [ENTER]
   export DIR_ENV=dts/env
   export DIR_LOG=dts/log
   export FILE_INIT=/init.sh
+  export FILES=/*.sh
 
 
   if [ ! -d $DIR_BIN ]; then
