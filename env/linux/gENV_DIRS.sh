@@ -3,7 +3,7 @@
 
 log_enter gENV_DIRS
 
-source settings.sh
+  source settings.sh
 
   source gENV_CATS.sh
   source gENV_NAMES.sh

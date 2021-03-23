@@ -88,9 +88,6 @@ echo gENV_PROJ [ENTER]
   export FILE_LOG=$DIR_SLASH$LOG_FILE
   echo FILE_LOG is $FILE_LOG
 
-  export FILE_SET_PATH=$DIR_SLASH$SET_PATH_FILE
-  echo FILE_SET_PATH is $FILE_SET_PATH
-
   echo bENV_PROJ [EXIT]
 
 return 0
