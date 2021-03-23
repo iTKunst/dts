@@ -12,4 +12,4 @@ echo $DIR_BOOT$FILE_INIT [ENTER]
   source $CMD_PATH
   source $FILE_LOG
 
-echo $DIR_LOG$FILE_INIT [EXIT]
+echo $DIR_BOOT$FILE_INIT [EXIT]
