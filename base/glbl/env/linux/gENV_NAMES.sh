@@ -49,6 +49,7 @@ log_enter gENV_NAMES
   export LOG=log
   export M2=.m2
   export MISC=misc
+  export MODE=d
   export MVN=maven
   export MYSQL=mysql
   export NEXUS=nexus
@@ -59,7 +60,6 @@ log_enter gENV_NAMES
   export PG=postgresql
   export PKI=pki
   export PROJ=proj
-  export PROJ_MODE=d
   export RUN=run
   export SET_PATH=mSET_PATH
   export SETTINGS=settings
