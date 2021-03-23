@@ -1,9 +1,13 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
+UP=$DOT$DOT$DIR_SLASH
+DIR=$UP$UP"system"
+CMD=$DIR$FILE_INIT
 
-log_enter $DIR_SYS$FILE_INIT
 
-source $DIR_SYS$ENV_DIR$FILE_INIT
+log_enter $CMD
 
-log_exit $DIR_SYS$FILE_INIT
+source $DIR$ENV_DIR$FILE_INIT
+
+log_exit $CMD
