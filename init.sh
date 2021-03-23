@@ -4,13 +4,15 @@
 echo dts/init.sh [ENTER]
 
 
-  if [ ! -d bin ]; then
-    mkdir bin
-    echo create bin
-  fi
-
+  export DIR_BIN=bin
   export DIR_ENV=dts/env
   export FILE_INIT=/init.sh
+
+
+  if [ ! -d $DIR_BIN ]; then
+    mkdir $DIR_BIN
+    echo create $DIR_BIN
+  fi
 
   export CMD_ENV=$DIR_ENV$FILE_INIT
   echo CMD_ENV is $CMD_ENV [VAR]
