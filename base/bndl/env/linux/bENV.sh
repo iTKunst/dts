@@ -12,7 +12,7 @@ DEF_URI_DTS_GIT=https://github.com/iTKunst/dts
 
 
 if [ -z "$PROJ_MODE" ]; then
-  echo PROJ_MODE nay be set it in settings.sh. [CMD]
+  echo PROJ_MODE may be set it in settings.sh. [CMD]
   echo Setting to default. [INFO]
   export PROJ_MODE=DEF_PROJ_MODE
 fi
@@ -73,7 +73,7 @@ export DIR_TMPL_CURR=$DIR_TMPL$TMPL_CURR_DIR
 # echo DIR_TMPL_CURR is $DIR_TMPL_CURR
 
 export CMD_INIT=$SLASH$INIT$DOT$EXT
-# echo CMD_INIT is $FILE_INIT
+# echo CMD_INIT is $CMD_INIT
 
  echo bENV [EXIT]
 

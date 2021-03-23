@@ -7,11 +7,13 @@ log_enter gENV
 # Automatically generated or default values
 
 source settings.sh
-source bENV.sh
 source gENV_DIRS.sh
 source gENV_FILES.sh
 source gENV_TAGS.sh
 source gENV_TKNS.sh
+
+DEF_PROJ_MODE=d
+DEF_URI_DTS_GIT=https://github.com/iTKunst/dts
 
 # PROJECT
 

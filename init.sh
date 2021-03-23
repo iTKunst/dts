@@ -3,13 +3,8 @@
 
  echo dts/init.sh [ENTER]
 
+  source gENV.sh
 
-  # TOKENS
-  export BCK_SLASH=\\
-  export COLON=:
-  export DOT=.
-  export FOR_SLASH=/
-  export STAR=*
 
   # NAMES
   export BASE=base
@@ -86,12 +81,41 @@
   export FILES=$OS_DIR$DIR_SLASH$STAR$DOT$EXT
   # echo FILES is $FILES [VAR]
 
-  if [ -z $TMPL_NAME ]; then
-   # echo TMPL_NAME [INVALID]
-   # echo TMPL_NAME must be set in settings.sh. [INFO]
-	  exit
+
+  if [ -z "$PROJ_MODE" ]; then
+    echo PROJ_MODE may be set it in settings.sh. [CMD]
+    echo Setting to default. [INFO]
+    export PROJ_MODE=DEF_PROJ_MODE
   fi
-  # echo TMPL_NAME is $TMPL_NAME [VAR]
+  # echo PROJ_MODE is $PROJ_MODE
+
+  if [ -z $URI_DTS_GIT ]; then
+    echo URI_DTS_GIT may be set it in settings_uri.sh. [INFO]
+    echo Setting to default. [INFO]
+    URI_DTS_GIT=$DEF_URI_DTS_GIT
+  fi
+  # echo URI_DTS_GIT is $URI_DTS_GIT
+
+  if [ -z "$PROJ_NAME" ]; then
+    echo PROJ_NAME [INVALID]
+    echo Must be set it in settings.sh! [CMD]
+    return 1
+  fi
+  # echo PROJ_NAME is $PROJ_NAME
+
+  if [ -z "$SYS_NAME" ]; then
+    echo SYS_NAME [INVALID]
+    echo Must set it in settings.sh! [CMD]
+    return 1
+  fi
+  # echo SYS_NAME is $SYS_NAME
+
+  if [ -z $TMPL_NAME ]; then
+    echo TMPL_NAME [INVALID]
+    echo You must set it in settings.sh! [CMD]
+    return 1
+  fi
+  # echo TMPL_NAME is $TMPL_NAME
 
   export DIR_TMPL_CURR=$DTS_DIR$TMPL_DIR$DIR_SLASH$TMPL_NAME
   # echo DIR_TMPL_CURR is $DIR_TMPL_CURR [VAR]
