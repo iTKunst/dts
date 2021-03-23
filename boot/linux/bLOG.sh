@@ -76,7 +76,7 @@ echo bLOG [LOAD]
   log_env_var()
   {
     if [ $LOG_ENV_VAR_ON -eq 1 ]; then
-      log "$1 [VAR] "
+      log "$1 is ($2) [VAR]"
     fi
   }
 
