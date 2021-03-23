@@ -3,17 +3,15 @@
 
  echo dts/init.sh [ENTER]
 
-  source gENV.sh
 
-
-  if [ ! -d $DIR_BIN ]; then
-    mkdir $DIR_BIN
-    echo create $DIR_BIN
+  if [ ! -d bin ]; then
+    mkdir bin
+    echo create bin
   fi
 
-  export CMD_BNDL=$DIR_BNDL$FILE_INIT
-  echo CMD_BNDL is $CMD_BNDL [VAR]
-  source $CMD_BNDL
+  export CMD_ENV=/dts/base/glbl/env/linux/genv.sh
+  echo CMD_ENV is $CMD_ENV [VAR]
+  source $CMD_ENV
 
   export CMD_SET_PATH=$DIR_BIN$FILE_SET_PATH
   echo CMD_SET_PATH is $CMD_SET_PATH [VAR]
