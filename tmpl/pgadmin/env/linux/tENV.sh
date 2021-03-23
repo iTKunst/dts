@@ -24,4 +24,4 @@ export PROJ_PORT_INT=$PG_ADMIN_PORT_INT
 export PROJ_VOL=$PG_ADMIN_VOL
 export PROJ_VOL_DIR=$PG_ADMIN_VOL_DIR
 
-log_exit pENV
+log_exit tENV

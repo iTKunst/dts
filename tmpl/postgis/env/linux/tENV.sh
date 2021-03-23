@@ -25,4 +25,4 @@ export PROJ_VOL=$GIS_VOL
 export PROJ_VOL_DIR=$GIS_VOL_DIR
 
 
-log_exit pENV
+log_exit tENV

@@ -23,4 +23,4 @@ export PROJ_IMG=$SWAG_IMG
 export PROJ_PORT_INT=$SWAG_PORT_INT
 
 
-log_exit pENV
+log_exit tENV

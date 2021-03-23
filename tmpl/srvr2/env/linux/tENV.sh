@@ -25,4 +25,4 @@ export PROJ_VOL=$SRVR2_VOL
 
 export PROJ_PORT_INT_DBG=$SRVR2_PORT_INT_DBG
 
-log_exit pENV
+log_exit tENV

@@ -23,4 +23,4 @@ export PROJ_IMG=$NEXUS_IMG
 export PROJ_PORT_INT=$NEXUS_PORT_INT
 
 
-log_exit pENV
+log_exit tENV

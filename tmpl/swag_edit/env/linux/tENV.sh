@@ -24,4 +24,4 @@ export PROJ_PORT_INT=$SWAG_ED_PORT_INT
 export PROJ_VOL=$SWAG_ED_VOL
 export PROJ_VOL_DIR=$SWAG_ED_VOL_DIR
 
-log_exit pENV
+log_exit tENV

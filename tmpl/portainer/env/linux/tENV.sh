@@ -24,4 +24,4 @@ export PROJ_VOL=$PORT_VOL
 export PROJ_VOL_DIR=$PORT_VOL_DIR
 
 
-log_exit pENV
+log_exit tENV

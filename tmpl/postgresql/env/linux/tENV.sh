@@ -23,4 +23,4 @@ export PROJ_IMG=$PG_IMG
 export PROJ_PORT_INT=$PG_PORT_INT
 export PROJ_VOL=$PG_VOL
 
-log_exit pENV
+log_exit tENV

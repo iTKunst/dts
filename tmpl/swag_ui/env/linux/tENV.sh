@@ -25,4 +25,4 @@ export PROJ_VOL=$SWAG_UI_VOL
 export PROJ_VOL_DIR=$SWAG_UI_VOL_DIR
 
 
-log_exit pENV
+log_exit tENV

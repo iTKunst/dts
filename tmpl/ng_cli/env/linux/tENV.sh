@@ -21,4 +21,4 @@ export PROJ_IMG=$SOAP_IMG
 export PROJ_PORT_INT=$SOAP_PORT_INT
 export PROJ_VOL=$SOAP_VOL
 
-log_exit pENV
+log_exit tENV

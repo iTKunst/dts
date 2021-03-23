@@ -24,4 +24,4 @@ export PROJ_PORT_INT=$GRDL_PORT_INT
 export PROJ_VOL=$GRDL_VOL
 export PROJ_VOL_DIR=$GRDL_VOL_DIR
 
-log_exit pENV
+log_exit tENV

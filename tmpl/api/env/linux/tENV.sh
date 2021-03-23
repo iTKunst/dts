@@ -26,4 +26,4 @@ export PROJ_VOL=$API_VOL
 
 export PROJ_PORT_INT_DBG=$API_PORT_INT_DBG
 
-log_exit pENV
+log_exit tENV

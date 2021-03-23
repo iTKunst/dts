@@ -25,4 +25,4 @@ export PROJ_VOL=$NEXUS3_VOL
 export PROJ_VOL_DIR=$NEXUS3_VOL_DIR
 
 
-log_exit pENV
+log_exit tENV

@@ -23,4 +23,4 @@ export PROJ_VOL=$ANS_VOL
 export PROJ_VOL_DIR=$ANS_VOL_DIR
 
 
-log_exit pENV
+log_exit tENV

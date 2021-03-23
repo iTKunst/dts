@@ -22,4 +22,4 @@ export PROJ_IMG=$NET_IMG
 export PROJ_PORT_INT=$NET_PORT_INT
 export PROJ_VOL=$NET_VOL
 
-log_exit pENV
+log_exit tENV

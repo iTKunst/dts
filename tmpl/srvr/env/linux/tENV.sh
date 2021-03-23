@@ -26,4 +26,4 @@ export PROJ_VOL=$SRVR_VOL
 export PROJ_CONT_CERT_DIR=$SRVR_CONT_CERT_DIR
 
 
-log_exit pENV
+log_exit tENV
