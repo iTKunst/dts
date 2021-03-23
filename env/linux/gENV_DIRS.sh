@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-log_enter gENV_DIRS
+log_env_enter gENV_DIRS
 
   source settings.sh
 
@@ -83,4 +83,4 @@ log_enter gENV_DIRS
 
 
 
-log_exit gENV_DIRS
+log_env_exit gENV_DIRS

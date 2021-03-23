@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-log_enter gENV_FILES
+log_env_enter gENV_FILES
 
   source gENV_CATS.sh
   source gENV_NAMES.sh
@@ -14,6 +14,6 @@ log_enter gENV_FILES
   export SET_PATH_FILE=$SET_PATH$DOT$EXT
 
 
-log_exit gENV_FILES
+log_env_exit gENV_FILES
 
 

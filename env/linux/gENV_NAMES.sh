@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-log_enter gENV_NAMES
+log_env_enter gENV_NAMES
 
   # These values may not be changed.
   # Technologies depend on these.
@@ -81,4 +81,4 @@ log_enter gENV_NAMES
   export WIN=win
   export WWW=www
 
-log_exit gENV_NAMES
+log_env_exit gENV_NAMES

@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-log_enter gENV_CATS
+log_env_enter gENV_CATS
 
   # These may be changed
 
@@ -44,4 +44,4 @@ log_enter gENV_CATS
   export WF=wf
   export WP=wp
 
-log_exit gENV_CATS
+log_env_exit gENV_CATS

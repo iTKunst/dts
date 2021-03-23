@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-log_enter gENV_TKNS
+log_env_enter gENV_TKNS
 
   export BCK_SLASH=\\
   export COLON=:
@@ -15,6 +15,6 @@ log_enter gENV_TKNS
   export DIR_UP=$DOT$DOT$DIR_SLASH
 
 
-log_exit gENV_TKNS
+log_env_exit gENV_TKNS
 
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-log_enter gENV_TAGS
+log_env_enter gENV_TAGS
 
 source gENV_CATS.sh
 source gENV_NAMES.sh
@@ -54,4 +54,4 @@ source gENV_TKNS.sh
   export WF_TAG=$SPLIT$WF
   export WP_TAG=$SPLIT$WP
 
-log_exit gENV_TAGS
+log_env_exit gENV_TAGS

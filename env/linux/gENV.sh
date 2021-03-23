@@ -2,7 +2,7 @@
 # shellcheck disable=SC2086
 # shellcheck disable=SC2153
 
-log_enter gENV
+log_env_enter gENV
 
 # Automatically generated or default values
 
@@ -579,4 +579,4 @@ export WP_PORT_INT_DBG=90
 export WP_TABLE_PREFIX=SYS_NAME$SPLIT
 
 
-log_exit gENV
+log_env_exit gENV

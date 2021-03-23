@@ -1,9 +1,9 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-log_enter gENV_WEB
+log_env_enter gENV_WEB
 
-source settings.sh
+  source settings.sh
 
   source gENV_CATS.sh
   source gENV_NAMES.sh
@@ -23,4 +23,4 @@ source settings.sh
 
 
 
-log_exit gENV_WEB
+log_env_exit gENV_WEB
