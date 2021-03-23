@@ -7,9 +7,12 @@ echo $DIR_BOOT$FILE_INIT [ENTER]
 
   cp $DIR_BOOT$FILES $DIR_BIN
 
-  export CMD_PATH=$DIR_BIN$FILE_PATH
+  CMD_PATH=$DIR_BIN$FILE_PATH
   echo CMD_PATH is $CMD_PATH [VAR]
   source $CMD_PATH
-  source $FILE_LOG
+
+  CMD_LOG=$FILE_LOG
+  echo CMD_LOG is $CMD_LOG [VAR]
+  source $CMD_LOG
 
 echo $DIR_BOOT$FILE_INIT [EXIT]
