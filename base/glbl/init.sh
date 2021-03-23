@@ -14,4 +14,3 @@ source $DIR_GLBL/openshift$FILE_INIT
 
 log_exit $DIR_GLBL$FILE_INIT
 
-sleep 10
