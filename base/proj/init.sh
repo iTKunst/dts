@@ -31,7 +31,7 @@ init()
   # FILES
   export FILE_INIT=$DIR_SLASH$INIT$DOT$EXT
   export FILE_SETTINGS=$SETTINGS$DOT$EXT
-  
+
   # HOSTS
   export HOST_GITHUB=$HTTPS$COLON$FOR_SLASH$FOR_SLASH$GIT_HUB$DOT$COM
 
@@ -79,7 +79,13 @@ init()
     git clone $URI_DTS_GIT --no-checkout $DIR_DTS
     cd $DIR_DTS
     git sparse-checkout init --cone
-    git sparse-checkout set base/* base/bndl base/glbl base/proj tmpl/$TMPL_NAME
+    git sparse-checkout set base/* \
+                            base/bndl \
+                            base/glbl \
+                            base/proj \
+                            boot \
+                            env \
+                            tmpl/$TMPL_NAME
     cd ..
   fi
 
