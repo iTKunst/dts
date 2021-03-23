@@ -24,7 +24,7 @@ echo gENV_PROJ [ENTER]
   if [ -z $URI_DTS_GIT ]; then
     echo URI_DTS_GIT may be set it in settings_uri.sh. [INFO]
     echo Setting to default. [INFO]
-    URI_DTS_GIT=$DEF_URI_DTS_GIT
+    URI_DTS_GIT=$WEB_DTS_GIT
   fi
   echo URI_DTS_GIT is $URI_DTS_GIT
 
@@ -77,6 +77,6 @@ echo gENV_PROJ [ENTER]
   export CMD_INIT=$SLASH$INIT$DOT$EXT
   echo CMD_INIT is $CMD_INIT
 
-   echo bENV [EXIT]
+  echo bENV_PROJ [EXIT]
 
 return 0
