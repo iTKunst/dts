@@ -50,6 +50,8 @@ log_env_enter gENV_PROJ
   fi
   log_env_var TMPL_NAME $TMPL_NAME
 
+  export TMPL_NAME_DIR=$DIR_SLASH$TMPL_NAME
+  log_env_var TMPL_NAME_DIR $TMPL_NAME_DIR
 
   export DIR_BASE=$DIR_DTS$BASE_DIR
   log_env_var DIR_BASE $DIR_BASE
@@ -63,7 +65,6 @@ log_env_enter gENV_PROJ
   export DIR_CERT=$USR_DIR$LOCAL_DIR$SHARE_DIR$CA_CERT_DIR
   log_env_var DIR_CERT $DIR_CERT
 
-  log_env_var GLBL_DIR $GLBL_DIR
   export DIR_GLBL=$DIR_BASE$GLBL_DIR
   log_env_var DIR_GLBL $DIR_GLBL
 
@@ -76,8 +77,7 @@ log_env_enter gENV_PROJ
   export DIR_TMPL=$DIR_DTS$TMPL_DIR
   log_env_var DIR_TMPL $DIR_TMPL
 
-  log_env_var TMPL_CURR_DIR $TMPL_CURR_DIR
-  export DIR_TMPL_CURR=$DIR_TMPL$TMPL_CURR_DIR$SHARE_DIR$TMPL_NAME
+  export DIR_TMPL_CURR=$DIR_TMPL$TMPL_NAME_DIR
   log_env_var DIR_TMPL_CURR $DIR_TMPL_CURR
 
   export FILE_INIT=$DIR_SLASH$INIT_FILE
