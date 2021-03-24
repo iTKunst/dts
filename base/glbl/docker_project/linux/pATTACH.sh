@@ -6,7 +6,7 @@ source LOG.sh
 
 log_enter pATTACH
 
-source $TMPL_ENV
+source $TMPL_ENV_FILE_FILE
 
 CONT=$PROJ_CONT
 log_var CONT $CONT

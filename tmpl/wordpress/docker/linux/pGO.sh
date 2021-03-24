@@ -5,7 +5,7 @@ source LOG.sh
 
 log_enter pGO
 
-source $TMPL_ENV
+source $TMPL_ENV_FILE
 
 CONT=$PROJ_CONT
 CONT_DIR=$PROJ_CONT_DIR

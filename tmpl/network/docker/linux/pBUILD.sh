@@ -6,7 +6,7 @@ source LOG.sh
 
 log_load pBUILD
 
-source $TMPL_ENV
+source $TMPL_ENV_FILE_FILE
 
 CONT_DIR=$PROJ_CONT_HOME_DIR
 IMG=$PROJ_IMG

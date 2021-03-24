@@ -7,7 +7,7 @@ source LOG.sh
 log_enter pDEL_IMG
 
 
-source $TMPL_ENV
+source $TMPL_ENV_FILE_FILE
 
 IMG=$PROJ_IMG
 log_var IMG $IMG

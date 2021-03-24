@@ -6,7 +6,7 @@ source LOG.sh
 
 log_enter sSTOP
 
-source $TMPL_ENV
+source $TMPL_ENV_FILE_FILE
 LABEL=$PROJ_LABEL
 CONT_FILTER="label=$LABEL"
 log_var CONT_FILTER $CONT_FILTER

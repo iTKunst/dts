@@ -10,7 +10,7 @@ log_enter pBUILD
 
 
 source pSTOP.sh
-source $TMPL_ENV
+source $TMPL_ENV_FILE_FILE
 
 CONT_DIR=$PROJ_CONT_DIR
 HOST_DIR=$PROJ_HOST_DIR

@@ -6,7 +6,7 @@ source LOG.sh
 
 log_enter sINSPECT
 
-source $TMPL_ENV
+source $TMPL_ENV_FILE_FILE
 
 log_var DB_VOL $DB_VOL
 log_var DB_MS_VOL $DB_MS_VOL
