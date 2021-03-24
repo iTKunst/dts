@@ -80,8 +80,7 @@ init()
     cd $DIR_DTS
     git sparse-checkout init --cone
     git sparse-checkout set base/* \
-                            base/bndl \
-                            base/glbl \
+                            base/cmd \
                             base/proj \
                             boot \
                             env \

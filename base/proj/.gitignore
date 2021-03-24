@@ -4,9 +4,9 @@ node_modules/
 
 bin/
 dts/
+sys/
 target/
 
-dts\
 
 code/src/
 
