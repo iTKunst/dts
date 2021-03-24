@@ -24,9 +24,9 @@ pINIT () {
 	      mkdir $PROJ
 	    fi
 
-      log_var PROJ_ENV_FILE $PROJ_ENV_FILE
+      log_var FILE_ENV_PROJ $FILE_ENV_PROJ
 
-	    if [ ! -f $FILE_ENV_PROJ ]; then
+	    if [ ! -f c ]; then
 
 	      SRC=$DIR_TMPL_CURR$ENV_DIR$OS_DIR$DIR_SLASH"pENV.sample.sh"
 	      log_var SRC $SRC
