@@ -66,8 +66,8 @@ log_env_enter gENV_PROJ
   export DIR_CERT=$USR_DIR$LOCAL_DIR$SHARE_DIR$CA_CERT_DIR
   log_env_var DIR_CERT $DIR_CERT
 
-  export DIR_GLBL=$DIR_BASE$GLBL_DIR
-  log_env_var DIR_GLBL $DIR_GLBL
+  export DIR_CMD=$DIR_BASE$CMD_DIR
+  log_env_var DIR_CMD $DIR_CMD
 
   export DIR_PROJ=$DIR_BASE$PROJ_DIR
   log_env_var DIR_PROJ $DIR_PROJ
