@@ -5,10 +5,10 @@ log_env_enter tENV
 
 source sENV.sh
 
-log_env_var PROJ_ENV_FILE $PROJ_ENV_FILE
+log_env_var FILE_PROJ_ENV $FILE_PROJ_ENV
 
-if [ -f $PROJ_ENV_FILE ]; then
-  source $PROJ_ENV_FILE
+if [ -f $FILE_PROJ_ENV ]; then
+  source $FILE_PROJ_ENV
 fi
 
 
