@@ -33,6 +33,11 @@ echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     echo create $TMPL
   fi
 
+  if [ ! -d $SYS ]; then
+    mkdir $SYS
+    echo create $SYS
+  fi
+
   export CMD_BOOT=$DIR_BOOT$FILE_INIT
   echo CMD_BOOT is $CMD_BOOT [VAR]
   source $CMD_BOOT
