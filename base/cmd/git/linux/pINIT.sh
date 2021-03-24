@@ -18,6 +18,8 @@ pINIT () {
 
 	if [ -d "$DIR_TMPL_CURR" ]; then
 
+      log_var PROJ $PROJ
+
 	    if [ ! -d $PROJ ]; then
 	      mkdir $PROJ
 	    fi
