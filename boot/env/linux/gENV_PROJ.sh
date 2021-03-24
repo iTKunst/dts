@@ -79,6 +79,9 @@ log_env_enter gENV_PROJ
   export FILE_LOG=$DIR_SLASH$LOG_FILE
   log_env_var FILE_LOG $FILE_LOG
 
+  export FILE_POM=$DIR_SLASH$POM_FILE
+  log_env_var FILE_POM $FILE_POM
+
   export FILE_SETTINGS=$DIR_SLASH$SETTINGS_FILE
   log_env_var FILE_SETTINGS $FILE_SETTINGS
 
