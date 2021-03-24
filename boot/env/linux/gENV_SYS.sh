@@ -6,9 +6,6 @@ log_env_enter gENV_SYS
 
   # Automatically generated values
 
-  source settings.sh
-  source gENV_PROJ.sh
-  source gENV_TAGS.sh
 
 
   export SYS_BASE=$SYS_NAME$PROJ_NAME_TAG

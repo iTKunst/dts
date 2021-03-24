@@ -5,12 +5,6 @@ log_env_enter gENV_PROJ
 
   source settings.sh
 
-  source gENV_DIRS.sh
-  source gENV_FILES.sh
-  source gENV_NAMES.sh
-  source gENV_TKNS.sh
-  source gENV_WEB.sh
-
 
   if [ -z "$PROJ_MODE" ]; then
     log_cmd PROJ_MODE may be set it in settings.sh.
