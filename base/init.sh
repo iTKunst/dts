@@ -12,5 +12,5 @@ log_enter $DIR_BASE$FILE_INIT
 
   cp $SRC .
 
- log_exit $DIR_BASE$FILE_INIT
+log_exit $DIR_BASE$FILE_INIT
 

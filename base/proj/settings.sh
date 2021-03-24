@@ -33,11 +33,15 @@ export TMPL_NAME=
 # LOGGING - MAIN
 export LOG_ON=1
 
-export LOG_ENTER_ON=0
-export LOG_EXIT_ON=0
-export LOG_LOAD_ON=0
-export LOG_UNLOAD_ON=0
-export LOG_VAR_ON=0
+export LOG_ENTER_ON=1
+export LOG_EXIT_ON=1
+export LOG_LOAD_ON=1
+export LOG_UNLOAD_ON=1
+export LOG_VAR_ON=1
+
+export LOG_ENV_ENTER_ON=0
+export LOG_ENV_EXIT_ON=0
+export LOG_ENV_VAR_ON=1
 
 # DIRECTORIES
 export DIR_DTS=dts

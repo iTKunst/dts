@@ -31,3 +31,4 @@ Use:
 ### To remove the DTS submodules from a project:
 > 1. Go to the root folder of the project
 > 2. Run **pREMOVE.sh** or **pREMOVE.cmd**
+
