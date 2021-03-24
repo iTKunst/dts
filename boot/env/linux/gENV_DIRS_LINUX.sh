@@ -24,5 +24,4 @@ log_env_enter gENV_DIRS_LINUX
   export VAR_DIR=$FOR_SLASH$VAR
 
 
-
 log_env_exit gENV_DIRS_LINUX
