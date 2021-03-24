@@ -18,12 +18,12 @@ pINIT () {
 
 	if [ -d "$DIR_TMPL_CURR" ]; then
 
-	    if [ ! -d "project" ]; then
-	      mkdir project
+	    if [ ! -d $PROJ_DIR ]; then
+	      mkdir $PROJ_DIR
 	    fi
 
 	    if [ ! -f "$PROJ_ENV_FILE" ]; then
-	      cp $DIR_TMPL_CURR$ENV_DIR$OS_DIR/pENV.sample.sh \
+	      cp $DIR_TMPL_CURR$ENV_DIR$OS_DIR$DIR_SLASH"pENV.sample.sh" \
 	         $PROJ_ENV_FILE
 	    fi
 
