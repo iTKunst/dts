@@ -10,7 +10,10 @@ log_enter $DIR_BASE$FILE_INIT
   SRC=$DIR_PROJ$FILE_INIT
   log_var SRC $SRC
 
-  cp $SRC .
+  TRG=$DIR_CURR
+  log_var TRG $TRG
+
+  cp $SRC $TRG
 
 log_exit $DIR_BASE$FILE_INIT
 
