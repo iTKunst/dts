@@ -3,7 +3,6 @@
 
 log_env_enter gENV_DIRS_OS
 
-  export DIR_SLASH=$FOR_SLASH
 
   export ANCH_DIR=$DIR_SLASH$ANCH
   export BASE_DIR=$DIR_SLASH$BASE

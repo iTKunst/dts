@@ -12,6 +12,8 @@ log_env_enter gENV_TKNS
   export STAR=*
   export WEB_SLASH=/
 
+  export DIR_SLASH=$FOR_SLASH
+
   export DIR_CURR=$DOT$DIR_SLASH
   export DIR_UP=$DOT$DOT$DIR_SLASH
 
