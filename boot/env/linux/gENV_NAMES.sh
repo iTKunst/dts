@@ -57,7 +57,7 @@ log_env_enter gENV_NAMES
   export M2=.m2
   export MISC=misc
   export MODE=d
-  export MVN=maven
+  export MVN=mvn
   export MYSQL=mysql
   export NEXUS=nexus
   export NGINX=nginx
