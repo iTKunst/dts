@@ -79,5 +79,6 @@ log_env_enter gENV_NAMES
   export VAR=var
   export WIN=win
   export WWW=www
+  export XML=xml
 
 log_env_exit gENV_NAMES

@@ -12,6 +12,7 @@ log_env_enter gENV_FILES
   export INIT_FILE=$INIT$DOT$EXT
   export LOG_FILE=log$DOT$EXT
   export SET_PATH_FILE=$SET_PATH$DOT$EXT
+  export SETTINGS_FILE=$SETTINGS$DOT$XML
 
 
 log_env_exit gENV_FILES

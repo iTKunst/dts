@@ -4,7 +4,7 @@
 
 log_enter $DIR_TMPL_CURR$SYS_DIR$FILE_INIT
 
-SRC=$DIR_SYS$MVN_DIR
+SRC=$DIR_SYS$MVN_DIR$DIR_SLASH"settings.xml"
 log_var SRC $SRC
 
 TRG=$SYS
