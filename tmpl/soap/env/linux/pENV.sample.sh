@@ -2,7 +2,7 @@
 # shellcheck disable=SC2086
 
 
-log_enter pENV
+log_env_enter pENV
 
 
 export PROJ_HOST=$SOAP_HOST
@@ -18,4 +18,4 @@ export PROJ_REPO_IP=$NEXUS3_IP
 export PROJ_REPO_PORT_EXT=$NEXUS3_PORT_EXT
 export PROJ_VER=$SOAP_VER
 
-log_exit pENV
+log_env_enter pENV
