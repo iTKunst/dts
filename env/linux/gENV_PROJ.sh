@@ -60,9 +60,6 @@ log_env_enter gENV_PROJ
   export DIR_BIN=$BIN
   log_env_var DIR_BIN $DIR_BIN
 
-  export DIR_BNDL=$DIR_BASE$BNDL_DIR
-  log_env_var DIR_BNDL $DIR_BNDL
-
   export DIR_CERT=$USR_DIR$LOCAL_DIR$SHARE_DIR$CA_CERT_DIR
   log_env_var DIR_CERT $DIR_CERT
 
