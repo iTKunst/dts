@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 source settings.sh
-source LOG.sh
+source bLOG.sh
 source $TMPL_ENV_FILE_FILE
 source pINIT.sh
 

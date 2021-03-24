@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 source settings.sh
-source LOG.sh
+source bLOG.sh
 
 
 log_enter sDEL_NET

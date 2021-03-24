@@ -3,7 +3,7 @@
 # echo pBUILD.sh [LOAD]
 
 source settings.sh
-source LOG.sh
+source bLOG.sh
 
 
 log_enter pBUILD
