@@ -4,8 +4,6 @@
 log_env_enter gENV_DIRS_LINUX
 
 
-  export DIR_SLASH=$FOR_SLASH
-
   export API_DIR=$FOR_SLASH$API
   export APP_DIR=$FOR_SLASH$APP
   export CA_CERT_DIR=$FOR_SLASH$CA_CERT
