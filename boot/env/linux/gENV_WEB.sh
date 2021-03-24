@@ -3,11 +3,6 @@
 
 log_env_enter gENV_WEB
 
-  source settings.sh
-
-  source gENV_CATS.sh
-  source gENV_NAMES.sh
-  source gENV_TKNS.sh
 
   export CA_CERT_WEB=$WEB_SLASH$CA_CERT
   export CA_TRUST_WEB=$WEB_SLASH$CA_TRUST
@@ -20,7 +15,6 @@ log_env_enter gENV_WEB
 
   export WEB_GIT_HUB=$GIT_HUB$COM_WEB
   export WEB_DTS_GIT=$HTTPS_WEB$GIT_HUB_WEB$ITK_WEB$DTS_WEB
-
 
 
 log_env_exit gENV_WEB
