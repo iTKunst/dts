@@ -70,7 +70,6 @@ log_env_enter gENV_NAMES
   export SPECS=specs
   export SRC=src
   export SYS=sys
-  export SYSTEM=system
   export TEMPL=tmpl
   export THEMES=themes
   export TMP=tmp
