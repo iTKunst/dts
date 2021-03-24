@@ -15,8 +15,6 @@ source gENV_PROJ.sh
 source gENV_WEB.sh
 
 
-# SYS
-
 
 # ANSIBLE
 
