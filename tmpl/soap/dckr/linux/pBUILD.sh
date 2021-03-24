@@ -27,7 +27,7 @@ REPO_PORT_EXT=$PROJ_REPO_PORT_EXT
 VER=$PROJ_VER
 
 log_var CONT_DIR $CONT_DIR
-log_var DOCKER_FILE $DOCKER_FILE
+log_var DOCKER_FILE $FILE_DCKR
 log_var SYS_DIR $SYS_DIR
 log_var TMPL_DIR $TMPL_DIR
 log_var HOST_DIR $HOST_DIR
@@ -61,7 +61,7 @@ DOCKER_BUILDKIT=1 \
           --build-arg REPO_PORT_EXT=$REPO_PORT_EXT \
           --build-arg VER=$VER \
           --add-host=$REPO_HOST:$REPO_IP \
-          -f $DOCKER_FILE \
+          -f $FILE_DCKR \
           -t $IMG \
           .
 
