@@ -22,9 +22,9 @@ pINIT () {
 	      mkdir project
 	    fi
 
-	    if [ ! -f "project/pENV.sh" ]; then
+	    if [ ! -f "s$PROJ_ENV_FILE" ]; then
 	      cp $DIR_TMPL_CURR$ENV_DIR$OS_DIR/pENV.sample.sh \
-	         project/pENV.sh
+	         s$PROJ_ENV_FILE
 	    fi
 
   fi
