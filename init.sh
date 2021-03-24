@@ -12,10 +12,12 @@ echo "%%%%%%%%%%%                                                               
 echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 
+  export ENV_DIR=/env
+  export CMD_DIR=/cmd
 
   export DIR_BIN=bin
-  export DIR_ENV=dts/env
   export DIR_BOOT=dts/boot
+
   export FILE_ENV=gENV.sh
   export FILE_INIT=/init.sh
   export FILE_LOG=bLOG.sh
@@ -31,10 +33,6 @@ echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   export CMD_BOOT=$DIR_BOOT$FILE_INIT
   echo CMD_BOOT is $CMD_BOOT [VAR]
   source $CMD_BOOT
-
-  export CMD_ENV=$DIR_ENV$FILE_INIT
-  echo CMD_ENV is $CMD_ENV [VAR]
-  source $CMD_ENV
 
   export CMD_BASE=$DIR_BASE$FILE_INIT
   echo CMD_BASE is $CMD_BASE [VAR]
