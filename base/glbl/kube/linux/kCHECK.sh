@@ -5,7 +5,7 @@ source LOG.sh
 
 log_enter kCHECK
 
-source sENV.sh
+source $FILE_SYS_ENV
 
 log_var SYS_DIR $SYS_DIR
 

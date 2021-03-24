@@ -6,7 +6,7 @@ source LOG.sh
 
 log_enter sVIEW
 
-source tENV.sh
+source $TMPL_ENV
 IMG_FILTER="$SYS_NAME*"
 CONT_FILTER="label=$SYS_NAME"
 NET_FILTER="name=$SYS_NAME*"

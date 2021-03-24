@@ -6,7 +6,7 @@ source LOG.sh
 
 log_enter kRUN
 
-source tENV.sh
+source $TMPL_ENV
 
 kubectl create \
         deployment \

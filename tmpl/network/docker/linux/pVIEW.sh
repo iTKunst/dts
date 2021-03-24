@@ -5,7 +5,7 @@ source LOG.sh
 
 log_load pVIEW
 
-source tENV.sh
+source $TMPL_ENV
 
 NET=$PROJ_NET
 

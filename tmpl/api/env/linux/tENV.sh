@@ -4,9 +4,9 @@
 
 log_enter tENV
 
-source sENV.sh
+source $FILE_SYS_ENV
 if [ -f "$PROJ_ENV_FILE" ]; then
-  source tENV.sh
+  source $TMPL_ENV
 fi
 
 

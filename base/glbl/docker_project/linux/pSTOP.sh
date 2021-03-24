@@ -7,7 +7,7 @@ source LOG.sh
 log_enter pSTOP
 
 
-source tENV.sh
+source $TMPL_ENV
 
 CONT=$PROJ_CONT
 log_var CONT $CONT

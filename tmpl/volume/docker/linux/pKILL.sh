@@ -6,7 +6,7 @@ source LOG.sh
 
 log_load pKILL
 
-source tENV.sh
+source $TMPL_ENV
 
 CONT=$PROJ_CONT
 

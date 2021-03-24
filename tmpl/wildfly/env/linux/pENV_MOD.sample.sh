@@ -4,7 +4,7 @@
 
 log_enter tENV
 
-source sENV.sh
+source $FILE_SYS_ENV
 
 
 export PROJ_HOST=$WF_HOST

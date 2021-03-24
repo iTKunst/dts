@@ -6,7 +6,7 @@ source LOG.sh
 
 log_load pPUBLISH
 
-source tENV.sh
+source $TMPL_ENV
 
 CONT=$PROJ_CONT
 CONT_DIR=$PROJ_CONT_DIR

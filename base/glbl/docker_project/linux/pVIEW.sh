@@ -6,7 +6,7 @@ source LOG.sh
 
 log_enter pVIEW
 
-source tENV.sh
+source $TMPL_ENV
 
 CONT=$PROJ_CONT
 IMG=$PROJ_IMG

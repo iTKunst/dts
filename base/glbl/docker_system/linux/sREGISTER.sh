@@ -7,7 +7,7 @@ source LOG.sh
 log_enter sREGISTER
 
 
-source sENV.sh
+source $FILE_SYS_ENV
 
 REPO_GRP=$DCKR_REPO_GRP
 REPO_HST=$DCKR_REPO_HST
