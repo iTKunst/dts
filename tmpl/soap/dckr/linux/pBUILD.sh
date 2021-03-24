@@ -4,13 +4,13 @@
 
 source settings.sh
 source bLOG.sh
+source tENV.sh
 
 
 log_enter pBUILD
 
 
 source pSTOP.sh
-source tENV.sh
 
 CONT_DIR=$PROJ_CONT_DIR
 HOST_DIR=$PROJ_HOST_DIR
