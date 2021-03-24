@@ -16,8 +16,10 @@ log_env_enter gENV_NAMES
   export CA_CERT=ca-certificates
   export CA_TRUST=ca-trust
   export CLI=cli
+  export CMD=cmd
   export CODE=code
   export COM=com
+  export COMPOSE=compose
   export CONTENT=content
   export DATA=data
   export DCKR=docker
@@ -46,6 +48,7 @@ log_env_enter gENV_NAMES
   export JBOSS=jboss
   export JSON=json
   export KEYCLOAK=keycloak
+  export KUBE=kube
   export LIB=lib
   export LINUX=linux
   export LOCAL=local
@@ -59,6 +62,7 @@ log_env_enter gENV_NAMES
   export NGINX=nginx
   export NODE=node
   export OPT=opt
+  export OPENSHIFT=openshift
   export OS=linux
   export PG=postgresql
   export PKI=pki
