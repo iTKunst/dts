@@ -3,8 +3,6 @@
 
 log_env_enter gENV_DIRS_LINUX
 
-  source settings.sh
-
   source gENV_CATS.sh
   source gENV_NAMES.sh
   source gENV_TKNS.sh
