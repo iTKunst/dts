@@ -59,5 +59,4 @@ log_env_enter gENV_DIRS_OS
   export WP_CONTENT_DIR=$WP_DIR$DASH$CONTENT
 
 
-
-log_env_exit gENV_DIRS
+log_env_exit gENV_DIRS_OS
