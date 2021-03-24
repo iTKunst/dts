@@ -23,6 +23,7 @@ log_env_enter gENV_NAMES
   export CONTENT=content
   export DATA=data
   export DCKR=dckr
+  export DOCKER=docker
   export DPLY=deployment
   export DTS=dts
   export ENV=env

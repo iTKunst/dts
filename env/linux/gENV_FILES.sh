@@ -8,7 +8,7 @@ log_env_enter gENV_FILES
   source gENV_TKNS.sh
 
   export API_JSON_FILE=$API$DOT$JSON
-  export DCKR_FILE=$DCKR$FILE
+  export DOCKER_FILE=$DOCKER$FILE
   export ENV_PROJ_FILE=$ENV_PROJ$DOT$EXT
   export ENV_SYS_FILE=$ENV_SYS$DOT$EXT
   export ENV_TMPL_FILE=$ENV_TMPL$DOT$EXT
