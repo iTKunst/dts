@@ -7,7 +7,7 @@ log_enter $DIR_TMPL_CURR$SYS_DIR$FILE_INIT
 SRC=$DIR_SYS$MVN_DIR
 log_var SRC $SRC
 
-TRG=$DIR_SYS
+TRG=$SYS
 log_var TRG $TRG
 
 mkdir -p $TRG
