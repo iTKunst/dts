@@ -6,7 +6,7 @@ source LOG.sh
 
 log_enter sINSPECT
 
-source project/pENV.sh
+source tENV.sh
 
 log_var DB_VOL $DB_VOL
 log_var DB_MS_VOL $DB_MS_VOL

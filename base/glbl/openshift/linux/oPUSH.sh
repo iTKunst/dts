@@ -9,7 +9,7 @@ log_enter oPUSH
 
 
 source pTAG.sh
-source project/pENV.sh
+source tENV.sh
 
 IMG=$PROJ_IMG
 REPO=$DCKR_REPO_HST

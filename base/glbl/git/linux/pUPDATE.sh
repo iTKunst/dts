@@ -2,7 +2,7 @@
 # shellcheck disable=SC2086
 source settings.sh
 source LOG.sh
-source project/pENV.sh
+source tENV.sh
 source pINIT.sh
 
 DEF_URI_DTS_GIT=https://github.com/iTKunst/dts
@@ -28,7 +28,7 @@ pUPDATE() {
   cd ..
 
   source $DIR_DTS$FILE_INIT
-  source project/pENV.sh
+  source tENV.sh
   pINIT
 
   log_exit pUPDATE

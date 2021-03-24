@@ -6,7 +6,7 @@ source LOG.sh
 
 log_enter sVIEW
 
-source project/pENV.sh
+source tENV.sh
 IMG_FILTER="$SYS_NAME*"
 CONT_FILTER="label=$SYS_NAME"
 NET_FILTER="name=$SYS_NAME*"

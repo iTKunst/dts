@@ -7,7 +7,7 @@ source LOG.sh
 log_enter sDEL_IMG
 
 
-source project/pENV.sh
+source tENV.sh
 FILTER="reference=$SYS_NAME*"
 log_var FILTER $FILTER
 log_var SYS_NAME $SYS_NAME

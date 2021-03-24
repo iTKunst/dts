@@ -7,7 +7,7 @@ source LOG.sh
 
 log_enter pTAG
 
-source project/pENV.sh
+source tENV.sh
 
 IMG=$PROJ_IMG
 REPO=$DCKR_REPO_HST

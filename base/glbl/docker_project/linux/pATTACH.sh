@@ -6,7 +6,7 @@ source LOG.sh
 
 log_enter pATTACH
 
-source project/pENV.sh
+source tENV.sh
 
 CONT=$PROJ_CONT
 log_var CONT $CONT

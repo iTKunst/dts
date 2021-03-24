@@ -6,7 +6,7 @@ source LOG.sh
 
 log_enter sSTOP
 
-source project/pENV.sh
+source tENV.sh
 LABEL=$PROJ_LABEL
 CONT_FILTER="label=$LABEL"
 log_var CONT_FILTER $CONT_FILTER

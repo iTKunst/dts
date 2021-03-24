@@ -6,7 +6,7 @@ source LOG.sh
 
 log_enter kRUN
 
-source project/pENV.sh
+source tENV.sh
 
 kubectl create \
         deployment \
