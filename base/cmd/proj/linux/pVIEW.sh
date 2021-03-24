@@ -6,7 +6,7 @@ source bLOG.sh
 
 log_enter pVIEW
 
-source $TMPL_ENV_FILE_FILE
+source tENV.sh
 
 CONT=$PROJ_CONT
 IMG=$PROJ_IMG

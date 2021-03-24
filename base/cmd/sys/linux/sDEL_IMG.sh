@@ -7,7 +7,7 @@ source bLOG.sh
 log_enter sDEL_IMG
 
 
-source $TMPL_ENV_FILE_FILE
+source tENV.sh
 FILTER="reference=$SYS_NAME*"
 log_var FILTER $FILTER
 log_var SYS_NAME $SYS_NAME

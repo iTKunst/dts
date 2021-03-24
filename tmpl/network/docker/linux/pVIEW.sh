@@ -5,7 +5,7 @@ source bLOG.sh
 
 log_load pVIEW
 
-source $TMPL_ENV_FILE_FILE
+source tENV.sh
 
 NET=$PROJ_NET
 

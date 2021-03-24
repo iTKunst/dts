@@ -9,7 +9,7 @@ source bLOG.sh
 log_enter pBUILD
 
 
-source $TMPL_ENV_FILE
+source tENV.sh
 
 CONT_DIR=$PROJ_CONT_DIR
 HOST_DIR=$PROJ_HOST_DIR

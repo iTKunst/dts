@@ -9,7 +9,7 @@ source bLOG.sh
 log_enter pINSTALL
 
 
-source $TMPL_ENV_FILE_FILE
+source tENV.sh
 
 log_var SYS_DIR $SYS_DIR
 log_var PROJ_NAME $PROJ_NAME

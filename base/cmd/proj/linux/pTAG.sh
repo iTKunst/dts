@@ -7,7 +7,7 @@ source bLOG.sh
 
 log_enter pTAG
 
-source $TMPL_ENV_FILE_FILE
+source tENV.sh
 
 IMG=$PROJ_IMG
 REPO=$DCKR_REPO_HST

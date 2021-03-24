@@ -6,7 +6,7 @@ source bLOG.sh
 
 log_load pBUILD
 
-source $TMPL_ENV_FILE_FILE
+source tENV.sh
 
 CONT_DIR=$PROJ_CONT_HOME_DIR
 IMG=$PROJ_IMG

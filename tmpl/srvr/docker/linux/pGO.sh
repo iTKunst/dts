@@ -6,7 +6,7 @@ source bLOG.sh
 
 log_load pGO
 
-source $TMPL_ENV_FILE_FILE
+source tENV.sh
 
 CONT=$PROJ_CONT
 CONT_DIR=$PROJ_CONT_DIR

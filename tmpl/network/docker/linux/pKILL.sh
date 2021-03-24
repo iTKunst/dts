@@ -6,7 +6,7 @@ source bLOG.sh
 
 log_load pKILL
 
-source $TMPL_ENV_FILE_FILE
+source tENV.sh
 
 NET=$PROJ_NET
 log_var NET $NET

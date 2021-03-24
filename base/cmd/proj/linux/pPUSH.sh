@@ -9,7 +9,7 @@ log_enter pPUSH
 
 
 source pTAG.sh
-source $TMPL_ENV_FILE_FILE
+source tENV.sh
 
 IMG=$PROJ_IMG
 REPO=$DCKR_REPO_HST

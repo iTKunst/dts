@@ -7,7 +7,7 @@ source bLOG.sh
 log_enter sDEL_CONT
 
 
-source $TMPL_ENV_FILE_FILE
+source tENV.sh
 
 FILTER="label=$SYS_NAME"
 

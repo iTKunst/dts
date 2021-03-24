@@ -4,7 +4,7 @@
 
 log_enter pENV
 
-source $TMPL_ENV_FILE
+source tENV.sh
 
 
 export PROJ_LABEL=$SYS_NAME

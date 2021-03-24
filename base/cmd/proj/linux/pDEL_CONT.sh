@@ -7,7 +7,7 @@ source bLOG.sh
 log_enter pDEL_CONT
 
 
-source $TMPL_ENV_FILE_FILE
+source tENV.sh
 
 CONT=$PROJ_CONT
 log_var CONT $CONT
