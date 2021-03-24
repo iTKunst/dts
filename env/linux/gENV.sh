@@ -12,6 +12,7 @@ source gENV_SYS.sh
 source gENV_TAGS.sh
 source gENV_TKNS.sh
 source gENV_PROJ.sh
+source gENV_SYS.sh
 source gENV_WEB.sh
 
 
