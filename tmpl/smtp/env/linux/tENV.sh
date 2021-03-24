@@ -3,7 +3,7 @@
 
 log_enter tENV
 
-source $FILE_SYS_ENV
+source sENV.sh
 
 
 export PROJ_LABEL=$SYS_NAME
