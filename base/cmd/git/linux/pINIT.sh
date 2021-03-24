@@ -22,9 +22,17 @@ pINIT () {
 	      mkdir $PROJ
 	    fi
 
+      log_var PROJ_ENV_FILE $PROJ_ENV_FILE
+
 	    if [ ! -f $PROJ_ENV_FILE ]; then
-	      cp $DIR_TMPL_CURR$ENV_DIR$OS_DIR$DIR_SLASH"pENV.sample.sh" \
-	         $PROJ_ENV_FILE
+
+	      SRC=$DIR_TMPL_CURR$ENV_DIR$OS_DIR$DIR_SLASH"pENV.sample.sh"
+	      log_var SRC $SRC
+
+	      TRG=$PROJ_ENV_FILE
+	      log_var TRG $TRG
+
+	      cp $SRC $TRG
 	    fi
 
   fi
