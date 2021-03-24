@@ -8,6 +8,7 @@ log_env_enter gENV_TKNS
   export DASH=-
   export DOT=.
   export FOR_SLASH=/
+  export SPLIT=_
   export STAR=*
   export WEB_SLASH=/
 
