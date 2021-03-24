@@ -6,10 +6,10 @@ log_env_enter gENV
 
 # Automatically generated or default values
 
-source settings.sh
 source gENV_DIRS_LINUX.sh
 source gENV_DIRS_OS.sh
 source gENV_FILES.sh
+source gENV_SYS.sh
 source gENV_TAGS.sh
 source gENV_TKNS.sh
 source gENV_PROJ.sh
@@ -18,11 +18,6 @@ source gENV_WEB.sh
 
 # SYS
 
-export SYS_BASE=$SYS_NAME$PROJ_TAG
-export SYS_NET=$SYS_NAME$NET_TAG
-
-export SYS_CONT=$SYS_BASE$CONT_TAG
-export SYS_IMG=$SYS_BASE$IMG_TAG
 
 # ANSIBLE
 
