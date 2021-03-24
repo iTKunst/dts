@@ -40,7 +40,7 @@ echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   source $CMD_BASE
 
   export UP=$DOT$DOT$DIR_SLASH
-  export CMD_SYS=$UP$UP$DIR_SYS$FILE_INIT
+  export CMD_SYS=$DIR_SYS$FILE_INIT
   echo CMD_SYS is $CMD_SYS [VAR]
   source $CMD_SYS
 
