@@ -7,6 +7,8 @@ log_env_enter gENV_SYS
   # Automatically generated values
 
 
+  export PROJ_NAME_TAG=$SPLIT$PROJ_NAME
+  log_env_var PROJ_NAME_TAG $PROJ_NAME_TAG
 
   export SYS_BASE=$SYS_NAME$PROJ_NAME_TAG
   log_env_var SYS_BASE $SYS_BASE

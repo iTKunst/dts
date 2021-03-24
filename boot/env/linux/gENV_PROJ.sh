@@ -3,8 +3,6 @@
 
 log_env_enter gENV_PROJ
 
-  source settings.sh
-
 
   if [ -z "$PROJ_MODE" ]; then
     log_cmd PROJ_MODE may be set it in settings.sh.
@@ -47,9 +45,6 @@ log_env_enter gENV_PROJ
 
   export TMPL_NAME_DIR=$DIR_SLASH$TMPL_NAME
   log_env_var TMPL_NAME_DIR $TMPL_NAME_DIR
-
-  export PROJ_NAME_TAG=$SPLIT$PROJ_NAME
-  log_env_var PROJ_NAME_TAG $PROJ_NAME_TAG
 
   export DIR_BASE=$DIR_DTS$BASE_DIR
   log_env_var DIR_BASE $DIR_BASE
