@@ -2,11 +2,11 @@
 .git/
 node_modules/
 
-bin/
-dts/
-sys/
-target/
-
+/bin/
+/dts/
+/sys/
+/target/
+/tmpl/
 
 code/src/
 
