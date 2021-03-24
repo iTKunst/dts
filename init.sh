@@ -35,7 +35,7 @@ echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   echo CMD_ENV is $CMD_ENV [VAR]
   source $CMD_ENV
 
-  export CMD_BASE=$DIR_BASE$FILE_INIT
+  export CMD_BASE=$DIR_BASE$CMD_DIR$FILE_INIT
   echo CMD_BASE is $CMD_BASE [VAR]
   source $CMD_BASE
 
