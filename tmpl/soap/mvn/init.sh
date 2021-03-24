@@ -2,12 +2,12 @@
 # shellcheck disable=SC2086
 
 
-log_enter $DIR_TMPL_CURR$SYS_DIR$FILE_INIT
+log_enter $DIR_TMPL_CURR$MVN_DIR$FILE_INIT
 
-SRC=$DIR_SYS$MVN_DIR$FILE_SETTINGS
+SRC=$DIR_TMPL_CURR$MVN_DIR$FILE_SETTINGS
 log_var SRC $SRC
 
-TRG=$SYS
+TRG=$TMPL
 log_var TRG $TRG
 
 mkdir -p $TRG
@@ -15,4 +15,4 @@ mkdir -p $TRG
 cp $SRC $TRG
 
 
-log_exit $DIR_TMPL_CURR$SYS_DIR$FILE_INIT
+log_exit $DIR_TMPL_CURR$MVN_DIR$FILE_INIT
