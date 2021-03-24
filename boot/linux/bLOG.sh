@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-echo bLOG [LOAD]
+# echo bLOG [LOAD]
 
   log()
   {
@@ -143,4 +143,4 @@ echo bLOG [LOAD]
     fi
   }
 
-echo bLOG [UNLOAD]
+# echo bLOG [UNLOAD]
