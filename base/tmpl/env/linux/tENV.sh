@@ -5,7 +5,7 @@
 log_enter tENV
 
 source sENV.sh
-if [ -f "s$PROJ_ENV_FILE" ]; then
+if [ -f "$PROJ_ENV_FILE" ]; then
   source $PROJ_ENV_FILE
 fi
 
