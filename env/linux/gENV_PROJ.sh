@@ -96,7 +96,7 @@ log_env_enter gENV_PROJ
   export FILE_ENV_SYS=$ENV_SYS_FILE
   log_env_var FILE_ENV_SYS $FILE_ENV_SYS
 
-  export FILE_ENV_TMPL=$ENV_TMPL_FILE
+  export FILE_ENV_TMPL=$DIR_SLASH$ENV_TMPL_FILE
   log_env_var FILE_ENV_TMPL $FILE_ENV_TMPL
 
 
