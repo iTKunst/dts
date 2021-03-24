@@ -1,11 +1,11 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-log_enter tENV
+log_env_enter tENV
 
 source sENV.sh
 
-log_var PROJ_ENV_FILE $PROJ_ENV_FILE
+log_env_var PROJ_ENV_FILE $PROJ_ENV_FILE
 
 if [ -f $PROJ_ENV_FILE ]; then
   source $PROJ_ENV_FILE
@@ -26,4 +26,4 @@ export PROJ_VOL=$SOAP_VOL
 
 export PROJ_CONT_CERT_DIR=$SOAP_CONT_CERT_DIR
 
-log_exit tENV
+log_env_exit tENV
