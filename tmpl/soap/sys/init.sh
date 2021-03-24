@@ -10,8 +10,6 @@ log_var SRC $SRC
 TRG=$SYS
 log_var TRG $TRG
 
-mkdir -p $TRG
-
 cp $SRC $TRG
 
 
