@@ -2,14 +2,14 @@
 # shellcheck disable=SC2086
 
 
-log_enter $DIR_TMPL"sys"$FILE_INIT
+log_enter $DIR_TMPL_CURR$SYS_DIR$FILE_INIT
 
-SRC=../../system/maven
-TRG=system
+SRC=$DIR_SYS$MVN_DIR
+TRG=
 
 mkdir -p $TRG
 
 cp $SRC $TRG
 
 
-log_exit $DIR_TMPL"sys"$FILE_INIT
+log_exit $DIR_TMPL_CURR$SYS_DIR$FILE_INIT
