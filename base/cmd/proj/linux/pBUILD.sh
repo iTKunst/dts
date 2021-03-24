@@ -21,11 +21,12 @@ log_enter pBUILD
 source tENV.sh
 
 CONT_DIR=$PROJ_CONT_DIR
+DOCKERFILE=$TMPL$FILE_DCKR
 HOST_DIR=$PROJ_HOST_DIR
 IMG=$PROJ_IMG
 
 log_var CONT_DIR $CONT_DIR
-log_var DCKR_URI $DCKR_URI
+log_var DOCKERFILE $DOCKERFILE
 log_var HOST_DIR $HOST_DIR
 log_var IMG $IMG
 log_var SYS_DIR $DIR_SYS
@@ -39,7 +40,7 @@ DOCKER_BUILDKIT=1 \
           --build-arg HOST_DIR=$HOST_DIR \
           --build-arg SYS_DIR=$SYS_DIR \
           --build-arg TMPL_DIR=$TMPL_DIR \
-          -f $DCKR_URI \
+          -f $DOCKERFILE \
           -t $IMG \
           .
 
