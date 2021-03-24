@@ -24,6 +24,9 @@ log_env_enter gENV_NAMES
   export DPLY=deployment
   export DTS=dts
   export ENV=env
+  export ENV_PROJ=pENV
+  export ENV_SYS=sENV
+  export ENV_TMPL=tENV
   export ETC=etc
   export EXT=sh
   export EXTRA=extra
