@@ -8,7 +8,6 @@ log_env_enter gENV
 
 source gENV_DIRS.sh
 source gENV_FILES.sh
-source gENV_SYS.sh
 source gENV_TAGS.sh
 source gENV_TKNS.sh
 source gENV_PROJ.sh
