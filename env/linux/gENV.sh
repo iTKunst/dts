@@ -7,7 +7,8 @@ log_env_enter gENV
 # Automatically generated or default values
 
 source settings.sh
-source gENV_DIRS.sh
+source gENV_DIRS_LINUX.sh
+source gENV_DIRS_OS.sh
 source gENV_FILES.sh
 source gENV_TAGS.sh
 source gENV_TKNS.sh
