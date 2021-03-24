@@ -3,10 +3,6 @@
 
 log_env_enter gENV_DIRS_OS
 
-  source gENV_CATS.sh
-  source gENV_NAMES.sh
-  source gENV_TKNS.sh
-
   export DIR_SLASH=$FOR_SLASH
 
   export ANCH_DIR=$DIR_SLASH$ANCH

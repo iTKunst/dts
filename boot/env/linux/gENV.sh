@@ -6,10 +6,13 @@ log_env_enter gENV
 
 # Automatically generated or default values
 
+  source gENV_CATS.sh
+  source gENV_NAMES.sh
+  source gENV_TKNS.sh
+
 source gENV_DIRS.sh
 source gENV_FILES.sh
 source gENV_TAGS.sh
-source gENV_TKNS.sh
 source gENV_PROJ.sh
 source gENV_SYS.sh
 source gENV_WEB.sh

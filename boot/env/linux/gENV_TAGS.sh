@@ -3,10 +3,6 @@
 
 log_env_enter gENV_TAGS
 
-  source gENV_CATS.sh
-  source gENV_NAMES.sh
-  source gENV_TKNS.sh
-
   export ADMIN_TAG=$SPLIT$ADMIN
   export ANS_TAG=$SPLIT$ANS
   export API_TAG=$SPLIT$API
