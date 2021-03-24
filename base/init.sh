@@ -5,7 +5,7 @@
 log_enter $DIR_BASE$FILE_INIT
 
 
-  source $DIR_GLBL$FILE_INIT
+  source $DIR_CMD$FILE_INIT
 
   SRC=$DIR_PROJ$FILE_INIT
   log_var SRC $SRC
