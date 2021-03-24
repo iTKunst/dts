@@ -18,8 +18,8 @@ pINIT () {
 
 	if [ -d "$DIR_TMPL_CURR" ]; then
 
-	    if [ ! -d $PROJ_DIR ]; then
-	      mkdir $PROJ_DIR
+	    if [ ! -d $PROJ ]; then
+	      mkdir $PROJ
 	    fi
 
 	    if [ ! -f "$PROJ_ENV_FILE" ]; then
