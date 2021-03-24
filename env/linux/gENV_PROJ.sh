@@ -8,6 +8,7 @@ log_env_enter gENV_PROJ
   source gENV_DIRS.sh
   source gENV_FILES.sh
   source gENV_NAMES.sh
+  source gENV_TKNS.sh
   source gENV_WEB.sh
 
 
@@ -71,7 +72,7 @@ log_env_enter gENV_PROJ
   export DIR_PROJ=$DIR_BASE$PROJ_DIR
   log_env_var DIR_PROJ $DIR_PROJ
 
-  export DIR_SYS=$UP$UP$SYS
+  export DIR_SYS=$DIR_UP$DIR_UP$SYS
   log_env_var DIR_SYS $DIR_SYS
 
   export DIR_TMPL=$DIR_DTS$TMPL_DIR
