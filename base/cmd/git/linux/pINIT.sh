@@ -26,12 +26,12 @@ pINIT () {
 
       log_var PROJ_ENV_FILE $PROJ_ENV_FILE
 
-	    if [ ! -f $PROJ_ENV_FILE ]; then
+	    if [ ! -f $FILE_ENV_PROJ ]; then
 
 	      SRC=$DIR_TMPL_CURR$ENV_DIR$OS_DIR$DIR_SLASH"pENV.sample.sh"
 	      log_var SRC $SRC
 
-	      TRG=$PROJ_ENV_FILE
+	      TRG=$FILE_ENV_PROJ
 	      log_var TRG $TRG
 
 	      cp $SRC $TRG
