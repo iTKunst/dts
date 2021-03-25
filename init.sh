@@ -50,6 +50,8 @@ echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     echo create $DIR_TMPL
   fi
 
+  sleep 10
+
   export CMD_BOOT=$DIR_BOOT$FILE_INIT
   echo CMD_BOOT is $CMD_BOOT [VAR]
   source $CMD_BOOT
