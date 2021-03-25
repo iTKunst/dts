@@ -9,6 +9,7 @@ log_env_enter gENV_CATS
   export API=api
   export CG=cg
   export CLI=cli
+  export CLNT=clnt
   export CONT=cont
   export DB=db
   export DBG=dbg
@@ -44,4 +45,5 @@ log_env_enter gENV_CATS
   export WF=wf
   export WP=wp
 
+  export SOAP_CLNT=$SOAP$
 log_env_exit gENV_CATS
