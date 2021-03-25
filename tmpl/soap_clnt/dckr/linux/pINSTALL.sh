@@ -12,7 +12,7 @@ log_enter pINSTALL
 source tENV.sh
 
 
-export TRG=$DIR_SYS$SOAP_DIR$DIR_SLASH$PROJ_NAME$DIR_SLASH$CLNT$DIR_SLASH$STAR
+export TRG=$DIR_SYS$SOAP_DIR$DIR_SLASH$PROJ_NAME$DIR_SLASH$CLNT
 log_var TRG $TRG
 
 export SRC=target/generated-sources/axis2
