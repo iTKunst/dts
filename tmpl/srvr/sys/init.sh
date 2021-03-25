@@ -1,0 +1,19 @@
+#!/bin/bash
+# shellcheck disable=SC2086
+
+
+log_enter $DIR_TMPL_CURR$SYS_DIR$FILE_INIT
+
+CMD_MVN=$DIR_SYS$MVN_DIR$FILE_INIT
+log_var CMD_MVN $CMD_MVN
+source $CMD_MVN
+
+CMD_WSDL=$DIR_SYS$SOAP_DIR$FILE_INIT
+log_var CMD_WSDL $CMD_WSDL
+source $CMD_WSDL
+
+CMD_NEX=$DIR_SYS$NEXUS_DIR$FILE_INIT
+log_var CMD_NEX $CMD_NEX
+source $CMD_NEX
+
+log_exit $DIR_TMPL_CURR$SYS_DIR$FILE_INIT
