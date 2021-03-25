@@ -33,11 +33,11 @@ RUN mkdir -p ${CONT_DIR}
 
 WORKDIR ${CONT_DIR}
 
-COPY ./${TMPL_DIR}/mvn/pom.xml .
-COPY ./${SYS_DIR}/soap/*.wsdl .
+COPY ${TMPL_DIR}/pom.xml .
+COPY ${SYS_DIR}/*.wsdl .
 
 RUN mkdir -p /root/.m2
-COPY ./${SYS_DIR}/maven/settings.xml /root/.m2/settings.xml
+COPY ${SYS_DIR}/settings.xml /root/.m2/settings.xml
 
 RUN mkdir -p ${CONT_CERT_DIR}
 
