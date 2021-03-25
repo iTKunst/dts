@@ -24,18 +24,23 @@ echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
   if [ ! -d $DIR_BIN ]; then
-    mkdir $DIR_BIN
+    mkdir -p $DIR_BIN
     echo create $DIR_BIN
   fi
 
-  if [ ! -d $TMPL ]; then
-    mkdir $TMPL
-    echo create $TMPL
+  if [ ! -d $PROJ ]; then
+    mkdir -p $PROJ
+    echo create $PROJ
   fi
 
   if [ ! -d $SYS ]; then
-    mkdir $SYS
+    mkdir -p $SYS
     echo create $SYS
+  fi
+
+  if [ ! -d $TMPL ]; then
+    mkdir -p $TMPL
+    echo create $TMPL
   fi
 
   export CMD_BOOT=$DIR_BOOT$FILE_INIT
