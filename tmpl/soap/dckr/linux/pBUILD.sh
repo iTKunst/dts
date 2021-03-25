@@ -36,10 +36,11 @@ REPO_IP=$PROJ_REPO_IP
 REPO_PORT_EXT=$PROJ_REPO_PORT_EXT
 VER=$PROJ_VER
 
+
 log_var CONT_DIR $CONT_DIR
 log_var DOCKER_FILE $FILE_DCKR
-log_var SYS_DIR $SYS_DIR
-log_var TMPL_DIR $TMPL_DIR
+log_var SYS $SYS
+log_var TMPL $TMPL
 log_var HOST_DIR $HOST_DIR
 log_var IMG $IMG
 log_var TMPL_NAME $TMPL_NAME
@@ -61,8 +62,8 @@ DOCKER_BUILDKIT=1 \
           --no-cache \
           --build-arg CONT_DIR=$CONT_DIR \
           --build-arg HOST_DIR=$HOST_DIR \
-          --build-arg SYS_DIR=$SYS_DIR \
-          --build-arg TMPL_DIR=$TMPL_DIR \
+          --build-arg SYS_DIR=$SYS \
+          --build-arg TMPL_DIR=$TMPL \
           --build-arg ART=$ART \
           --build-arg CONT_CERT_DIR=$CONT_CERT_DIR \
           --build-arg FILE=$FILE \
