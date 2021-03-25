@@ -1,4 +1,4 @@
-# tmpl_soap
+# soap_client
 
 Project template for building java clients based on wsdl
 
