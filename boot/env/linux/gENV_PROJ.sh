@@ -94,6 +94,9 @@ log_env_enter gENV_PROJ
   export FILE_ENV_TMPL=$DIR_SLASH$ENV_TMPL_FILE
   log_env_var FILE_ENV_TMPL $FILE_ENV_TMPL
 
+  export BUILD_DCKR=$TMPL_DIR$FILE_DCKR
+  log_env_var BUILD_DCKR $BUILD_DCKR
+
 log_env_exit gENV_PROJ
 
 return 0
