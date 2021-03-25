@@ -41,7 +41,7 @@ COPY ${SYS_DIR}/settings.xml /root/.m2/settings.xml
 
 RUN mkdir -p ${CONT_CERT_DIR}
 
-COPY ./${SYS_DIR}/nexus/nexus.crt ${CONT_CERT_DIR}
+COPY ${SYS_DIR}/nexus.crt ${CONT_CERT_DIR}
 RUN update-ca-certificates -v
 
 # build all dependencies for offline use
