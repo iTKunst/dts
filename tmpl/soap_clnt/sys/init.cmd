@@ -9,8 +9,6 @@ rem echo %DIR_TMPL%%DIR_SLASH%%FILE_INIT% [ENTER]
   SET "TRG=%SYS%"
   rem echo TRG is %TRG%
 
-  mkdir -p $TRG
-
   xcopy /q /y %SRC% %$TRG% >NUL
 
 
