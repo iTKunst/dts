@@ -12,7 +12,7 @@ log_enter pINSTALL
 source tENV.sh
 
 
-export TARGET=$DIR_SYS$SOAP_DIR/$PROJ_NAME
+export TARGET=$DIR_SYS$SOAP_DIR$DIR_SLASH$PROJ_NAME$DIR_SLASH$CLNT$DIR_SLASH$STAR
 log_var TARGET $TARGET
 
 export SOURCE=./target/generated-sources/axis2
