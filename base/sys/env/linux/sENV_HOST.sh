@@ -165,11 +165,11 @@ log_enter sENV_HOST
   export SOAP_CLNT_IP=0.0.0.0
   export SOAP_CLNT_PORT_EXT=8500
 
-  # SOAP_CLNT
+  # SOAP_SRVR
 
-  export SOAP_CLNT_HOST=0.0.0.0
-  export SOAP_CLNT_IP=0.0.0.0
-  export SOAP_CLNT_PORT_EXT=8550
+  export SOAP_SRVR_HOST=0.0.0.0
+  export SOAP_SRVR_IP=0.0.0.0
+  export SOAP_SRVR_PORT_EXT=8550
 
   # SRVR
 
