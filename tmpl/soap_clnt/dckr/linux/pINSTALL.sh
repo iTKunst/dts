@@ -13,13 +13,13 @@ source tENV.sh
 
 
 export TRG=$DIR_SYS$SOAP_DIR$DIR_SLASH$PROJ_NAME$DIR_SLASH$CLNT$DIR_SLASH$STAR
-log_var TARGET $TARGET
+log_var TRG $TRG
 
-export SOURCE=./target/generated-sources/axis2
-log_var SOURCE $SOURCE
+export SRC=target/generated-sources/axis2
+log_var SRC $SRC
 
-mkdir -p $TARGET
+mkdir -p $TRG
 shopt -s dotglob
-cp -r $SOURC/* $TARGET
+cp -r $SRC $TRG
 
 log_exit pINSTALL
