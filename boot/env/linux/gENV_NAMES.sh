@@ -21,6 +21,7 @@ log_env_enter gENV_NAMES
   export COM=com
   export COMPOSE=compose
   export CONTENT=content
+  export CRT=crt
   export DATA=data
   export DCKR=dckr
   export DOCKER=docker

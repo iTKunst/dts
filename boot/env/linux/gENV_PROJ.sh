@@ -79,6 +79,9 @@ log_env_enter gENV_PROJ
   export FILE_LOG=$DIR_SLASH$LOG_FILE
   log_env_var FILE_LOG $FILE_LOG
 
+  export FILE_NEXUS=$DIR_SLASH$NEXUS_FILE
+  log_env_var FILE_NEXUS $FILE_NEXUS
+
   export FILE_POM=$DIR_SLASH$POM_FILE
   log_env_var FILE_POM $FILE_POM
 
