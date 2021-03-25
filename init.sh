@@ -23,21 +23,25 @@ echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   export FILES=/linux/*.sh
 
 
+  echo DIR_BIN is $DIR_BIN [VAR]
   if [ ! -d $DIR_BIN ]; then
     mkdir -p $DIR_BIN
     echo create $DIR_BIN
   fi
 
+  echo PROJ is $PROJ [VAR]
   if [ ! -d $PROJ ]; then
     mkdir -p $PROJ
     echo create $PROJ
   fi
 
+  echo SYS is $SYS [VAR]
   if [ ! -d $SYS ]; then
     mkdir -p $SYS
     echo create $SYS
   fi
 
+  echo TMPL is $TMPL [VAR]
   if [ ! -d $TMPL ]; then
     mkdir -p $TMPL
     echo create $TMPL
