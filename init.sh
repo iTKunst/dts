@@ -15,6 +15,9 @@ echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
   export DIR_BIN=bin
   export DIR_BOOT=dts/boot
+  export DIR_PROJ=proj
+  export DIR_SYS=sys
+  export DIR_TMPL=tmpl
 
   export FILE_ENV=gENV.sh
   export FILE_INIT=/init.sh
@@ -29,22 +32,22 @@ echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     echo create $DIR_BIN
   fi
 
-  echo PROJ is $PROJ [VAR]
-  if [ ! -d $PROJ ]; then
-    mkdir -p $PROJ
-    echo create $PROJ
+  echo DIR_PROJ is $DIR_PROJ [VAR]
+  if [ ! -d $DIR_PROJ ]; then
+    mkdir -p $DIR_PROJ
+    echo create $DIR_PROJ
   fi
 
-  echo SYS is $SYS [VAR]
-  if [ ! -d $SYS ]; then
-    mkdir -p $SYS
-    echo create $SYS
+  echo DIR_SYS is $DIR_SYS [VAR]
+  if [ ! -d $DIR_SYS ]; then
+    mkdir -p $DIR_SYS
+    echo create $DIR_SYS
   fi
 
-  echo TMPL is $TMPL [VAR]
-  if [ ! -d $TMPL ]; then
-    mkdir -p $TMPL
-    echo create $TMPL
+  echo DIR_TMPL is $DIR_TMPL [VAR]
+  if [ ! -d $DIR_TMPL ]; then
+    mkdir -p $DIR_TMPL
+    echo create $DIR_TMPL
   fi
 
   export CMD_BOOT=$DIR_BOOT$FILE_INIT
