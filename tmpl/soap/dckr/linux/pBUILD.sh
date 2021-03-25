@@ -28,7 +28,6 @@ IMG=$PROJ_IMG
 USER=$PROJ_USER
 
 ART=$PROJ_ART
-CONT_CERT_DIR=$PROJ_CONT_CERT_DIR
 FILE=$PROJ_FILE
 GRP=$PROJ_GRP
 REPO_HOST=$PROJ_REPO_HOST
@@ -48,7 +47,7 @@ log_var TMPL_NAME $TMPL_NAME
 log_var USER $USER
 
 log_var ART $ART
-log_var CONT_CERT_DIR $CONT_CERT_DIR
+log_var DIR_CERT $DIR_CERT
 log_var FILE $FILE
 log_var GRP $GRP
 log_var REPO_HOST $REPO_HOST
@@ -66,7 +65,7 @@ DOCKER_BUILDKIT=1 \
           --build-arg SYS_DIR=$SYS \
           --build-arg TMPL_DIR=$TMPL \
           --build-arg ART=$ART \
-          --build-arg CONT_CERT_DIR=$CONT_CERT_DIR \
+          --build-arg CERT_DIR=$DIR_CERT \
           --build-arg FILE=$FILE \
           --build-arg GRP=$GRP \
           --build-arg REPO_HOST=$REPO_HOST \
