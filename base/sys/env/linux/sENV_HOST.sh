@@ -2,7 +2,7 @@
 # shellcheck disable=SC2086
 
 
-log_enter sENV_HOST
+log_env_enter sENV_HOST
 
   # ANSIBLE
 
@@ -224,4 +224,4 @@ log_enter sENV_HOST
   export WP_PORT_EXT_APPS=9302
 
 
-log_exit sENV_HOST
+log_env_exit sENV_HOST

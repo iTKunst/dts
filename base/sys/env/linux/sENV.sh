@@ -2,7 +2,7 @@
 # shellcheck disable=SC2086
 
 
-log_enter sENV
+log_env_enter sENV
 
   source gENV.sh
   source sENV_DCKR.sh
@@ -261,4 +261,4 @@ log_enter sENV
   export WP_TABLE_PREFIX=pre
 
 
-log_exit sENV
+log_env_exit sENV
