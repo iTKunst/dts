@@ -13,6 +13,7 @@ log_env_enter gENV_FILES
   export POM_FILE=$POM$DOT$XML
   export SET_PATH_FILE=$SET_PATH$DOT$EXT
   export SETTINGS_FILE=$SETTINGS$DOT$XML
+  export WSDL_FILES=$STAR$DOT$WSDL
 
 
 log_env_exit gENV_FILES

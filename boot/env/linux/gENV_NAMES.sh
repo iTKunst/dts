@@ -87,6 +87,7 @@ log_env_enter gENV_NAMES
   export USR=usr
   export VAR=var
   export WIN=win
+  export WSDL=wsdl
   export WWW=www
   export XML=xml
 

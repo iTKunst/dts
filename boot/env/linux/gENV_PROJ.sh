@@ -94,6 +94,9 @@ log_env_enter gENV_PROJ
   export FILE_ENV_TMPL=$DIR_SLASH$ENV_TMPL_FILE
   log_env_var FILE_ENV_TMPL $FILE_ENV_TMPL
 
+  export FILES_WSDL=$DIR_SLASH$WSDL_FILES
+  log_env_var FILES_WSDL $FILES_WSDL
+
   export BUILD_DCKR=$TMPL$FILE_DCKR
   log_env_var BUILD_DCKR $BUILD_DCKR
 
