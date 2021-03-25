@@ -17,7 +17,6 @@ log_var SYS_NAME $SYS_NAME
 
 export SOURCE=./$SYS_DIR/soap/$PROJ_NAME
 export TARGET=code/src-gen
-
 log_var TARGET $TARGET
 log_var SOURCE $SOURCE
 
