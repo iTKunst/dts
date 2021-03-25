@@ -20,10 +20,6 @@ pINIT () {
 
       log_var PROJ $PROJ
 
-	    if [ ! -d $PROJ ]; then
-	      mkdir $PROJ
-	    fi
-
       log_var FILE_ENV_PROJ $FILE_ENV_PROJ
 
 	    if [ ! -f c ]; then
