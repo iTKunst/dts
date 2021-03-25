@@ -4,249 +4,261 @@
 
 log_enter sENV
 
-source gENV.sh
-source sENV_DCKR.sh
-source sENV_HOST.sh
+  source gENV.sh
+  source sENV_DCKR.sh
+  source sENV_HOST.sh
 
 
-# ANSIBLE
+  # ANSIBLE
 
-export ANS_DB_NAME=
-export ANS_PASSWORD=
-export ANS_USER=
+  export ANS_DB_NAME=
+  export ANS_PASSWORD=
+  export ANS_USER=
 
-# API
+  # API
 
-export API_DB_NAME=
-export API_PASSWORD=
-export API_USER=
+  export API_DB_NAME=
+  export API_PASSWORD=
+  export API_USER=
 
-# FREEIPA
+  # FREEIPA
 
-export FREE_DB_NAME=
-export FREE_PASSWORD=FREE
-export FREE_USER=pjldooley@gmail.com
+  export FREE_DB_NAME=
+  export FREE_PASSWORD=FREE
+  export FREE_USER=pjldooley@gmail.com
 
-export FREE_CONT_GRP_DIR=/sys/fs/cgroup
-export FREE_DOMAIN=ipa.com
-export FREE_HOST_GRP_DIR=/sys/fs/cgroup
-export FREE_SYSCTL=net.ipv6.conf.all.disable_ipv6=0
+  export FREE_CONT_GRP_DIR=/sys/fs/cgroup
+  export FREE_DOMAIN=ipa.com
+  export FREE_HOST_GRP_DIR=/sys/fs/cgroup
+  export FREE_SYSCTL=net.ipv6.conf.all.disable_ipv6=0
 
-# GEOSERVER
+  # GEOSERVER
 
-export GEO_DB_NAME=
-export GEO_PASSWORD=GEO
-export GEO_USER=pjldooley@gmail.com
+  export GEO_DB_NAME=
+  export GEO_PASSWORD=GEO
+  export GEO_USER=pjldooley@gmail.com
 
-# GOLANG
+  # GOLANG
 
-export GO_DB_NAME=
-export GO_PASSWORD=GO
-export GO_USER=pjldooley@gmail.com
+  export GO_DB_NAME=
+  export GO_PASSWORD=GO
+  export GO_USER=pjldooley@gmail.com
 
-# GRADLE
+  # GRADLE
 
-export GRDL_DB_NAME=
-export GRDL_PASSWORD=GRDL
-export GRDL_USER=pjldooley@gmail.com
+  export GRDL_DB_NAME=
+  export GRDL_PASSWORD=GRDL
+  export GRDL_USER=pjldooley@gmail.com
 
-# GRADLE LIBRARY
+  # GRADLE LIBRARY
 
-export GRDL_LIB_DB_NAME=
-export GRDL_LIB_PASSWORD=
-export GRDL_LIB_USER=
+  export GRDL_LIB_DB_NAME=
+  export GRDL_LIB_PASSWORD=
+  export GRDL_LIB_USER=
 
-# JFROG
+  # JFROG
 
-export JFROG_DB_NAME=
-export JFROG_PASSWORD=
-export JFROG_LIB_USER=
+  export JFROG_DB_NAME=
+  export JFROG_PASSWORD=
+  export JFROG_LIB_USER=
 
-export JFROG_REG_DEV=docker-dev-local2.art.local
-export JFROG_REG_PROD=docker-prod-local2.art.local
-export JFROG_REG_REM=docker-remote.art.local
-export JFROG_REG_VIRT=docker-virtual.art.local
+  export JFROG_REG_DEV=docker-dev-local2.art.local
+  export JFROG_REG_PROD=docker-prod-local2.art.local
+  export JFROG_REG_REM=docker-remote.art.local
+  export JFROG_REG_VIRT=docker-virtual.art.local
 
-# KEYCLOAK
+  # KEYCLOAK
 
-export KEY_DB_NAME=
-export KEY_PASSWORD=admin
-export KEY_USER=admin
+  export KEY_DB_NAME=
+  export KEY_PASSWORD=admin
+  export KEY_USER=admin
 
-export KEY_DBG=true
-export KEY_IMPORT=$KEY_CONT_DIR$FOR_SLASH"realm-export.json"
-export KEY_LOG_LEVEL=INFO
-export KEY_PROXY_FORWARD=true
-export KEY_ROOT_LOG_LEVEL=INFO
+  export KEY_DBG=true
+  export KEY_IMPORT=$KEY_CONT_DIR$FOR_SLASH"realm-export.json"
+  export KEY_LOG_LEVEL=INFO
+  export KEY_PROXY_FORWARD=true
+  export KEY_ROOT_LOG_LEVEL=INFO
 
-# MAVEN
+  # MAVEN
 
-export MVN_DB_NAME=
-export MVN_PASSWORD=admin
-export MVN_USER=admin
+  export MVN_DB_NAME=
+  export MVN_PASSWORD=admin
+  export MVN_USER=admin
 
-# MAVEN LIBRARY
+  # MAVEN LIBRARY
 
-export MVN_LIB_DB_NAME=
-export MVN_LIB_PASSWORD=
-export MVN_LIB_USER=
+  export MVN_LIB_DB_NAME=
+  export MVN_LIB_PASSWORD=
+  export MVN_LIB_USER=
 
-# MYSQL
+  # MYSQL
 
-export MS_DB_NAME=sigv2
-export MS_PASSWORD=admin
-export MS_USER=root
+  export MS_DB_NAME=sigv2
+  export MS_PASSWORD=admin
+  export MS_USER=root
 
-# MYSQL ADMIN
+  # MYSQL ADMIN
 
-export MS_ADMIN_DB_NAME=
-export MS_ADMIN_PASSWORD=admin
-export MS_ADMIN_USER=pjldooley@gmail.com
+  export MS_ADMIN_DB_NAME=
+  export MS_ADMIN_PASSWORD=admin
+  export MS_ADMIN_USER=pjldooley@gmail.com
 
-# NANO
+  # NANO
 
-export NANO_DB_NAME=
-export NANO_PASSWORD=
-export NANO_USER=
+  export NANO_DB_NAME=
+  export NANO_PASSWORD=
+  export NANO_USER=
 
-# NEXUS
+  # NEXUS
 
-export NEXUS_DB_NAME=
-export NEXUS_PASSWORD=
-export NEXUS_USER=
+  export NEXUS_DB_NAME=
+  export NEXUS_PASSWORD=
+  export NEXUS_USER=
 
-# NEXUS3
+  # NEXUS3
 
-export NEXUS3_DB_NAME=
-export NEXUS3_PASSWORD=12345678
-export NEXUS3_USER=taghrdooleyp
+  export NEXUS3_DB_NAME=
+  export NEXUS3_PASSWORD=12345678
+  export NEXUS3_USER=taghrdooleyp
 
-# NODEJS
+  # NODEJS
 
-export NODE_DB_NAME=
-export NODE_PASSWORD=
-export NODE_USER=
+  export NODE_DB_NAME=
+  export NODE_PASSWORD=
+  export NODE_USER=
 
-export NODE_JSON=
-export NODE_LOG_LEVEL=info
+  export NODE_JSON=
+  export NODE_LOG_LEVEL=info
 
-# OPENAPI CLI
+  # OPENAPI CLI
 
-export OA_CLI_DB_NAME=
-export OA_CLI_PASSWORD=
-export OA_CLI_USER=
+  export OA_CLI_DB_NAME=
+  export OA_CLI_PASSWORD=
+  export OA_CLI_USER=
 
-export OA_CLI_API_NAME=
+  export OA_CLI_API_NAME=
 
-# OPENAPI SRVR
+  # OPENAPI SRVR
 
-export OA_SRVR_DB_NAME=
-export OA_SRVR_PASSWORD=
-export OA_SRVR_USER=
+  export OA_SRVR_DB_NAME=
+  export OA_SRVR_PASSWORD=
+  export OA_SRVR_USER=
 
-# PGADMIN
+  # PGADMIN
 
-export PG_ADMIN_DB_NAME=
-export PG_ADMIN_PASSWORD=admin
-export PG_ADMIN_USER=pjldooley@gmail.com
+  export PG_ADMIN_DB_NAME=
+  export PG_ADMIN_PASSWORD=admin
+  export PG_ADMIN_USER=pjldooley@gmail.com
 
-# PORTAINER
+  # PORTAINER
 
-export PORT_DB_NAME=
-export PORT_PASSWORD=admin123
-export PORT_USER=admin
+  export PORT_DB_NAME=
+  export PORT_PASSWORD=admin123
+  export PORT_USER=admin
 
-# POSTGIS
+  # POSTGIS
 
-export GIS_DB_NAME=
-export GIS_PASSWORD=GIS
-export GIS_USER=pjldooley@gmail.com
+  export GIS_DB_NAME=
+  export GIS_PASSWORD=GIS
+  export GIS_USER=pjldooley@gmail.com
 
-# POSTGRESQL
+  # POSTGRESQL
 
-export PG_DB_NAME=keycloak
-export PG_PASSWORD=keycloak
-export PG_USER=keycloak
+  export PG_DB_NAME=keycloak
+  export PG_PASSWORD=keycloak
+  export PG_USER=keycloak
 
-# REACTJS
+  # REACTJS
 
-export REACT_DB_NAME=
-export REACT_PASSWORD=
-export REACT_USER=
+  export REACT_DB_NAME=
+  export REACT_PASSWORD=
+  export REACT_USER=
 
-# SMTP
+  # SMTP
 
-export SMTP_DB_NAME=
-export SMTP_PASSWORD=secret
-export SMTP_USER=myuser
+  export SMTP_DB_NAME=
+  export SMTP_PASSWORD=secret
+  export SMTP_USER=myuser
 
-export SMTP_SH_ADDRESS=mail.mysmtp.com
-export SMTP_SH_ALIASES=*.mysmtp.com
-export SMTP_SH_PORT=587
+  export SMTP_SH_ADDRESS=mail.mysmtp.com
+  export SMTP_SH_ALIASES=*.mysmtp.com
+  export SMTP_SH_PORT=587
 
-# SOAP
+  # SOAP_CLNT
 
-export SOAP_DB_NAME=
-export SOAP_PASSWORD=
-export SOAP_USER=
+  export SOAP_CLNT_DB_NAME=
+  export SOAP_CLNT_PASSWORD=
+  export SOAP_CLNT_USER=
 
-export SOAP_ART=cvms-scgv-ihs
-export SOAP_FILE=APSShipService.wsdl
-export SOAP_GRP=ca.gc.ccg-gcc
-export SOAP_PKG=ca.gc.ccggcc.cvmsscgv.ihs
-export SOAP_VER=1.0.1
+  export SOAP_CLNT_ART=cvms-scgv-ihs
+  export SOAP_CLNT_FILE=APSShipService.wsdl
+  export SOAP_CLNT_GRP=ca.gc.ccg-gcc
+  export SOAP_CLNT_PKG=ca.gc.ccggcc.cvmsscgv.ihs_client
+  export SOAP_CLNT_VER=1.0.1
 
-# SRVR
+  # SOAP_SRVR
 
-export SRVR_DB_NAME=
-export SRVR_PASSWORD=
-export SRVR_USER=
+  export SOAP_SRVR_DB_NAME=
+  export SOAP_SRVR_PASSWORD=
+  export SOAP_SRVR_USER=
 
-# SRVR2
+  export SOAP_SRVR_ART=cvms-scgv-ihs
+  export SOAP_SRVR_FILE=APSShipService.wsdl
+  export SOAP_SRVR_GRP=ca.gc.ccg-gcc
+  export SOAP_SRVR_PKG=ca.gc.ccggcc.cvmsscgv.ihs
+  export SOAP_SRVR_VER=1.0.1
 
-export SRVR2_DB_NAME=
-export SRVR2_PASSWORD=
-export SRVR2_USER=
+  # SRVR
 
-# SWAGGER CODEGEN CLI
+  export SRVR_DB_NAME=
+  export SRVR_PASSWORD=
+  export SRVR_USER=
 
-export SWAG_CG_CLI_DB_NAME=
-export SWAG_CG_CLI_PASSWORD=
-export SWAG_CG_CLI_USER=
+  # SRVR2
 
-export SWAG_CG_CLI_FILE=IHS.yaml
+  export SRVR2_DB_NAME=
+  export SRVR2_PASSWORD=
+  export SRVR2_USER=
 
-# SWAGGER EDITOR
+  # SWAGGER CODEGEN CLI
 
-export SWAG_EDIT_DB_NAME=
-export SWAG_EDIT_PASSWORD=
-export SWAG_EDIT_USER=
+  export SWAG_CG_CLI_DB_NAME=
+  export SWAG_CG_CLI_PASSWORD=
+  export SWAG_CG_CLI_USER=
 
-# SWAGGER GENERATOR
+  export SWAG_CG_CLI_FILE=IHS.yaml
 
-export SWAG_GEN_DB_NAME=
-export SWAG_GEN_PASSWORD=
-export SWAG_GEN_USER=
+  # SWAGGER EDITOR
 
-# SWAGGER UI
+  export SWAG_EDIT_DB_NAME=
+  export SWAG_EDIT_PASSWORD=
+  export SWAG_EDIT_USER=
 
-export SWAG_UI_DB_NAME=
-export SWAG_UI_PASSWORD=
-export SWAG_UI_USER=
+  # SWAGGER GENERATOR
 
-# WILDFLY
+  export SWAG_GEN_DB_NAME=
+  export SWAG_GEN_PASSWORD=
+  export SWAG_GEN_USER=
 
-export WF_DB_NAME=
-export WF_PASSWORD=
-export WF_USER=
+  # SWAGGER UI
 
-# WORDPRESS
+  export SWAG_UI_DB_NAME=
+  export SWAG_UI_PASSWORD=
+  export SWAG_UI_USER=
 
-export WP_DB_NAME=wp
-export WP_PASSWORD=admin
-export WP_USER=root
+  # WILDFLY
 
-export WP_TABLE_PREFIX=pre
+  export WF_DB_NAME=
+  export WF_PASSWORD=
+  export WF_USER=
+
+  # WORDPRESS
+
+  export WP_DB_NAME=wp
+  export WP_PASSWORD=admin
+  export WP_USER=root
+
+  export WP_TABLE_PREFIX=pre
 
 
 log_exit sENV
