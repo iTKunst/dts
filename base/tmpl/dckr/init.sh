@@ -1,0 +1,25 @@
+#!/bin/bash
+# shellcheck disable=SC2086
+
+
+log_enter $DIR_TMPL_CURR$DCKR_DIR$FILE_INIT
+
+  SRC_DCKR=$DIR_TMPL_CURR$DCKR_DIR$FILE_DCKR
+  log_var SRC_DCKR $SRC_DCKR
+
+  TRG_DCKR=$TMPL
+  log_var TRG_DCKR $TRG_DCKR
+
+  cp $SRC_DCKR $TRG_DCKR
+
+  log_var FILES $FILES
+
+  SRC_BIN=$DIR_TMPL_CURR$DCKR_DIR$FILES
+  log_var SRC_BIN $SRC_BIN
+
+  TRG_BIN=$DIR_BIN
+  log_var TRG_BIN $TRG_BIN
+
+  cp $SRC_BIN $TRG_BIN
+
+log_exit $DIR_TMPL_CURR$DCKR_DIR$FILE_INIT
