@@ -11,18 +11,15 @@ log_enter pINSTALL
 
 source tENV.sh
 
-log_var SYS_DIR $SYS_DIR
-log_var PROJ_NAME $PROJ_NAME
-log_var SYS_NAME $SYS_NAME
 
-export TARGET=../$SYS_NAME$SPLIT$SYS_DIR/soap/$PROJ_NAME
-export SOURCE=./target/generated-sources/axis2
+export TRG=$DIR_SYS$SOAP_DIR$DIR_SLASH$PROJ_NAME$DIR_SLASH$SRVR
+log_var TRG $TRG
 
-log_var TARGET $TARGET
-log_var SOURCE $SOURCE
+export SRC=target/generated-sources/axis2
+log_var SRC $SRC
 
-mkdir -p $TARGET
+mkdir -p $TRG
 shopt -s dotglob
-cp -r $SOURCE/* $TARGET
+cp -r $SRC $TRG
 
 log_exit pINSTALL
