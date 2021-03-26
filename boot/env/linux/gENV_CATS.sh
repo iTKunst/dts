@@ -14,7 +14,7 @@ log_env_enter gENV_CATS
   export DBG=dbg
   export EDIT=edit
   export FREE=free
-  export GEN=gen
+  export GEN=src-gen
   export GEO=geo
   export GIS=gis
   export GO=go
