@@ -46,6 +46,15 @@ log_env_enter gENV_PROJ
   export TMPL_NAME_DIR=$DIR_SLASH$TMPL_NAME
   log_env_var TMPL_NAME_DIR $TMPL_NAME_DIR
 
+  export DIR_API=$API
+  log_env_var DIR_API $DIR_API
+
+  export DIR_API_CLNT=$DIR_API$CLNT_DIR
+  log_env_var DIR_API_CLNT $DIR_API_CLNT
+
+  export DIR_API_SRVR=$DIR_API$SRVR_DIR
+  log_env_var DIR_API_SRVR $DIR_API_SRVR
+
   export DIR_BASE=$DIR_DTS$BASE_DIR
   log_env_var DIR_BASE $DIR_BASE
 
@@ -72,6 +81,15 @@ log_env_enter gENV_PROJ
 
   export DIR_PROJ=$DIR_BASE$PROJ_DIR
   log_env_var DIR_PROJ $DIR_PROJ
+
+  export DIR_SOAP=$SOAP
+  log_env_var DIR_SOAP $DIR_SOAP
+
+  export DIR_SOAP_CLNT=$DIR_SOAP$CLNT_DIR
+  log_env_var DIR_SOAP_CLNT $DIR_SOAP_CLNT
+
+  export DIR_SOAP_SRVR=$DIR_SOAP$SRVR_DIR
+  log_env_var DIR_SOAP_SRVR $DIR_SOAP_SRVR
 
   export DIR_SYS=$DIR_UP$DIR_UP$SYS
   log_env_var DIR_SYS $DIR_SYS

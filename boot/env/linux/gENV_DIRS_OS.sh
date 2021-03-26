@@ -5,6 +5,7 @@ log_env_enter gENV_DIRS_OS
 
 
   export ANCH_DIR=$DIR_SLASH$ANCH
+  export API_DIR=$DIR_SLASH$API
   export BASE_DIR=$DIR_SLASH$BASE
   export BIN_DIR=$DIR_SLASH$BIN
   export CMD_DIR=$DIR_SLASH$CMD
