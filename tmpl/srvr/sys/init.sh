@@ -31,9 +31,9 @@ log_enter $DIR_TMPL_CURR$SYS_DIR$FILE_INIT
   TRG_SRVR=$DIR_CODE_GEN_SRVR
   log_var TRG_SRVR $TRG_SRVR
 
-  if [ ! -d TRG_SRVR ]; then
-    mkdir -p TRG_SRVR
-    echo create TRG_SRVRv
+  if [ ! -d $TRG_SRVR ]; then
+    mkdir -p $TRG_SRVR
+    echo create $TRG_SRVR
   fi
 
   cp $SRC_SRVR $TRG_SRVR
