@@ -16,6 +16,7 @@ log_env_enter gENV_NAMES
   export CA_CERT=ca-certificates
   export CA_TRUST=ca-trust
   export CLI=cli
+  export CLNT=clnt
   export CMD=cmd
   export CODE=code
   export COM=com
@@ -75,10 +76,12 @@ log_env_enter gENV_NAMES
   export SETTINGS=settings
   export SHARE=share
   export SNGL=standalone
+  export SOAP=soap
   export SOCK=sock
   export SOURCE=source
   export SPECS=specs
   export SRC=src
+  export SRVR=srvr
   export SYS=sys
   export TEMPL=tmpl
   export THEMES=themes
