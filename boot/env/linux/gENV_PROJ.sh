@@ -133,6 +133,7 @@ log_env_enter gENV_PROJ
   export BUILD_DCKR=$TMPL$FILE_DCKR
   log_env_var BUILD_DCKR $BUILD_DCKR
 
+
 log_env_exit gENV_PROJ
 
 return 0
