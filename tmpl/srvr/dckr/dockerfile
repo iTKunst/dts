@@ -10,7 +10,7 @@ ARG HOST_DIR
 ARG SYS_DIR
 ARG TMPL_DIR
 
-ARG CONT_CERT_DIR
+ARG CERT_DIR
 ARG REPO_HOST
 ARG REPO_PORT_EXT
 
@@ -19,7 +19,7 @@ RUN echo HOST_DIR is ${HOST_DIR}
 RUN echo SYS_DIR is ${SYS_DIR}
 RUN echo TMPL_DIR is ${TMPL_DIR}
 
-RUN echo CONT_CERT_DIR is ${CONT_CERT_DIR}
+RUN echo CERT_DIR is ${CERT_DIR}
 RUN echo REPO_HOST is ${REPO_HOST}
 RUN echo REPO_PORT_EXT is ${REPO_PORT_EXT}
 
@@ -28,11 +28,11 @@ RUN mkdir -p ${CONT_DIR}
 WORKDIR ${CONT_DIR}
 
 RUN mkdir -p /root/.m2
-COPY ./${SYS_DIR}/maven/settings.xml /root/.m2/settings.xml
+COPY ${SYS_DIR}/settings.xml /root/.m2/settings.xml
 
-RUN mkdir -p ${CONT_CERT_DIR}
+RUN mkdir -p ${CERT_DIR}
 
-COPY ./${SYS_DIR}/nexus/nexus.crt ${CONT_CERT_DIR}
+COPY ${SYS_DIR}/nexus.crt ${CERT_DIR}
 RUN update-ca-certificates -v
 
 # copy the project files

@@ -14,7 +14,5 @@ code/src/
 /path.txt
 /path.cmd
 
-/code/pom.sample.xml
-/project/pENV.sample.sh
 
 *.iml
