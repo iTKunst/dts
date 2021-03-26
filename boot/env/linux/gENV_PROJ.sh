@@ -58,6 +58,9 @@ log_env_enter gENV_PROJ
   export DIR_CMD=$DIR_BASE$CMD_DIR
   log_env_var DIR_CMD $DIR_CMD
 
+  export DIR_CODE_GEN=$CODE$GEN_DIR
+  log_env_var DIR_CODE_GEN $DIR_CODE_GEN
+
   export DIR_NEXUS=$DIR_BASE$NEXUS_DIR
   log_env_var DIR_NEXUS $DIR_NEXUS
 
