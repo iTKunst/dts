@@ -4,13 +4,15 @@
 
 log_enter $DIR_TMPL_CURR$MVN_DIR$FILE_INIT
 
-SRC=$DIR_TMPL_CURR$MVN_DIR$FILE_POM
+SRC=$DIR_TMPL_CURR$MVN_DIR
 log_var SRC $SRC
 
-TRG=$TMPL
+TRG=code
 log_var TRG $TRG
 
-cp $SRC $TRG
-
+if [ ! -f $TRG/pom.xml ]; then
+  cp $SRC/pom.sample.xml $TRG/pom.xml
+fi
 
 log_exit $DIR_TMPL_CURR$MVN_DIR$FILE_INIT
+
