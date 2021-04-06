@@ -15,5 +15,5 @@ log_var CONT $CONT
 docker container start $CONT
 
 
-log_exit pSTOP
+log_exit pSTART
 
