@@ -32,7 +32,6 @@ RUN mkdir -p ${CONT_DIR}
 WORKDIR ${CONT_DIR}
 
 COPY ${TMPL_DIR}/pom.xml .
-COPY ${SYS_DIR}/*.wsdl .
 
 RUN mkdir -p /root/.m2
 COPY ${SYS_DIR}/settings.xml /root/.m2/settings.xml
@@ -46,14 +45,12 @@ RUN update-ca-certificates -v
 RUN mvn dependency:go-offline -B
 
 ENV ART $ART
-ENV FILE $FILE
 ENV GRP $GRP
 ENV REPO_HOST $REPO_HOST
 ENV REPO_PORT_EXT $REPO_PORT_EXT
 ENV VER $VER
 
 RUN echo ART is ${ART}
-RUN echo FILE is ${FILE}
 RUN echo GRP is ${GRP}
 RUN echo REPO_HOST is ${REPO_HOST}
 RUN echo REPO_PORT_EXT is ${REPO_PORT_EXT}
