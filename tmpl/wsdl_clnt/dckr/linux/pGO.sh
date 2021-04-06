@@ -67,9 +67,6 @@ docker run \
        --name=$CONT \
        $IMG
 
-source pINSTALL.sh
-source pSTOP.sh
-source pDEL_CONT.sh
 
 log_unload pGO
 
