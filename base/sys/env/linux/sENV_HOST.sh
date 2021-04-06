@@ -227,6 +227,6 @@ log_env_enter sENV_HOST
 
   export WSDL_CLNT_HOST=0.0.0.0
   export WSDL_CLNT_IP=0.0.0.0
-  export WSDL_CLNT_PORT_EXT=8500
+  export WSDL_CLNT_PORT_EXT=9400
 
 log_env_exit sENV_HOST
