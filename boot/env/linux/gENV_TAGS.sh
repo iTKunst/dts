@@ -50,6 +50,7 @@ log_env_enter gENV_TAGS
   export VOL_TAG=$SPLIT$VOL
   export WF_TAG=$SPLIT$WF
   export WP_TAG=$SPLIT$WP
-  export WSDL_TAG=$SPLIT$WSDL
+  export WSDL_CLNT_TAG=$SPLIT$WSDL$SPLIT$CLNT
+  export WSDL_SRVR_TAG=$SPLIT$WSDL$SPLIT$SRVR
 
 log_env_exit gENV_TAGS
