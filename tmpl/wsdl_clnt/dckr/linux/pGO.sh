@@ -19,6 +19,9 @@ log_load pGO
 
 source tENV.sh
 
+source pSTOP.sh
+source pDEL_CONT.sh
+
 CONT=$PROJ_CONT
 CONT_DIR=$PROJ_CONT_DIR
 CONT_MNT_DIR=$PROJ_CONT_MNT_DIR
