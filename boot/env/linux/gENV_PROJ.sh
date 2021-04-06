@@ -82,6 +82,9 @@ log_env_enter gENV_PROJ
   export DIR_PROJ=$DIR_BASE$PROJ_DIR
   log_env_var DIR_PROJ $DIR_PROJ
 
+  export DIR_SYS=$DIR_UP$DIR_UP$SYS
+  log_env_var DIR_SYS $DIR_SYS
+
   export DIR_SOAP=$DIR_SYS$SOAP_DIR
   log_env_var DIR_SOAP $DIR_SOAP
 
@@ -90,9 +93,6 @@ log_env_enter gENV_PROJ
 
   export DIR_SOAP_SRVR=$DIR_SOAP$SRVR_DIR
   log_env_var DIR_SOAP_SRVR $DIR_SOAP_SRVR
-
-  export DIR_SYS=$DIR_UP$DIR_UP$SYS
-  log_env_var DIR_SYS $DIR_SYS
 
   export DIR_TMPL=$DIR_DTS$TMPL_DIR
   log_env_var DIR_TMPL $DIR_TMPL
