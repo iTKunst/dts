@@ -42,6 +42,8 @@ log_env_enter gENV_CATS
   export VOL=vol
   export WF=wf
   export WP=wp
+  export WSDL=wsdl
 
   export SOAP_CLNT=$SOAP$
+
 log_env_exit gENV_CATS

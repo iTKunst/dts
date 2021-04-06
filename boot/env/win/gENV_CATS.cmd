@@ -44,6 +44,7 @@ SET "UI=ui"
 SET "VOL=vol"
 SET "WF=wf"
 SET "WP=wp"
+SET "WSDL=wsdl"
 
 
 rem call LOG_EXIT gENV_CATS
