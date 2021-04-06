@@ -15,7 +15,7 @@ source tENV.sh
 export SRC=target/generated-sources/axis2
 log_var SRC $SRC
 
-export TRG=$DIR_SOAP_CLNT$PROJ_NAME
+export TRG=$DIR_SOAP_CLNT$DIR_SLASH$PROJ_NAME
 log_var TRG $TRG
 
 mkdir -p $TRG
