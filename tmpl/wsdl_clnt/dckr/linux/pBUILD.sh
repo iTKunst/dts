@@ -22,38 +22,49 @@ log_enter pBUILD
 
 source pSTOP.sh
 
+
+log_var BUILD_DCKR $BUILD_DCKR
 CONT_DIR=$PROJ_CONT_DIR
-HOST_DIR=$PROJ_HOST_DIR
-IMG=$PROJ_IMG
-USER=$PROJ_USER
-
-ART=$PROJ_ART
-FILE=$PROJ_FILE
-GRP=$PROJ_GRP
-REPO_HOST=$PROJ_REPO_HOST
-REPO_IP=$PROJ_REPO_IP
-REPO_PORT_EXT=$PROJ_REPO_PORT_EXT
-VER=$PROJ_VER
-
-
 
 log_var CONT_DIR $CONT_DIR
-log_var BUILD_DCKR $BUILD_DCKR
-log_var SYS $SYS
-log_var TMPL $TMPL
+HOST_DIR=$PROJ_HOST_DIR
+
 log_var HOST_DIR $HOST_DIR
+IMG=$PROJ_IMG
+
 log_var IMG $IMG
-log_var TMPL_NAME $TMPL_NAME
+
+log_var SYS $SYS
+
+log_var TMPL $TMPL
+
+USER=$PROJ_USER
 log_var USER $USER
 
+
+ART=$PROJ_ART
 log_var ART $ART
+
 log_var DIR_CERT $DIR_CERT
-log_var FILE $FILE
+
+GRP=$PROJ_GRP
 log_var GRP $GRP
+
+REPO_HOST=$PROJ_REPO_HOST
 log_var REPO_HOST $REPO_HOST
+
+REPO_IP=$PROJ_REPO_IP
 log_var REPO_IP $REPO_IP
+
+REPO_PORT_EXT=$PROJ_REPO_PORT_EXT
 log_var REPO_PORT_EXT $REPO_PORT_EXT
+
+log_var TMPL_NAME $TMPL_NAME
+
+VER=$PROJ_VER
 log_var VER $VER
+
+
 
 
 DOCKER_BUILDKIT=1 \
@@ -66,7 +77,6 @@ DOCKER_BUILDKIT=1 \
           --build-arg TMPL_DIR=$TMPL \
           --build-arg ART=$ART \
           --build-arg CERT_DIR=$DIR_CERT \
-          --build-arg FILE=$FILE \
           --build-arg GRP=$GRP \
           --build-arg REPO_HOST=$REPO_HOST \
           --build-arg REPO_PORT_EXT=$REPO_PORT_EXT \
