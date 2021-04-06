@@ -223,5 +223,10 @@ log_env_enter sENV_HOST
   export WP_PORT_EXT_ADMIN=9301
   export WP_PORT_EXT_APPS=9302
 
+  # WSDL_CLNT
+
+  export WSDL_CLNT_HOST=0.0.0.0
+  export WSDL_CLNT_IP=0.0.0.0
+  export WSDL_CLNT_PORT_EXT=8500
 
 log_env_exit sENV_HOST

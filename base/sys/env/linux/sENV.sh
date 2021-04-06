@@ -260,5 +260,15 @@ log_env_enter sENV
 
   export WP_TABLE_PREFIX=pre
 
+  # WSDL_CLNT
+
+  export WSDL_CLNT_DB_NAME=
+  export WSDL_CLNT_PASSWORD=
+  export WSDL_CLNT_USER=
+
+  export WSDL_CLNT_ART=cvms-scgv-ihs
+  export WSDL_CLNT_GRP=ca.gc.ccg-gcc
+  export WSDL_CLNT_PKG=ca.gc.ccggcc.cvmsscgv.wsdl_client
+  export WSDL_CLNT_VER=1.0.1
 
 log_env_exit sENV
