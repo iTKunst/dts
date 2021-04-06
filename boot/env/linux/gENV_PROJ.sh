@@ -82,7 +82,7 @@ log_env_enter gENV_PROJ
   export DIR_PROJ=$DIR_BASE$PROJ_DIR
   log_env_var DIR_PROJ $DIR_PROJ
 
-  export DIR_SOAP=$SOAP
+  export DIR_SOAP=$DIR_SYS$SOAP_DIR
   log_env_var DIR_SOAP $DIR_SOAP
 
   export DIR_SOAP_CLNT=$DIR_SOAP$CLNT_DIR
