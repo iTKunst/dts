@@ -8,7 +8,7 @@ node_modules/
 /target/
 /tmpl/
 
-code/src/
+code/src-gen/
 
 /nul
 /path.txt
