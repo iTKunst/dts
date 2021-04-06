@@ -56,6 +56,6 @@ RUN echo REPO_HOST is ${REPO_HOST}
 RUN echo REPO_PORT_EXT is ${REPO_PORT_EXT}
 RUN echo VER is ${VER}
 
-ENTRYPOINT ["mvn", "deploy"]
+ENTRYPOINT ["mvn", "package"]
 
 #ENTRYPOINT ["/bin/sh"]
