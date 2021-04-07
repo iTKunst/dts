@@ -267,6 +267,7 @@ log_env_enter sENV
   export WSDL_CLNT_USER=
 
   export WSDL_CLNT_ART=cvms-scgv-ihs
+  export SOAP_SRVR_FILE=APSShipService.wsdl
   export WSDL_CLNT_GRP=ca.gc.ccg-gcc
   export WSDL_CLNT_PKG=ca.gc.ccggcc.cvmsscgv.wsdl_client
   export WSDL_CLNT_VER=1.0.1
