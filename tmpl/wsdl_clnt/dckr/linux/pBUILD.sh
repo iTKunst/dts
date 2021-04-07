@@ -43,6 +43,8 @@ FILE=$PROJ_FILE
 log_var FILE $FILE
 GRP=$PROJ_GRP
 log_var GRP $GRP
+PKG=$PROJ_PKG
+log_var PKG $PKG
 REPO_HOST=$PROJ_REPO_HOST
 log_var REPO_HOST $REPO_HOST
 REPO_IP=$PROJ_REPO_IP
@@ -66,6 +68,7 @@ DOCKER_BUILDKIT=1 \
           --build-arg CERT_DIR=$DIR_CERT \
           --build-arg FILE=$FILE \
           --build-arg GRP=$GRP \
+          --build-arg PKG=$PKG \
           --build-arg REPO_HOST=$REPO_HOST \
           --build-arg REPO_PORT_EXT=$REPO_PORT_EXT \
           --build-arg VER=$VER \
