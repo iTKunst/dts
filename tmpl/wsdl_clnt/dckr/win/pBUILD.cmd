@@ -49,14 +49,19 @@ call LOG_VAR VER %VER%
 
 REM DOCKER_BUILDKIT=1 ^
 docker  build ^
-        --build-arg CERT_DIR=%CERT_DIR% ^
         --build-arg CONT_DIR=%CONT_DIR% ^
-        --build-arg HOST_CFG_DIR=%HOST_CFG_DIR% ^
         --build-arg HOST_DIR=%HOST_DIR% ^
         --build-arg SYS_DIR=%DIR_SYS% ^
         --build-arg TMPL_DIR=%TMPL_DIR% ^
-        --add-host=%MVN_REPO_URI%:%MVN_REPO_IP% ^
-        -f %DCKR_URI% ^
+        --build-arg ART=%ART% ^
+        --build-arg CERT_DIR=%CERT_DIR% ^
+        --build-arg FILE=%FILE% ^
+        --build-arg GRP=%GRP% ^
+        --build-arg REPO_HOST=%REPO_HOST% ^
+        --build-arg REPO_PORT_EXT=%REPO_PORT_EXT% ^
+        --build-arg VER=%VER% ^
+        --add-host=%REPO_HOST%:%REPO_IP% ^
+        -f %BUILD_DCKR% ^
         -t %IMG% ^
         .
 
