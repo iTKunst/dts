@@ -58,7 +58,6 @@ log_var VER $VER
 DOCKER_BUILDKIT=1 \
           docker  \
           build \
-          --no-cache \
           --build-arg CONT_DIR=$CONT_DIR \
           --build-arg HOST_DIR=$HOST_DIR \
           --build-arg SYS_DIR=$SYS \
