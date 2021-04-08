@@ -249,17 +249,17 @@ SET "WP_USER=root"
 
 SET "WP_TABLE_PREFIX=pre"
 
-REM WSDL
+REM WSDL_CLNT
 
-SET "WSDL_DB_NAME="
-SET "WSDL_PASSWORD="
-SET "WSDL_USER="
+SET "WSDL_CLNT_DB_NAME="
+SET "WSDL_CLNT_PASSWORD="
+SET "WSDL_CLNT_USER="
 
-SET "WSDL_ART=cvms-scgv-ihs"
-SET "WSDL_FILE=APSShipService.wsdl"
-SET "WSDL_GRP=ca.gc.ccg-gcc"
-SET "WSDL_PKG=ca.gc.ccggcc.cvmsscgv.ihs"
-SET "WSDL_VER=1.0.1"
+SET "WSDL_CLNT_ART=cvms-scgv-ihs"
+SET "WSDL_CLNT_FILE=APSShipService.wsdl"
+SET "WSDL_CLNT_GRP=ca.gc.ccg-gcc"
+SET "WSDL_CLNT_PKG=ca.gc.ccggcc.cvmsscgv.ihs"
+SET "WSDL_CLNT_VER=1.0.1"
 
 rem call LOG_UNLOAD sENV
 echo sENV [UNLOAD]
