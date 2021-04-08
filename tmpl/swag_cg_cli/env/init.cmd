@@ -1,8 +1,27 @@
 @echo off
 
 
-CALL LOG_ENTER %TMPL_DIR%%ENV_DIR%%DIR_SLASH%%FILE_INIT%
+rem CALL %DIR_BIN%%DIR_SLASH%LOG_ENTER %DIR_TMPL_CURR%%ENV_DIR%%FILE_INIT%
+rem echo %DIR_TMPL%%ENV_DIR%%FILE_INIT%  [ENTER]
 
-xcopy /q /y %TMPL_DIR%%ENV_DIR%%OS_DIR%\tENV.cmd %DIR_BIN% >NUL
+SET "SRC_TMPL=%DIR_TMPL_CURR%%ENV_DIR%%OS_DIR%%DIR_SLASH%tENV.cmd"
+rem echo SRC_TMPL is %SRC_TMPL%
 
-CALL LOG_EXIT %TMPL_DIR%%ENV_DIR%%DIR_SLASH%%FILE_INIT%
+xcopy /q /y %SRC_TMPL% %DIR_BIN% >NUL
+
+if not exist project (
+  rem echo making project directory
+  mkdir project
+)
+
+if not exist project\pENV.cmd (
+  rem echo copying pENV.cmd to project
+  SET "SRC_PROJ=%DIR_TMPL_CURR%%ENV_DIR%%OS_DIR%%DIR_SLASH%pENV.sample.cmd"
+  rem echo SRC_PROJ is %SRC_PROJ%
+
+  xcopy /q /y %SRC_PROJ% project
+  ren project%DIR_SLASH%pENV.sample.cmd pENV.cmd
+)
+
+rem CALL LOG_EXIT \%DIR_TMPL%%ENV_DIR%%FILE_INIT%
+rem echo %DIR_TMPL%%ENV_DIR%%FILE_INIT%  [EXIT]

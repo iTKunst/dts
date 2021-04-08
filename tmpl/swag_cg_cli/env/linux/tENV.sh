@@ -1,14 +1,15 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-
-log_enter tENV
+log_env_enter tENV
 
 source sENV.sh
-if [ -f $PROJ_ENV_FILE ]; then
-  source $PROJ_ENV_FILE
-fi
 
+log_env_var FILE_ENV_PROJ $FILE_ENV_PROJ
+
+if [ -f $FILE_ENV_PROJ ]; then
+  source $FILE_ENV_PROJ
+fi
 
 
 export PROJ_LABEL=$SYS_NAME
@@ -21,6 +22,6 @@ export PROJ_HOST_DIR=$SWAG_CG_CLI_HOST_DIR
 export PROJ_HOST_MNT_DIR=$SWAG_CG_CLI_HOST_MNT_DIR
 export PROJ_IMG=$SWAG_CG_CLI_IMG
 export PROJ_PORT_INT=$SWAG_CG_CLI_PORT_INT
+export PROJ_VOL=$SWAG_CG_CL_VOL
 
-
-log_exit tENV
+log_env_exit tENV
