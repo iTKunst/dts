@@ -42,7 +42,7 @@ DOCKER_BUILDKIT=1 \
           --build-arg HOST_DIR=$HOST_DIR \
           --build-arg SYS_DIR=$SYS_DIR \
           --build-arg TMPL_DIR=$TMPL_DIR \
-          -f $DOCKERFILE \
+          -f $BUILD_DCKR \
           -t $IMG \
           .
 
