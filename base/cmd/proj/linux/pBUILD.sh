@@ -2,10 +2,6 @@
 # shellcheck disable=SC2086
 # echo pBUILD.sh [LOAD]
 
-source settings.sh
-source bLOG.sh
-
-
 echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 echo "%%%%%%%%%%%                                                                %%%%%%%%%%%%"
@@ -15,22 +11,28 @@ echo "%%%%%%%%%%%                                                               
 echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 
+source settings.sh
+source bLOG.sh
+source tENV.sh
+
+
 log_enter pBUILD
 
 
-source tENV.sh
-
+log_var BUILD_DCKR $BUILD_DCKR
 CONT_DIR=$PROJ_CONT_DIR
-DOCKERFILE=$TMPL$FILE_DCKR
-HOST_DIR=$PROJ_HOST_DIR
-IMG=$PROJ_IMG
-
 log_var CONT_DIR $CONT_DIR
-log_var DOCKERFILE $DOCKERFILE
+HOST_DIR=$PROJ_HOST_DIR
 log_var HOST_DIR $HOST_DIR
+IMG=$PROJ_IMG
 log_var IMG $IMG
-log_var SYS_DIR $DIR_SYS
-log_var TMPL_DIR $DIR_TMPL
+log_var SYS $SYS
+log_var TMPL $TMPL
+log_var TMPL_NAME $TMPL_NAME
+USER=$PROJ_USER
+log_var USER $USER
+
+
 
 DOCKER_BUILDKIT=1 \
           docker  \
