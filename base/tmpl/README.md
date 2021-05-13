@@ -1,12 +1,12 @@
-# base_tmpl
+# tmpl
 
 
 Template for creating new docker templates
 
-### 1. Create the new repo with the template template
+### 1. Create the new folder with the base/tmpl folder
 
 Use:
-> <https://github.com/iTKunst/base_tmpl.git>
+> <https://github.com/iTKunst/dts/base/tmpl
 
 ### 2. Clone the new repo to your dev environment
 
