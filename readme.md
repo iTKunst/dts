@@ -2,7 +2,7 @@
 Designed to simplify the process of creating and running containers
 
 Clone your project from 
-<https://github.com/itkunst/base_proj>
+<https://github.com/itkunst/dta/base/proj>
 
 For Linux
 ```
@@ -57,4 +57,4 @@ For Windows
 ```
 
 ## Please refer to DTS.pdf
-<https://github.com/itkunst/base_docs/blob/master/DTS.pdf>
+<https://github.com/itkunst/dts/DTS.pdf>
