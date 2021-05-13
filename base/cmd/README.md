@@ -1,9 +1,9 @@
 # Docker Templating System (DTS)
 Designed to simplify the process of creating and running containers
 
-## base_global
+## base/cmd
 
-Submodule for GLOBAL Configuration and environment files.  
+Submodule for all script commands  
 
 ### Changes should only be made here when adding or upgrading templates.
 
