@@ -1,14 +1,14 @@
 # Docker Templating System (DTS)
 Designed to simplify the process of creating and running containers
 
-## base_system 
+## base/sys
 
 Template for SYSTEM configuration and environment files
 
 ### 1. Create the new repo with the system template
 
 Use:
-> <https://github.com/iTKunst/base_system.git>
+> <https://github.com/iTKunst/dts/base/sys>
 
 ### 2. Clone the new repo to your dev environment
 
