@@ -2,7 +2,7 @@
 Designed to simplify the process of creating and running containers
 
 Clone your project from 
-<https://github.com/itkunst/dta/base/proj>
+<https://github.com/itkunst/dts/base/proj>
 
 For Linux
 ```
