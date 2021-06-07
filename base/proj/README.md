@@ -8,7 +8,7 @@ Template for configuring and running a docker project
 ### 1. Create the new repo with the project template
 
 Use:
-> <https://github.com/iTKunst/base/base/proj
+> <https://github.com/iTKunst/dts/base/proj
 
 ### 2. Clone the new repo to your dev environment
 
